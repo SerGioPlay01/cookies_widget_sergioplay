@@ -1517,53 +1517,49 @@
         async createSettingsHTML() {
             return `
                 <div class="cookie-settings__container">
-                    <div class="cookie-settings__scrollable">
-                        <div class="cookie-settings__header">
-                            <h3 class="cookie-settings__title">
-                                ${this.t('settingsTitle')}
-                            </h3>
-                            <p class="cookie-settings__description">
-                                ${this.t('settingsDescription')}
-                            </p>
-                            ${this.privacyLaw ? `
-                                <div class="cookie-settings__law-info">
-                                    <span class="cookie-settings__law-badge">${this.privacyLaw.name}</span>
-                                    <span class="cookie-settings__region">📍 ${this.userRegion}</span>
-                                </div>
-                            ` : ''}
-                        </div>
-                        
-                        <div class="cookie-settings__content">
-                            ${this.config.categories.map(category => this.createCategoryHTML(category)).join('')}
-                        </div>
+                    <div class="cookie-settings__header">
+                        <h3 class="cookie-settings__title">
+                            ${this.t('settingsTitle')}
+                        </h3>
+                        <p class="cookie-settings__description">
+                            ${this.t('settingsDescription')}
+                        </p>
+                        ${this.privacyLaw ? `
+                            <div class="cookie-settings__law-info">
+                                <span class="cookie-settings__law-badge">${this.privacyLaw.name}</span>
+                                <span class="cookie-settings__region">📍 ${this.userRegion}</span>
+                            </div>
+                        ` : ''}
+                    </div>
+                    
+                    <div class="cookie-settings__content">
+                        ${this.config.categories.map(category => this.createCategoryHTML(category)).join('')}
                     </div>
                     
                     <div class="cookie-settings__footer">
-                        <div class="cookie-settings__footer-buttons">
-                            <button class="cookie-banner__button cookie-banner__button--decline" 
-                                    data-action="close-settings">
-                                ${this.t('cancel')}
-                            </button>
-                            <button class="cookie-banner__button cookie-banner__button--accept" 
-                                    data-action="save-settings">
-                                ${this.t('saveSettings')}
-                            </button>
-                        </div>
-                        
-                        <div class="cookie-settings__links">
-                            <a href="https://cookies-widget-sergioplay.vercel.app/" 
-                               target="_blank" 
-                               rel="noopener noreferrer"
-                               class="cookie-settings__link">
-                                🌐 ${this.t('website')}
-                            </a>
-                            <a href="https://github.com/SerGioPlay01/cookies_widget_sergioplay" 
-                               target="_blank" 
-                               rel="noopener noreferrer"
-                               class="cookie-settings__link">
-                                📦 ${this.t('github')}
-                            </a>
-                        </div>
+                        <button class="cookie-banner__button cookie-banner__button--decline" 
+                                data-action="close-settings">
+                            ${this.t('cancel')}
+                        </button>
+                        <button class="cookie-banner__button cookie-banner__button--accept" 
+                                data-action="save-settings">
+                            ${this.t('saveSettings')}
+                        </button>
+                    </div>
+                    
+                    <div class="cookie-settings__links">
+                        <a href="https://cookies-widget-sergioplay.vercel.app/" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="cookie-settings__link">
+                            🌐 ${this.t('website')}
+                        </a>
+                        <a href="https://github.com/SerGioPlay01/cookies_widget_sergioplay" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="cookie-settings__link">
+                            📦 ${this.t('github')}
+                        </a>
                     </div>
                 </div>
             `;
@@ -1694,10 +1690,6 @@
             const settings = document.getElementById('cookieSettings');
             
             if (!settings) return;
-
-            // Блокируем прокрутку страницы
-            document.body.style.overflow = 'hidden';
-            document.documentElement.style.overflow = 'hidden';
             
             settings.classList.add('show');
             settings.setAttribute('aria-hidden', 'false');
@@ -1705,10 +1697,21 @@
             // Update toggles with current settings
             this.updateSettingsToggles();
             
+            // Мобильная оптимизация - прокрутка к началу настроек
+            if (window.innerWidth <= 768) {
+                setTimeout(() => {
+                    const banner = document.getElementById('cookieBanner');
+                    if (banner) {
+                        banner.scrollTop = 0;
+                    }
+                    settings.scrollTop = 0;
+                }, 100);
+            }
+            
             // Focus management
             const firstInput = settings.querySelector('input, button');
             if (firstInput) {
-                setTimeout(() => firstInput.focus(), 100);
+                firstInput.focus();
             }
             
             this.dispatchEvent('cookieSettingsShown');
@@ -1720,12 +1723,18 @@
             
             if (!settings) return;
             
-            // Восстанавливаем прокрутку страницы
-            document.body.style.overflow = '';
-            document.documentElement.style.overflow = '';
-            
             settings.classList.remove('show');
             settings.setAttribute('aria-hidden', 'true');
+            
+            // Мобильная оптимизация - восстановление скролла
+            if (window.innerWidth <= 768) {
+                setTimeout(() => {
+                    const banner = document.getElementById('cookieBanner');
+                    if (banner) {
+                        banner.scrollTop = 0;
+                    }
+                }, 100);
+            }
             
             this.dispatchEvent('cookieSettingsHidden');
         }

@@ -1517,49 +1517,53 @@
         async createSettingsHTML() {
             return `
                 <div class="cookie-settings__container">
-                    <div class="cookie-settings__header">
-                        <h3 class="cookie-settings__title">
-                            ${this.t('settingsTitle')}
-                        </h3>
-                        <p class="cookie-settings__description">
-                            ${this.t('settingsDescription')}
-                        </p>
-                        ${this.privacyLaw ? `
-                            <div class="cookie-settings__law-info">
-                                <span class="cookie-settings__law-badge">${this.privacyLaw.name}</span>
-                                <span class="cookie-settings__region">📍 ${this.userRegion}</span>
-                            </div>
-                        ` : ''}
-                    </div>
-                    
-                    <div class="cookie-settings__content">
-                        ${this.config.categories.map(category => this.createCategoryHTML(category)).join('')}
+                    <div class="cookie-settings__scrollable">
+                        <div class="cookie-settings__header">
+                            <h3 class="cookie-settings__title">
+                                ${this.t('settingsTitle')}
+                            </h3>
+                            <p class="cookie-settings__description">
+                                ${this.t('settingsDescription')}
+                            </p>
+                            ${this.privacyLaw ? `
+                                <div class="cookie-settings__law-info">
+                                    <span class="cookie-settings__law-badge">${this.privacyLaw.name}</span>
+                                    <span class="cookie-settings__region">📍 ${this.userRegion}</span>
+                                </div>
+                            ` : ''}
+                        </div>
+                        
+                        <div class="cookie-settings__content">
+                            ${this.config.categories.map(category => this.createCategoryHTML(category)).join('')}
+                        </div>
                     </div>
                     
                     <div class="cookie-settings__footer">
-                        <button class="cookie-banner__button cookie-banner__button--decline" 
-                                data-action="close-settings">
-                            ${this.t('cancel')}
-                        </button>
-                        <button class="cookie-banner__button cookie-banner__button--accept" 
-                                data-action="save-settings">
-                            ${this.t('saveSettings')}
-                        </button>
-                    </div>
-                    
-                    <div class="cookie-settings__links">
-                        <a href="https://cookies-widget-sergioplay.vercel.app/" 
-                           target="_blank" 
-                           rel="noopener noreferrer"
-                           class="cookie-settings__link">
-                            🌐 ${this.t('website')}
-                        </a>
-                        <a href="https://github.com/SerGioPlay01/cookies_widget_sergioplay" 
-                           target="_blank" 
-                           rel="noopener noreferrer"
-                           class="cookie-settings__link">
-                            📦 ${this.t('github')}
-                        </a>
+                        <div class="cookie-settings__footer-buttons">
+                            <button class="cookie-banner__button cookie-banner__button--decline" 
+                                    data-action="close-settings">
+                                ${this.t('cancel')}
+                            </button>
+                            <button class="cookie-banner__button cookie-banner__button--accept" 
+                                    data-action="save-settings">
+                                ${this.t('saveSettings')}
+                            </button>
+                        </div>
+                        
+                        <div class="cookie-settings__links">
+                            <a href="https://cookies-widget-sergioplay.vercel.app/" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="cookie-settings__link">
+                                🌐 ${this.t('website')}
+                            </a>
+                            <a href="https://github.com/SerGioPlay01/cookies_widget_sergioplay" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="cookie-settings__link">
+                                📦 ${this.t('github')}
+                            </a>
+                        </div>
                     </div>
                 </div>
             `;

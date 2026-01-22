@@ -1,3 +1,5 @@
+![Local Notes Screenshot]([https://github.com/SerGioPlay01/localnotes/blob/main/sccc.png?raw=true](https://raw.githubusercontent.com/SerGioPlay01/cookies_widget_sergioplay/refs/heads/main/cookiesbannersergioplay.jpg))
+
 # 🍪 Cookie Widget - Global Privacy Compliance Made Easy
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -785,5 +787,6 @@ If Cookie Widget helped your project, consider:
 [📚 Docs](https://cookies-widget-sergioplay.vercel.app/documentation.html) • 
 [🎮 Demo](https://cookies-widget-sergioplay.vercel.app/#demo) • 
 [🛠️ Tools](https://cookies-widget-sergioplay.vercel.app/tools.html)
+
 
 </div>

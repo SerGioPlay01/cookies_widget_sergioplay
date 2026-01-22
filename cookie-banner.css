@@ -207,26 +207,29 @@
 
 .cookie-settings.show {
     max-height: 80vh;
-    padding: 20px;
-    overflow-y: auto;
+    padding: 0;
+    overflow: hidden;
     -webkit-overflow-scrolling: touch;
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .cookie-settings__container {
     max-width: 1200px;
     margin: 0 auto;
-    position: relative;
     height: 100%;
     display: flex;
     flex-direction: column;
+    padding: 20px;
 }
 
 .cookie-settings__scrollable {
     flex: 1;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    padding-bottom: 80px; /* Отступ для футера */
+    padding-bottom: 20px;
+    margin-bottom: 80px; /* Отступ для футера */
 }
 
 /* Стили прокрутки для scrollable контейнера */
@@ -458,15 +461,16 @@
     flex-wrap: wrap;
     padding: 15px 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
     background: rgba(0, 0, 0, 0.95);
-    z-index: 1;
+    z-index: 10002;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     padding-bottom: max(15px, env(safe-area-inset-bottom));
+    flex-shrink: 0;
 }
 
 /* Показываем футер только когда панель настроек открыта */
@@ -543,6 +547,10 @@
     
     .cookie-settings.show {
         max-height: 85vh;
+        padding: 0;
+    }
+    
+    .cookie-settings__container {
         padding: 15px;
     }
     
@@ -613,6 +621,10 @@
     
     .cookie-settings.show {
         max-height: 90vh;
+        padding: 0;
+    }
+    
+    .cookie-settings__container {
         padding: 10px;
     }
     
@@ -638,7 +650,7 @@
     }
     
     .cookie-settings__scrollable {
-        padding-bottom: 100px; /* Увеличенный отступ для мобильных */
+        margin-bottom: 100px; /* Увеличенный отступ для мобильных */
     }
     
     .cookie-settings__links {
@@ -761,6 +773,11 @@
     
     .cookie-settings.show {
         max-height: 75vh;
+        padding: 0;
+    }
+    
+    .cookie-settings__container {
+        padding: 10px;
     }
     
     .cookie-settings__header {
@@ -783,11 +800,11 @@
     }
     
     .cookie-settings__scrollable {
-        padding-bottom: 80px; /* Отступ для фиксированного футера */
+        margin-bottom: 80px; /* Отступ для фиксированного футера */
     }
     
     .cookie-settings__scrollable {
-        padding-bottom: 90px; /* Отступ для фиксированного футера */
+        margin-bottom: 90px; /* Отступ для фиксированного футера */
     }
 }
 

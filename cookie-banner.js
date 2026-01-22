@@ -3,9 +3,10 @@
  * Supports GDPR, CCPA, LGPD, 152-ФЗ РФ, PIPEDA, PIPL, APPI, PIPA and other privacy regulations
  * Multilingual support with 20+ languages and auto-detection
  * Anti-adblock protection and advanced features
+ * https://github.com/SerGioPlay01/cookies_widget_sergioplay
  * 
  * @version 3.0.0
- * @author SerGioPlay
+ * @author SerGioPlay01
  * @license MIT
  */
 
@@ -44,7 +45,9 @@
             cancel: 'Отмена',
             saveSettings: 'Сохранить настройки',
             learnMore: 'Узнать больше',
-            poweredBy: 'Работает на Cookie Widget'
+            poweredBy: 'Работает на Cookie Widget',
+            website: 'Сайт',
+            github: 'GitHub'
         },
         'en': {
             name: 'English',
@@ -72,7 +75,9 @@
             cancel: 'Cancel',
             saveSettings: 'Save Settings',
             learnMore: 'Learn More',
-            poweredBy: 'Powered by Cookie Widget'
+            poweredBy: 'Powered by Cookie Widget',
+            website: 'Website',
+            github: 'GitHub'
         }
     };
 
@@ -321,6 +326,21 @@
                                 data-action="save-settings">
                             ${this.t('saveSettings')}
                         </button>
+                    </div>
+                    
+                    <div class="cookie-settings__links">
+                        <a href="https://cookies-widget-sergioplay.vercel.app/" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="cookie-settings__link">
+                            🌐 ${this.t('website')}
+                        </a>
+                        <a href="https://github.com/SerGioPlay01/cookies_widget_sergioplay" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="cookie-settings__link">
+                            📦 ${this.t('github')}
+                        </a>
                     </div>
                 </div>
             `;

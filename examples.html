@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO Meta Tags -->
-    <title>Примеры интеграции Cookie Widget | React, Vue, WordPress, Google Analytics</title>
-    <meta name="description" content="Готовые примеры интеграции Cookie Widget для React, Vue.js, WordPress, Google Analytics 4, Яндекс.Метрика. Пошаговые инструкции и код для копирования.">
-    <meta name="keywords" content="cookie widget примеры, интеграция cookie banner, React cookie, Vue cookie, WordPress GDPR, Google Analytics GDPR">
+    <title>Cookie Widget Integration Examples | React, Vue, WordPress, Google Analytics</title>
+    <meta name="description" content="Ready-made Cookie Widget integration examples for React, Vue.js, WordPress, Google Analytics 4, Yandex.Metrica. Step-by-step instructions and copy-paste code.">
+    <meta name="keywords" content="cookie widget examples, cookie banner integration, React cookie, Vue cookie, WordPress GDPR, Google Analytics GDPR">
     <meta name="author" content="SerGioPlay">
     <meta name="robots" content="index, follow">
     
@@ -17,8 +17,8 @@
     <!-- Open Graph -->
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://cookies-widget-sergioplay.vercel.app/examples.html">
-    <meta property="og:title" content="Примеры интеграции Cookie Widget">
-    <meta property="og:description" content="Готовые примеры интеграции Cookie Widget для популярных фреймворков и сервисов">
+    <meta property="og:title" content="Cookie Widget Integration Examples">
+    <meta property="og:description" content="Ready-made Cookie Widget integration examples for popular frameworks and services">
     <meta property="og:image" content="https://cookies-widget-sergioplay.vercel.app/favicon_folder/android-chrome-512x512.png">
     
     <!-- Favicons -->
@@ -54,12 +54,25 @@
                 </a>
             </div>
             <div class="nav-menu">
-                <a href="index.html#features" class="nav-link" data-i18n="nav.features">Возможности</a>
-                <a href="index.html#installation" class="nav-link" data-i18n="nav.installation">Установка</a>
-                <a href="documentation.html" class="nav-link" data-i18n="nav.docs">Документация</a>
-                <a href="examples.html" class="nav-link active" data-i18n="nav.examples">Примеры</a>
-                <a href="tools.html" class="nav-link" data-i18n="nav.tools">Инструменты</a>
-                <a href="index.html#support" class="nav-link" data-i18n="nav.support">Поддержка</a>
+                <a href="index.html#features" class="nav-link" data-i18n="nav.features">Features</a>
+                <a href="index.html#installation" class="nav-link" data-i18n="nav.installation">Installation</a>
+                <a href="documentation.html" class="nav-link" data-i18n="nav.docs">Documentation</a>
+                <a href="examples.html" class="nav-link active" data-i18n="nav.examples">Examples</a>
+                <a href="tools.html" class="nav-link" data-i18n="nav.tools">Tools</a>
+                <a href="index.html#support" class="nav-link" data-i18n="nav.support">Support</a>
+                
+                <!-- Language Selector -->
+                <div class="language-selector" id="languageSelector">
+                    <button class="language-btn" id="languageBtn">
+                        <span class="language-flag" id="currentFlag">EN</span>
+                        <span class="language-text" id="currentLang">English</span>
+                        <span class="language-arrow">▼</span>
+                    </button>
+                    <div class="language-dropdown" id="languageDropdown">
+                        <!-- Languages will be populated by i18n.js -->
+                    </div>
+                </div>
+                
                 <a href="https://github.com/SerGioPlay01/cookies_widget_sergioplay" class="nav-link nav-link--github" target="_blank">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
@@ -71,6 +84,154 @@
     </nav>
 
     <style>
+        /* Language Selector Styles */
+        .language-selector {
+            position: relative;
+            display: inline-block;
+        }
+
+        .language-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 0.5rem 0.75rem;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #666;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .language-btn:hover {
+            background: rgba(255, 255, 255, 1);
+            border-color: #4CAF50;
+            color: #4CAF50;
+        }
+
+        .language-flag {
+            font-size: 1rem;
+            line-height: 1;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
+        }
+
+        .language-text {
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .language-arrow {
+            transition: transform 0.3s ease;
+            opacity: 0.7;
+        }
+
+        .language-btn:hover .language-arrow {
+            opacity: 1;
+        }
+
+        .language-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: white;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(20px);
+            min-width: 180px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1001;
+            overflow: hidden;
+        }
+
+        .language-dropdown.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .language-option {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .language-option:last-child {
+            border-bottom: none;
+        }
+
+        .language-option:hover {
+            background: rgba(76, 175, 80, 0.1);
+            color: #4CAF50;
+        }
+
+        .language-option.active {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .language-option.active:hover {
+            background: #45a049;
+        }
+
+        .language-option .language-flag {
+            font-size: 0.75rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .language-option span:last-child {
+            font-weight: 500;
+        }
+
+        /* Mobile styles for language selector */
+        @media (max-width: 768px) {
+            .language-selector {
+                margin-top: 1rem;
+                width: 100%;
+            }
+            
+            .language-btn {
+                width: 100%;
+                justify-content: center;
+                padding: 0.75rem 1rem;
+            }
+            
+            .language-dropdown {
+                position: static;
+                width: 100%;
+                margin-top: 0.5rem;
+                transform: none;
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .language-dropdown.active {
+                transform: none;
+            }
+        }
+        
         body {
             margin: 0;
             padding: 0;
@@ -176,6 +337,11 @@
             font-weight: bold;
         }
         
+        .code-examples {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
         .code-section {
             background: rgba(255, 255, 255, 0.95);
             border-radius: 20px;
@@ -190,55 +356,36 @@
             color: #2c3e50;
             font-size: 2rem;
             font-weight: 700;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 3px solid transparent;
+            margin-bottom: 1rem;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            position: relative;
         }
         
-        .code-section h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 2px;
+        .code-section p {
+            color: #5a6c7d;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
         }
         
         .code-block {
             background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
             color: #e2e8f0;
-            padding: 1.5rem;
             border-radius: 12px;
             margin: 1.5rem 0;
-            overflow-x: auto;
-            position: relative;
+            overflow: hidden;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
-        .code-block pre {
-            margin: 0;
-            font-family: 'Fira Code', 'Monaco', 'Consolas', monospace;
-            font-size: 0.9rem;
-            line-height: 1.6;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-        }
-        
         .code-header {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .code-header span {
@@ -268,34 +415,19 @@
             box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
         }
         
-        .demo-section {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 2rem;
-            margin-bottom: 3rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            text-align: center;
+        .code-block pre {
+            padding: 1.5rem;
+            margin: 0;
+            overflow-x: auto;
+            font-family: 'Fira Code', 'Monaco', 'Consolas', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
         }
         
-        .demo-btn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            padding: 1rem 2rem;
-            border-radius: 12px;
-            cursor: pointer;
-            font-size: 1.1rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
-            margin: 0.5rem;
-        }
-        
-        .demo-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(102, 126, 234, 0.6);
+        .code-block code {
+            color: #e2e8f0;
+            white-space: pre-wrap;
+            word-wrap: break-word;
         }
         
         @media (max-width: 768px) {
@@ -316,18 +448,23 @@
                 padding: 1.5rem;
             }
             
-            .code-block {
+            .code-block pre {
                 padding: 1rem;
+                font-size: 0.8rem;
+            }
+            
+            .code-header {
+                padding: 0.75rem;
             }
         }
     </style>
 
     <div class="examples-container">
         <div class="examples-header">
-            <h1 class="examples-title" data-i18n="examples.title">Примеры интеграции</h1>
+            <h1 class="examples-title" data-i18n="examples.title">Integration Examples</h1>
             <p class="examples-subtitle" data-i18n="examples.subtitle">
-                Готовые решения для интеграции Cookie Widget в популярные фреймворки, CMS и аналитические системы. 
-                Копируйте код и адаптируйте под ваши потребности.
+                Ready-made solutions for integrating Cookie Widget into popular frameworks, CMS and analytics systems. 
+                Copy the code and adapt it to your needs.
             </p>
         </div>
 
@@ -336,1175 +473,152 @@
             <div class="example-card">
                 <span class="example-icon">⚛️</span>
                 <h3 class="example-title" data-i18n="example.react.title">React / Next.js</h3>
-                <p class="example-description" data-i18n="example.react.description">Современная интеграция для React приложений с TypeScript поддержкой</p>
+                <p class="example-description" data-i18n="example.react.description">Modern integration for React applications with TypeScript support</p>
                 <ul class="example-features">
-                    <li>TypeScript типизация</li>
-                    <li>Хуки для управления состоянием</li>
-                    <li>SSR совместимость</li>
-                    <li>Динамическая загрузка скриптов</li>
+                    <li data-i18n="example.react.feature1">TypeScript typing</li>
+                    <li data-i18n="example.react.feature2">State management hooks</li>
+                    <li data-i18n="example.react.feature3">SSR compatibility</li>
+                    <li data-i18n="example.react.feature4">Dynamic script loading</li>
                 </ul>
             </div>
             
             <div class="example-card">
                 <span class="example-icon">🟢</span>
                 <h3 class="example-title" data-i18n="example.vue.title">Vue.js / Nuxt.js</h3>
-                <p class="example-description" data-i18n="example.vue.description">Интеграция для Vue экосистемы с композиционным API</p>
+                <p class="example-description" data-i18n="example.vue.description">Integration for Vue ecosystem with composition API</p>
                 <ul class="example-features">
-                    <li>Composition API</li>
-                    <li>Реактивные настройки</li>
-                    <li>Nuxt.js плагин</li>
-                    <li>Автоматическая инициализация</li>
+                    <li data-i18n="example.vue.feature1">Composition API</li>
+                    <li data-i18n="example.vue.feature2">Reactive settings</li>
+                    <li data-i18n="example.vue.feature3">Nuxt.js plugin</li>
+                    <li data-i18n="example.vue.feature4">Automatic initialization</li>
                 </ul>
             </div>
             
             <div class="example-card">
                 <span class="example-icon">📝</span>
                 <h3 class="example-title" data-i18n="example.wordpress.title">WordPress</h3>
-                <p class="example-description" data-i18n="example.wordpress.description">Простая интеграция в WordPress с админ панелью</p>
+                <p class="example-description" data-i18n="example.wordpress.description">Simple WordPress integration with admin panel</p>
                 <ul class="example-features">
-                    <li>Плагин для WordPress</li>
-                    <li>Настройки в админке</li>
-                    <li>Совместимость с темами</li>
-                    <li>Шорткоды поддержка</li>
+                    <li data-i18n="example.wordpress.feature1">WordPress plugin</li>
+                    <li data-i18n="example.wordpress.feature2">Admin panel settings</li>
+                    <li data-i18n="example.wordpress.feature3">Theme compatibility</li>
+                    <li data-i18n="example.wordpress.feature4">Shortcode support</li>
                 </ul>
             </div>
             
             <div class="example-card">
                 <span class="example-icon">📊</span>
                 <h3 class="example-title" data-i18n="example.ga4.title">Google Analytics 4</h3>
-                <p class="example-description" data-i18n="example.ga4.description">Полная интеграция с GA4 и управление событиями</p>
+                <p class="example-description" data-i18n="example.ga4.description">Full GA4 integration and event management</p>
                 <ul class="example-features">
-                    <li>Условная загрузка GA4</li>
-                    <li>Отслеживание согласия</li>
-                    <li>Конфигурация приватности</li>
-                    <li>Кастомные события</li>
+                    <li data-i18n="example.ga4.feature1">Conditional GA4 loading</li>
+                    <li data-i18n="example.ga4.feature2">Consent tracking</li>
+                    <li data-i18n="example.ga4.feature3">Privacy configuration</li>
+                    <li data-i18n="example.ga4.feature4">Custom events</li>
                 </ul>
             </div>
             
             <div class="example-card">
                 <span class="example-icon">📈</span>
-                <h3 class="example-title" data-i18n="example.yandex.title">Яндекс.Метрика</h3>
-                <p class="example-description" data-i18n="example.yandex.description">Интеграция с российской системой аналитики</p>
+                <h3 class="example-title" data-i18n="example.yandex.title">Yandex.Metrica</h3>
+                <p class="example-description" data-i18n="example.yandex.description">Integration with Russian analytics system</p>
                 <ul class="example-features">
-                    <li>Соблюдение 152-ФЗ</li>
-                    <li>Цели и события</li>
-                    <li>Вебвизор управление</li>
-                    <li>Карты кликов</li>
+                    <li data-i18n="example.yandex.feature1">152-FZ compliance</li>
+                    <li data-i18n="example.yandex.feature2">Goals and events</li>
+                    <li data-i18n="example.yandex.feature3">Webvisor management</li>
+                    <li data-i18n="example.yandex.feature4">Click maps</li>
                 </ul>
             </div>
             
             <div class="example-card">
-                <span class="example-icon">🏢</span>
-                <h3 class="example-title" data-i18n="example.corporate.title">Корпоративные решения</h3>
-                <p class="example-description" data-i18n="example.corporate.description">Настройка для крупных компаний и корпораций</p>
+                <span class="example-icon">🚀</span>
+                <h3 class="example-title" data-i18n="example.advanced.title">Advanced Features v3.3</h3>
+                <p class="example-description" data-i18n="example.advanced.description">Using new exclusive capabilities</p>
                 <ul class="example-features">
-                    <li>Брендинг и кастомизация</li>
-                    <li>Интеграция с CRM</li>
-                    <li>Дополнительные категории</li>
-                    <li>Корпоративные политики</li>
+                    <li data-i18n="example.advanced.feature1">Smart Auto-Detect trackers</li>
+                    <li data-i18n="example.advanced.feature2">SEO-Friendly Mode</li>
+                    <li data-i18n="example.advanced.feature3">Script Guard protection</li>
+                    <li data-i18n="example.advanced.feature4">Zero-Reload Mode</li>
+                </ul>
+            </div>
+            
+            <div class="example-card">
+                <span class="example-icon">🔧</span>
+                <h3 class="example-title" data-i18n="example.api.title">API Integration</h3>
+                <p class="example-description" data-i18n="example.api.description">Programmatic control via JavaScript API</p>
+                <ul class="example-features">
+                    <li data-i18n="example.api.feature1">Events and callbacks</li>
+                    <li data-i18n="example.api.feature2">Dynamic management</li>
+                    <li data-i18n="example.api.feature3">Custom categories</li>
+                    <li data-i18n="example.api.feature4">SPA integration</li>
+                </ul>
+            </div>
+            
+            <div class="example-card">
+                <span class="example-icon">🌍</span>
+                <h3 class="example-title" data-i18n="example.multilang.title">Multilingual</h3>
+                <p class="example-description" data-i18n="example.multilang.description">Support for multiple languages and localization</p>
+                <ul class="example-features">
+                    <li data-i18n="example.multilang.feature1">8 languages out of the box</li>
+                    <li data-i18n="example.multilang.feature2">Auto language detection</li>
+                    <li data-i18n="example.multilang.feature3">Custom translations</li>
+                    <li data-i18n="example.multilang.feature4">RTL support</li>
+                </ul>
+            </div>
+            
+            <div class="example-card">
+                <span class="example-icon">📱</span>
+                <h3 class="example-title" data-i18n="example.mobile.title">Mobile Optimization</h3>
+                <p class="example-description" data-i18n="example.mobile.description">Responsive design for mobile devices</p>
+                <ul class="example-features">
+                    <li data-i18n="example.mobile.feature1">Responsive design</li>
+                    <li data-i18n="example.mobile.feature2">Touch-friendly interface</li>
+                    <li data-i18n="example.mobile.feature3">PWA compatibility</li>
+                    <li data-i18n="example.mobile.feature4">Performance optimization</li>
+                </ul>
+            </div>
+            
+            <div class="example-card">
+                <span class="example-icon">🔒</span>
+                <h3 class="example-title" data-i18n="example.security.title">Security and Privacy</h3>
+                <p class="example-description" data-i18n="example.security.description">Maximum protection of user data</p>
+                <ul class="example-features">
+                    <li data-i18n="example.security.feature1">Secure Storage system</li>
+                    <li data-i18n="example.security.feature2">Data encryption</li>
+                    <li data-i18n="example.security.feature3">GDPR/CCPA compliance</li>
+                    <li data-i18n="example.security.feature4">Security audit</li>
                 </ul>
             </div>
         </div>
 
-        <!-- Live Demo Section -->
-        <div class="demo-section">
-            <h2 data-i18n="examples.demo.title">🎮 Живая демонстрация</h2>
-            <p data-i18n="examples.demo.description">Попробуйте Cookie Widget в действии:</p>
-            <button class="demo-btn" onclick="window.cookieBanner?.show()" data-i18n="examples.demo.show">Показать Cookie Баннер</button>
-            <button class="demo-btn" onclick="window.cookieBanner?.reset()" data-i18n="examples.demo.reset">Сбросить настройки</button>
-            <button class="demo-btn" onclick="showCurrentSettings()" data-i18n="examples.demo.current">Текущие настройки</button>
         </div>
 
-        <!-- React Example -->
-        <div class="code-section">
-            <h2 data-i18n="examples.react.integration.title">⚛️ React / Next.js интеграция</h2>
-            <p data-i18n="examples.react.integration.description">Полный пример интеграции Cookie Widget в React приложение с TypeScript:</p>
-            
-            <div class="code-block">
-                <div class="code-header">
-                    <span>components/CookieManager.tsx</span>
-                    <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Копировать</button>
-                </div>
-                <pre><code>import { useEffect, useState, useCallback } from 'react';
-import Head from 'next/head';
-
-interface CookieSettings {
-    necessary: boolean;
-    functional: boolean;
-    analytics: boolean;
-    marketing: boolean;
-    performance: boolean;
-}
-
-interface CookieBanner {
-    show(): void;
-    hide(): void;
-    reset(): void;
-    getSettings(): CookieSettings;
-    setSettings(settings: Partial&lt;CookieSettings&gt;): void;
-    setTexts(texts: Record&lt;string, string&gt;): void;
-}
-
-declare global {
-    interface Window {
-        cookieBanner?: CookieBanner;
-        CookieBanner?: new (options?: any) => CookieBanner;
-    }
-}
-
-export default function CookieManager() {
-    const [cookieSettings, setCookieSettings] = useState&lt;CookieSettings | null&gt;(null);
-    const [isInitialized, setIsInitialized] = useState(false);
-    
-    const handleCookieAccept = useCallback((settings: CookieSettings) => {
-        setCookieSettings(settings);
-        
-        // Загружаем аналитику если разрешено
-        if (settings.analytics) {
-            import('../utils/analytics').then(({ initAnalytics }) => {
-                initAnalytics();
-            });
-        }
-        
-        // Загружаем маркетинговые скрипты
-        if (settings.marketing) {
-            import('../utils/marketing').then(({ initMarketing }) => {
-                initMarketing();
-            });
-        }
-        
-        // Отправляем событие в аналитику
-        if (typeof window !== 'undefined' && window.gtag) {
-            window.gtag('event', 'cookie_consent_granted', {
-                analytics_consent: settings.analytics,
-                marketing_consent: settings.marketing
-            });
-        }
-    }, []);
-    
-    const handleCookieDecline = useCallback((settings: CookieSettings) => {
-        setCookieSettings(settings);
-        console.log('Пользователь отклонил cookie:', settings);
-    }, []);
-    
-    useEffect(() => {
-        const initCookieBanner = () => {
-            if (typeof window !== 'undefined' && window.CookieBanner) {
-                const banner = new window.CookieBanner({
-                    autoShow: true,
-                    theme: 'modern',
-                    position: 'bottom',
-                    privacyPolicyUrl: '/privacy-policy',
-                    onAccept: handleCookieAccept,
-                    onDecline: handleCookieDecline,
-                    onSettingsChange: handleCookieAccept
-                });
-                
-                // Кастомизация для React приложения
-                banner.setTexts({
-                    title: 'Управление данными',
-                    description: 'Мы используем современные технологии для улучшения вашего опыта',
-                    acceptAll: 'Принять все',
-                    decline: 'Только необходимые',
-                    settings: 'Настроить'
-                });
-                
-                setIsInitialized(true);
-                
-                // Проверяем существующие настройки
-                const existingSettings = banner.getSettings();
-                if (existingSettings) {
-                    setCookieSettings(existingSettings);
-                }
-            }
-        };
-        
-        if (document.readyState === 'complete') {
-            initCookieBanner();
-        } else {
-            window.addEventListener('load', initCookieBanner);
-        }
-        
-        return () => {
-            window.removeEventListener('load', initCookieBanner);
-        };
-    }, [handleCookieAccept, handleCookieDecline]);
-    
-    const showCookieSettings = useCallback(() => {
-        if (window.cookieBanner) {
-            window.cookieBanner.show();
-        }
-    }, []);
-    
-    return (
-        &lt;&gt;
-            &lt;Head&gt;
-                &lt;link 
-                    rel="stylesheet" 
-                    href="https://cookies-widget-sergioplay.vercel.app/cookie-banner.css" 
-                /&gt;
-                &lt;script 
-                    src="https://cookies-widget-sergioplay.vercel.app/cookie-banner.js"
-                    async
-                /&gt;
-            &lt;/Head&gt;
-            
-            {/* Кастомная кнопка настроек */}
-            {isInitialized && (
-                &lt;div className="fixed bottom-4 left-4 z-50"&gt;
-                    &lt;button 
-                        onClick={showCookieSettings}
-                        className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg shadow-lg transition-all duration-300 flex items-center gap-2"
-                    &gt;
-                        🍪 Настройки Cookie
-                    &lt;/button&gt;
-                &lt;/div&gt;
-            )}
-            
-            {/* Отображение текущих настроек для разработки */}
-            {process.env.NODE_ENV === 'development' && cookieSettings && (
-                &lt;div className="fixed top-4 right-4 bg-gray-800 text-white p-4 rounded-lg text-sm z-50"&gt;
-                    &lt;h4&gt;Cookie Settings:&lt;/h4&gt;
-                    &lt;pre&gt;{JSON.stringify(cookieSettings, null, 2)}&lt;/pre&gt;
-                &lt;/div&gt;
-            )}
-        &lt;/&gt;
-    );
-}</code></pre>
-            </div>
-            
-            <div class="code-block">
-                <div class="code-header">
-                    <span>utils/analytics.ts</span>
-                    <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Копировать</button>
-                </div>
-                <pre><code>// Утилиты для аналитики
-export const initAnalytics = () => {
-    // Google Analytics 4
-    const script = document.createElement('script');
-    script.async = true;
-    script.src = 'https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID';
-    document.head.appendChild(script);
-    
-    window.dataLayer = window.dataLayer || [];
-    function gtag(...args: any[]) {
-        window.dataLayer.push(args);
-    }
-    window.gtag = gtag;
-    
-    gtag('js', new Date());
-    gtag('config', 'GA_MEASUREMENT_ID', {
-        anonymize_ip: true,
-        allow_google_signals: false,
-        allow_ad_personalization_signals: false
-    });
-    
-    console.log('Analytics initialized');
-};
-
-export const trackEvent = (eventName: string, parameters?: Record&lt;string, any&gt;) => {
-    if (window.gtag) {
-        window.gtag('event', eventName, parameters);
-    }
-};</code></pre>
-            </div>
-        </div>
-
-        <!-- Vue.js Example -->
-        <div class="code-section">
-            <h2 data-i18n="examples.vue.integration.title">🟢 Vue.js / Nuxt.js интеграция</h2>
-            <p data-i18n="examples.vue.integration.description">Пример интеграции с Vue.js используя Composition API:</p>
-            
-            <div class="code-block">
-                <div class="code-header">
-                    <span>composables/useCookieConsent.ts</span>
-                    <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Копировать</button>
-                </div>
-                <pre><code>import { ref, onMounted, computed } from 'vue'
-
-interface CookieSettings {
-    necessary: boolean
-    functional: boolean
-    analytics: boolean
-    marketing: boolean
-    performance: boolean
-}
-
-export const useCookieConsent = () => {
-    const cookieSettings = ref&lt;CookieSettings | null&gt;(null)
-    const isInitialized = ref(false)
-    
-    const hasAnalyticsConsent = computed(() => 
-        cookieSettings.value?.analytics ?? false
-    )
-    
-    const hasMarketingConsent = computed(() => 
-        cookieSettings.value?.marketing ?? false
-    )
-    
-    const initCookieBanner = () => {
-        if (typeof window !== 'undefined' && window.CookieBanner) {
-            const banner = new window.CookieBanner({
-                autoShow: true,
-                theme: 'modern',
-                position: 'bottom',
-                privacyPolicyUrl: '/privacy-policy',
-                onAccept: (settings: CookieSettings) => {
-                    cookieSettings.value = settings
-                    handleConsentChange(settings)
-                },
-                onDecline: (settings: CookieSettings) => {
-                    cookieSettings.value = settings
-                },
-                onSettingsChange: (settings: CookieSettings) => {
-                    cookieSettings.value = settings
-                    handleConsentChange(settings)
-                }
-            })
-            
-            // Кастомизация текстов
-            banner.setTexts({
-                title: 'Использование файлов cookie',
-                description: 'Мы используем cookie для улучшения вашего опыта',
-                acceptAll: 'Принять все',
-                decline: 'Отклонить',
-                settings: 'Настройки'
-            })
-            
-            isInitialized.value = true
-            
-            // Получаем существующие настройки
-            const existingSettings = banner.getSettings()
-            if (existingSettings) {
-                cookieSettings.value = existingSettings
-            }
-        }
-    }
-    
-    const handleConsentChange = (settings: CookieSettings) => {
-        // Загружаем аналитику если разрешено
-        if (settings.analytics) {
-            loadAnalytics()
-        }
-        
-        // Загружаем маркетинговые скрипты
-        if (settings.marketing) {
-            loadMarketing()
-        }
-    }
-    
-    const loadAnalytics = async () => {
-        // Динамическая загрузка аналитики
-        const { initGA4 } = await import('~/utils/analytics')
-        initGA4()
-    }
-    
-    const loadMarketing = async () => {
-        // Динамическая загрузка маркетинговых скриптов
-        const { initMarketing } = await import('~/utils/marketing')
-        initMarketing()
-    }
-    
-    const showCookieSettings = () => {
-        if (window.cookieBanner) {
-            window.cookieBanner.show()
-        }
-    }
-    
-    const resetCookieSettings = () => {
-        if (window.cookieBanner) {
-            window.cookieBanner.reset()
-        }
-    }
-    
-    onMounted(() => {
-        if (process.client) {
-            if (document.readyState === 'complete') {
-                initCookieBanner()
-            } else {
-                window.addEventListener('load', initCookieBanner)
-            }
-        }
-    })
-    
-    return {
-        cookieSettings: readonly(cookieSettings),
-        isInitialized: readonly(isInitialized),
-        hasAnalyticsConsent,
-        hasMarketingConsent,
-        showCookieSettings,
-        resetCookieSettings
-    }
-}</code></pre>
-            </div>
-            
-            <div class="code-block">
-                <div class="code-header">
-                    <span>components/CookieManager.vue</span>
-                    <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Копировать</button>
-                </div>
-                <pre><code>&lt;template&gt;
-  &lt;div&gt;
-    &lt;!-- Cookie Scripts --&gt;
-    &lt;Head&gt;
-      &lt;Link 
-        rel="stylesheet" 
-        href="https://cookies-widget-sergioplay.vercel.app/cookie-banner.css" 
-      /&gt;
-      &lt;Script 
-        src="https://cookies-widget-sergioplay.vercel.app/cookie-banner.js"
-        async
-      /&gt;
-    &lt;/Head&gt;
-    
-    &lt;!-- Cookie Settings Button --&gt;
-    &lt;Transition name="fade"&gt;
-      &lt;button 
-        v-if="isInitialized"
-        @click="showCookieSettings"
-        class="cookie-settings-btn"
-      &gt;
-        🍪 Настройки Cookie
-      &lt;/button&gt;
-    &lt;/Transition&gt;
-    
-    &lt;!-- Debug Info (только в разработке) --&gt;
-    &lt;div v-if="$config.public.dev && cookieSettings" class="debug-info"&gt;
-      &lt;h4&gt;Cookie Settings:&lt;/h4&gt;
-      &lt;pre&gt;{{ JSON.stringify(cookieSettings, null, 2) }}&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/template&gt;
-
-&lt;script setup lang="ts"&gt;
-const { 
-  cookieSettings, 
-  isInitialized, 
-  showCookieSettings,
-  hasAnalyticsConsent,
-  hasMarketingConsent 
-} = useCookieConsent()
-
-// Отслеживаем изменения согласия для аналитики
-watch(hasAnalyticsConsent, (newValue) => {
-  if (newValue) {
-    console.log('Analytics consent granted')
-  } else {
-    console.log('Analytics consent revoked')
-  }
-})
-
-watch(hasMarketingConsent, (newValue) => {
-  if (newValue) {
-    console.log('Marketing consent granted')
-  } else {
-    console.log('Marketing consent revoked')
-  }
-})
-&lt;/script&gt;
-
-&lt;style scoped&gt;
-.cookie-settings-btn {
-  position: fixed;
-  bottom: 1rem;
-  left: 1rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 25px;
-  cursor: pointer;
-  font-weight: 600;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-  transition: all 0.3s ease;
-  z-index: 1000;
-}
-
-.cookie-settings-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-}
-
-.debug-info {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  background: rgba(0, 0, 0, 0.8);
-  color: white;
-  padding: 1rem;
-  border-radius: 8px;
-  font-size: 0.8rem;
-  z-index: 1000;
-  max-width: 300px;
-}
-
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 0.3s ease;
-}
-
-.fade-enter-from, .fade-leave-to {
-  opacity: 0;
-}
-&lt;/style&gt;</code></pre>
-            </div>
-        </div>
-
-        <!-- WordPress Example -->
-        <div class="code-section">
-            <h2 data-i18n="examples.wordpress.integration.title">📝 WordPress интеграция</h2>
-            <p data-i18n="examples.wordpress.integration.description">Простая интеграция Cookie Widget в WordPress тему или плагин:</p>
-            
-            <div class="code-block">
-                <div class="code-header">
-                    <span>functions.php</span>
-                    <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Копировать</button>
-                </div>
-                <pre><code>&lt;?php
-/**
- * Cookie Widget Integration for WordPress
- */
-
-// Подключение Cookie Widget
-function add_cookie_widget() {
-    // Подключаем CSS
-    wp_enqueue_style(
-        'cookie-banner-css', 
-        'https://cookies-widget-sergioplay.vercel.app/cookie-banner.css',
-        array(),
-        '3.0.0'
-    );
-    
-    // Подключаем JavaScript
-    wp_enqueue_script(
-        'cookie-banner-js', 
-        'https://cookies-widget-sergioplay.vercel.app/cookie-banner.js',
-        array(),
-        '3.0.0',
-        true
-    );
-    
-    // Передаем настройки в JavaScript
-    $cookie_settings = array(
-        'privacyPolicyUrl' => get_privacy_policy_url(),
-        'siteName' => get_bloginfo('name'),
-        'adminEmail' => get_option('admin_email')
-    );
-    
-    wp_localize_script('cookie-banner-js', 'cookieWidgetSettings', $cookie_settings);
-}
-add_action('wp_enqueue_scripts', 'add_cookie_widget');
-
-// Кастомизация Cookie Widget
-function customize_cookie_widget() {
-    ?>
-    &lt;script&gt;
-    document.addEventListener('DOMContentLoaded', function() {
-        // Ждем загрузки Cookie Widget
-        window.addEventListener('cookieBannerInitialized', function() {
-            if (window.cookieBanner && cookieWidgetSettings) {
-                // Кастомизируем тексты
-                window.cookieBanner.setTexts({
-                    title: 'Файлы cookie на сайте ' + cookieWidgetSettings.siteName,
-                    description: 'Мы используем файлы cookie для улучшения работы нашего сайта и персонализации контента.',
-                    acceptAll: 'Принять все cookie',
-                    decline: 'Только необходимые',
-                    settings: 'Управление cookie'
-                });
-                
-                // Устанавливаем ссылку на политику конфиденциальности
-                if (cookieWidgetSettings.privacyPolicyUrl) {
-                    window.cookieBanner.setPrivacyPolicyUrl(cookieWidgetSettings.privacyPolicyUrl);
-                }
-            }
-        });
-        
-        // Интеграция с WordPress аналитикой
-        window.addEventListener('cookieConsentAccepted', function(event) {
-            if (event.detail.analytics) {
-                // Активируем Google Analytics если установлен
-                if (typeof gtag !== 'undefined') {
-                    gtag('consent', 'update', {
-                        'analytics_storage': 'granted'
-                    });
-                }
-                
-                // Активируем другие аналитические плагины
-                if (typeof _paq !== 'undefined') {
-                    _paq.push(['setConsentGiven']);
-                }
-            }
-            
-            if (event.detail.marketing) {
-                // Активируем маркетинговые плагины
-                if (typeof fbq !== 'undefined') {
-                    fbq('consent', 'grant');
-                }
-            }
-        });
-    });
-    &lt;/script&gt;
-    &lt;?php
-}
-add_action('wp_footer', 'customize_cookie_widget');
-
-// Добавляем кнопку настроек cookie в меню
-function add_cookie_settings_menu_item($items, $args) {
-    if ($args->theme_location == 'footer-menu') {
-        $items .= '&lt;li class="menu-item"&gt;&lt;a href="#" onclick="window.cookieBanner?.show(); return false;"&gt;Настройки Cookie&lt;/a&gt;&lt;/li&gt;';
-    }
-    return $items;
-}
-add_filter('wp_nav_menu_items', 'add_cookie_settings_menu_item', 10, 2);
-
-// Шорткод для кнопки настроек cookie
-function cookie_settings_shortcode($atts) {
-    $atts = shortcode_atts(array(
-        'text' => 'Настройки Cookie',
-        'class' => 'cookie-settings-btn'
-    ), $atts);
-    
-    return sprintf(
-        '&lt;button class="%s" onclick="window.cookieBanner?.show()"&gt;%s&lt;/button&gt;',
-        esc_attr($atts['class']),
-        esc_html($atts['text'])
-    );
-}
-add_shortcode('cookie_settings', 'cookie_settings_shortcode');
-
-// CSS для кнопки настроек
-function cookie_widget_styles() {
-    ?>
-    &lt;style&gt;
-    .cookie-settings-btn {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 25px;
-        cursor: pointer;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-    }
-    
-    .cookie-settings-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-    }
-    &lt;/style&gt;
-    &lt;?php
-}
-add_action('wp_head', 'cookie_widget_styles');
-?&gt;</code></pre>
-            </div>
-        </div>
-
-        <!-- Google Analytics Example -->
-        <div class="code-section">
-            <h2 data-i18n="examples.ga4.integration.title">📊 Google Analytics 4 интеграция</h2>
-            <p data-i18n="examples.ga4.integration.description">Полная интеграция с Google Analytics 4 с управлением согласием:</p>
-            
-            <div class="code-block">
-                <div class="code-header">
-                    <span>ga4-integration.js</span>
-                    <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Копировать</button>
-                </div>
-                <pre><code>/**
- * Google Analytics 4 Integration with Cookie Widget
- * Полная интеграция с управлением согласием
- */
-
-class GA4CookieIntegration {
-    constructor(measurementId, options = {}) {
-        this.measurementId = measurementId;
-        this.isLoaded = false;
-        this.options = {
-            anonymizeIP: true,
-            allowGoogleSignals: false,
-            allowAdPersonalization: false,
-            cookieExpires: 63072000, // 2 года
-            ...options
-        };
-        
-        this.init();
-    }
-    
-    init() {
-        // Инициализируем Google Consent Mode
-        this.initConsentMode();
-        
-        // Слушаем события cookie баннера
-        this.setupEventListeners();
-        
-        // Проверяем существующее согласие
-        this.checkExistingConsent();
-    }
-    
-    initConsentMode() {
-        // Инициализируем Google Consent Mode с отказом по умолчанию
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        window.gtag = gtag;
-        
-        gtag('consent', 'default', {
-            'analytics_storage': 'denied',
-            'ad_storage': 'denied',
-            'ad_user_data': 'denied',
-            'ad_personalization': 'denied',
-            'functionality_storage': 'granted',
-            'security_storage': 'granted'
-        });
-        
-        // Загружаем Google Analytics
-        this.loadGA4();
-    }
-    
-    loadGA4() {
-        if (this.isLoaded) return;
-        
-        const script = document.createElement('script');
-        script.async = true;
-        script.src = `https://www.googletagmanager.com/gtag/js?id=${this.measurementId}`;
-        document.head.appendChild(script);
-        
-        script.onload = () => {
-            gtag('js', new Date());
-            gtag('config', this.measurementId, {
-                anonymize_ip: this.options.anonymizeIP,
-                allow_google_signals: this.options.allowGoogleSignals,
-                allow_ad_personalization_signals: this.options.allowAdPersonalization,
-                cookie_expires: this.options.cookieExpires,
-                send_page_view: false // Отправим вручную после согласия
-            });
-            
-            this.isLoaded = true;
-            console.log('Google Analytics 4 загружен');
-            
-            // Отправляем page_view если есть согласие
-            this.checkAndSendPageView();
-        };
-    }
-    
-    setupEventListeners() {
-        window.addEventListener('cookieConsentAccepted', (event) => {
-            this.handleConsentAccepted(event.detail);
-        });
-        
-        window.addEventListener('cookieConsentDeclined', (event) => {
-            this.handleConsentDeclined(event.detail);
-        });
-        
-        window.addEventListener('cookieConsentChanged', (event) => {
-            this.handleConsentChanged(event.detail);
-        });
-    }
-    
-    handleConsentAccepted(settings) {
-        this.updateConsentMode(settings);
-        this.trackConsentEvent('accepted', settings);
-        this.sendPageView();
-    }
-    
-    handleConsentDeclined(settings) {
-        this.updateConsentMode(settings);
-        this.trackConsentEvent('declined', settings);
-    }
-    
-    handleConsentChanged(settings) {
-        this.updateConsentMode(settings);
-        this.trackConsentEvent('changed', settings);
-        
-        if (settings.analytics) {
-            this.sendPageView();
-        }
-    }
-    
-    updateConsentMode(settings) {
-        if (!window.gtag) return;
-        
-        gtag('consent', 'update', {
-            'analytics_storage': settings.analytics ? 'granted' : 'denied',
-            'ad_storage': settings.marketing ? 'granted' : 'denied',
-            'ad_user_data': settings.marketing ? 'granted' : 'denied',
-            'ad_personalization': settings.marketing ? 'granted' : 'denied'
-        });
-        
-        console.log('Google Consent Mode обновлен:', settings);
-    }
-    
-    checkExistingConsent() {
-        // Проверяем существующие настройки cookie
-        if (window.cookieBanner) {
-            const settings = window.cookieBanner.getSettings();
-            if (settings) {
-                this.updateConsentMode(settings);
-                if (settings.analytics) {
-                    this.sendPageView();
-                }
-            }
-        }
-    }
-    
-    checkAndSendPageView() {
-        if (window.cookieBanner) {
-            const settings = window.cookieBanner.getSettings();
-            if (settings && settings.analytics) {
-                this.sendPageView();
-            }
-        }
-    }
-    
-    sendPageView() {
-        if (window.gtag && this.isLoaded) {
-            gtag('event', 'page_view', {
-                page_title: document.title,
-                page_location: window.location.href,
-                page_path: window.location.pathname
-            });
-            console.log('GA4 page_view отправлен');
-        }
-    }
-    
-    trackConsentEvent(action, settings) {
-        if (window.gtag && this.isLoaded) {
-            gtag('event', 'cookie_consent', {
-                event_category: 'Cookie Consent',
-                event_label: action,
-                custom_parameter_1: JSON.stringify(settings),
-                value: action === 'accepted' ? 1 : 0
-            });
-        }
-    }
-    
-    // Публичные методы для отслеживания событий
-    trackEvent(eventName, parameters = {}) {
-        if (window.gtag && this.isLoaded) {
-            gtag('event', eventName, parameters);
-        }
-    }
-    
-    trackPurchase(transactionId, value, currency = 'USD', items = []) {
-        if (window.gtag && this.isLoaded) {
-            gtag('event', 'purchase', {
-                transaction_id: transactionId,
-                value: value,
-                currency: currency,
-                items: items
-            });
-        }
-    }
-    
-    setUserProperties(properties) {
-        if (window.gtag && this.isLoaded) {
-            gtag('set', 'user_properties', properties);
-        }
-    }
-}
-
-// Инициализация (замените на ваш Measurement ID)
-const ga4Integration = new GA4CookieIntegration('G-XXXXXXXXXX', {
-    anonymizeIP: true,
-    allowGoogleSignals: false,
-    allowAdPersonalization: false
-});
-
-// Экспортируем для использования в других скриптах
-window.ga4Integration = ga4Integration;</code></pre>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Copy code functionality
-        function copyCode(button) {
-            const codeBlock = button.parentElement.nextElementSibling;
-            const code = codeBlock.textContent;
-            
-            navigator.clipboard.writeText(code).then(() => {
-                const originalText = button.textContent;
-                const copiedText = window.i18n ? window.i18n.t('ui.copied') : 'Скопировано!';
-                button.textContent = copiedText;
-                button.style.background = 'linear-gradient(135deg, #4CAF50 0%, #45a049 100%)';
-                
-                setTimeout(() => {
-                    button.textContent = originalText;
-                    button.style.background = '';
-                }, 2000);
-            }).catch(() => {
-                // Fallback для старых браузеров
-                const textArea = document.createElement('textarea');
-                textArea.value = code;
-                document.body.appendChild(textArea);
-                textArea.select();
-                document.execCommand('copy');
-                document.body.removeChild(textArea);
-                
-                const originalText = button.textContent;
-                button.textContent = 'Скопировано!';
-                setTimeout(() => {
-                    button.textContent = originalText;
-                }, 2000);
-            });
-        }
-
-        // Show current settings demo
-        function showCurrentSettings() {
-            if (window.cookieBanner) {
-                const settings = window.cookieBanner.getSettings();
-                alert('Текущие настройки:\n' + JSON.stringify(settings, null, 2));
-            } else {
-                alert('Cookie Banner не инициализирован');
-            }
-        }
-
-        // Auto-update year in footer
-        document.addEventListener('DOMContentLoaded', function() {
-            const yearElements = document.querySelectorAll('#currentYear');
-            yearElements.forEach(el => {
-                el.textContent = new Date().getFullYear();
-            });
-        });
-    </script>
-    
-    <!-- Footer -->
-    <footer class="footer" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 2rem 0; margin-top: 3rem;">
-        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
-            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-                <div>
-                    <p>&copy; <span id="currentYear">2025</span> SerGioPlay. <span data-i18n="footer.copyright">Распространяется под лицензией MIT.</span></p>
-                </div>
-                <div style="display: flex; gap: 1rem; align-items: center;">
-                    <a href="https://github.com/SerGioPlay01" target="_blank" aria-label="GitHub" style="color: white; opacity: 0.8; transition: opacity 0.3s;">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                        </svg>
-                    </a>
-                    <a href="https://x.com/_SerGio_Play_" target="_blank" aria-label="X (Twitter)" style="color: white; opacity: 0.8; transition: opacity 0.3s;">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.80l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                        </svg>
-                    </a>
-                    <a href="https://instagram.com/_sergio_play_" target="_blank" aria-label="Instagram" style="color: white; opacity: 0.8; transition: opacity 0.3s;">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Auto-update year in footer
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-    </script>
-
-    <!-- Buy Me a Coffee Widget -->
-    <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="sergioplay" data-description="Support me on Buy me a coffee!" data-message="" data-color="#40DCA5" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
-</body>
-</html>
-    </script>
-    
-    <!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon_folder/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon_folder/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon_folder/favicon-16x16.png">
-    <link rel="manifest" href="/favicon_folder/manifest.json">
-    <meta name="theme-color" content="#4CAF50">
-    
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f8f9fa;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        
-        .header {
-            text-align: center;
-            margin-bottom: 3rem;
-            padding: 2rem;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #333;
-        }
-        
-        .header p {
-            font-size: 1.25rem;
-            color: #666;
-        }
-        
-        .examples-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-        
-        .example-card {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .example-card h2 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #333;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .example-card p {
-            color: #666;
-            margin-bottom: 1.5rem;
-        }
-        
-        .code-block {
-            background: #1e1e1e;
-            border-radius: 8px;
-            overflow: hidden;
-            margin: 1rem 0;
-        }
-        
-        .code-header {
-            background: #2d2d2d;
-            padding: 1rem;
-            color: #fff;
-            font-size: 0.9rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .copy-btn {
-            background: #4CAF50;
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-        
-        .copy-btn:hover {
-            background: #45a049;
-        }
-        
-        .code-block pre {
-            padding: 1.5rem;
-            margin: 0;
-            overflow-x: auto;
-        }
-        
-        .code-block code {
-            color: #f8f8f2;
-            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
-        
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: #4CAF50;
-            color: white;
-            text-decoration: none;
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            margin-bottom: 2rem;
-        }
-        
-        .back-link:hover {
-            background: #45a049;
-            transform: translateY(-2px);
-        }
-        
-        @media (max-width: 768px) {
-            .examples-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .container {
-                padding: 1rem;
-            }
-            
-            .header h1 {
-                font-size: 2rem;
-            }
-        }
-    </style>
-    <link rel="stylesheet" href="cookie-banner.css">
-    <link rel="stylesheet" href="pwa.css">
-</head>
-<body>
-    <div class="container">
-        <a href="index.html" class="back-link">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="m12 19-7-7 7-7"/>
-                <path d="M19 12H5"/>
-            </svg>
-            <span data-i18n="examples.back.link">Назад к главной</span>
-        </a>
-        
-        <div class="header">
-            <h1 data-i18n="examples.page.title">Примеры интеграции</h1>
-            <p data-i18n="examples.page.description">Готовые примеры для быстрой интеграции Cookie Widget в ваш проект</p>
-        </div>
-        
-        <div class="examples-grid">
-            <!-- Базовая интеграция -->
-            <div class="example-card">
-                <h2 data-i18n="examples.basic.title">
-                    🚀 Базовая интеграция
-                </h2>
-                <p data-i18n="examples.basic.description">Самый простой способ подключить виджет к вашему сайту</p>
+        <!-- Code Examples Section -->
+        <div class="code-examples">
+            <!-- Basic Integration -->
+            <div class="code-section">
+                <h2 data-i18n="examples.basic.title">🚀 Basic Integration</h2>
+                <p data-i18n="examples.basic.description">The simplest way to connect the widget to your site</p>
                 
                 <div class="code-block">
                     <div class="code-header">
                         <span>HTML</span>
-                        <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Копировать</button>
+                        <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Copy</button>
                     </div>
                     <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="ru"&gt;
+&lt;html lang="en"&gt;
 &lt;head&gt;
     &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Мой сайт&lt;/title&gt;
+    &lt;title&gt;My Website&lt;/title&gt;
     &lt;link rel="stylesheet" href="https://cookies-widget-sergioplay.vercel.app/cookie-banner.css"&gt;
 &lt;/head&gt;
 &lt;body&gt;
-    &lt;!-- Ваш контент --&gt;
-    &lt;h1&gt;Добро пожаловать на мой сайт&lt;/h1&gt;
+    &lt;!-- Your content --&gt;
+    &lt;h1&gt;Welcome to my website&lt;/h1&gt;
     
     &lt;footer&gt;
         &lt;a href="#cookie-settings" onclick="showCookieSettings(); return false;"&gt;
-            Настройки Cookie
+            Cookie Settings
         &lt;/a&gt;
     &lt;/footer&gt;
     
@@ -1513,124 +627,140 @@ window.ga4Integration = ga4Integration;</code></pre>
 &lt;/html&gt;</code></pre>
                 </div>
             </div>
-            
-            <!-- Google Analytics -->
-            <div class="example-card">
-                <h2 data-i18n="examples.ga4.simple.title">
-                    📊 Google Analytics 4
-                </h2>
-                <p data-i18n="examples.ga4.simple.description">Интеграция с Google Analytics с учетом согласия пользователя</p>
+
+            <!-- React Example -->
+            <div class="code-section">
+                <h2 data-i18n="examples.react.integration.title">⚛️ React / Next.js Integration</h2>
+                <p data-i18n="examples.react.integration.description">Complete example of Cookie Widget integration in React application</p>
                 
                 <div class="code-block">
                     <div class="code-header">
-                        <span>HTML + JavaScript</span>
-                        <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Копировать</button>
+                        <span>components/CookieManager.jsx</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                     </div>
-                    <pre><code>&lt;!-- Google tag (gtag.js) --&gt;
-&lt;script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"&gt;&lt;/script&gt;
-&lt;script&gt;
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  
-  // Устанавливаем режим согласия по умолчанию
-  gtag('consent', 'default', {
-    'analytics_storage': 'denied',
-    'ad_storage': 'denied',
-    'ad_user_data': 'denied',
-    'ad_personalization': 'denied'
-  });
-  
-  gtag('js', new Date());
-  gtag('config', 'GA_MEASUREMENT_ID');
-  
-  // Слушаем изменения согласия
-  window.addEventListener('cookieConsentChanged', function(event) {
-    const settings = event.detail;
+                    <pre><code>import { useEffect, useState } from 'react';
+
+export default function CookieManager() {
+    const [isLoaded, setIsLoaded] = useState(false);
     
-    gtag('consent', 'update', {
-      'analytics_storage': settings.analytics ? 'granted' : 'denied',
-      'ad_storage': settings.marketing ? 'granted' : 'denied',
-      'ad_user_data': settings.marketing ? 'granted' : 'denied',
-      'ad_personalization': settings.marketing ? 'granted' : 'denied'
-    });
-  });
-&lt;/script&gt;
-
-&lt;!-- Cookie Widget --&gt;
-&lt;link rel="stylesheet" href="https://cookies-widget-sergioplay.vercel.app/cookie-banner.css"&gt;
-&lt;script src="https://cookies-widget-sergioplay.vercel.app/cookie-banner.js"&gt;&lt;/script&gt;</code></pre>
+    useEffect(() => {
+        // Load CSS
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'https://cookies-widget-sergioplay.vercel.app/cookie-banner.css';
+        document.head.appendChild(link);
+        
+        // Load JavaScript
+        const script = document.createElement('script');
+        script.src = 'https://cookies-widget-sergioplay.vercel.app/cookie-banner.js';
+        script.async = true;
+        script.onload = () => setIsLoaded(true);
+        document.body.appendChild(script);
+        
+        // Listen for consent changes
+        const handleConsentChange = (event) => {
+            const settings = event.detail;
+            console.log('Cookie consent changed:', settings);
+            
+            // Your processing logic
+            if (settings.analytics) {
+                // Enable analytics
+            }
+        };
+        
+        window.addEventListener('cookieConsentChanged', handleConsentChange);
+        
+        return () => {
+            window.removeEventListener('cookieConsentChanged', handleConsentChange);
+        };
+    }, []);
+    
+    const showSettings = () => {
+        if (window.cookieBanner) {
+            window.cookieBanner.showSettings();
+        }
+    };
+    
+    return (
+        &lt;div&gt;
+            {isLoaded && (
+                &lt;button onClick={showSettings} className="cookie-settings-btn"&gt;
+                    🍪 Cookie Settings
+                &lt;/button&gt;
+            )}
+        &lt;/div&gt;
+    );
+}</code></pre>
                 </div>
             </div>
-            
-            <!-- Яндекс.Метрика -->
-            <div class="example-card">
-                <h2 data-i18n="examples.yandex.simple.title">
-                    📈 Яндекс.Метрика
-                </h2>
-                <p data-i18n="examples.yandex.simple.description">Интеграция с Яндекс.Метрикой с условной загрузкой</p>
+
+            <!-- Vue.js Example -->
+            <div class="code-section">
+                <h2 data-i18n="examples.vue.integration.title">🟢 Vue.js Integration</h2>
+                <p data-i18n="examples.vue.integration.description">Integration example with Vue.js using Composition API</p>
                 
                 <div class="code-block">
                     <div class="code-header">
-                        <span>JavaScript</span>
-                        <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Копировать</button>
+                        <span>components/CookieManager.vue</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                     </div>
-                    <pre><code>&lt;script&gt;
-// Функция инициализации Яндекс.Метрики
-function initYandexMetrica() {
-  (function(m,e,t,r,i,k,a){
-    m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-    m[i].l=1*new Date();
-    k=e.createElement(t),a=e.getElementsByTagName(t)[0],
-    k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-  })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+                    <pre><code>&lt;template&gt;
+  &lt;div&gt;
+    &lt;button v-if="isLoaded" @click="showSettings" class="cookie-settings-btn"&gt;
+      🍪 Cookie Settings
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
 
-  ym(YOUR_COUNTER_ID, "init", {
-    clickmap:true,
-    trackLinks:true,
-    accurateTrackBounce:true,
-    webvisor:true
-  });
-}
+&lt;script setup&gt;
+import { ref, onMounted } from 'vue'
 
-// Слушаем изменения согласия
-window.addEventListener('cookieConsentChanged', function(event) {
-  const settings = event.detail;
+const isLoaded = ref(false)
+
+onMounted(() => {
+  // Load CSS
+  const link = document.createElement('link')
+  link.rel = 'stylesheet'
+  link.href = 'https://cookies-widget-sergioplay.vercel.app/cookie-banner.css'
+  document.head.appendChild(link)
   
-  if (settings.analytics && typeof ym === 'undefined') {
-    // Загружаем Яндекс.Метрику только если дано согласие
-    initYandexMetrica();
+  // Load JavaScript
+  const script = document.createElement('script')
+  script.src = 'https://cookies-widget-sergioplay.vercel.app/cookie-banner.js'
+  script.async = true
+  script.onload = () => isLoaded.value = true
+  document.body.appendChild(script)
+  
+  // Listen for consent changes
+  const handleConsentChange = (event) => {
+    const settings = event.detail
+    console.log('Cookie consent changed:', settings)
   }
-});
+  
+  window.addEventListener('cookieConsentChanged', handleConsentChange)
+})
 
-// Проверяем существующее согласие при загрузке страницы
-document.addEventListener('DOMContentLoaded', function() {
+const showSettings = () => {
   if (window.cookieBanner) {
-    const settings = window.cookieBanner.getCookieSettings();
-    if (settings.analytics) {
-      initYandexMetrica();
-    }
+    window.cookieBanner.showSettings()
   }
-});
-&lt;/script&gt;
-
-&lt;noscript&gt;&lt;div&gt;&lt;img src="https://mc.yandex.ru/watch/YOUR_COUNTER_ID" style="position:absolute; left:-9999px;" alt="" /&gt;&lt;/div&gt;&lt;/noscript&gt;</code></pre>
+}
+&lt;/script&gt;</code></pre>
                 </div>
             </div>
-            
-            <!-- WordPress -->
-            <div class="example-card">
-                <h2 data-i18n="examples.wordpress.simple.title">
-                    🔌 WordPress
-                </h2>
-                <p data-i18n="examples.wordpress.simple.description">Интеграция в WordPress через functions.php</p>
+
+            <!-- WordPress Example -->
+            <div class="code-section">
+                <h2 data-i18n="examples.wordpress.integration.title">📝 WordPress Integration</h2>
+                <p data-i18n="examples.wordpress.integration.description">Simple Cookie Widget integration in WordPress</p>
                 
                 <div class="code-block">
                     <div class="code-header">
-                        <span>PHP (functions.php)</span>
-                        <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Копировать</button>
+                        <span>functions.php</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                     </div>
                     <pre><code>&lt;?php
-// Добавляем Cookie Widget в WordPress
+// Add Cookie Widget to WordPress
 function add_cookie_widget() {
     // CSS
     wp_enqueue_style(
@@ -1651,266 +781,1202 @@ function add_cookie_widget() {
 }
 add_action('wp_enqueue_scripts', 'add_cookie_widget');
 
-// Добавляем ссылку на настройки в футер
+// Add settings link to footer
 function add_cookie_settings_link() {
-    echo '&lt;a href="#cookie-settings" onclick="showCookieSettings(); return false;" style="margin-right: 15px;"&gt;Настройки Cookie&lt;/a&gt;';
+    echo '&lt;a href="#cookie-settings" onclick="showCookieSettings(); return false;"&gt;Cookie Settings&lt;/a&gt;';
 }
-add_action('wp_footer', 'add_cookie_settings_link', 5);
+add_action('wp_footer', 'add_cookie_settings_link');
 ?&gt;</code></pre>
                 </div>
             </div>
-            
-            <!-- React -->
-            <div class="example-card">
-                <h2 data-i18n="examples.react.simple.title">
-                    ⚛️ React
-                </h2>
-                <p data-i18n="examples.react.simple.description">Использование в React приложении</p>
+
+            <!-- Google Analytics Example -->
+            <div class="code-section">
+                <h2 data-i18n="examples.ga4.integration.title">📊 Google Analytics 4 Integration</h2>
+                <p data-i18n="examples.ga4.integration.description">Integration with Google Analytics considering user consent</p>
                 
                 <div class="code-block">
                     <div class="code-header">
-                        <span>JSX</span>
-                        <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Копировать</button>
+                        <span>HTML + JavaScript</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                     </div>
-                    <pre><code>import React, { useEffect } from 'react';
+                    <pre><code>&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  
+  // Set default consent mode
+  gtag('consent', 'default', {
+    'analytics_storage': 'denied',
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied'
+  });
+  
+  gtag('js', new Date());
+  gtag('config', 'GA_MEASUREMENT_ID');
+  
+  // Listen for consent changes
+  window.addEventListener('cookieConsentChanged', function(event) {
+    const settings = event.detail;
+    
+    gtag('consent', 'update', {
+      'analytics_storage': settings.analytics ? 'granted' : 'denied',
+      'ad_storage': settings.marketing ? 'granted' : 'denied',
+      'ad_user_data': settings.marketing ? 'granted' : 'denied',
+      'ad_personalization': settings.marketing ? 'granted' : 'denied'
+    });
+  });
+&lt;/script&gt;
 
-// Компонент для Cookie Widget
-const CookieWidget = () => {
-  useEffect(() => {
-    // Загружаем CSS
+&lt;!-- Cookie Widget --&gt;
+&lt;link rel="stylesheet" href="https://cookies-widget-sergioplay.vercel.app/cookie-banner.css"&gt;
+&lt;script src="https://cookies-widget-sergioplay.vercel.app/cookie-banner.js"&gt;&lt;/script&gt;</code></pre>
+                </div>
+            </div>
+
+            <!-- Yandex Metrica Example -->
+            <div class="code-section">
+                <h2 data-i18n="examples.yandex.integration.title">📈 Yandex.Metrica Integration</h2>
+                <p data-i18n="examples.yandex.integration.description">Integration with Yandex.Metrica with conditional loading</p>
+                
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>JavaScript</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><code>&lt;script&gt;
+// Yandex.Metrica initialization function
+function initYandexMetrica() {
+  (function(m,e,t,r,i,k,a){
+    m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],
+    k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+  })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+  ym(YOUR_COUNTER_ID, "init", {
+    clickmap:true,
+    trackLinks:true,
+    accurateTrackBounce:true,
+    webvisor:true
+  });
+}
+
+// Listen for consent changes
+window.addEventListener('cookieConsentChanged', function(event) {
+  const settings = event.detail;
+  
+  if (settings.analytics && typeof ym === 'undefined') {
+    // Load Yandex.Metrica only if consent is given
+    initYandexMetrica();
+  }
+});
+
+// Check existing consent on page load
+document.addEventListener('DOMContentLoaded', function() {
+  if (window.cookieBanner) {
+    const settings = window.cookieBanner.getSettings();
+    if (settings && settings.analytics) {
+      initYandexMetrica();
+    }
+  }
+});
+&lt;/script&gt;
+
+&lt;noscript&gt;&lt;div&gt;&lt;img src="https://mc.yandex.ru/watch/YOUR_COUNTER_ID" style="position:absolute; left:-9999px;" alt="" /&gt;&lt;/div&gt;&lt;/noscript&gt;</code></pre>
+                </div>
+            </div>
+
+            <!-- Angular Example -->
+            <div class="code-section">
+                <h2 data-i18n="examples.angular.title">🅰️ Angular Integration</h2>
+                <p data-i18n="examples.angular.description">Cookie Widget integration in Angular application with service</p>
+                
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>services/cookie.service.ts</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><code>import { Injectable } from '@angular/core';
+
+declare global {
+  interface Window {
+    cookieBanner?: any;
+    CookieBanner?: any;
+  }
+}
+
+@Injectable({
+  providedIn: 'root'
+})
+export class CookieService {
+  private isLoaded = false;
+
+  constructor() {
+    this.loadCookieWidget();
+  }
+
+  private loadCookieWidget(): void {
+    // Load CSS
     const link = document.createElement('link');
     link.rel = 'stylesheet';
     link.href = 'https://cookies-widget-sergioplay.vercel.app/cookie-banner.css';
     document.head.appendChild(link);
-    
-    // Загружаем JavaScript
+
+    // Load JavaScript
     const script = document.createElement('script');
     script.src = 'https://cookies-widget-sergioplay.vercel.app/cookie-banner.js';
     script.async = true;
+    script.onload = () => {
+      this.isLoaded = true;
+      this.setupEventListeners();
+    };
     document.body.appendChild(script);
-    
-    // Слушаем изменения согласия
-    const handleConsentChange = (event) => {
+  }
+
+  private setupEventListeners(): void {
+    window.addEventListener('cookieConsentChanged', (event: any) => {
       const settings = event.detail;
       console.log('Cookie consent changed:', settings);
       
-      // Ваша логика обработки
+      // Your processing logic
       if (settings.analytics) {
-        // Включить аналитику
+        // Enable analytics
       }
-    };
-    
-    window.addEventListener('cookieConsentChanged', handleConsentChange);
-    
-    return () => {
-      window.removeEventListener('cookieConsentChanged', handleConsentChange);
-      document.head.removeChild(link);
-      document.body.removeChild(script);
-    };
-  }, []);
-  
-  return null;
-};
+    });
+  }
 
-// Компонент ссылки на настройки
-const CookieSettingsLink = () => {
-  const handleClick = (e) => {
-    e.preventDefault();
-    if (window.showCookieSettings) {
-      window.showCookieSettings();
+  showSettings(): void {
+    if (window.cookieBanner) {
+      window.cookieBanner.showSettings();
     }
-  };
-  
-  return (
-    &lt;a href="#cookie-settings" onClick={handleClick}&gt;
-      Настройки Cookie
-    &lt;/a&gt;
-  );
-};
+  }
 
-// Использование в App.js
-function App() {
-  return (
-    &lt;div className="App"&gt;
-      &lt;CookieWidget /&gt;
-      
-      {/* Ваш контент */}
-      &lt;header&gt;
-        &lt;h1&gt;Мое React приложение&lt;/h1&gt;
-      &lt;/header&gt;
-      
-      &lt;footer&gt;
-        &lt;CookieSettingsLink /&gt;
-      &lt;/footer&gt;
-    &lt;/div&gt;
-  );
-}
-
-export default App;</code></pre>
+  getSettings(): any {
+    return window.cookieBanner?.getSettings();
+  }
+}</code></pre>
                 </div>
-            </div>
-            
-            <!-- Vue.js -->
-            <div class="example-card">
-                <h2 data-i18n="examples.vue.simple.title">
-                    💚 Vue.js
-                </h2>
-                <p data-i18n="examples.vue.simple.description">Интеграция в Vue.js приложение</p>
-                
+
                 <div class="code-block">
                     <div class="code-header">
-                        <span>Vue Component</span>
-                        <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Копировать</button>
+                        <span>components/cookie-button.component.ts</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                     </div>
-                    <pre><code>&lt;template&gt;
-  &lt;div&gt;
-    &lt;!-- Ваш контент --&gt;
-    &lt;header&gt;
-      &lt;h1&gt;Мое Vue приложение&lt;/h1&gt;
-    &lt;/header&gt;
-    
-    &lt;footer&gt;
-      &lt;a href="#cookie-settings" @click.prevent="showCookieSettings"&gt;
-        Настройки Cookie
-      &lt;/a&gt;
-    &lt;/footer&gt;
-  &lt;/div&gt;
-&lt;/template&gt;
+                    <pre><code>import { Component } from '@angular/core';
+import { CookieService } from '../services/cookie.service';
 
-&lt;script&gt;
-export default {
-  name: 'App',
-  
-  mounted() {
-    this.loadCookieWidget();
-  },
-  
-  methods: {
-    loadCookieWidget() {
-      // Загружаем CSS
-      const link = document.createElement('link');
-      link.rel = 'stylesheet';
-      link.href = 'https://cookies-widget-sergioplay.vercel.app/cookie-banner.css';
-      document.head.appendChild(link);
-      
-      // Загружаем JavaScript
-      const script = document.createElement('script');
-      script.src = 'https://cookies-widget-sergioplay.vercel.app/cookie-banner.js';
-      script.async = true;
-      document.body.appendChild(script);
-      
-      // Слушаем изменения согласия
-      window.addEventListener('cookieConsentChanged', this.handleConsentChange);
-    },
-    
-    handleConsentChange(event) {
-      const settings = event.detail;
-      console.log('Cookie consent changed:', settings);
-      
-      // Ваша логика обработки
-      this.$emit('cookie-consent-changed', settings);
-    },
-    
-    showCookieSettings() {
-      if (window.showCookieSettings) {
-        window.showCookieSettings();
-      }
+@Component({
+  selector: 'app-cookie-button',
+  template: `
+    &lt;button 
+      (click)="showSettings()" 
+      class="cookie-settings-btn"
+      *ngIf="cookieService.getSettings()"&gt;
+      🍪 Cookie Settings
+    &lt;/button&gt;
+  `,
+  styles: [`
+    .cookie-settings-btn {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+      transition: all 0.3s ease;
+      z-index: 1000;
     }
-  },
-  
-  beforeUnmount() {
-    window.removeEventListener('cookieConsentChanged', this.handleConsentChange);
-  }
-}
-&lt;/script&gt;</code></pre>
-                </div>
-            </div>
-            
-            <!-- Кастомизация -->
-            <div class="example-card">
-                <h2 data-i18n="examples.customization.title">
-                    🎨 Кастомизация стилей
-                </h2>
-                <p data-i18n="examples.customization.description">Настройка внешнего вида под ваш дизайн</p>
-                
-                <div class="code-block">
-                    <div class="code-header">
-                        <span>CSS</span>
-                        <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Копировать</button>
-                    </div>
-                    <pre><code>/* Подключаем основные стили */
-@import url('https://cookies-widget-sergioplay.vercel.app/cookie-banner.css');
+    
+    .cookie-settings-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+    }
+  `]
+})
+export class CookieButtonComponent {
+  constructor(public cookieService: CookieService) {}
 
-/* Кастомизация цветов */
-:root {
-  --cookie-banner-bg: #2c3e50;
-  --cookie-banner-text: #ecf0f1;
-  --cookie-banner-accent: #e74c3c;
-}
-
-/* Изменяем позицию баннера */
-.cookie-banner {
-  top: 0;
-  bottom: auto;
-  border-radius: 0 0 12px 12px;
-}
-
-/* Кастомные кнопки */
-.cookie-banner__button--accept {
-  background: linear-gradient(45deg, #e74c3c, #c0392b);
-  border-radius: 25px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.cookie-banner__button--accept:hover {
-  background: linear-gradient(45deg, #c0392b, #a93226);
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
-}
-
-/* Анимация появления */
-.cookie-banner {
-  animation: slideInDown 0.5s ease-out;
-}
-
-@keyframes slideInDown {
-  from {
-    transform: translateY(-100%);
-  }
-  to {
-    transform: translateY(0);
-  }
-}
-
-/* Темная тема */
-@media (prefers-color-scheme: dark) {
-  .cookie-banner {
-    background: rgba(30, 30, 30, 0.98);
-    border-top: 1px solid #444;
-  }
-  
-  .cookie-banner__text {
-    color: #e0e0e0;
+  showSettings(): void {
+    this.cookieService.showSettings();
   }
 }</code></pre>
                 </div>
             </div>
-        </div>
+
+            <!-- Svelte Example -->
+            <div class="code-section">
+                <h2 data-i18n="examples.svelte.title">🧡 Svelte Integration</h2>
+                <p data-i18n="examples.svelte.description">Simple Cookie Widget integration in Svelte application</p>
+                
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>lib/CookieManager.svelte</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><code>&lt;script&gt;
+  import { onMount } from 'svelte';
+  
+  let isLoaded = false;
+  let cookieSettings = null;
+
+  onMount(() => {
+    // Load CSS
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://cookies-widget-sergioplay.vercel.app/cookie-banner.css';
+    document.head.appendChild(link);
+
+    // Load JavaScript
+    const script = document.createElement('script');
+    script.src = 'https://cookies-widget-sergioplay.vercel.app/cookie-banner.js';
+    script.async = true;
+    script.onload = () => {
+      isLoaded = true;
+      setupEventListeners();
+    };
+    document.body.appendChild(script);
+  });
+
+  function setupEventListeners() {
+    window.addEventListener('cookieConsentChanged', (event) => {
+      cookieSettings = event.detail;
+      console.log('Cookie consent changed:', cookieSettings);
+    });
+  }
+
+  function showSettings() {
+    if (window.cookieBanner) {
+      window.cookieBanner.showSettings();
+    }
+  }
+&lt;/script&gt;
+
+{#if isLoaded}
+  &lt;button on:click={showSettings} class="cookie-settings-btn"&gt;
+    🍪 Cookie Settings
+  &lt;/button&gt;
+{/if}
+
+&lt;style&gt;
+  .cookie-settings-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .cookie-settings-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+  }
+&lt;/style&gt;</code></pre>
+                </div>
+            </div>
+
+            <!-- Nuxt.js Plugin Example -->
+            <div class="code-section">
+                <h2 data-i18n="examples.nuxt.title">💚 Nuxt.js Plugin</h2>
+                <p data-i18n="examples.nuxt.description">Creating a plugin for automatic initialization in Nuxt.js</p>
+                
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>plugins/cookie-widget.client.js</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><code>export default defineNuxtPlugin(() => {
+  // Load CSS
+  useHead({
+    link: [
+      {
+        rel: 'stylesheet',
+        href: 'https://cookies-widget-sergioplay.vercel.app/cookie-banner.css'
+      }
+    ]
+  });
+
+  // Load JavaScript
+  const script = document.createElement('script');
+  script.src = 'https://cookies-widget-sergioplay.vercel.app/cookie-banner.js';
+  script.async = true;
+  
+  script.onload = () => {
+    // Setup events
+    window.addEventListener('cookieConsentChanged', (event) => {
+      const settings = event.detail;
+      
+      // Integration with Nuxt Analytics
+      if (settings.analytics && window.$gtag) {
+        window.$gtag('consent', 'update', {
+          'analytics_storage': 'granted'
+        });
+      }
+      
+      // Can use Nuxt composables
+      const { $router } = useNuxtApp();
+      console.log('Cookie consent changed on route:', $router.currentRoute.value.path);
+    });
+  };
+  
+  document.head.appendChild(script);
+
+  // Предоставляем глобальные методы
+  return {
+    provide: {
+      cookieWidget: {
+        showSettings: () => {
+          if (window.cookieBanner) {
+            window.cookieBanner.showSettings();
+          }
+        },
+        getSettings: () => {
+          return window.cookieBanner?.getSettings();
+        }
+      }
+    }
+  };
+});</code></pre>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>components/CookieButton.vue</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><code>&lt;template&gt;
+  &lt;button @click="showSettings" class="cookie-settings-btn"&gt;
+    🍪 Cookie Settings
+  &lt;/button&gt;
+&lt;/template&gt;
+
+&lt;script setup&gt;
+const { $cookieWidget } = useNuxtApp();
+
+const showSettings = () => {
+  $cookieWidget.showSettings();
+};
+&lt;/script&gt;
+
+&lt;style scoped&gt;
+.cookie-settings-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.cookie-settings-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+&lt;/style&gt;</code></pre>
+                </div>
+            </div>
+
+            <!-- Drupal Example -->
+            <div class="code-section">
+                <h2 data-i18n="examples.drupal.title">🔷 Drupal Integration</h2>
+                <p data-i18n="examples.drupal.description">Creating a Drupal module with admin panel</p>
+                
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>cookie_widget.info.yml</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><code>name: Cookie Widget
+type: module
+description: 'Cookie Widget integration for GDPR compliance'
+core_version_requirement: ^9 || ^10
+package: Custom
+dependencies:
+  - drupal:system</code></pre>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>cookie_widget.module</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><code>&lt;?php
+
+/**
+ * @file
+ * Cookie Widget module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function cookie_widget_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.cookie_widget':
+      return '&lt;p&gt;' . t('Cookie Widget для GDPR соответствия.') . '&lt;/p&gt;';
+  }
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function cookie_widget_page_attachments(array &$attachments) {
+  $config = \Drupal::config('cookie_widget.settings');
+  
+  if ($config->get('enabled')) {
+    // Add CSS
+    $attachments['#attached']['html_head'][] = [
+      [
+        '#tag' => 'link',
+        '#attributes' => [
+          'rel' => 'stylesheet',
+          'href' => 'https://cookies-widget-sergioplay.vercel.app/cookie-banner.css',
+        ],
+      ],
+      'cookie_widget_css'
+    ];
+    
+    // Add JavaScript
+    $attachments['#attached']['html_head'][] = [
+      [
+        '#tag' => 'script',
+        '#attributes' => [
+          'src' => 'https://cookies-widget-sergioplay.vercel.app/cookie-banner.js',
+          'async' => TRUE,
+        ],
+      ],
+      'cookie_widget_js'
+    ];
+    
+    // Add settings
+    $attachments['#attached']['drupalSettings']['cookieWidget'] = [
+      'privacyPolicyUrl' => $config->get('privacy_policy_url'),
+      'siteName' => \Drupal::config('system.site')->get('name'),
+    ];
+    
+    // Add initialization
+    $attachments['#attached']['html_head'][] = [
+      [
+        '#tag' => 'script',
+        '#value' => "
+          document.addEventListener('DOMContentLoaded', function() {
+            if (window.CookieBanner && drupalSettings.cookieWidget) {
+              window.cookieBanner = new window.CookieBanner({
+                privacyPolicyUrl: drupalSettings.cookieWidget.privacyPolicyUrl
+              });
+            }
+          });
+        ",
+      ],
+      'cookie_widget_init'
+    ];
+  }
+}</code></pre>
+                </div>
+            </div>
+
+            <!-- Joomla Example -->
+            <div class="code-section">
+                <h2 data-i18n="examples.joomla.title">🟠 Joomla Integration</h2>
+                <p data-i18n="examples.joomla.description">Creating a plugin for Joomla CMS</p>
+                
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>cookiewidget.xml</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;extension version="3.9" type="plugin" group="system" method="upgrade"&gt;
+    &lt;name&gt;PLG_SYSTEM_COOKIEWIDGET&lt;/name&gt;
+    &lt;author&gt;SerGioPlay&lt;/author&gt;
+    &lt;creationDate&gt;2025-01-22&lt;/creationDate&gt;
+    &lt;copyright&gt;Copyright (C) 2025. All rights reserved.&lt;/copyright&gt;
+    &lt;license&gt;MIT&lt;/license&gt;
+    &lt;authorEmail&gt;sergioplay@example.com&lt;/authorEmail&gt;
+    &lt;version&gt;1.0.0&lt;/version&gt;
+    &lt;description&gt;PLG_SYSTEM_COOKIEWIDGET_XML_DESCRIPTION&lt;/description&gt;
+    
+    &lt;files&gt;
+        &lt;filename plugin="cookiewidget"&gt;cookiewidget.php&lt;/filename&gt;
+    &lt;/files&gt;
+    
+    &lt;config&gt;
+        &lt;fields name="params"&gt;
+            &lt;fieldset name="basic"&gt;
+                &lt;field
+                    name="enabled"
+                    type="radio"
+                    label="PLG_SYSTEM_COOKIEWIDGET_ENABLED_LABEL"
+                    description="PLG_SYSTEM_COOKIEWIDGET_ENABLED_DESC"
+                    default="1"&gt;
+                    &lt;option value="0"&gt;JNO&lt;/option&gt;
+                    &lt;option value="1"&gt;JYES&lt;/option&gt;
+                &lt;/field&gt;
+                
+                &lt;field
+                    name="privacy_policy_url"
+                    type="text"
+                    label="PLG_SYSTEM_COOKIEWIDGET_PRIVACY_URL_LABEL"
+                    description="PLG_SYSTEM_COOKIEWIDGET_PRIVACY_URL_DESC"
+                    default="/privacy-policy" /&gt;
+            &lt;/fieldset&gt;
+        &lt;/fields&gt;
+    &lt;/config&gt;
+&lt;/extension&gt;</code></pre>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>cookiewidget.php</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><code>&lt;?php
+defined('_JEXEC') or die;
+
+use Joomla\CMS\Plugin\CMSPlugin;
+use Joomla\CMS\Factory;
+
+class PlgSystemCookiewidget extends CMSPlugin
+{
+    protected $autoloadLanguage = true;
+
+    public function onBeforeCompileHead()
+    {
+        if (!$this->params->get('enabled', 1)) {
+            return;
+        }
+
+        $app = Factory::getApplication();
+        $document = $app->getDocument();
+
+        if ($document->getType() !== 'html') {
+            return;
+        }
+
+        // Add CSS
+        $document->addStyleSheet(
+            'https://cookies-widget-sergioplay.vercel.app/cookie-banner.css'
+        );
+
+        // Add JavaScript
+        $document->addScript(
+            'https://cookies-widget-sergioplay.vercel.app/cookie-banner.js',
+            ['async' => true]
+        );
+
+        // Add initialization
+        $privacyUrl = $this->params->get('privacy_policy_url', '/privacy-policy');
+        $siteName = $app->get('sitename');
+
+        $script = "
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.CookieBanner) {
+                window.cookieBanner = new window.CookieBanner({
+                    privacyPolicyUrl: '{$privacyUrl}',
+                    siteName: '{$siteName}'
+                });
+                
+                // Event handling
+                window.addEventListener('cookieConsentChanged', function(event) {
+                    const settings = event.detail;
+                    console.log('Joomla: Cookie consent changed', settings);
+                });
+            }
+        });
+        ";
+
+        $document->addScriptDeclaration($script);
+    }
+}</code></pre>
+                </div>
+            </div>
+
+            <!-- Bitrix Example -->
+            <div class="code-section">
+                <h2 data-i18n="examples.bitrix.title">🔶 1C-Bitrix Integration</h2>
+                <p data-i18n="examples.bitrix.description">Cookie Widget integration in 1C-Bitrix via component</p>
+                
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>local/components/cookie.widget/.description.php</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><code>&lt;?php
+if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
+
+$arComponentDescription = array(
+    "NAME" => "Cookie Widget",
+    "DESCRIPTION" => "Component for Cookie Widget integration with GDPR support",
+    "ICON" => "/images/cookie_widget.gif",
+    "SORT" => 10,
+    "CACHE_PATH" => "Y",
+    "PATH" => array(
+        "ID" => "custom",
+        "NAME" => "Custom Components",
+        "CHILD" => array(
+            "ID" => "cookie",
+            "NAME" => "Cookie Management"
+        )
+    ),
+);</code></pre>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>local/components/cookie.widget/.parameters.php</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><code>&lt;?php
+if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
+
+$arComponentParameters = array(
+    "PARAMETERS" => array(
+        "PRIVACY_POLICY_URL" => array(
+            "PARENT" => "BASE",
+            "NAME" => "Privacy Policy URL",
+            "TYPE" => "STRING",
+            "DEFAULT" => "/privacy-policy/",
+        ),
+        "AUTO_SHOW" => array(
+            "PARENT" => "BASE",
+            "NAME" => "Auto show banner",
+            "TYPE" => "CHECKBOX",
+            "DEFAULT" => "Y",
+        ),
+        "THEME" => array(
+            "PARENT" => "BASE",
+            "NAME" => "Theme",
+            "TYPE" => "LIST",
+            "VALUES" => array(
+                "light" => "Light",
+                "dark" => "Dark",
+                "modern" => "Modern",
+            ),
+            "DEFAULT" => "modern",
+        ),
+        "POSITION" => array(
+            "PARENT" => "BASE",
+            "NAME" => "Banner position",
+            "TYPE" => "LIST",
+            "VALUES" => array(
+                "bottom" => "Bottom",
+                "top" => "Top",
+                "center" => "Center",
+            ),
+            "DEFAULT" => "bottom",
+        ),
+        "CACHE_TIME" => array("DEFAULT" => 3600),
+    ),
+);</code></pre>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>local/components/cookie.widget/component.php</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><code>&lt;?php
+if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
+
+use Bitrix\Main\Page\Asset;
+use Bitrix\Main\Config\Option;
+
+class CookieWidgetComponent extends CBitrixComponent
+{
+    public function executeComponent()
+    {
+        // Connect CSS
+        Asset::getInstance()->addCss(
+            'https://cookies-widget-sergioplay.vercel.app/cookie-banner.css'
+        );
         
-        <div style="text-align: center; margin-top: 3rem;">
-            <a href="index.html" class="back-link">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="m12 19-7-7 7-7"/>
-                    <path d="M19 12H5"/>
-                </svg>
-                <span data-i18n="examples.back.main">Вернуться к главной странице</span>
-            </a>
+        // Connect JavaScript
+        Asset::getInstance()->addJs(
+            'https://cookies-widget-sergioplay.vercel.app/cookie-banner.js'
+        );
+        
+        // Prepare parameters
+        $this->arResult = array(
+            'PRIVACY_POLICY_URL' => $this->arParams['PRIVACY_POLICY_URL'],
+            'AUTO_SHOW' => $this->arParams['AUTO_SHOW'] === 'Y',
+            'THEME' => $this->arParams['THEME'],
+            'POSITION' => $this->arParams['POSITION'],
+            'SITE_NAME' => Option::get('main', 'site_name'),
+        );
+        
+        // Add JavaScript initialization
+        $initScript = "
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.CookieBanner) {
+                window.cookieBanner = new window.CookieBanner({
+                    autoShow: " . ($this->arResult['AUTO_SHOW'] ? 'true' : 'false') . ",
+                    theme: '" . $this->arResult['THEME'] . "',
+                    position: '" . $this->arResult['POSITION'] . "',
+                    privacyPolicyUrl: '" . $this->arResult['PRIVACY_POLICY_URL'] . "',
+                    siteName: '" . $this->arResult['SITE_NAME'] . "'
+                });
+                
+                // Integration with Bitrix analytics
+                window.addEventListener('cookieConsentChanged', function(event) {
+                    const settings = event.detail;
+                    
+                    // Send event to Bitrix
+                    if (typeof BX !== 'undefined' && BX.ajax) {
+                        BX.ajax.runAction('cookie:widget.consent.save', {
+                            data: {
+                                settings: settings,
+                                timestamp: new Date().getTime()
+                            }
+                        });
+                    }
+                    
+                    // Yandex.Metrica management
+                    if (settings.analytics && typeof ym !== 'undefined') {
+                        ym('COUNTER_ID', 'userParams', {
+                            cookieConsent: 'granted'
+                        });
+                    }
+                });
+            }
+        });
+        ";
+        
+        Asset::getInstance()->addString($initScript, true);
+        
+        $this->includeComponentTemplate();
+    }
+}
+
+$component = new CookieWidgetComponent();
+$component->executeComponent();</code></pre>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>local/components/cookie.widget/templates/.default/template.php</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><code>&lt;?php if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die(); ?&gt;
+
+&lt;div class="cookie-widget-bitrix"&gt;
+    &lt;!-- Cookie settings button --&gt;
+    &lt;button 
+        onclick="if(window.cookieBanner) window.cookieBanner.showSettings();" 
+        class="cookie-settings-btn-bitrix"
+        title="Cookie Settings"&gt;
+        🍪 Cookie Settings
+    &lt;/button&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+.cookie-settings-btn-bitrix {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    transition: all 0.3s ease;
+    z-index: 10000;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.cookie-settings-btn-bitrix:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+@media (max-width: 768px) {
+    .cookie-settings-btn-bitrix {
+        bottom: 10px;
+        left: 10px;
+        padding: 10px 20px;
+        font-size: 12px;
+    }
+}
+&lt;/style&gt;</code></pre>
+                </div>
+            </div>
+
+            <!-- Laravel Example -->
+            <div class="code-section">
+                <h2 data-i18n="examples.laravel.title">🔴 Laravel Integration</h2>
+                <p data-i18n="examples.laravel.description">Creating a Laravel package with middleware and service provider</p>
+                
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>app/Http/Middleware/CookieWidget.php</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><code>&lt;?php
+
+namespace App\Http\Middleware;
+
+use Closure;
+use Illuminate\Http\Request;
+
+class CookieWidget
+{
+    public function handle(Request $request, Closure $next)
+    {
+        $response = $next($request);
+        
+        // Add Cookie Widget only for HTML pages
+        if ($response->headers->get('Content-Type') === 'text/html; charset=UTF-8') {
+            $content = $response->getContent();
+            
+            // Add CSS and JS to head
+            $cookieWidgetAssets = '
+                &lt;link rel="stylesheet" href="https://cookies-widget-sergioplay.vercel.app/cookie-banner.css"&gt;
+                &lt;script src="https://cookies-widget-sergioplay.vercel.app/cookie-banner.js" async&gt;&lt;/script&gt;
+                &lt;script&gt;
+                    document.addEventListener("DOMContentLoaded", function() {
+                        if (window.CookieBanner) {
+                            window.cookieBanner = new window.CookieBanner({
+                                privacyPolicyUrl: "' . route('privacy-policy') . '",
+                                siteName: "' . config('app.name') . '"
+                            });
+                            
+                            // Send events to Laravel
+                            window.addEventListener("cookieConsentChanged", function(event) {
+                                fetch("' . route('cookie.consent') . '", {
+                                    method: "POST",
+                                    headers: {
+                                        "Content-Type": "application/json",
+                                        "X-CSRF-TOKEN": "' . csrf_token() . '"
+                                    },
+                                    body: JSON.stringify({
+                                        settings: event.detail,
+                                        timestamp: new Date().toISOString()
+                                    })
+                                });
+                            });
+                        }
+                    });
+                &lt;/script&gt;
+            ';
+            
+            $content = str_replace('&lt;/head&gt;', $cookieWidgetAssets . '&lt;/head&gt;', $content);
+            $response->setContent($content);
+        }
+        
+        return $response;
+    }
+}</code></pre>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>app/Http/Controllers/CookieConsentController.php</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><code>&lt;?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+
+class CookieConsentController extends Controller
+{
+    public function store(Request $request)
+    {
+        $validated = $request->validate([
+            'settings' => 'required|array',
+            'settings.necessary' => 'boolean',
+            'settings.functional' => 'boolean',
+            'settings.analytics' => 'boolean',
+            'settings.marketing' => 'boolean',
+            'timestamp' => 'required|date'
+        ]);
+        
+        // Log consent for audit
+        Log::info('Cookie consent updated', [
+            'user_ip' => $request->ip(),
+            'user_agent' => $request->userAgent(),
+            'settings' => $validated['settings'],
+            'timestamp' => $validated['timestamp']
+        ]);
+        
+        // Save to session
+        session(['cookie_consent' => $validated['settings']]);
+        
+        // If user is authenticated, save to database
+        if (auth()->check()) {
+            auth()->user()->update([
+                'cookie_consent' => json_encode($validated['settings']),
+                'cookie_consent_updated_at' => now()
+            ]);
+        }
+        
+        return response()->json(['status' => 'success']);
+    }
+    
+    public function show()
+    {
+        $consent = session('cookie_consent');
+        
+        if (auth()->check() && !$consent) {
+            $userConsent = auth()->user()->cookie_consent;
+            $consent = $userConsent ? json_decode($userConsent, true) : null;
+        }
+        
+        return response()->json(['consent' => $consent]);
+    }
+}</code></pre>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>routes/web.php</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><code>&lt;?php
+
+use App\Http\Controllers\CookieConsentController;
+
+// Routes for Cookie Widget
+Route::post('/cookie/consent', [CookieConsentController::class, 'store'])
+    -&gt;name('cookie.consent');
+
+Route::get('/cookie/consent', [CookieConsentController::class, 'show'])
+    -&gt;name('cookie.consent.show');
+
+// Add middleware to all web routes
+Route::middleware(['web', 'cookie.widget'])-&gt;group(function () {
+    // Your routes here
+});</code></pre>
+                </div>
+            </div>
+
+            <!-- Django Example -->
+            <div class="code-section">
+                <h2 data-i18n="examples.django.title">🐍 Django Integration</h2>
+                <p data-i18n="examples.django.description">Creating a Django application with middleware for Cookie Widget</p>
+                
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>cookie_widget/middleware.py</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><code>from django.utils.deprecation import MiddlewareMixin
+from django.conf import settings
+from django.urls import reverse
+import json
+
+class CookieWidgetMiddleware(MiddlewareMixin):
+    def process_response(self, request, response):
+        # Add Cookie Widget only for HTML pages
+        if (response.get('Content-Type', '').startswith('text/html') and 
+            hasattr(response, 'content')):
+            
+            content = response.content.decode('utf-8')
+            
+            # Generate scripts for Cookie Widget
+            cookie_widget_html = f'''
+                &lt;link rel="stylesheet" href="https://cookies-widget-sergioplay.vercel.app/cookie-banner.css"&gt;
+                &lt;script src="https://cookies-widget-sergioplay.vercel.app/cookie-banner.js" async&gt;&lt;/script&gt;
+                &lt;script&gt;
+                    document.addEventListener('DOMContentLoaded', function() {{
+                        if (window.CookieBanner) {{
+                            window.cookieBanner = new window.CookieBanner({{
+                                privacyPolicyUrl: "{reverse('privacy_policy')}",
+                                siteName: "{getattr(settings, 'SITE_NAME', 'Django Site')}"
+                            }});
+                            
+                            // Send events to Django
+                            window.addEventListener('cookieConsentChanged', function(event) {{
+                                fetch("{reverse('cookie_consent')}", {{
+                                    method: 'POST',
+                                    headers: {{
+                                        'Content-Type': 'application/json',
+                                        'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value
+                                    }},
+                                    body: JSON.stringify({{
+                                        settings: event.detail,
+                                        timestamp: new Date().toISOString()
+                                    }})
+                                }});
+                            }});
+                        }}
+                    }});
+                &lt;/script&gt;
+            '''
+            
+            # Insert before closing head tag
+            content = content.replace('&lt;/head&gt;', cookie_widget_html + '&lt;/head&gt;')
+            response.content = content.encode('utf-8')
+            response['Content-Length'] = len(response.content)
+        
+        return response</code></pre>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>cookie_widget/views.py</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><code>from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.http import require_http_methods
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
+from django.views import View
+import json
+import logging
+
+logger = logging.getLogger(__name__)
+
+@method_decorator(csrf_exempt, name='dispatch')
+class CookieConsentView(View):
+    def post(self, request):
+        try:
+            data = json.loads(request.body)
+            settings = data.get('settings', {})
+            timestamp = data.get('timestamp')
+            
+            # Data validation
+            required_keys = ['necessary', 'functional', 'analytics', 'marketing']
+            if not all(key in settings for key in required_keys):
+                return JsonResponse({'error': 'Invalid settings'}, status=400)
+            
+            # Log consent
+            logger.info(f'Cookie consent updated: {settings}', extra={
+                'user_ip': self.get_client_ip(request),
+                'user_agent': request.META.get('HTTP_USER_AGENT'),
+                'timestamp': timestamp
+            })
+            
+            # Save to session
+            request.session['cookie_consent'] = settings
+            
+            # If user is authenticated, save to profile
+            if request.user.is_authenticated:
+                profile = request.user.profile
+                profile.cookie_consent = json.dumps(settings)
+                profile.save()
+            
+            return JsonResponse({'status': 'success'})
+            
+        except json.JSONDecodeError:
+            return JsonResponse({'error': 'Invalid JSON'}, status=400)
+        except Exception as e:
+            logger.error(f'Error saving cookie consent: {str(e)}')
+            return JsonResponse({'error': 'Server error'}, status=500)
+    
+    def get(self, request):
+        consent = request.session.get('cookie_consent')
+        
+        if request.user.is_authenticated and not consent:
+            try:
+                profile = request.user.profile
+                if profile.cookie_consent:
+                    consent = json.loads(profile.cookie_consent)
+            except:
+                pass
+        
+        return JsonResponse({'consent': consent})
+    
+    def get_client_ip(self, request):
+        x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+        if x_forwarded_for:
+            ip = x_forwarded_for.split(',')[0]
+        else:
+            ip = request.META.get('REMOTE_ADDR')
+        return ip</code></pre>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>cookie_widget/urls.py</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><code>from django.urls import path
+from . import views
+
+app_name = 'cookie_widget'
+
+urlpatterns = [
+    path('consent/', views.CookieConsentView.as_view(), name='cookie_consent'),
+]</code></pre>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>settings.py (add)</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><code># Add to MIDDLEWARE
+MIDDLEWARE = [
+    # ... other middleware
+    'cookie_widget.middleware.CookieWidgetMiddleware',
+]
+
+# Add to INSTALLED_APPS
+INSTALLED_APPS = [
+    # ... other apps
+    'cookie_widget',
+]
+
+# Cookie Widget settings
+SITE_NAME = 'My Django Site'
+
+# Logging for Cookie Widget
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'cookie_file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': 'cookie_consent.log',
+        },
+    },
+    'loggers': {
+        'cookie_widget': {
+            'handlers': ['cookie_file'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+    },
+}</code></pre>
+                </div>
+            </div>
         </div>
     </div>
-    
+
     <script>
+        // Copy code functionality
         function copyCode(button) {
             const codeBlock = button.closest('.code-block');
             const code = codeBlock.querySelector('code');
@@ -1952,17 +2018,132 @@ export default {
         
         function showCopySuccess(button) {
             const originalText = button.textContent;
-            button.textContent = 'Скопировано!';
-            button.style.background = '#45a049';
+            const copiedText = window.i18n ? window.i18n.t('ui.copied') : 'Copied!';
+            button.textContent = copiedText;
+            button.style.background = 'linear-gradient(135deg, #45a049 0%, #4CAF50 100%)';
             
             setTimeout(() => {
                 button.textContent = originalText;
-                button.style.background = '#4CAF50';
+                button.style.background = 'linear-gradient(135deg, #4CAF50 0%, #45a049 100%)';
             }, 2000);
         }
+
+        // Auto-update year in footer
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            
+            // Add data-i18n attributes to all copy buttons
+            const copyButtons = document.querySelectorAll('.copy-btn');
+            copyButtons.forEach(button => {
+                if (!button.hasAttribute('data-i18n')) {
+                    button.setAttribute('data-i18n', 'ui.copy');
+                }
+            });
+            
+            // Initialize translations
+            if (window.i18n && window.i18n.init) {
+                window.i18n.init();
+            }
+        });
     </script>
     
-    <script src="cookie-banner.js"></script>
-    <script src="pwa.js"></script>
+    <!-- Footer -->
+    <footer class="footer" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 2rem 0; margin-top: 3rem;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <div>
+                    <p>&copy; <span id="currentYear">2025</span> SerGioPlay. <span data-i18n="footer.copyright">Распространяется под лицензией MIT.</span></p>
+                </div>
+                <div style="display: flex; gap: 1rem; align-items: center;">
+                    <a href="https://github.com/SerGioPlay01" target="_blank" aria-label="GitHub" style="color: white; opacity: 0.8; transition: opacity 0.3s;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                    <a href="https://x.com/_SerGio_Play_" target="_blank" aria-label="X (Twitter)" style="color: white; opacity: 0.8; transition: opacity 0.3s;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.80l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                    <a href="https://instagram.com/_sergio_play_" target="_blank" aria-label="Instagram" style="color: white; opacity: 0.8; transition: opacity 0.3s;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Auto-update year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+
+    <!-- Buy Me a Coffee Widget -->
+    <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="sergioplay" data-description="Support me on Buy me a coffee!" data-message="" data-color="#40DCA5" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+</body>
+</html>
+
+    <script>
+        // Copy code functionality
+        function copyCode(button) {
+            const codeBlock = button.closest('.code-block');
+            const code = codeBlock.querySelector('code');
+            
+            if (code) {
+                const text = code.textContent;
+                
+                if (navigator.clipboard && window.isSecureContext) {
+                    navigator.clipboard.writeText(text).then(() => {
+                        showCopySuccess(button);
+                    }).catch(() => {
+                        fallbackCopyTextToClipboard(text, button);
+                    });
+                } else {
+                    fallbackCopyTextToClipboard(text, button);
+                }
+            }
+        }
+        
+        function fallbackCopyTextToClipboard(text, button) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.style.position = 'fixed';
+            textArea.style.left = '-999999px';
+            textArea.style.top = '-999999px';
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+                document.execCommand('copy');
+                showCopySuccess(button);
+            } catch (err) {
+                console.error('Fallback: Oops, unable to copy', err);
+            }
+            
+            document.body.removeChild(textArea);
+        }
+        
+        function showCopySuccess(button) {
+            const originalText = button.textContent;
+            button.textContent = 'Copied!';
+            button.style.background = 'linear-gradient(135deg, #4CAF50 0%, #45a049 100%)';
+            
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.style.background = 'linear-gradient(135deg, #4CAF50 0%, #45a049 100%)';
+            }, 2000);
+        }
+        
+        // Language selector initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize i18n if available
+            if (window.i18n) {
+                window.i18n.init();
+            }
+        });
+    </script>
 </body>
 </html>

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO Meta Tags -->
-    <title>Документация - Cookie Widget | Полное руководство по интеграции и настройке</title>
-    <meta name="description" content="Подробная документация Cookie Widget: установка, настройка, API, примеры кода. Полное руководство по интеграции GDPR-совместимого cookie баннера.">
-    <meta name="keywords" content="cookie widget документация, GDPR cookie banner API, настройка cookie баннера, интеграция cookie widget">
+    <title>Documentation v3.3 - Cookie Widget | Smart Auto-Detect, SEO-Friendly Mode, Integrations Hub</title>
+    <meta name="description" content="Complete Cookie Widget v3.3 documentation: Smart Auto-Detect trackers, SEO-Friendly Mode, Script Guard, Zero-Reload Mode, Integrations Hub, Secure Storage. API and code examples.">
+    <meta name="keywords" content="cookie widget v3.3 documentation, smart auto-detect, seo-friendly mode, integrations hub, script guard, zero-reload mode, secure storage">
     <meta name="author" content="SerGioPlay">
     <meta name="robots" content="index, follow">
     
@@ -17,8 +17,8 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://cookies-widget-sergioplay.vercel.app/documentation.html">
-    <meta property="og:title" content="Cookie Widget - Документация">
-    <meta property="og:description" content="Полное руководство по интеграции и настройке Cookie Widget">
+    <meta property="og:title" content="Cookie Widget - Documentation">
+    <meta property="og:description" content="Complete guide for Cookie Widget integration and configuration">
     <meta property="og:image" content="https://cookies-widget-sergioplay.vercel.app/favicon_folder/android-chrome-512x512.png">
     
     <!-- Favicons -->
@@ -56,12 +56,25 @@
                 </a>
             </div>
             <div class="nav-menu">
-                <a href="index.html#features" class="nav-link" data-i18n="nav.features">Возможности</a>
-                <a href="index.html#installation" class="nav-link" data-i18n="nav.installation">Установка</a>
-                <a href="documentation.html" class="nav-link" data-i18n="nav.docs">Документация</a>
-                <a href="examples.html" class="nav-link" data-i18n="nav.examples">Примеры</a>
-                <a href="tools.html" class="nav-link" data-i18n="nav.tools">Инструменты</a>
-                <a href="index.html#support" class="nav-link" data-i18n="nav.support">Поддержка</a>
+                <a href="index.html#features" class="nav-link" data-i18n="nav.features">Features</a>
+                <a href="index.html#installation" class="nav-link" data-i18n="nav.installation">Installation</a>
+                <a href="documentation.html" class="nav-link" data-i18n="nav.docs">Documentation</a>
+                <a href="examples.html" class="nav-link" data-i18n="nav.examples">Examples</a>
+                <a href="tools.html" class="nav-link" data-i18n="nav.tools">Tools</a>
+                <a href="index.html#support" class="nav-link" data-i18n="nav.support">Support</a>
+                
+                <!-- Language Selector -->
+                <div class="language-selector" id="languageSelector">
+                    <button class="language-btn" id="languageBtn">
+                        <span class="language-flag" id="currentFlag">EN</span>
+                        <span class="language-text" id="currentLang">English</span>
+                        <span class="language-arrow">▼</span>
+                    </button>
+                    <div class="language-dropdown" id="languageDropdown">
+                        <!-- Languages will be populated by i18n.js -->
+                    </div>
+                </div>
+                
                 <a href="https://github.com/SerGioPlay01/cookies_widget_sergioplay" class="nav-link nav-link--github" target="_blank">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
@@ -73,6 +86,154 @@
     </nav>
 
     <style>
+        /* Language Selector Styles */
+        .language-selector {
+            position: relative;
+            display: inline-block;
+        }
+
+        .language-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 0.5rem 0.75rem;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #666;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .language-btn:hover {
+            background: rgba(255, 255, 255, 1);
+            border-color: #4CAF50;
+            color: #4CAF50;
+        }
+
+        .language-flag {
+            font-size: 1rem;
+            line-height: 1;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
+        }
+
+        .language-text {
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .language-arrow {
+            transition: transform 0.3s ease;
+            opacity: 0.7;
+        }
+
+        .language-btn:hover .language-arrow {
+            opacity: 1;
+        }
+
+        .language-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: white;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(20px);
+            min-width: 180px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1001;
+            overflow: hidden;
+        }
+
+        .language-dropdown.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .language-option {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .language-option:last-child {
+            border-bottom: none;
+        }
+
+        .language-option:hover {
+            background: rgba(76, 175, 80, 0.1);
+            color: #4CAF50;
+        }
+
+        .language-option.active {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .language-option.active:hover {
+            background: #45a049;
+        }
+
+        .language-option .language-flag {
+            font-size: 0.75rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .language-option span:last-child {
+            font-weight: 500;
+        }
+
+        /* Mobile styles for language selector */
+        @media (max-width: 768px) {
+            .language-selector {
+                margin-top: 1rem;
+                width: 100%;
+            }
+            
+            .language-btn {
+                width: 100%;
+                justify-content: center;
+                padding: 0.75rem 1rem;
+            }
+            
+            .language-dropdown {
+                position: static;
+                width: 100%;
+                margin-top: 0.5rem;
+                transform: none;
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .language-dropdown.active {
+                transform: none;
+            }
+        }
+        
         body {
             margin: 0;
             padding: 0;
@@ -827,62 +988,81 @@
 
     <div class="docs-container">
         <div class="docs-header">
-            <h1 class="docs-title" data-i18n="docs.title">Документация Cookie Widget</h1>
+            <h1 class="docs-title" data-i18n="docs.title">Cookie Widget v3.3 Documentation</h1>
             <p class="docs-subtitle" data-i18n="docs.subtitle">
-                Полное руководство по интеграции, настройке и использованию Cookie Widget для соблюдения GDPR, CCPA, 152-ФЗ РФ и других международных стандартов защиты данных
+                Complete guide to new exclusive features: Smart Auto-Detect trackers, SEO-Friendly Mode, Script Guard, 
+                Zero-Reload Mode, Integrations Hub, Secure Storage and Geo-Adaptive Compliance
             </p>
             
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-number">5KB</div>
-                    <div class="stat-label" data-i18n="docs.stats.size">Минимальный размер</div>
+                    <div class="stat-number">v3.3</div>
+                    <div class="stat-label" data-i18n="docs.stats.version">Version</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">18KB</div>
+                    <div class="stat-label" data-i18n="docs.stats.size">Full size</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">8+</div>
+                    <div class="stat-label" data-i18n="docs.stats.features">Unique features</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">20+</div>
-                    <div class="stat-label" data-i18n="docs.stats.languages">Языков поддержки</div>
+                    <div class="stat-label" data-i18n="docs.stats.languages">Supported languages</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">8</div>
-                    <div class="stat-label" data-i18n="docs.stats.laws">Законов соответствия</div>
+                    <div class="stat-label" data-i18n="docs.stats.laws">Law compliance</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">0</div>
-                    <div class="stat-label" data-i18n="docs.stats.dependencies">Зависимостей</div>
+                    <div class="stat-label" data-i18n="docs.stats.dependencies">Dependencies</div>
                 </div>
             </div>
         </div>
 
         <div class="docs-layout">
             <nav class="docs-nav">
-                <h3 data-i18n="docs.contents">Содержание</h3>
+                <h3 data-i18n="docs.contents">Contents</h3>
                 <ul>
-                    <li><a href="#quick-start" data-i18n="docs.nav.quickstart">Быстрый старт</a></li>
-                    <li><a href="#installation" data-i18n="docs.nav.installation">Установка</a></li>
-                    <li><a href="#configuration" data-i18n="docs.nav.configuration">Конфигурация</a></li>
+                    <li><a href="#quick-start" data-i18n="docs.nav.quickstart">Quick Start</a></li>
+                    <li><a href="#installation" data-i18n="docs.nav.installation">Installation</a></li>
+                    <li><a href="#advanced-features" data-i18n="docs.nav.advanced">🆕 Exclusive Features</a></li>
+                    <li><a href="#smart-auto-detect" data-i18n="docs.nav.smart-detect">🧠 Smart Auto-Detect</a></li>
+                    <li><a href="#seo-friendly" data-i18n="docs.nav.seo-friendly">🔍 SEO-Friendly Mode</a></li>
+                    <li><a href="#script-guard" data-i18n="docs.nav.script-guard">🔒 Script Guard</a></li>
+                    <li><a href="#integrations-hub" data-i18n="docs.nav.integrations">🤝 Integrations Hub</a></li>
+                    <li><a href="#zero-reload" data-i18n="docs.nav.zero-reload">🚀 Zero-Reload Mode</a></li>
+                    <li><a href="#secure-storage" data-i18n="docs.nav.secure-storage">🔒 Secure Storage</a></li>
+                    <li><a href="#configuration" data-i18n="docs.nav.configuration">Configuration</a></li>
                     <li><a href="#api-reference" data-i18n="docs.nav.api">API Reference</a></li>
-                    <li><a href="#text-customization" data-i18n="docs.nav.customization">Кастомизация текста</a></li>
-                    <li><a href="#events" data-i18n="docs.nav.events">События</a></li>
-                    <li><a href="#examples" data-i18n="docs.nav.examples">Примеры</a></li>
-                    <li><a href="#compliance" data-i18n="docs.nav.compliance">Соответствие законам</a></li>
-                    <li><a href="#troubleshooting" data-i18n="docs.nav.troubleshooting">Решение проблем</a></li>
+                    <li><a href="#text-customization" data-i18n="docs.nav.customization">Text Customization</a></li>
+                    <li><a href="#events" data-i18n="docs.nav.events">Events</a></li>
+                    <li><a href="#examples" data-i18n="docs.nav.examples">Examples</a></li>
+                    <li><a href="#compliance" data-i18n="docs.nav.compliance">Law Compliance</a></li>
+                    <li><a href="#troubleshooting" data-i18n="docs.nav.troubleshooting">Troubleshooting</a></li>
                 </ul>
             </nav>
             
             <div class="docs-content">
         <section id="quick-start" class="docs-section">
-            <h2 data-i18n="docs.quickstart.title">🚀 Быстрый старт</h2>
-            <p data-i18n="docs.quickstart.description">Интегрируйте Cookie Widget на ваш сайт за 2 минуты и получите полное соответствие международным стандартам защиты данных:</p>
+            <h2 data-i18n="docs.quickstart.title">🚀 Quick Start</h2>
+            <p data-i18n="docs.quickstart.description">Integrate Cookie Widget on your site in 2 minutes and get full compliance with international data protection standards:</p>
             
             <div class="feature-highlight">
-                <h3 data-i18n="docs.quickstart.features">✨ Новые возможности в версии 3.0</h3>
-                <p data-i18n="docs.quickstart.features.description">Автоматическая блокировка cookie, 20+ языков, API для кастомизации текста, защита от блокировщиков рекламы, интеграция с GA4 и Яндекс.Метрикой</p>
+                <h3 data-i18n="docs.quickstart.features">✨ New Exclusive Features in v3.3</h3>
+                <p data-i18n="docs.quickstart.features.description">
+                    🧠 Smart Auto-Detect trackers • 🔍 SEO-Friendly Mode for bots • 🔒 Script Guard blocking • 
+                    🚀 Zero-Reload Mode • 🤝 Integrations Hub • 🔒 Secure Storage • 🔄 Auto-Renew Consent • 🌍 Geo-Adaptive Compliance
+                </p>
             </div>
             
-            <h3 data-i18n="docs.quickstart.step1">1. Подключите файлы</h3>
+            <h3 data-i18n="docs.quickstart.step1">1. Include files</h3>
             <div class="code-block">
                 <div class="code-header">
                     <span>HTML</span>
-                    <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Копировать</button>
+                    <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Copy</button>
                 </div>
                 <pre><code>&lt;!-- CSS --&gt;
 &lt;link rel="stylesheet" href="https://cookies-widget-sergioplay.vercel.app/cookie-banner.css"&gt;
@@ -891,95 +1071,95 @@
 &lt;script src="https://cookies-widget-sergioplay.vercel.app/cookie-banner.js"&gt;&lt;/script&gt;</code></pre>
             </div>
 
-            <h3 data-i18n="docs.quickstart.step2">2. Готово!</h3>
-            <p data-i18n="docs.quickstart.step2.description">Cookie баннер автоматически:</p>
+            <h3 data-i18n="docs.quickstart.step2">2. Done!</h3>
+            <p data-i18n="docs.quickstart.step2.description">Cookie banner will automatically:</p>
             <div class="example-grid">
                 <div class="example-card">
-                    <div class="example-title" data-i18n="docs.quickstart.auto.region">🌍 Определит регион</div>
-                    <p data-i18n="docs.quickstart.auto.region.description">Автоматически определит местоположение пользователя и применит соответствующие требования законов (GDPR, CCPA, 152-ФЗ, LGPD и др.)</p>
+                    <div class="example-title" data-i18n="docs.quickstart.auto.region">🌍 Detect region</div>
+                    <p data-i18n="docs.quickstart.auto.region.description">Automatically detect user location and apply corresponding law requirements (GDPR, CCPA, 152-FZ, LGPD, etc.)</p>
                 </div>
                 <div class="example-card">
-                    <div class="example-title" data-i18n="docs.quickstart.auto.language">🗣️ Выберет язык</div>
-                    <p data-i18n="docs.quickstart.auto.language.description">Определит язык браузера из 20+ поддерживаемых языков включая русский, английский, немецкий, французский, китайский</p>
+                    <div class="example-title" data-i18n="docs.quickstart.auto.language">🗣️ Choose language</div>
+                    <p data-i18n="docs.quickstart.auto.language.description">Detect browser language from 20+ supported languages including Russian, English, German, French, Chinese</p>
                 </div>
                 <div class="example-card">
-                    <div class="example-title" data-i18n="docs.quickstart.auto.blocking">🛡️ Заблокирует cookie</div>
-                    <p data-i18n="docs.quickstart.auto.blocking.description">Заблокирует все нежелательные cookie до получения согласия и автоматически удалит отклоненные cookie</p>
+                    <div class="example-title" data-i18n="docs.quickstart.auto.blocking">🛡️ Block cookies</div>
+                    <p data-i18n="docs.quickstart.auto.blocking.description">Block all unwanted cookies until consent is given and automatically remove rejected cookies</p>
                 </div>
                 <div class="example-card">
-                    <div class="example-title" data-i18n="docs.quickstart.auto.responsive">📱 Адаптируется</div>
-                    <p data-i18n="docs.quickstart.auto.responsive.description">Отобразится корректно на всех устройствах и экранах с современным адаптивным дизайном</p>
+                    <div class="example-title" data-i18n="docs.quickstart.auto.responsive">📱 Adapt</div>
+                    <p data-i18n="docs.quickstart.auto.responsive.description">Display correctly on all devices and screens with modern responsive design</p>
                 </div>
             </div>
 
-            <h3 data-i18n="docs.quickstart.step3">3. Дополнительная настройка (опционально)</h3>
+            <h3 data-i18n="docs.quickstart.step3">3. Additional setup (optional)</h3>
             <div class="code-block">
                 <div class="code-header">
                     <span>JavaScript</span>
-                    <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Копировать</button>
+                    <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Copy</button>
                 </div>
-                <pre><code>// Кастомизация после загрузки
+                <pre><code>// Customization after loading
 window.addEventListener('cookieBannerInitialized', function() {
-    // Изменить тексты
+    // Change texts
     window.cookieBanner.setTexts({
-        title: 'Мы используем cookies',
-        acceptAll: 'Согласиться',
-        decline: 'Отказаться'
+        title: 'We use cookies',
+        acceptAll: 'Accept',
+        decline: 'Decline'
     });
     
-    // Изменить ссылку на политику
+    // Change privacy policy link
     window.cookieBanner.setPrivacyPolicyUrl('/privacy-policy.html');
     
-    // Применить темную тему
+    // Apply dark theme
     window.cookieBanner.setTheme('dark');
 });</code></pre>
             </div>
 
             <div class="info">
-                <div class="info-title" data-i18n="docs.tip.title">💡 Совет</div>
-                <p data-i18n="docs.tip.description">Для дополнительной настройки используйте мощный JavaScript API. Все тексты, ссылки, темы и поведение можно изменить программно. Посмотрите расширенные примеры ниже для интеграции с Google Analytics 4, Яндекс.Метрикой, React и корпоративных настроек.</p>
+                <div class="info-title" data-i18n="docs.tip.title">💡 Tip</div>
+                <p data-i18n="docs.tip.description">For additional customization use the powerful JavaScript API. All texts, links, themes and behavior can be changed programmatically. Check advanced examples below for integration with Google Analytics 4, Yandex.Metrica, React and corporate settings.</p>
             </div>
 
             <div class="warning">
-                <div class="warning-title" data-i18n="docs.warning.title">⚠️ Важно для разработчиков</div>
-                <p data-i18n="docs.warning.description">Cookie Widget автоматически блокирует все cookie до получения согласия. Убедитесь, что ваши аналитические и маркетинговые скрипты загружаются только после события <code>cookieConsentAccepted</code>.</p>
+                <div class="warning-title" data-i18n="docs.warning.title">⚠️ Important for developers</div>
+                <p data-i18n="docs.warning.description">Cookie Widget automatically blocks all cookies until consent is given. Make sure your analytics and marketing scripts load only after the <code>cookieConsentAccepted</code> event.</p>
             </div>
         </section>
 
         <section id="installation" class="docs-section">
-            <h2 data-i18n="docs.installation.title">📦 Установка</h2>
+            <h2 data-i18n="docs.installation.title">📦 Installation</h2>
             
-            <h3 data-i18n="docs.installation.cdn.title">CDN (Рекомендуется)</h3>
-            <p data-i18n="docs.installation.cdn.description">Самый простой способ - использовать наш CDN:</p>
+            <h3 data-i18n="docs.installation.cdn.title">CDN (Recommended)</h3>
+            <p data-i18n="docs.installation.cdn.description">The simplest way - use our CDN:</p>
             <div class="code-block">
                 <div class="code-header">
                     <span>HTML</span>
-                    <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Копировать</button>
+                    <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Copy</button>
                 </div>
                 <pre><code>&lt;link rel="stylesheet" href="https://cookies-widget-sergioplay.vercel.app/cookie-banner.css"&gt;
 &lt;script src="https://cookies-widget-sergioplay.vercel.app/cookie-banner.js"&gt;&lt;/script&gt;</code></pre>
             </div>
 
-            <h3 data-i18n="docs.installation.local.title">Локальная установка</h3>
-            <p data-i18n="docs.installation.local.description">Скачайте файлы и разместите их на вашем сервере:</p>
+            <h3 data-i18n="docs.installation.local.title">Local Installation</h3>
+            <p data-i18n="docs.installation.local.description">Download files and place them on your server:</p>
             <div class="example-grid">
                 <div class="example-card">
-                    <div class="example-title">Скачать CSS</div>
+                    <div class="example-title">Download CSS</div>
                     <a href="https://cookies-widget-sergioplay.vercel.app/cookie-banner.css" download>cookie-banner.css</a>
                 </div>
                 <div class="example-card">
-                    <div class="example-title">Скачать JS</div>
+                    <div class="example-title">Download JS</div>
                     <a href="https://cookies-widget-sergioplay.vercel.app/cookie-banner.js" download>cookie-banner.js</a>
                 </div>
             </div>
 
-            <h3 data-i18n="docs.installation.platforms.title">Интеграция с популярными платформами</h3>
+            <h3 data-i18n="docs.installation.platforms.title">Integration with popular platforms</h3>
             
             <h4 data-i18n="install.wordpress.title">WordPress</h4>
             <div class="code-block">
                 <div class="code-header">
                     <span>PHP (functions.php)</span>
-                    <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Копировать</button>
+                    <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Copy</button>
                 </div>
                 <pre><code>function add_cookie_widget() {
     wp_enqueue_style('cookie-banner', 'https://cookies-widget-sergioplay.vercel.app/cookie-banner.css');
@@ -992,7 +1172,7 @@ add_action('wp_enqueue_scripts', 'add_cookie_widget');</code></pre>
             <div class="code-block">
                 <div class="code-header">
                     <span>JSX</span>
-                    <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Копировать</button>
+                    <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Copy</button>
                 </div>
                 <pre><code>import Head from 'next/head';
 
@@ -1010,38 +1190,336 @@ export default function App({ Component, pageProps }) {
             </div>
         </section>
 
-        <section id="configuration" class="docs-section">
-            <h2 data-i18n="docs.configuration.title">⚙️ Конфигурация</h2>
+        <!-- Advanced Features Section -->
+        <section id="advanced-features" class="docs-section">
+            <h2>🆕 Exclusive Features v3.3</h2>
+            <p>Cookie Widget v3.3 includes revolutionary features that competitors don't have:</p>
             
-            <h3 data-i18n="docs.configuration.basic.title">Базовая конфигурация</h3>
+            <div class="example-grid">
+                <div class="example-card">
+                    <div class="example-title">🧠 Smart Auto-Detect</div>
+                    <p>Automatic detection of 20+ trackers on page</p>
+                </div>
+                <div class="example-card">
+                    <div class="example-title">🔍 SEO-Friendly Mode</div>
+                    <p>Search bots see site as accepting all cookies</p>
+                </div>
+                <div class="example-card">
+                    <div class="example-title">🔒 Script Guard</div>
+                    <p>Script blocking until consent is given</p>
+                </div>
+                <div class="example-card">
+                    <div class="example-title">🤝 Integrations Hub</div>
+                    <p>Ready-made settings for popular services</p>
+                </div>
+                <div class="example-card">
+                    <div class="example-title">🚀 Zero-Reload Mode</div>
+                    <p>Enable/disable without page reload</p>
+                </div>
+                <div class="example-card">
+                    <div class="example-title">🔒 Secure Storage</div>
+                    <p>Storage in multiple repositories</p>
+                </div>
+            </div>
+            
+            <div class="info">
+                <div class="info-title">💡 Demo</div>
+                <p>Try all new features in action: <a href="demo-advanced-features.html" target="_blank">Interactive Demo</a></p>
+            </div>
+        </section>
+
+        <!-- Smart Auto-Detect Section -->
+        <section id="smart-auto-detect" class="docs-section">
+            <h2 data-i18n="docs.smart-detect.title">🧠 Smart Auto-Detect Tracking</h2>
+            <p data-i18n="docs.smart-detect.description">Automatic detection of trackers and scripts on page with categorization by types.</p>
+            
+            <h3>Supported trackers</h3>
+            <div class="code-block">
+                <div class="code-header">
+                    <span>List of supported services</span>
+                </div>
+                <pre><code>Analytics:
+• Google Analytics (gtag, ga, _ga, _gid)
+• Yandex Metrika (ym, yaCounter)
+• Adobe Analytics (s.t, _satellite)
+• Hotjar (hj, _hjSettings)
+
+Marketing:
+• Meta Pixel (fbq, _fbp, _fbc)
+• TikTok Pixel (ttq, _ttp)
+• Google Ads (gtag_report_conversion)
+• LinkedIn Insight (_linkedin_partner_id)
+
+Functional:
+• YouTube (youtube.com/embed)
+• Google Maps (maps.googleapis.com)
+• Intercom (Intercom)</code></pre>
+            </div>
+            
+            <h3>API methods</h3>
+            <div class="api-method">
+                <div class="api-method-name">getDetectedTrackers()</div>
+                <div class="api-method-desc">Get list of all detected trackers</div>
+                <div class="code-block">
+                    <pre><code>const trackers = cookieBanner.getDetectedTrackers();
+console.log(trackers);
+// {
+//   analytics: [{ name: 'Google Analytics', type: 'script', source: 'gtag' }],
+//   marketing: [{ name: 'Meta Pixel', type: 'script', source: 'fbq' }]
+// }</code></pre>
+                </div>
+            </div>
+            
+            <div class="api-method">
+                <div class="api-method-name">getTrackerStats()</div>
+                <div class="api-method-desc">Get tracker statistics</div>
+                <div class="code-block">
+                    <pre><code>const stats = cookieBanner.getTrackerStats();
+console.log(stats);
+// { total: 3, byCategory: { analytics: 1, marketing: 2 } }</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEO-Friendly Mode Section -->
+        <section id="seo-friendly" class="docs-section">
+            <h2 data-i18n="docs.seo-friendly.title">🔍 SEO-Friendly Mode</h2>
+            <p data-i18n="docs.seo-friendly.description">Search bots see the site as accepting all cookies for better indexing, while real users see the banner.</p>
+            
+            <h3>Bot detection</h3>
+            <div class="code-block">
+                <div class="code-header">
+                    <span>Supported bots</span>
+                </div>
+                <pre><code>• GoogleBot
+• YandexBot  
+• BingBot
+• FacebookBot
+• TwitterBot
+• LinkedInBot
+• WhatsApp
+• TelegramBot
+• AppleBot
+• DuckDuckBot</code></pre>
+            </div>
+            
+            <h3>Configuration</h3>
+            <div class="code-block">
+                <pre><code>const cookieBanner = CookieBanner.create({
+    seoFriendlyMode: true, // Enabled by default
+    
+    onBotDetected: (info) => {
+        console.log('Bot detected:', info.userAgent);
+        // Bot automatically gets full consent
+    }
+});
+
+// Check current visitor
+const seoInfo = cookieBanner.getSEOInfo();
+if (seoInfo.isBot) {
+    console.log('This is a bot visit - no banner shown');
+}</code></pre>
+            </div>
+        </section>
+
+        <!-- Script Guard Section -->
+        <section id="script-guard" class="docs-section">
+            <h2 data-i18n="docs.script-guard.title">🔒 Script Guard</h2>
+            <p data-i18n="docs.script-guard.description">Script blocking for Analytics and Marketing even before site loading through proxy stubs.</p>
+            
+            <h3>How it works</h3>
+            <div class="info">
+                <div class="info-title">🛡️ Protection</div>
+                <p>Script Guard intercepts tracker function calls (gtag, fbq, ym) and blocks their execution until user consent is obtained.</p>
+            </div>
+            
+            <div class="code-block">
+                <pre><code>// Script Guard automatically blocks:
+gtag('config', 'GA_MEASUREMENT_ID'); // ❌ Blocked
+fbq('init', 'PIXEL_ID');             // ❌ Blocked  
+ym(12345678, "init", {});            // ❌ Blocked
+
+// After consent is given:
+gtag('config', 'GA_MEASUREMENT_ID'); // ✅ Executed
+fbq('init', 'PIXEL_ID');             // ✅ Executed</code></pre>
+            </div>
+            
+            <h3>API methods</h3>
+            <div class="api-method">
+                <div class="api-method-name">getScriptGuardStats()</div>
+                <div class="api-method-desc">Get blocked scripts statistics</div>
+                <div class="code-block">
+                    <pre><code>const guardStats = cookieBanner.getScriptGuardStats();
+console.log(guardStats);
+// {
+//   enabled: true,
+//   blockedCount: 5,
+//   blockedScripts: ['gtag', 'fbq', 'ym']
+// }</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Integrations Hub Section -->
+        <section id="integrations-hub" class="docs-section">
+            <h2 data-i18n="docs.integrations-hub.title">🤝 Integrations Hub</h2>
+            <p data-i18n="docs.integrations-hub.description">Ready-made settings for popular services with zero-config integration.</p>
+            
+            <h3>Supported integrations</h3>
+            <div class="example-grid">
+                <div class="example-card">
+                    <div class="example-title">Google Tag Manager</div>
+                    <p>Complete GTM setup with consent mode</p>
+                </div>
+                <div class="example-card">
+                    <div class="example-title">Yandex Metrika</div>
+                    <p>Configuration with custom options</p>
+                </div>
+                <div class="example-card">
+                    <div class="example-title">Meta Pixel</div>
+                    <p>Facebook/Instagram pixel</p>
+                </div>
+                <div class="example-card">
+                    <div class="example-title">TikTok Pixel</div>
+                    <p>TikTok advertising pixel</p>
+                </div>
+                <div class="example-card">
+                    <div class="example-title">Google reCAPTCHA v3</div>
+                    <p>Spam protection</p>
+                </div>
+                <div class="example-card">
+                    <div class="example-title">Cloudflare Turnstile</div>
+                    <p>Private CAPTCHA alternative</p>
+                </div>
+            </div>
+            
+            <h3>Usage</h3>
+            <div class="code-block">
+                <pre><code>const cookieBanner = CookieBanner.create({
+    integrations: [
+        {
+            type: 'google-tag-manager',
+            config: { id: 'GTM-XXXXXXX' }
+        },
+        {
+            type: 'yandex-metrika',
+            config: { 
+                id: '12345678',
+                options: { clickmap: true, trackLinks: true }
+            }
+        },
+        {
+            type: 'meta-pixel',
+            config: { id: 'YOUR_PIXEL_ID' }
+        }
+    ]
+});
+
+// Add integration dynamically
+cookieBanner.addIntegration('tiktok-pixel', {
+    id: 'YOUR_TIKTOK_PIXEL_ID'
+});</code></pre>
+            </div>
+        </section>
+
+        <!-- Zero-Reload Mode Section -->
+        <section id="zero-reload" class="docs-section">
+            <h2 data-i18n="docs.zero-reload.title">🚀 Zero-Reload Mode</h2>
+            <p data-i18n="docs.zero-reload.description">Enable and disable trackers without page reload through queue system.</p>
+            
+            <h3>How it works</h3>
+            <div class="info">
+                <div class="info-title">⚡ Instant activation</div>
+                <p>Scripts are added to queue and executed instantly when consent is given, without need for page reload.</p>
+            </div>
+            
+            <div class="code-block">
+                <pre><code>// Add script to queue
+cookieBanner.queueScript('analytics', () => {
+    gtag('config', 'GA_MEASUREMENT_ID');
+    console.log('Analytics activated!');
+});
+
+cookieBanner.queueScript('marketing', () => {
+    fbq('init', 'PIXEL_ID');
+    fbq('track', 'PageView');
+    console.log('Marketing activated!');
+});
+
+// Scripts will execute instantly when user gives consent</code></pre>
+            </div>
+        </section>
+
+        <!-- Secure Storage Section -->
+        <section id="secure-storage" class="docs-section">
+            <h2 data-i18n="docs.secure-storage.title">🔒 Secure LocalStorage Backup</h2>
+            <p data-i18n="docs.secure-storage.description">Save consent in multiple storages for maximum reliability.</p>
+            
+            <h3>Supported storages</h3>
+            <div class="code-block">
+                <div class="code-header">
+                    <span>Fallback chain</span>
+                </div>
+                <pre><code>1. localStorage     (primary)
+2. sessionStorage   (session)
+3. IndexedDB        (database)
+4. cookies          (fallback)</code></pre>
+            </div>
+            
+            <h3>Configuration</h3>
+            <div class="code-block">
+                <pre><code>const cookieBanner = CookieBanner.create({
+    secureStorage: true, // Enabled by default
+    
+    onStorageMethod: (methods) => {
+        console.log('Consent saved to:', methods);
+        // { localStorage: true, sessionStorage: true, indexedDB: true }
+    }
+});
+
+// Check storage availability
+const storageInfo = cookieBanner.getStorageInfo();
+console.log('Available storage:', storageInfo.available);</code></pre>
+            </div>
+            
+            <div class="warning">
+                <div class="warning-title">⚠️ Compatibility</div>
+                <p>Secure Storage works even with completely disabled cookies in browser, ensuring 100% compatibility with "anti-cookie" settings.</p>
+            </div>
+        </section>
+
+        <section id="configuration" class="docs-section">
+            <h2 data-i18n="docs.configuration.title">⚙️ Configuration</h2>
+            
+            <h3 data-i18n="docs.configuration.basic.title">Basic configuration</h3>
             <div class="code-block">
                 <div class="code-header">
                     <span>JavaScript</span>
-                    <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Копировать</button>
+                    <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Copy</button>
                 </div>
-                <pre><code>// Создание с пользовательскими настройками
+                <pre><code>// Create with custom settings
 const cookieBanner = new CookieBanner({
-    autoShow: true,                    // Автоматически показывать баннер
-    showDeclineButton: true,           // Показывать кнопку "Отклонить"
-    showSettingsButton: true,          // Показывать кнопку "Настройки"
-    position: 'bottom',                // Позиция: 'top', 'bottom'
-    theme: 'default',                  // Тема: 'default', 'dark', 'light'
-    privacyPolicyUrl: '/privacy',      // Ссылка на политику конфиденциальности
-    cookieExpiry: 365,                 // Срок действия согласия (дни)
-    respectDNT: true,                  // Учитывать Do Not Track
+    autoShow: true,                    // Automatically show banner
+    showDeclineButton: true,           // Show "Decline" button
+    showSettingsButton: true,          // Show "Settings" button
+    position: 'bottom',                // Position: 'top', 'bottom'
+    theme: 'default',                  // Theme: 'default', 'dark', 'light'
+    privacyPolicyUrl: '/privacy',      // Privacy policy link
+    cookieExpiry: 365,                 // Consent validity (days)
+    respectDNT: true,                  // Respect Do Not Track
     
-    // Категории cookie
+    // Cookie categories
     categories: ['necessary', 'functional', 'analytics', 'marketing', 'performance'],
     
-    // Колбэки
+    // Callbacks
     onAccept: function(settings) {
-        console.log('Согласие принято:', settings);
+        console.log('Consent accepted:', settings);
     },
     onDecline: function(settings) {
-        console.log('Согласие отклонено:', settings);
+        console.log('Consent declined:', settings);
     },
     onSettingsChange: function(settings) {
-        console.log('Настройки изменены:', settings);
+        console.log('Settings changed:', settings);
     }
 });</code></pre>
             </div>
@@ -1049,11 +1527,11 @@ const cookieBanner = new CookieBanner({
         <section id="api-reference" class="docs-section">
             <h2 data-i18n="docs.api.title">📚 API Reference</h2>
             
-            <h3 data-i18n="docs.api.methods.title">Основные методы</h3>
+            <h3 data-i18n="docs.api.methods.title">Main methods</h3>
             
             <div class="api-method">
                 <div class="api-method-name">show()</div>
-                <div class="api-method-desc" data-i18n="docs.api.show.description">Показать cookie баннер</div>
+                <div class="api-method-desc" data-i18n="docs.api.show.description">Show cookie banner</div>
                 <div class="code-block">
                     <pre><code>window.cookieBanner.show();</code></pre>
                 </div>
@@ -1061,7 +1539,7 @@ const cookieBanner = new CookieBanner({
 
             <div class="api-method">
                 <div class="api-method-name">hide()</div>
-                <div class="api-method-desc" data-i18n="docs.api.hide.description">Скрыть cookie баннер</div>
+                <div class="api-method-desc" data-i18n="docs.api.hide.description">Hide cookie banner</div>
                 <div class="code-block">
                     <pre><code>window.cookieBanner.hide();</code></pre>
                 </div>
@@ -1069,7 +1547,7 @@ const cookieBanner = new CookieBanner({
 
             <div class="api-method">
                 <div class="api-method-name">getSettings()</div>
-                <div class="api-method-desc" data-i18n="docs.api.getSettings.description">Получить текущие настройки cookie</div>
+                <div class="api-method-desc" data-i18n="docs.api.getSettings.description">Get current cookie settings</div>
                 <div class="code-block">
                     <pre><code>const settings = window.cookieBanner.getSettings();
 console.log(settings);
@@ -1079,11 +1557,11 @@ console.log(settings);
 
             <div class="api-method">
                 <div class="api-method-name">setSettings(settings)</div>
-                <div class="api-method-desc">Установить настройки cookie программно</div>
+                <div class="api-method-desc">Set cookie settings programmatically</div>
                 <div class="api-params">
                     <div class="api-param">
                         <span class="param-name">settings</span> <span class="param-type">Object</span>
-                        <div class="param-desc">Объект с настройками категорий cookie</div>
+                        <div class="param-desc">Object with cookie category settings</div>
                     </div>
                 </div>
                 <div class="code-block">
@@ -1099,7 +1577,7 @@ console.log(settings);
 
             <div class="api-method">
                 <div class="api-method-name">reset()</div>
-                <div class="api-method-desc">Сбросить все настройки и показать баннер заново</div>
+                <div class="api-method-desc">Reset all settings and show banner again</div>
                 <div class="code-block">
                     <pre><code>window.cookieBanner.reset();</code></pre>
                 </div>
@@ -1107,7 +1585,7 @@ console.log(settings);
 
             <div class="api-method">
                 <div class="api-method-name">getLanguage()</div>
-                <div class="api-method-desc">Получить текущий язык интерфейса</div>
+                <div class="api-method-desc">Get current interface language</div>
                 <div class="code-block">
                     <pre><code>const language = window.cookieBanner.getLanguage();
 console.log(language); // "ru", "en", "de", etc.</code></pre>
@@ -1116,7 +1594,7 @@ console.log(language); // "ru", "en", "de", etc.</code></pre>
 
             <div class="api-method">
                 <div class="api-method-name">getVersion()</div>
-                <div class="api-method-desc">Получить версию Cookie Widget</div>
+                <div class="api-method-desc">Get Cookie Widget version</div>
                 <div class="code-block">
                     <pre><code>const version = window.cookieBanner.getVersion();
 console.log(version); // "3.0.0"</code></pre>
@@ -1125,7 +1603,7 @@ console.log(version); // "3.0.0"</code></pre>
 
             <div class="api-method">
                 <div class="api-method-name">getAllTexts()</div>
-                <div class="api-method-desc">Получить все тексты интерфейса (включая кастомные)</div>
+                <div class="api-method-desc">Get all interface texts (including custom ones)</div>
                 <div class="code-block">
                     <pre><code>const allTexts = window.cookieBanner.getAllTexts();
 console.log(allTexts);
@@ -1135,11 +1613,11 @@ console.log(allTexts);
 
             <div class="api-method">
                 <div class="api-method-name">setTheme(theme)</div>
-                <div class="api-method-desc">Изменить тему оформления баннера</div>
+                <div class="api-method-desc">Change banner theme</div>
                 <div class="api-params">
                     <div class="api-param">
                         <span class="param-name">theme</span> <span class="param-type">string</span>
-                        <div class="param-desc">Название темы: 'default', 'dark', 'light', 'corporate'</div>
+                        <div class="param-desc">Theme name: 'default', 'dark', 'light', 'corporate'</div>
                     </div>
                 </div>
                 <div class="code-block">
@@ -1149,11 +1627,11 @@ console.log(allTexts);
 
             <div class="api-method">
                 <div class="api-method-name">setPosition(position)</div>
-                <div class="api-method-desc">Изменить позицию баннера на странице</div>
+                <div class="api-method-desc">Change banner position on page</div>
                 <div class="api-params">
                     <div class="api-param">
                         <span class="param-name">position</span> <span class="param-type">string</span>
-                        <div class="param-desc">Позиция: 'top', 'bottom'</div>
+                        <div class="param-desc">Position: 'top', 'bottom'</div>
                     </div>
                 </div>
                 <div class="code-block">
@@ -1163,32 +1641,32 @@ console.log(allTexts);
 
             <div class="api-method">
                 <div class="api-method-name">addCategory(category, config)</div>
-                <div class="api-method-desc">Добавить новую категорию cookie</div>
+                <div class="api-method-desc">Add new cookie category</div>
                 <div class="api-params">
                     <div class="api-param">
                         <span class="param-name">category</span> <span class="param-type">string</span>
-                        <div class="param-desc">ID новой категории</div>
+                        <div class="param-desc">New category ID</div>
                     </div>
                     <div class="api-param">
                         <span class="param-name">config</span> <span class="param-type">Object</span>
-                        <div class="param-desc">Конфигурация категории с полями title и description</div>
+                        <div class="param-desc">Category configuration with title and description fields</div>
                     </div>
                 </div>
                 <div class="code-block">
                     <pre><code>window.cookieBanner.addCategory('security', {
-    title: 'Безопасность',
-    description: 'Cookie для защиты от мошенничества'
+    title: 'Security',
+    description: 'Cookies for fraud protection'
 });</code></pre>
                 </div>
             </div>
 
             <div class="api-method">
                 <div class="api-method-name">removeCategory(category)</div>
-                <div class="api-method-desc">Удалить категорию cookie (кроме 'necessary')</div>
+                <div class="api-method-desc">Remove cookie category (except 'necessary')</div>
                 <div class="api-params">
                     <div class="api-param">
                         <span class="param-name">category</span> <span class="param-type">string</span>
-                        <div class="param-desc">ID категории для удаления</div>
+                        <div class="param-desc">Category ID to remove</div>
                     </div>
                 </div>
                 <div class="code-block">
@@ -1198,102 +1676,102 @@ console.log(allTexts);
         </section>
 
         <section id="text-customization" class="docs-section">
-            <h2>✏️ API для кастомизации текста</h2>
+            <h2>✏️ Text Customization API</h2>
 
             <div class="api-method">
                 <div class="api-method-name">setText(key, value)</div>
-                <div class="api-method-desc">Изменить текст элемента баннера</div>
+                <div class="api-method-desc">Change banner element text</div>
                 <div class="api-params">
                     <div class="api-param">
                         <span class="param-name">key</span> <span class="param-type">string</span>
-                        <div class="param-desc">Ключ текстового элемента</div>
+                        <div class="param-desc">Text element key</div>
                     </div>
                     <div class="api-param">
                         <span class="param-name">value</span> <span class="param-type">string</span>
-                        <div class="param-desc">Новый текст</div>
+                        <div class="param-desc">New text</div>
                     </div>
                 </div>
                 <div class="code-block">
-                    <pre><code>// Изменить заголовок баннера
-window.cookieBanner.setText('title', 'Мы используем cookies');
+                    <pre><code>// Change banner title
+window.cookieBanner.setText('title', 'We use cookies');
 
-// Изменить текст кнопки
-window.cookieBanner.setText('acceptAll', 'Согласиться');
+// Change button text
+window.cookieBanner.setText('acceptAll', 'Accept');
 
-// Изменить описание категории
-window.cookieBanner.setText('analyticsDesc', 'Помогают улучшить сайт');</code></pre>
+// Change category description
+window.cookieBanner.setText('analyticsDesc', 'Help improve the site');</code></pre>
                 </div>
             </div>
 
             <div class="api-method">
                 <div class="api-method-name">setTexts(texts)</div>
-                <div class="api-method-desc">Изменить несколько текстов одновременно</div>
+                <div class="api-method-desc">Change multiple texts at once</div>
                 <div class="api-params">
                     <div class="api-param">
                         <span class="param-name">texts</span> <span class="param-type">Object</span>
-                        <div class="param-desc">Объект с парами ключ-значение</div>
+                        <div class="param-desc">Object with key-value pairs</div>
                     </div>
                 </div>
                 <div class="code-block">
                     <pre><code>window.cookieBanner.setTexts({
-    title: 'Согласие на обработку данных',
-    description: 'Мы используем файлы cookie и другие технологии',
-    acceptAll: 'Принять все',
-    decline: 'Отказаться',
-    settings: 'Настроить'
+    title: 'Data Processing Consent',
+    description: 'We use cookies and other technologies',
+    acceptAll: 'Accept All',
+    decline: 'Decline',
+    settings: 'Configure'
 });</code></pre>
                 </div>
             </div>
 
             <div class="api-method">
                 <div class="api-method-name">getText(key)</div>
-                <div class="api-method-desc">Получить текущий текст элемента</div>
+                <div class="api-method-desc">Get current element text</div>
                 <div class="code-block">
                     <pre><code>const title = window.cookieBanner.getText('title');
-console.log(title); // "Использование файлов cookie"</code></pre>
+console.log(title); // "Cookie Usage"</code></pre>
                 </div>
             </div>
 
             <div class="api-method">
                 <div class="api-method-name">setPrivacyPolicyUrl(url)</div>
-                <div class="api-method-desc">Изменить ссылку на политику конфиденциальности</div>
+                <div class="api-method-desc">Change privacy policy link</div>
                 <div class="code-block">
                     <pre><code>window.cookieBanner.setPrivacyPolicyUrl('/privacy-policy.html');</code></pre>
                 </div>
             </div>
 
-            <h3>Доступные ключи для текстов</h3>
+            <h3>Available text keys</h3>
             <div class="example-grid">
                 <div class="example-card">
-                    <div class="example-title">Основные тексты</div>
+                    <div class="example-title">Main texts</div>
                     <ul>
-                        <li><code>title</code> - Заголовок баннера</li>
-                        <li><code>description</code> - Описание</li>
-                        <li><code>privacyPolicy</code> - Текст ссылки на политику</li>
+                        <li><code>title</code> - Banner title</li>
+                        <li><code>description</code> - Description</li>
+                        <li><code>privacyPolicy</code> - Policy link text</li>
                     </ul>
                 </div>
                 <div class="example-card">
-                    <div class="example-title">Кнопки</div>
+                    <div class="example-title">Buttons</div>
                     <ul>
-                        <li><code>acceptAll</code> - "Принять все"</li>
-                        <li><code>decline</code> - "Отклонить"</li>
-                        <li><code>settings</code> - "Настройки"</li>
-                        <li><code>saveSettings</code> - "Сохранить"</li>
-                        <li><code>cancel</code> - "Отмена"</li>
+                        <li><code>acceptAll</code> - "Accept All"</li>
+                        <li><code>decline</code> - "Decline"</li>
+                        <li><code>settings</code> - "Settings"</li>
+                        <li><code>saveSettings</code> - "Save"</li>
+                        <li><code>cancel</code> - "Cancel"</li>
                     </ul>
                 </div>
                 <div class="example-card">
-                    <div class="example-title">Категории</div>
+                    <div class="example-title">Categories</div>
                     <ul>
-                        <li><code>necessary</code> - Необходимые</li>
-                        <li><code>functional</code> - Функциональные</li>
-                        <li><code>analytics</code> - Аналитические</li>
-                        <li><code>marketing</code> - Маркетинговые</li>
-                        <li><code>performance</code> - Производительность</li>
+                        <li><code>necessary</code> - Necessary</li>
+                        <li><code>functional</code> - Functional</li>
+                        <li><code>analytics</code> - Analytics</li>
+                        <li><code>marketing</code> - Marketing</li>
+                        <li><code>performance</code> - Performance</li>
                     </ul>
                 </div>
                 <div class="example-card">
-                    <div class="example-title">Описания категорий</div>
+                    <div class="example-title">Category descriptions</div>
                     <ul>
                         <li><code>necessaryDesc</code></li>
                         <li><code>functionalDesc</code></li>
@@ -1305,30 +1783,30 @@ console.log(title); // "Использование файлов cookie"</code></
             </div>
         </section>
         <section id="events" class="docs-section">
-            <h2>📡 События</h2>
+            <h2>📡 Events</h2>
             
-            <p>Cookie Widget генерирует события, на которые можно подписаться:</p>
+            <p>Cookie Widget generates events you can subscribe to:</p>
 
             <div class="api-method">
                 <div class="api-method-name">cookieBannerInitialized</div>
-                <div class="api-method-desc">Баннер инициализирован</div>
+                <div class="api-method-desc">Banner initialized</div>
                 <div class="code-block">
                     <pre><code>window.addEventListener('cookieBannerInitialized', function(event) {
-    console.log('Баннер инициализирован:', event.detail);
+    console.log('Banner initialized:', event.detail);
 });</code></pre>
                 </div>
             </div>
 
             <div class="api-method">
                 <div class="api-method-name">cookieConsentAccepted</div>
-                <div class="api-method-desc">Пользователь принял cookie</div>
+                <div class="api-method-desc">User accepted cookies</div>
                 <div class="code-block">
                     <pre><code>window.addEventListener('cookieConsentAccepted', function(event) {
-    console.log('Согласие принято:', event.detail);
+    console.log('Consent accepted:', event.detail);
     
-    // Включить аналитику, если разрешено
+    // Enable analytics if allowed
     if (event.detail.analytics) {
-        // Инициализировать Google Analytics
+        // Initialize Google Analytics
         gtag('config', 'GA_MEASUREMENT_ID');
     }
 });</code></pre>
@@ -1337,32 +1815,32 @@ console.log(title); // "Использование файлов cookie"</code></
 
             <div class="api-method">
                 <div class="api-method-name">cookieConsentDeclined</div>
-                <div class="api-method-desc">Пользователь отклонил cookie</div>
+                <div class="api-method-desc">User declined cookies</div>
                 <div class="code-block">
                     <pre><code>window.addEventListener('cookieConsentDeclined', function(event) {
-    console.log('Согласие отклонено:', event.detail);
+    console.log('Consent declined:', event.detail);
 });</code></pre>
                 </div>
             </div>
 
             <div class="api-method">
                 <div class="api-method-name">cookieConsentChanged</div>
-                <div class="api-method-desc">Настройки cookie изменены</div>
+                <div class="api-method-desc">Cookie settings changed</div>
                 <div class="code-block">
                     <pre><code>window.addEventListener('cookieConsentChanged', function(event) {
-    console.log('Настройки изменены:', event.detail);
+    console.log('Settings changed:', event.detail);
 });</code></pre>
                 </div>
             </div>
 
             <div class="api-method">
                 <div class="api-method-name">cookieSettingsApplied</div>
-                <div class="api-method-desc">Настройки применены к странице</div>
+                <div class="api-method-desc">Settings applied to page</div>
                 <div class="code-block">
                     <pre><code>window.addEventListener('cookieSettingsApplied', function(event) {
     const settings = event.detail;
     
-    // Управление скриптами на основе настроек
+    // Manage scripts based on settings
     if (settings.marketing) {
         loadMarketingScripts();
     }
@@ -1376,37 +1854,37 @@ console.log(title); // "Использование файлов cookie"</code></
         </section>
 
         <section id="examples" class="docs-section">
-            <h2>💡 Примеры использования</h2>
+            <h2>💡 Usage Examples</h2>
             
-            <h3>🔥 Новые расширенные примеры</h3>
-            <p>Изучите продвинутые сценарии интеграции Cookie Widget с популярными сервисами и фреймворками:</p>
+            <h3>🔥 New Advanced Examples</h3>
+            <p>Explore advanced Cookie Widget integration scenarios with popular services and frameworks:</p>
 
             <div class="example-grid">
                 <div class="example-card">
                     <div class="example-title">📊 Google Analytics 4</div>
-                    <p>Полная интеграция с GA4 и управление событиями</p>
+                    <p>Complete GA4 integration with event management</p>
                 </div>
                 <div class="example-card">
-                    <div class="example-title">📈 Яндекс.Метрика</div>
-                    <p>Интеграция с российской системой аналитики</p>
+                    <div class="example-title">📈 Yandex.Metrica</div>
+                    <p>Integration with Russian analytics system</p>
                 </div>
                 <div class="example-card">
                     <div class="example-title">⚛️ React/Next.js</div>
-                    <p>Интеграция в современные React приложения</p>
+                    <p>Integration in modern React applications</p>
                 </div>
                 <div class="example-card">
-                    <div class="example-title">🏢 Корпоративная настройка</div>
-                    <p>Полная кастомизация для корпоративных сайтов</p>
+                    <div class="example-title">🏢 Corporate Setup</div>
+                    <p>Complete customization for corporate websites</p>
                 </div>
             </div>
 
-            <h3>📊 Google Analytics 4 - Полная интеграция</h3>
+            <h3>📊 Google Analytics 4 - Complete Integration</h3>
             <div class="code-block">
                 <div class="code-header">
                     <span>JavaScript</span>
-                    <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Копировать</button>
+                    <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Copy</button>
                 </div>
-                <pre><code>// Продвинутая интеграция с Google Analytics 4
+                <pre><code>// Advanced Google Analytics 4 integration
 class GA4CookieIntegration {
     constructor(measurementId) {
         this.measurementId = measurementId;
@@ -1415,7 +1893,7 @@ class GA4CookieIntegration {
     }
     
     init() {
-        // Слушаем события cookie баннера
+        // Listen to cookie banner events
         window.addEventListener('cookieConsentAccepted', (event) => {
             if (event.detail.analytics) {
                 this.loadGA4();
@@ -1440,7 +1918,7 @@ class GA4CookieIntegration {
     loadGA4() {
         if (this.isLoaded) return;
         
-        // Загружаем Google Analytics 4
+        // Load Google Analytics 4
         const script = document.createElement('script');
         script.async = true;
         script.src = `https://www.googletagmanager.com/gtag/js?id=${this.measurementId}`;
@@ -1458,15 +1936,15 @@ class GA4CookieIntegration {
         });
         
         this.isLoaded = true;
-        console.log('Google Analytics 4 загружен');
+        console.log('Google Analytics 4 loaded');
     }
     
     disableGA4() {
         if (!this.isLoaded) return;
         
-        // Отключаем GA4
+        // Disable GA4
         window[`ga-disable-${this.measurementId}`] = true;
-        console.log('Google Analytics 4 отключен');
+        console.log('Google Analytics 4 disabled');
     }
     
     trackConsentAccepted(settings) {
@@ -1484,17 +1962,17 @@ class GA4CookieIntegration {
     }
 }
 
-// Инициализация
+// Initialize
 const ga4Integration = new GA4CookieIntegration('GA_MEASUREMENT_ID');</code></pre>
             </div>
 
-            <h3>📈 Яндекс.Метрика - Российская аналитика</h3>
+            <h3>📈 Yandex.Metrica - Russian Analytics</h3>
             <div class="code-block">
                 <div class="code-header">
                     <span>JavaScript</span>
-                    <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Копировать</button>
+                    <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Copy</button>
                 </div>
-                <pre><code>// Интеграция с Яндекс.Метрикой с соблюдением 152-ФЗ
+                <pre><code>// Yandex.Metrica integration with 152-FZ compliance
 class YandexMetricaCookieIntegration {
     constructor(counterId) {
         this.counterId = counterId;
@@ -1518,7 +1996,7 @@ class YandexMetricaCookieIntegration {
     loadYandexMetrica() {
         if (this.isLoaded) return;
         
-        // Загружаем Яндекс.Метрику
+        // Load Yandex.Metrica
         (function(m,e,t,r,i,k,a){
             m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
             m[i].l=1*new Date();
@@ -1530,13 +2008,13 @@ class YandexMetricaCookieIntegration {
             clickmap: true,
             trackLinks: true,
             accurateTrackBounce: true,
-            webvisor: false, // Отключаем вебвизор для соблюдения приватности
+            webvisor: false, // Disable webvisor for privacy compliance
             trackHash: true,
             ecommerce: "dataLayer"
         });
         
         this.isLoaded = true;
-        console.log('Яндекс.Метрика загружена');
+        console.log('Yandex.Metrica loaded');
     }
     
     trackConsentEvent(action, settings = {}) {
@@ -1548,15 +2026,15 @@ class YandexMetricaCookieIntegration {
     }
 }
 
-// Инициализация для российских сайтов
+// Initialize for Russian sites
 const yandexIntegration = new YandexMetricaCookieIntegration(12345678);</code></pre>
             </div>
 
-            <h3>⚛️ React/Next.js - Современная интеграция</h3>
+            <h3>⚛️ React/Next.js - Modern Integration</h3>
             <div class="code-block">
                 <div class="code-header">
                     <span>JSX + TypeScript</span>
-                    <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Копировать</button>
+                    <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Copy</button>
                 </div>
                 <pre><code>// components/CookieManager.tsx
 import { useEffect, useState } from 'react';
@@ -1575,7 +2053,7 @@ export default function CookieManager() {
     const [isInitialized, setIsInitialized] = useState(false);
     
     useEffect(() => {
-        // Инициализация cookie баннера
+        // Initialize cookie banner
         const initCookieBanner = () => {
             if (typeof window !== 'undefined' && window.CookieBanner) {
                 const banner = new window.CookieBanner({
@@ -1595,18 +2073,18 @@ export default function CookieManager() {
                 
                 setIsInitialized(true);
                 
-                // Кастомизация для React приложения
+                // Customization for React application
                 banner.setTexts({
-                    title: 'Управление данными',
-                    description: 'Мы используем современные технологии для улучшения вашего опыта',
-                    acceptAll: 'Принять все',
-                    decline: 'Только необходимые',
-                    settings: 'Настроить'
+                    title: 'Data Management',
+                    description: 'We use modern technologies to improve your experience',
+                    acceptAll: 'Accept All',
+                    decline: 'Necessary Only',
+                    settings: 'Configure'
                 });
             }
         };
         
-        // Проверяем загрузку скрипта
+        // Check script loading
         if (document.readyState === 'complete') {
             initCookieBanner();
         } else {
@@ -1619,14 +2097,14 @@ export default function CookieManager() {
     }, []);
     
     const handleCookieAccept = (settings: CookieSettings) => {
-        // Загружаем аналитику если разрешено
+        // Load analytics if allowed
         if (settings.analytics) {
             import('../utils/analytics').then(({ initAnalytics }) => {
                 initAnalytics();
             });
         }
         
-        // Загружаем маркетинговые скрипты
+        // Load marketing scripts
         if (settings.marketing) {
             import('../utils/marketing').then(({ initMarketing }) => {
                 initMarketing();
@@ -1635,7 +2113,7 @@ export default function CookieManager() {
     };
     
     const handleCookieDecline = (settings: CookieSettings) => {
-        console.log('Пользователь отклонил cookie:', settings);
+        console.log('User declined cookies:', settings);
     };
     
     return (
@@ -1651,13 +2129,13 @@ export default function CookieManager() {
                 /&gt;
             &lt;/Head&gt;
             
-            {/* Кастомная кнопка настроек в футере */}
+            {/* Custom settings button in footer */}
             {isInitialized && (
                 &lt;button 
                     onClick={() => window.cookieBanner?.show()}
                     className="cookie-settings-btn"
                 &gt;
-                    🍪 Настройки Cookie
+                    🍪 Cookie Settings
                 &lt;/button&gt;
             )}
         &lt;/&gt;
@@ -1665,17 +2143,17 @@ export default function CookieManager() {
 }</code></pre>
             </div>
 
-            <h3>🏢 Корпоративная настройка - Полная кастомизация</h3>
+            <h3>🏢 Corporate Setup - Complete Customization</h3>
             <div class="code-block">
                 <div class="code-header">
                     <span>JavaScript</span>
-                    <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Копировать</button>
+                    <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Copy</button>
                 </div>
-                <pre><code>// Корпоративная настройка для крупных компаний
+                <pre><code>// Corporate setup for large companies
 class CorporateCookieManager {
     constructor(config) {
         this.config = {
-            companyName: config.companyName || 'Наша Компания',
+            companyName: config.companyName || 'Our Company',
             brandColor: config.brandColor || '#2c5aa0',
             logoUrl: config.logoUrl || null,
             legalUrls: config.legalUrls || {},
@@ -1687,36 +2165,36 @@ class CorporateCookieManager {
     }
     
     init() {
-        // Создаем баннер с корпоративными настройками
+        // Create banner with corporate settings
         const banner = new CookieBanner({
             autoShow: true,
             theme: 'corporate',
             position: 'bottom',
-            showPoweredBy: false, // Убираем брендинг для корпоративных клиентов
+            showPoweredBy: false, // Remove branding for corporate clients
             privacyPolicyUrl: this.config.legalUrls.privacy || '/privacy',
             cookieExpiry: 365,
             
-            // Корпоративные колбэки
+            // Corporate callbacks
             onAccept: (settings) => this.handleAccept(settings),
             onDecline: (settings) => this.handleDecline(settings),
             onSettingsChange: (settings) => this.handleSettingsChange(settings)
         });
         
-        // Применяем корпоративный стиль
+        // Apply corporate style
         this.applyCorporateStyle(banner);
         
-        // Кастомизируем тексты
+        // Customize texts
         this.customizeTexts(banner);
         
-        // Добавляем дополнительные категории если нужно
+        // Add additional categories if needed
         this.addCustomCategories(banner);
         
-        // Интеграция с корпоративными системами
+        // Integration with corporate systems
         this.setupCorporateIntegrations(banner);
     }
     
     applyCorporateStyle(banner) {
-        // Применяем корпоративные цвета
+        // Apply corporate colors
         const style = document.createElement('style');
         style.textContent = `
             .cookie-banner {
@@ -1750,25 +2228,25 @@ class CorporateCookieManager {
     
     customizeTexts(banner) {
         banner.setTexts({
-            title: `Политика использования cookie - ${this.config.companyName}`,
-            description: `${this.config.companyName} использует файлы cookie для обеспечения наилучшего пользовательского опыта. Продолжая использовать наш сайт, вы соглашаетесь с нашей`,
-            privacyPolicy: 'политикой конфиденциальности',
-            acceptAll: 'Принять все cookie',
-            decline: 'Только необходимые',
-            settings: 'Управление настройками',
-            settingsTitle: `Управление cookie - ${this.config.companyName}`,
-            settingsDescription: 'Настройте использование cookie в соответствии с вашими предпочтениями. Мы уважаем ваш выбор и обеспечиваем полную прозрачность.',
+            title: `Cookie Usage Policy - ${this.config.companyName}`,
+            description: `${this.config.companyName} uses cookies to provide the best user experience. By continuing to use our site, you agree to our`,
+            privacyPolicy: 'privacy policy',
+            acceptAll: 'Accept All Cookies',
+            decline: 'Necessary Only',
+            settings: 'Manage Settings',
+            settingsTitle: `Cookie Management - ${this.config.companyName}`,
+            settingsDescription: 'Configure cookie usage according to your preferences. We respect your choice and ensure complete transparency.',
             
-            // Кастомные категории
-            security: 'Безопасность',
-            securityDesc: 'Cookie для обеспечения безопасности и защиты от мошенничества',
-            personalization: 'Персонализация',
-            personalizationDesc: 'Cookie для персонализации контента и рекомендаций'
+            // Custom categories
+            security: 'Security',
+            securityDesc: 'Cookies for security and fraud protection',
+            personalization: 'Personalization',
+            personalizationDesc: 'Cookies for content personalization and recommendations'
         });
     }
     
     addCustomCategories(banner) {
-        // Добавляем корпоративные категории
+        // Add corporate categories
         this.config.customCategories.forEach(category => {
             banner.addCategory(category.id, {
                 title: category.title,
@@ -1779,12 +2257,12 @@ class CorporateCookieManager {
     }
     
     setupCorporateIntegrations(banner) {
-        // Интеграция с корпоративными системами
+        // Integration with corporate systems
         window.addEventListener('cookieConsentAccepted', (event) => {
-            // Отправляем данные в корпоративную CRM
+            // Send data to corporate CRM
             this.sendToCRM('consent_accepted', event.detail);
             
-            // Активируем корпоративные сервисы
+            // Activate corporate services
             this.activateCorporateServices(event.detail);
         });
         
@@ -1794,28 +2272,28 @@ class CorporateCookieManager {
     }
     
     handleAccept(settings) {
-        console.log(`${this.config.companyName}: Согласие принято`, settings);
+        console.log(`${this.config.companyName}: Consent accepted`, settings);
         
-        // Загружаем корпоративную аналитику
+        // Load corporate analytics
         if (settings.analytics) {
             this.loadCorporateAnalytics();
         }
         
-        // Активируем персонализацию
+        // Activate personalization
         if (settings.personalization) {
             this.activatePersonalization();
         }
     }
     
     handleDecline(settings) {
-        console.log(`${this.config.companyName}: Согласие отклонено`, settings);
+        console.log(`${this.config.companyName}: Consent declined`, settings);
     }
     
     handleSettingsChange(settings) {
-        console.log(`${this.config.companyName}: Настройки изменены`, settings);
+        console.log(`${this.config.companyName}: Settings changed`, settings);
     }
     
-    // Вспомогательные методы
+    // Helper methods
     adjustColor(color, amount) {
         return '#' + color.replace(/^#/, '').replace(/../g, color => 
             ('0' + Math.min(255, Math.max(0, parseInt(color, 16) + amount)).toString(16)).substr(-2)
@@ -1823,7 +2301,7 @@ class CorporateCookieManager {
     }
     
     sendToCRM(action, data) {
-        // Отправка данных в корпоративную CRM
+        // Send data to corporate CRM
         fetch('/api/cookie-consent', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -1832,24 +2310,24 @@ class CorporateCookieManager {
     }
     
     loadCorporateAnalytics() {
-        // Загрузка корпоративных аналитических систем
-        console.log('Загружаем корпоративную аналитику...');
+        // Load corporate analytics systems
+        console.log('Loading corporate analytics...');
     }
     
     activatePersonalization() {
-        // Активация систем персонализации
-        console.log('Активируем персонализацию...');
+        // Activate personalization systems
+        console.log('Activating personalization...');
     }
     
     activateCorporateServices(settings) {
-        // Активация других корпоративных сервисов
-        console.log('Активируем корпоративные сервисы...', settings);
+        // Activate other corporate services
+        console.log('Activating corporate services...', settings);
     }
 }
 
-// Инициализация для корпоративного клиента
+// Initialize for corporate client
 const corporateManager = new CorporateCookieManager({
-    companyName: 'ООО "Технологии Будущего"',
+    companyName: 'Future Technologies LLC',
     brandColor: '#1e3a8a',
     logoUrl: '/assets/company-logo.png',
     legalUrls: {
@@ -1860,27 +2338,27 @@ const corporateManager = new CorporateCookieManager({
     customCategories: [
         {
             id: 'security',
-            title: 'Безопасность',
-            description: 'Cookie для защиты от мошенничества и обеспечения безопасности',
+            title: 'Security',
+            description: 'Cookies for fraud protection and security',
             required: true
         },
         {
             id: 'personalization',
-            title: 'Персонализация',
-            description: 'Cookie для персонализации контента и улучшения пользовательского опыта',
+            title: 'Personalization',
+            description: 'Cookies for content personalization and user experience improvement',
             required: false
         }
     ]
 });</code></pre>
             </div>
 
-            <h3>🔧 Умная система загрузки скриптов</h3>
+            <h3>🔧 Smart Script Loading System</h3>
             <div class="code-block">
                 <div class="code-header">
                     <span>JavaScript</span>
-                    <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Копировать</button>
+                    <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Copy</button>
                 </div>
-                <pre><code>// Умная система загрузки скриптов на основе согласия
+                <pre><code>// Smart consent-based script loading system
 class SmartScriptLoader {
     constructor() {
         this.loadedScripts = new Set();
@@ -1889,10 +2367,10 @@ class SmartScriptLoader {
     }
     
     init() {
-        // Регистрируем скрипты для каждой категории
+        // Register scripts for each category
         this.registerScripts();
         
-        // Слушаем события cookie баннера
+        // Listen to cookie banner events
         window.addEventListener('cookieConsentAccepted', (event) => {
             this.loadScriptsForCategories(event.detail);
         });
@@ -1903,7 +2381,7 @@ class SmartScriptLoader {
     }
     
     registerScripts() {
-        // Аналитические скрипты
+        // Analytics scripts
         this.addScript('analytics', {
             name: 'Google Analytics',
             src: 'https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID',
@@ -1927,7 +2405,7 @@ class SmartScriptLoader {
             }
         });
         
-        // Маркетинговые скрипты
+        // Marketing scripts
         this.addScript('marketing', {
             name: 'Facebook Pixel',
             src: 'https://connect.facebook.net/en_US/fbevents.js',
@@ -1937,7 +2415,7 @@ class SmartScriptLoader {
             }
         });
         
-        // Функциональные скрипты
+        // Functional scripts
         this.addScript('functional', {
             name: 'Chat Widget',
             src: 'https://widget.intercom.io/widget/YOUR_APP_ID',
@@ -1981,43 +2459,43 @@ class SmartScriptLoader {
         script.src = config.src;
         script.async = true;
         script.onload = () => {
-            console.log(`Скрипт загружен: ${config.name}`);
+            console.log(`Script loaded: ${config.name}`);
             if (config.init) {
                 config.init();
             }
             this.loadedScripts.add(scriptId);
         };
         script.onerror = () => {
-            console.error(`Ошибка загрузки скрипта: ${config.name}`);
+            console.error(`Script loading error: ${config.name}`);
         };
         
         document.head.appendChild(script);
     }
     
     handleConsentChange(newSettings) {
-        // Загружаем новые скрипты если согласие расширено
+        // Load new scripts if consent expanded
         this.loadScriptsForCategories(newSettings);
         
-        // Здесь можно добавить логику для отключения скриптов
-        // если согласие было отозвано
+        // Here you can add logic to disable scripts
+        // if consent was revoked
     }
 }
 
-// Инициализация умной загрузки скриптов
+// Initialize smart script loading
 const scriptLoader = new SmartScriptLoader();</code></pre>
             </div>
 
-            <h3>🎨 Кастомная кнопка настроек в дизайне сайта</h3>
+            <h3>🎨 Custom Settings Button in Site Design</h3>
             <div class="code-block">
                 <div class="code-header">
                     <span>HTML + CSS + JavaScript</span>
-                    <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Копировать</button>
+                    <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Copy</button>
                 </div>
-                <pre><code>&lt;!-- Стильная кнопка настроек cookie --&gt;
+                <pre><code>&lt;!-- Stylish cookie settings button --&gt;
 &lt;div class="cookie-settings-widget"&gt;
     &lt;button id="cookieSettingsBtn" class="cookie-btn"&gt;
         &lt;span class="cookie-icon"&gt;🍪&lt;/span&gt;
-        &lt;span class="cookie-text"&gt;Настройки Cookie&lt;/span&gt;
+        &lt;span class="cookie-text"&gt;Cookie Settings&lt;/span&gt;
     &lt;/button&gt;
 &lt;/div&gt;
 
@@ -2089,17 +2567,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const cookieBtn = document.getElementById('cookieSettingsBtn');
     
     cookieBtn.addEventListener('click', function() {
-        // Показываем настройки cookie
+        // Show cookie settings
         if (window.cookieBanner) {
             window.cookieBanner.show();
         } else if (window.showCookieSettings) {
             window.showCookieSettings();
         } else {
-            console.warn('Cookie banner не инициализирован');
+            console.warn('Cookie banner not initialized');
         }
     });
     
-    // Скрываем кнопку если баннер активен
+    // Hide button if banner is active
     window.addEventListener('cookieBannerShown', function() {
         cookieBtn.style.display = 'none';
     });
@@ -2112,185 +2590,185 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         </section>
         <section id="compliance" class="docs-section">
-            <h2>⚖️ Соответствие законам</h2>
+            <h2>⚖️ Law Compliance</h2>
             
-            <p>Cookie Widget автоматически обеспечивает соответствие основным законам о защите данных по всему миру:</p>
+            <p>Cookie Widget automatically ensures compliance with major data protection laws worldwide:</p>
 
             <div class="example-grid">
                 <div class="example-card">
-                    <div class="example-title">🇪🇺 GDPR (Европа)</div>
+                    <div class="example-title">🇪🇺 GDPR (Europe)</div>
                     <ul>
-                        <li>Явное согласие пользователя</li>
-                        <li>Гранулярный контроль категорий</li>
-                        <li>Возможность отзыва согласия</li>
-                        <li>Блокировка cookie до согласия</li>
-                        <li>Право на забвение</li>
+                        <li>Explicit user consent</li>
+                        <li>Granular category control</li>
+                        <li>Ability to withdraw consent</li>
+                        <li>Cookie blocking before consent</li>
+                        <li>Right to be forgotten</li>
                     </ul>
                 </div>
                 <div class="example-card">
-                    <div class="example-title">🇺🇸 CCPA (Калифорния)</div>
+                    <div class="example-title">🇺🇸 CCPA (California)</div>
                     <ul>
-                        <li>Право на отказ от продажи данных</li>
-                        <li>Прозрачность использования данных</li>
-                        <li>Контроль над персональной информацией</li>
-                        <li>Уведомление о сборе данных</li>
+                        <li>Right to opt out of data sale</li>
+                        <li>Data usage transparency</li>
+                        <li>Control over personal information</li>
+                        <li>Data collection notification</li>
                     </ul>
                 </div>
                 <div class="example-card">
-                    <div class="example-title">🇷🇺 152-ФЗ (Россия)</div>
+                    <div class="example-title">🇷🇺 152-FZ (Russia)</div>
                     <ul>
-                        <li>Согласие на обработку персональных данных</li>
-                        <li>Информирование о целях обработки</li>
-                        <li>Возможность отзыва согласия</li>
-                        <li>Локализация данных</li>
+                        <li>Consent for personal data processing</li>
+                        <li>Information about processing purposes</li>
+                        <li>Ability to withdraw consent</li>
+                        <li>Data localization</li>
                     </ul>
                 </div>
                 <div class="example-card">
-                    <div class="example-title">🇧🇷 LGPD (Бразилия)</div>
+                    <div class="example-title">🇧🇷 LGPD (Brazil)</div>
                     <ul>
-                        <li>Явное согласие</li>
-                        <li>Прозрачность обработки данных</li>
-                        <li>Права субъектов данных</li>
-                        <li>Минимизация данных</li>
+                        <li>Explicit consent</li>
+                        <li>Data processing transparency</li>
+                        <li>Data subject rights</li>
+                        <li>Data minimization</li>
                     </ul>
                 </div>
                 <div class="example-card">
-                    <div class="example-title">🇨🇦 PIPEDA (Канада)</div>
+                    <div class="example-title">🇨🇦 PIPEDA (Canada)</div>
                     <ul>
-                        <li>Согласие на сбор данных</li>
-                        <li>Ограничение использования</li>
-                        <li>Точность данных</li>
-                        <li>Защитные меры</li>
+                        <li>Consent for data collection</li>
+                        <li>Use limitation</li>
+                        <li>Data accuracy</li>
+                        <li>Safeguards</li>
                     </ul>
                 </div>
                 <div class="example-card">
-                    <div class="example-title">🇨🇳 PIPL (Китай)</div>
+                    <div class="example-title">🇨🇳 PIPL (China)</div>
                     <ul>
-                        <li>Согласие на обработку</li>
-                        <li>Минимизация данных</li>
-                        <li>Локализация данных</li>
-                        <li>Права субъектов</li>
+                        <li>Consent for processing</li>
+                        <li>Data minimization</li>
+                        <li>Data localization</li>
+                        <li>Subject rights</li>
                     </ul>
                 </div>
                 <div class="example-card">
-                    <div class="example-title">🇯🇵 APPI (Япония)</div>
+                    <div class="example-title">🇯🇵 APPI (Japan)</div>
                     <ul>
-                        <li>Согласие на использование</li>
-                        <li>Уведомление о целях</li>
-                        <li>Безопасность данных</li>
-                        <li>Трансграничная передача</li>
+                        <li>Consent for use</li>
+                        <li>Purpose notification</li>
+                        <li>Data security</li>
+                        <li>Cross-border transfer</li>
                     </ul>
                 </div>
                 <div class="example-card">
-                    <div class="example-title">🇰🇷 PIPA (Южная Корея)</div>
+                    <div class="example-title">🇰🇷 PIPA (South Korea)</div>
                     <ul>
-                        <li>Согласие на сбор</li>
-                        <li>Уведомление об использовании</li>
-                        <li>Права на доступ и удаление</li>
-                        <li>Безопасность обработки</li>
+                        <li>Consent for collection</li>
+                        <li>Use notification</li>
+                        <li>Access and deletion rights</li>
+                        <li>Processing security</li>
                     </ul>
                 </div>
             </div>
 
             <div class="feature-highlight">
-                <h3>🌍 Автоматическое определение региона</h3>
-                <p>Cookie Widget автоматически определяет местоположение пользователя и применяет соответствующие требования законодательства. Это обеспечивает соответствие местным законам без дополнительной настройки.</p>
+                <h3>🌍 Automatic Region Detection</h3>
+                <p>Cookie Widget automatically detects user location and applies corresponding law requirements. This ensures compliance with local laws without additional configuration.</p>
             </div>
 
-            <h3>Ключевые принципы соответствия</h3>
+            <h3>Key compliance principles</h3>
             <div class="example-grid">
                 <div class="example-card">
                     <div class="example-title">🔒 Privacy by Design</div>
-                    <p>Защита данных встроена в архитектуру с самого начала</p>
+                    <p>Data protection built into architecture from the beginning</p>
                 </div>
                 <div class="example-card">
-                    <div class="example-title">📋 Прозрачность</div>
-                    <p>Четкое объяснение того, какие данные собираются и зачем</p>
+                    <div class="example-title">📋 Transparency</div>
+                    <p>Clear explanation of what data is collected and why</p>
                 </div>
                 <div class="example-card">
-                    <div class="example-title">⚖️ Законность</div>
-                    <p>Обработка данных только на основе законных оснований</p>
+                    <div class="example-title">⚖️ Lawfulness</div>
+                    <p>Data processing only based on lawful grounds</p>
                 </div>
                 <div class="example-card">
-                    <div class="example-title">🎯 Минимизация</div>
-                    <p>Сбор только необходимых для целей обработки данных</p>
+                    <div class="example-title">🎯 Minimization</div>
+                    <p>Collection of only data necessary for processing purposes</p>
                 </div>
             </div>
 
             <div class="warning">
-                <div class="warning-title">⚠️ Важно</div>
-                <p>Хотя Cookie Widget помогает соблюдать требования законов, окончательная ответственность за соответствие лежит на владельце сайта. Рекомендуется консультация с юристами для обеспечения полного соответствия применимому законодательству.</p>
+                <div class="warning-title">⚠️ Important</div>
+                <p>While Cookie Widget helps comply with law requirements, final responsibility for compliance lies with the website owner. Legal consultation is recommended to ensure full compliance with applicable legislation.</p>
             </div>
 
             <div class="info">
-                <div class="info-title">📚 Дополнительные ресурсы</div>
-                <p>Для получения актуальной информации о требованиях законодательства рекомендуем обращаться к официальным источникам регулирующих органов в вашей юрисдикции.</p>
+                <div class="info-title">📚 Additional Resources</div>
+                <p>For current information about legislative requirements, we recommend consulting official sources of regulatory authorities in your jurisdiction.</p>
             </div>
         </section>
 
         <section id="troubleshooting" class="docs-section">
-            <h2>🔧 Решение проблем</h2>
+            <h2>🔧 Troubleshooting</h2>
             
-            <h3>Баннер не появляется</h3>
+            <h3>Banner doesn't appear</h3>
             <div class="info">
-                <div class="info-title">Возможные причины:</div>
+                <div class="info-title">Possible causes:</div>
                 <ul>
-                    <li>Файлы не загружены или заблокированы</li>
-                    <li>Согласие уже было дано ранее</li>
-                    <li>Включен Do Not Track в браузере</li>
-                    <li>Ошибки JavaScript на странице</li>
+                    <li>Files not loaded or blocked</li>
+                    <li>Consent already given previously</li>
+                    <li>Do Not Track enabled in browser</li>
+                    <li>JavaScript errors on page</li>
                 </ul>
             </div>
 
             <div class="code-block">
                 <div class="code-header">
-                    <span>JavaScript (Диагностика)</span>
-                    <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Копировать</button>
+                    <span>JavaScript (Diagnostics)</span>
+                    <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Copy</button>
                 </div>
-                <pre><code>// Проверить инициализацию
+                <pre><code>// Check initialization
 console.log('Cookie Banner:', window.cookieBanner);
-console.log('Класс доступен:', typeof CookieBanner !== 'undefined');
+console.log('Class available:', typeof CookieBanner !== 'undefined');
 
-// Принудительно показать баннер
+// Force show banner
 if (window.cookieBanner) {
-    window.cookieBanner.reset(); // Сбросить согласие
-    window.cookieBanner.show();  // Показать баннер
+    window.cookieBanner.reset(); // Reset consent
+    window.cookieBanner.show();  // Show banner
 }
 
-// Проверить текущие настройки
-console.log('Настройки:', window.cookieBanner?.getSettings());</code></pre>
+// Check current settings
+console.log('Settings:', window.cookieBanner?.getSettings());</code></pre>
             </div>
 
-            <h3>Настройки не сохраняются</h3>
+            <h3>Settings not saving</h3>
             <div class="code-block">
                 <div class="code-header">
                     <span>JavaScript</span>
-                    <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Копировать</button>
+                    <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Copy</button>
                 </div>
-                <pre><code>// Проверить поддержку localStorage
+                <pre><code>// Check localStorage support
 if (typeof Storage !== "undefined") {
-    console.log("localStorage поддерживается");
+    console.log("localStorage supported");
 } else {
-    console.log("localStorage НЕ поддерживается");
+    console.log("localStorage NOT supported");
 }
 
-// Проверить сохраненные данные
+// Check saved data
 console.log('localStorage:', localStorage.getItem('cookie_consent'));
 console.log('Cookies:', document.cookie);</code></pre>
             </div>
 
-            <h3>Конфликты с другими скриптами</h3>
+            <h3>Conflicts with other scripts</h3>
             <div class="code-block">
                 <div class="code-header">
                     <span>JavaScript</span>
-                    <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Копировать</button>
+                    <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Copy</button>
                 </div>
-                <pre><code>// Создать изолированный экземпляр
+                <pre><code>// Create isolated instance
 const myCookieBanner = new CookieBanner({
-    // настройки
+    // settings
 });
 
-// Использовать без глобальных переменных
+// Use without global variables
 myCookieBanner.show();</code></pre>
             </div>
         </section>
@@ -2306,7 +2784,7 @@ myCookieBanner.show();</code></pre>
             
             navigator.clipboard.writeText(code).then(() => {
                 const originalText = button.textContent;
-                const copiedText = window.i18n ? window.i18n.t('ui.copied') : 'Скопировано!';
+                const copiedText = window.i18n ? window.i18n.t('ui.copied') : 'Copied!';
                 button.textContent = copiedText;
                 button.style.background = '#4CAF50';
                 
@@ -2341,7 +2819,7 @@ myCookieBanner.show();</code></pre>
                 const targetId = this.getAttribute('href').substring(1);
                 const targetElement = document.getElementById(targetId);
                 if (targetElement) {
-                    const headerHeight = 120; // Учитываем высоту навигации
+                    const headerHeight = 120; // Account for navigation height
                     const targetPosition = targetElement.offsetTop - headerHeight;
                     
                     window.scrollTo({
@@ -2349,14 +2827,14 @@ myCookieBanner.show();</code></pre>
                         behavior: 'smooth'
                     });
                     
-                    // Обновляем активную ссылку
+                    // Update active link
                     document.querySelectorAll('.docs-nav a').forEach(a => a.classList.remove('active'));
                     this.classList.add('active');
                 }
             });
         });
 
-        // Обновление активной ссылки при прокрутке
+        // Update active link on scroll
         window.addEventListener('scroll', function() {
             const sections = document.querySelectorAll('.docs-section');
             const navLinks = document.querySelectorAll('.docs-nav a');
@@ -2393,7 +2871,7 @@ myCookieBanner.show();</code></pre>
         <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
             <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
                 <div>
-                    <p>&copy; <span id="currentYear">2025</span> SerGioPlay. <span data-i18n="footer.copyright">Распространяется под лицензией MIT.</span></p>
+                    <p>&copy; <span id="currentYear">2025</span> SerGioPlay. <span data-i18n="footer.copyright">Distributed under MIT License.</span></p>
                 </div>
                 <div style="display: flex; gap: 1rem; align-items: center;">
                     <a href="https://github.com/SerGioPlay01" target="_blank" aria-label="GitHub" style="color: white; opacity: 0.8; transition: opacity 0.3s;">
@@ -2423,5 +2901,16 @@ myCookieBanner.show();</code></pre>
 
     <!-- Buy Me a Coffee Widget -->
     <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="sergioplay" data-description="Support me on Buy me a coffee!" data-message="" data-color="#40DCA5" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+</body>
+</html>
+    <script>
+        // Language selector initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize i18n if available
+            if (window.i18n) {
+                window.i18n.init();
+            }
+        });
+    </script>
 </body>
 </html>

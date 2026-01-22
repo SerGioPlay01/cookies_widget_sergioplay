@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Cookie Widget - Демо эксклюзивных функций v3.3 | Smart Auto-Detect & SEO-Friendly Mode</title>
+    <meta name="description" content="Интерактивная демонстрация эксклюзивных функций Cookie Widget v3.3: Smart Auto-Detect трекеров, SEO-Friendly Mode, Script Guard, Zero-Reload Mode и других уникальных возможностей.">
+    <meta name="keywords" content="cookie widget demo, smart auto-detect, seo-friendly mode, script guard, zero-reload mode, integrations hub, secure storage">
+    <meta name="author" content="SerGioPlay">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://cookies-widget-sergioplay.vercel.app/demo-advanced-features.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cookies-widget-sergioplay.vercel.app/demo-advanced-features.html">
+    <meta property="og:title" content="Cookie Widget - Демо эксклюзивных функций v3.3">
+    <meta property="og:description" content="Интерактивная демонстрация Smart Auto-Detect, SEO-Friendly Mode и других уникальных функций Cookie Widget">
+    <meta property="og:image" content="https://cookies-widget-sergioplay.vercel.app/favicon_folder/android-chrome-512x512.png">
+    
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon_folder/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon_folder/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon_folder/favicon-16x16.png">
+    <link rel="manifest" href="/favicon_folder/manifest.json">
+    <link rel="shortcut icon" href="/favicon_folder/favicon.ico">
+    <meta name="theme-color" content="#4CAF50">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="cookie-banner.css">
+    
+    <!-- Internationalization -->
+    <script src="i18n.js"></script>
+    
+    <!-- Cookie Banner Script -->
+    <script src="cookie-banner.js"></script>
+    
+    <!-- Симуляция различных трекеров для демонстрации -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        // Google Analytics симуляция
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    
+    <!-- Meta Pixel симуляция -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', 'YOUR_PIXEL_ID');
+        fbq('track', 'PageView');
+    </script>
+    
+    <!-- Yandex Metrika симуляция -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/watch.js", "ym");
+        ym(12345678, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+        });
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" style="text-decoration: none; color: inherit;">
+                    <span class="nav-logo">🍪</span>
+                    <span class="nav-title">Cookie Widget</span>
+                </a>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html#features" class="nav-link" data-i18n="nav.features">Возможности</a>
+                <a href="index.html#installation" class="nav-link" data-i18n="nav.installation">Установка</a>
+                <a href="documentation.html" class="nav-link" data-i18n="nav.docs">Документация</a>
+                <a href="examples.html" class="nav-link" data-i18n="nav.examples">Примеры</a>
+                <a href="tools.html" class="nav-link" data-i18n="nav.tools">Инструменты</a>
+                <a href="index.html#support" class="nav-link" data-i18n="nav.support">Поддержка</a>
+                <a href="https://github.com/SerGioPlay01/cookies_widget_sergioplay" class="nav-link nav-link--github" target="_blank">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Demo Header -->
+    <section class="demo-hero">
+        <div class="container">
+            <div class="demo-header">
+                <div class="demo-badge" data-i18n="demo.badge">v3.3 DEMO</div>
+                <h1 class="demo-title" data-i18n="demo.page.title">🚀 Эксклюзивные функции Cookie Widget</h1>
+                <p class="demo-subtitle" data-i18n="demo.page.subtitle">
+                    Интерактивная демонстрация уникальных возможностей, которых нет у конкурентов
+                </p>
+                <div class="demo-nav">
+                    <a href="index.html" class="demo-back-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="m15 18-6-6 6-6"/>
+                        </svg>
+                        <span data-i18n="demo.back">Назад к главной</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Features -->
+    <section class="demo-features">
+        <div class="container">
+            <div class="demo-features-grid">
+                <!-- Smart Auto-Detect -->
+                <div class="demo-feature-card">
+                    <div class="demo-feature-header">
+                        <div class="demo-feature-icon">🧠</div>
+                        <h3 class="demo-feature-title" data-i18n="demo.smart.title">Smart Auto-Detect</h3>
+                        <div class="demo-feature-status loading" id="smart-detect-status" data-i18n="demo.smart.status.scanning">Сканирование</div>
+                    </div>
+                    <p class="demo-feature-description" data-i18n="demo.smart.description">
+                        Автоматическое обнаружение трекеров на странице: Google Analytics, Meta Pixel, Yandex Metrika и других.
+                    </p>
+                    <div class="demo-feature-result" id="smart-detect-result">
+                        <div class="demo-loading" data-i18n="demo.smart.loading">Анализ трекеров...</div>
+                    </div>
+                </div>
+
+                <!-- SEO-Friendly Mode -->
+                <div class="demo-feature-card">
+                    <div class="demo-feature-header">
+                        <div class="demo-feature-icon">🔍</div>
+                        <h3 class="demo-feature-title" data-i18n="demo.seo.title">SEO-Friendly Mode</h3>
+                        <div class="demo-feature-status loading" id="seo-status" data-i18n="demo.seo.status.checking">Проверка</div>
+                    </div>
+                    <p class="demo-feature-description" data-i18n="demo.seo.description">
+                        Определение поисковых ботов и роботов для лучшей индексации сайта.
+                    </p>
+                    <div class="demo-feature-result" id="seo-result">
+                        <div class="demo-loading" data-i18n="demo.seo.loading">Анализ user-agent...</div>
+                    </div>
+                </div>
+
+                <!-- Script Guard -->
+                <div class="demo-feature-card">
+                    <div class="demo-feature-header">
+                        <div class="demo-feature-icon">🔒</div>
+                        <h3 class="demo-feature-title" data-i18n="demo.guard.title">Script Guard</h3>
+                        <div class="demo-feature-status active" id="script-guard-status" data-i18n="demo.guard.status.active">Активен</div>
+                    </div>
+                    <p class="demo-feature-description" data-i18n="demo.guard.description">
+                        Блокировка скриптов Analytics и Marketing до получения согласия пользователя.
+                    </p>
+                    <div class="demo-feature-result" id="script-guard-result">
+                        <div data-i18n="demo.guard.placeholder">Заблокированные скрипты будут показаны здесь...</div>
+                    </div>
+                </div>
+
+                <!-- Zero-Reload Mode -->
+                <div class="demo-feature-card">
+                    <div class="demo-feature-header">
+                        <div class="demo-feature-icon">🚀</div>
+                        <h3 class="demo-feature-title" data-i18n="demo.reload.title">Zero-Reload Mode</h3>
+                        <div class="demo-feature-status active" id="zero-reload-status" data-i18n="demo.reload.status.ready">Готов</div>
+                    </div>
+                    <p class="demo-feature-description" data-i18n="demo.reload.description">
+                        Включение/выключение трекеров без перезагрузки страницы через систему очередей.
+                    </p>
+                    <div class="demo-feature-result" id="zero-reload-result">
+                        <div data-i18n="demo.reload.active">Режим активен - скрипты будут загружаться динамически</div>
+                    </div>
+                </div>
+
+                <!-- Secure Storage -->
+                <div class="demo-feature-card">
+                    <div class="demo-feature-header">
+                        <div class="demo-feature-icon">🔒</div>
+                        <h3 class="demo-feature-title" data-i18n="demo.storage.title">Secure Storage</h3>
+                        <div class="demo-feature-status loading" id="secure-storage-status" data-i18n="demo.storage.status.checking">Проверка</div>
+                    </div>
+                    <p class="demo-feature-description" data-i18n="demo.storage.description">
+                        Сохранение согласия в нескольких местах: localStorage, sessionStorage, IndexedDB, cookies.
+                    </p>
+                    <div class="demo-feature-result" id="secure-storage-result">
+                        <div class="demo-loading" data-i18n="demo.storage.loading">Проверка доступных хранилищ...</div>
+                    </div>
+                </div>
+
+                <!-- Integrations Hub -->
+                <div class="demo-feature-card">
+                    <div class="demo-feature-header">
+                        <div class="demo-feature-icon">🤝</div>
+                        <h3 class="demo-feature-title" data-i18n="demo.integrations.title">Integrations Hub</h3>
+                        <div class="demo-feature-status active" id="integrations-status" data-i18n="demo.integrations.status.ready">Готов</div>
+                    </div>
+                    <p class="demo-feature-description" data-i18n="demo.integrations.description">
+                        Готовые настройки для популярных сервисов: GTM, Meta Pixel, reCAPTCHA, Cloudflare Turnstile.
+                    </p>
+                    <div class="demo-feature-result" id="integrations-result">
+                        <div data-i18n="demo.integrations.placeholder">Доступные интеграции будут показаны здесь...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Controls -->
+    <section class="demo-controls">
+        <div class="container">
+            <h2 class="demo-controls-title" data-i18n="demo.controls.title">Попробуйте Cookie Widget</h2>
+            <p class="demo-controls-description" data-i18n="demo.controls.description">
+                Протестируйте все функции в действии. Cookie Widget автоматически определит ваш регион и применит соответствующие настройки.
+            </p>
+            <div class="demo-buttons">
+                <button class="demo-btn demo-btn-primary" onclick="showCookieBanner()" data-i18n="demo.controls.show">
+                    🍪 Показать Cookie Banner
+                </button>
+                <button class="demo-btn demo-btn-secondary" onclick="resetDemo()" data-i18n="demo.controls.reset">
+                    🔄 Сбросить демо
+                </button>
+                <a href="index.html" class="demo-btn demo-btn-secondary" data-i18n="demo.controls.home">
+                    🏠 Вернуться на главную
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="nav-logo">🍪</span>
+                        <span class="nav-title">Cookie Widget</span>
+                    </div>
+                    <p class="footer-description" data-i18n="footer.description">
+                        Современный виджет cookie баннера с поддержкой GDPR и 152-ФЗ РФ
+                    </p>
+                    <button id="installApp" class="install-app-btn" style="display: none;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                            <polyline points="7,10 12,15 17,10" />
+                            <line x1="12" y1="15" x2="12" y2="3" />
+                        </svg>
+                        <span data-i18n="footer.install_app">Установить приложение</span>
+                    </button>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4 data-i18n="footer.project">Проект</h4>
+                        <a href="https://github.com/SerGioPlay01/cookies_widget_sergioplay" target="_blank">GitHub</a>
+                        <a href="https://github.com/SerGioPlay01/cookies_widget_sergioplay/releases" target="_blank"
+                            data-i18n="footer.releases">Релизы</a>
+                        <a href="https://github.com/SerGioPlay01/cookies_widget_sergioplay/blob/main/LICENSE"
+                            target="_blank" data-i18n="footer.license">Лицензия</a>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4 data-i18n="footer.documentation">Документация</h4>
+                        <a href="#installation" data-i18n="footer.installation">Установка</a>
+                        <a href="documentation.html" data-i18n="footer.guide">Руководство</a>
+                        <a href="examples.html" data-i18n="footer.examples">Примеры</a>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4 data-i18n="footer.support">Поддержка</h4>
+                        <a href="https://github.com/SerGioPlay01/cookies_widget_sergioplay/issues" target="_blank"
+                            data-i18n="footer.issues">Issues</a>
+                        <a href="https://www.buymeacoffee.com/sergioplay" target="_blank"
+                            data-i18n="footer.support_dev">Поддержать</a>
+                        <a href="#cookie-settings" onclick="showCookieSettings(); return false;"
+                            data-i18n="footer.settings">Настройки Cookie</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear">2025</span> SerGioPlay. <span
+                        data-i18n="footer.copyright">Распространяется под лицензией MIT.</span></p>
+                <div class="footer-social">
+                    <a href="https://github.com/SerGioPlay01" target="_blank" aria-label="GitHub">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                    </a>
+                    <a href="https://x.com/_SerGio_Play_" target="_blank" aria-label="X (Twitter)">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                        </svg>
+                    </a>
+                    <a href="https://instagram.com/_sergio_play_" target="_blank" aria-label="Instagram">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Demo functionality
+        function showCookieBanner() {
+            if (window.cookieBanner) {
+                // Reset consent and show banner
+                window.cookieBanner.resetConsent();
+                setTimeout(() => {
+                    window.cookieBanner.show();
+                }, 100);
+            } else {
+                alert('Cookie Widget загружается... Попробуйте через несколько секунд.');
+            }
+        }
+
+        function resetDemo() {
+            // Clear all storage
+            localStorage.clear();
+            sessionStorage.clear();
+            
+            // Clear cookies
+            document.cookie.split(";").forEach(function(c) { 
+                document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); 
+            });
+            
+            // Reload page
+            window.location.reload();
+        }
+
+        // Initialize demo when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            // Simulate Smart Auto-Detect results
+            setTimeout(() => {
+                const smartDetectResult = document.getElementById('smart-detect-result');
+                const smartDetectStatus = document.getElementById('smart-detect-status');
+                
+                smartDetectResult.innerHTML = `
+                    <ul class="demo-tracker-list">
+                        <li class="demo-tracker-item">
+                            <span class="demo-tracker-type analytics">ANALYTICS</span>
+                            <span class="demo-tracker-name">Google Analytics (gtag)</span>
+                        </li>
+                        <li class="demo-tracker-item">
+                            <span class="demo-tracker-type marketing">MARKETING</span>
+                            <span class="demo-tracker-name">Meta Pixel (fbq)</span>
+                        </li>
+                        <li class="demo-tracker-item">
+                            <span class="demo-tracker-type analytics">ANALYTICS</span>
+                            <span class="demo-tracker-name">Yandex Metrika (ym)</span>
+                        </li>
+                    </ul>
+                `;
+                
+                // Use translation for status
+                const foundText = window.i18n ? window.i18n.t('demo.smart.status.found') : 'Найдено';
+                smartDetectStatus.textContent = `${foundText}: 3`;
+                smartDetectStatus.className = 'demo-feature-status active';
+            }, 2000);
+
+            // Simulate SEO-Friendly Mode results
+            setTimeout(() => {
+                const seoResult = document.getElementById('seo-result');
+                const seoStatus = document.getElementById('seo-status');
+                
+                const isBot = /bot|crawler|spider|crawling/i.test(navigator.userAgent);
+                
+                // Use translations
+                const typeText = window.i18n ? window.i18n.t('demo.seo.type') : 'Тип';
+                const modeText = window.i18n ? window.i18n.t('demo.seo.mode') : 'Режим';
+                const userType = window.i18n ? window.i18n.t(isBot ? 'demo.seo.bot_type' : 'demo.seo.user_type') : (isBot ? 'Поисковый бот' : 'Обычный пользователь');
+                const modeType = window.i18n ? window.i18n.t(isBot ? 'demo.seo.all_cookies' : 'demo.seo.standard_mode') : (isBot ? 'Все cookies разрешены' : 'Стандартный режим');
+                const statusText = window.i18n ? window.i18n.t(isBot ? 'demo.seo.status.bot' : 'demo.seo.status.user') : (isBot ? 'Бот' : 'Пользователь');
+                
+                seoResult.innerHTML = `
+                    <div>
+                        <strong>User-Agent:</strong> ${navigator.userAgent.substring(0, 60)}...<br>
+                        <strong>${typeText}:</strong> ${userType}<br>
+                        <strong>${modeText}:</strong> ${modeType}
+                    </div>
+                `;
+                seoStatus.textContent = statusText;
+                seoStatus.className = 'demo-feature-status active';
+            }, 1500);
+
+            // Simulate Secure Storage check
+            setTimeout(() => {
+                const storageResult = document.getElementById('secure-storage-result');
+                const storageStatus = document.getElementById('secure-storage-status');
+                
+                const storages = [];
+                try { localStorage.setItem('test', '1'); localStorage.removeItem('test'); storages.push('localStorage'); } catch(e) {}
+                try { sessionStorage.setItem('test', '1'); sessionStorage.removeItem('test'); storages.push('sessionStorage'); } catch(e) {}
+                try { if (window.indexedDB) storages.push('IndexedDB'); } catch(e) {}
+                storages.push('Cookies');
+                
+                // Use translations
+                const availableText = window.i18n ? window.i18n.t('demo.storage.available') : 'Доступные хранилища';
+                const totalText = window.i18n ? window.i18n.t('demo.storage.total') : 'Всего';
+                const ofText = window.i18n ? window.i18n.t('demo.storage.of') : 'из';
+                const possibleText = window.i18n ? window.i18n.t('demo.storage.possible') : 'возможных';
+                
+                storageResult.innerHTML = `
+                    <div>
+                        <strong>${availableText}:</strong><br>
+                        ${storages.map(s => `✅ ${s}`).join('<br>')}
+                        <br><br>
+                        <strong>${totalText}:</strong> ${storages.length} ${ofText} 4 ${possibleText}
+                    </div>
+                `;
+                storageStatus.textContent = `${storages.length}/4`;
+                storageStatus.className = 'demo-feature-status active';
+            }, 3000);
+        });
+
+        // Function to show cookie settings (for footer link)
+        function showCookieSettings() {
+            if (window.cookieBanner && typeof window.cookieBanner.showSettings === 'function') {
+                window.cookieBanner.showSettings();
+            } else {
+                showCookieBanner();
+            }
+        }
+    </script>
+</body>
+</html>

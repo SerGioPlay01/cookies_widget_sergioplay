@@ -219,7 +219,7 @@ function initCopyCode() {
             showCopySuccess(button);
         } catch (err) {
             console.error('Fallback: Oops, unable to copy', err);
-            showNotification('Не удалось скопировать код');
+            showNotification('Не удалось сCopy код');
         }
         
         document.body.removeChild(textArea);

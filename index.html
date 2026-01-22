@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,31 +8,36 @@
     <meta name="google-site-verification" content="egPDfS40HGTB97OHt3aWiauBnAvX2zJ3m8sAMBIb40A" />
     <meta name="yandex-verification" content="7ed609c24ec6271a" />
     <meta name="msvalidate.01" content="845BB81CAB820F07535F21F2BC60BF16" />
-    
+
     <!-- SEO Meta Tags -->
-    <title>Cookie Widget - GDPR & 152-ФЗ Compliant Cookie Banner | Современный виджет согласия на cookie</title>
-    <meta name="description" content="Современный виджет cookie баннера с поддержкой GDPR и 152-ФЗ РФ. Легкая интеграция, красивый дизайн, полная адаптивность. Бесплатный CDN, примеры для React, Vue, WordPress.">
-    <meta name="keywords" content="cookie banner, GDPR, 152-ФЗ, cookie widget, privacy, javascript, согласие на cookie, баннер cookie, виджет cookie, GDPR compliance, персональные данные">
+    <title>Cookie Widget v3.3 - GDPR & 152-FZ Compliant | Smart Auto-Detect & SEO-Friendly Mode</title>
+    <meta name="description"
+        content="Modern cookie banner widget v3.3 with Smart Auto-Detect trackers, SEO-Friendly Mode, Integrations Hub and Secure Storage. GDPR, CCPA, LGPD, 152-FZ compliance support.">
+    <meta name="keywords"
+        content="cookie banner, GDPR, 152-FZ, cookie widget, privacy, javascript, smart auto-detect, seo-friendly, integrations hub, secure storage, zero-reload mode, script guard">
     <meta name="author" content="SerGioPlay">
     <meta name="robots" content="index, follow">
-    
+
     <!-- Canonical URL -->
     <link rel="canonical" href="https://cookies-widget-sergioplay.vercel.app/">
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://cookies-widget-sergioplay.vercel.app/">
-    <meta property="og:title" content="Cookie Widget - GDPR & 152-ФЗ Compliant Cookie Banner">
-    <meta property="og:description" content="Современный виджет cookie баннера с поддержкой GDPR и российского законодательства 152-ФЗ. Легкая интеграция, адаптивный дизайн и гибкие настройки.">
-    <meta property="og:image" content="https://cookies-widget-sergioplay.vercel.app/favicon_folder/android-chrome-512x512.png">
-    
+    <meta property="og:title" content="Cookie Widget v3.3 - Smart Auto-Detect & SEO-Friendly Mode">
+    <meta property="og:description"
+        content="Modern cookie banner widget v3.3 with Smart Auto-Detect trackers, SEO-Friendly Mode, Integrations Hub and Secure Storage. GDPR, CCPA, LGPD compliance support.">
+    <meta property="og:image"
+        content="https://cookies-widget-sergioplay.vercel.app/favicon_folder/android-chrome-512x512.png">
+
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://cookies-widget-sergioplay.vercel.app/">
-    <meta name="twitter:title" content="Cookie Widget - GDPR & 152-ФЗ Compliant">
-    <meta name="twitter:description" content="Современный виджет cookie баннера с поддержкой GDPR и 152-ФЗ РФ">
-    <meta name="twitter:image" content="https://cookies-widget-sergioplay.vercel.app/favicon_folder/android-chrome-512x512.png">
-    
+    <meta name="twitter:title" content="Cookie Widget v3.3 - Smart Features">
+    <meta name="twitter:description" content="Smart Auto-Detect, SEO-Friendly Mode, Integrations Hub, Zero-Reload Mode">
+    <meta name="twitter:image"
+        content="https://cookies-widget-sergioplay.vercel.app/favicon_folder/android-chrome-512x512.png">
+
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon_folder/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon_folder/favicon-32x32.png">
@@ -39,7 +45,7 @@
     <link rel="manifest" href="/favicon_folder/manifest.json">
     <link rel="shortcut icon" href="/favicon_folder/favicon.ico">
     <meta name="theme-color" content="#4CAF50">
-    
+
     <!-- PWA Meta Tags -->
     <meta name="application-name" content="Cookie Widget">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -50,30 +56,38 @@
     <meta name="msapplication-config" content="/favicon_folder/browserconfig.xml">
     <meta name="msapplication-TileColor" content="#667eea">
     <meta name="msapplication-tap-highlight" content="no">
-    
+
     <!-- PWA iOS Splash Screens -->
-    <link rel="apple-touch-startup-image" href="/favicon_folder/apple-splash-2048-2732.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-    <link rel="apple-touch-startup-image" href="/favicon_folder/apple-splash-1668-2388.png" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-    <link rel="apple-touch-startup-image" href="/favicon_folder/apple-splash-1536-2048.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-    <link rel="apple-touch-startup-image" href="/favicon_folder/apple-splash-1125-2436.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
-    <link rel="apple-touch-startup-image" href="/favicon_folder/apple-splash-1242-2208.png" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
-    <link rel="apple-touch-startup-image" href="/favicon_folder/apple-splash-750-1334.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-    <link rel="apple-touch-startup-image" href="/favicon_folder/apple-splash-640-1136.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-    
+    <link rel="apple-touch-startup-image" href="/favicon_folder/apple-splash-2048-2732.png"
+        media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="/favicon_folder/apple-splash-1668-2388.png"
+        media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="/favicon_folder/apple-splash-1536-2048.png"
+        media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="/favicon_folder/apple-splash-1125-2436.png"
+        media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="/favicon_folder/apple-splash-1242-2208.png"
+        media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="/favicon_folder/apple-splash-750-1334.png"
+        media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="/favicon_folder/apple-splash-640-1136.png"
+        media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="cookie-banner.css">
     <link rel="stylesheet" href="i18n.css">
-    
+
     <!-- Internationalization -->
     <script src="i18n.js"></script>
-    
+
     <!-- Cookie Banner Script -->
     <script src="cookie-banner.js"></script>
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar">
@@ -83,18 +97,19 @@
                 <span class="nav-title">Cookie Widget</span>
             </div>
             <div class="nav-menu">
-                <a href="#features" class="nav-link" data-i18n="nav.features">Возможности</a>
-                <a href="#installation" class="nav-link" data-i18n="nav.installation">Установка</a>
-                <a href="documentation.html" class="nav-link" data-i18n="nav.docs">Документация</a>
-                <a href="examples.html" class="nav-link" data-i18n="nav.examples">Примеры</a>
-                <a href="tools.html" class="nav-link" data-i18n="nav.tools">Инструменты</a>
-                <a href="#support" class="nav-link" data-i18n="nav.support">Поддержка</a>
-                
+                <a href="#installation" class="nav-link" data-i18n="nav.installation">Installation</a>
+                <a href="documentation.html" class="nav-link" data-i18n="nav.docs">Documentation</a>
+                <a href="examples.html" class="nav-link" data-i18n="nav.examples">Examples</a>
+                <a href="tools.html" class="nav-link" data-i18n="nav.tools">Tools</a>
+                <a href="#support" class="nav-link" data-i18n="nav.support">Support</a>
+
                 <!-- Language Selector будет добавлен автоматически через i18n.js -->
-                
-                <a href="https://github.com/SerGioPlay01/cookies_widget_sergioplay" class="nav-link nav-link--github" target="_blank">
+
+                <a href="https://github.com/SerGioPlay01/cookies_widget_sergioplay" class="nav-link nav-link--github"
+                    target="_blank">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        <path
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                     </svg>
                     GitHub
                 </a>
@@ -120,44 +135,50 @@
                         <span class="hero-title-sub" data-i18n="hero.title.sub">GDPR & Global Privacy Compliant</span>
                     </h1>
                     <p class="hero-description" data-i18n="hero.description">
-                        Современный и красивый виджет cookie баннера с полной поддержкой GDPR, CCPA, LGPD, 152-ФЗ РФ и других международных стандартов защиты данных. 
-                        Легкая интеграция, адаптивный дизайн и гибкие настройки.
+                        Modern cookie banner widget v3.3 with unique features: Smart Auto-Detect trackers, SEO-Friendly
+                        Mode for bots,
+                        Integrations Hub with ready configurations, Zero-Reload Mode and Secure Storage. Full support for
+                        GDPR, CCPA, LGPD, 152-FZ.
                     </p>
                     <div class="hero-buttons">
                         <a href="#installation" class="btn btn-primary">
-                            <span data-i18n="hero.btn.start">Начать использовать</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="m9 18 6-6-6-6"/>
+                            <span data-i18n="hero.btn.start">Get Started</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="m9 18 6-6-6-6" />
                             </svg>
                         </a>
                         <a href="examples.html" class="btn btn-secondary">
-                            <span data-i18n="hero.btn.examples">Примеры интеграции</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                <polyline points="14,2 14,8 20,8"/>
-                                <line x1="16" y1="13" x2="8" y2="13"/>
-                                <line x1="16" y1="17" x2="8" y2="17"/>
+                            <span data-i18n="hero.btn.examples">Integration Examples</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                <polyline points="14,2 14,8 20,8" />
+                                <line x1="16" y1="13" x2="8" y2="13" />
+                                <line x1="16" y1="17" x2="8" y2="17" />
                             </svg>
                         </a>
-                        <a href="https://github.com/SerGioPlay01/cookies_widget_sergioplay" class="btn btn-outline" target="_blank">
+                        <a href="https://github.com/SerGioPlay01/cookies_widget_sergioplay" class="btn btn-outline"
+                            target="_blank">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                <path
+                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                             </svg>
                             <span data-i18n="hero.btn.github">GitHub</span>
                         </a>
                     </div>
                     <div class="hero-stats">
                         <div class="stat">
-                            <div class="stat-number">5KB</div>
-                            <div class="stat-label" data-i18n="hero.stat.size">Минимальный размер</div>
+                            <div class="stat-number">18KB</div>
+                            <div class="stat-label" data-i18n="hero.stat.size">Full Size</div>
                         </div>
                         <div class="stat">
                             <div class="stat-number">0</div>
-                            <div class="stat-label" data-i18n="hero.stat.deps">Зависимостей</div>
+                            <div class="stat-label" data-i18n="hero.stat.deps">Dependencies</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-number">100%</div>
-                            <div class="stat-label" data-i18n="hero.stat.gdpr">Соответствие GDPR</div>
+                            <div class="stat-number">8+</div>
+                            <div class="stat-label" data-i18n="hero.stat.features">Unique Features</div>
                         </div>
                     </div>
                 </div>
@@ -174,7 +195,7 @@
                             </div>
                             <div class="browser-content">
                                 <div class="demo-page">
-                                    <div class="demo-header" data-i18n="demo.browser.title">Ваш сайт</div>
+                                    <div class="demo-header" data-i18n="demo.browser.title">Your Website</div>
                                     <div class="demo-content">
                                         <div class="demo-text-line"></div>
                                         <div class="demo-text-line"></div>
@@ -184,21 +205,24 @@
                                 <div class="demo-cookie-banner">
                                     <div class="demo-banner-content">
                                         <div class="demo-banner-text">
-                                            <div class="demo-banner-title" data-i18n="demo.banner.title">Использование файлов cookie</div>
-                                            <div class="demo-banner-desc" data-i18n="demo.banner.description">Мы используем cookie для улучшения работы сайта...</div>
+                                            <div class="demo-banner-title" data-i18n="demo.banner.title">Cookie Usage</div>
+                                            <div class="demo-banner-desc" data-i18n="demo.banner.description">We use cookies to improve website functionality...</div>
                                         </div>
                                         <div class="demo-banner-buttons">
-                                            <button class="demo-btn demo-btn--settings" data-i18n="demo.banner.settings">Настройки</button>
-                                            <button class="demo-btn demo-btn--accept" data-i18n="demo.banner.accept">Принять</button>
+                                            <button class="demo-btn demo-btn--settings"
+                                                data-i18n="demo.banner.settings">Settings</button>
+                                            <button class="demo-btn demo-btn--accept"
+                                                data-i18n="demo.banner.accept">Accept</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <button class="demo-trigger" onclick="tryShowCookieBanner()">
-                            <span data-i18n="demo.try">Попробовать виджет</span>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polygon points="5,3 19,12 5,21"/>
+                        <button class="demo-trigger" onclick="window.location.href='demo-advanced-features.html'">
+                            <span data-i18n="demo.try">Try Widget</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polygon points="5,3 19,12 5,21" />
                             </svg>
                         </button>
                     </div>
@@ -211,112 +235,240 @@
     <section class="features" id="features">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title" data-i18n="features.title">Возможности</h2>
+                <h2 class="section-title" data-i18n="features.title">Features</h2>
                 <p class="section-description" data-i18n="features.description">
-                    Современный cookie баннер с поддержкой 20+ языков, автоматической блокировкой cookie и соответствием международным стандартам защиты данных
+                    Cookie Widget v3.3 with revolutionary features: Smart Auto-Detect trackers, SEO-Friendly Mode, Script
+                    Guard,
+                    Auto-Renew Consent, Zero-Reload Mode, Integrations Hub and Secure Storage. Support for 20+ languages and all
+                    international standards.
                 </p>
             </div>
             <div class="features-grid">
+
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                         </svg>
                     </div>
-                    <h3 class="feature-title" data-i18n="feature.compliance.title">🌍 Глобальное соответствие</h3>
+                    <h3 class="feature-title" data-i18n="feature.compliance.title">🌍 Geo-Adaptive Compliance</h3>
                     <p class="feature-description" data-i18n="feature.compliance.description">
-                        Полное соответствие GDPR, CCPA, LGPD, 152-ФЗ РФ, PIPEDA, PIPL, APPI, PIPA и другим международным стандартам защиты данных с автоматическим определением региона
+                        Automatic adaptation to laws: GDPR (EU), CCPA (USA), LGPD (Brazil), 152-FZ (Russia).
+                        Region detection and application of corresponding settings.
                     </p>
                 </div>
-                
+
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12.8 5.6c-.9-1.9-3.7-1.9-4.6 0L6.3 9.6c-.4.8-1.2 1.4-2.1 1.4H1.1c-2.1 0-3 2.7-1.3 3.9l2.7 2c.7.5 1 1.4.7 2.2l-1 3.1c-.7 2 1.6 3.7 3.3 2.6l2.7-1.8c.7-.5 1.7-.5 2.4 0l2.7 1.8c1.7 1.1 4-0.6 3.3-2.6l-1-3.1c-.3-.8 0-1.7.7-2.2l2.7-2c1.7-1.2.8-3.9-1.3-3.9h-3.1c-.9 0-1.7-.6-2.1-1.4L12.8 5.6z"/>
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M12.8 5.6c-.9-1.9-3.7-1.9-4.6 0L6.3 9.6c-.4.8-1.2 1.4-2.1 1.4H1.1c-2.1 0-3 2.7-1.3 3.9l2.7 2c.7.5 1 1.4.7 2.2l-1 3.1c-.7 2 1.6 3.7 3.3 2.6l2.7-1.8c.7-.5 1.7-.5 2.4 0l2.7 1.8c1.7 1.1 4-0.6 3.3-2.6l-1-3.1c-.3-.8 0-1.7.7-2.2l2.7-2c1.7-1.2.8-3.9-1.3-3.9h-3.1c-.9 0-1.7-.6-2.1-1.4L12.8 5.6z">
+                            </path>
                         </svg>
                     </div>
-                    <h3 class="feature-title" data-i18n="feature.languages.title">🗣️ 20+ языков поддержки</h3>
-                    <p class="feature-description" data-i18n="feature.languages.description">
-                        Автоматическое определение языка браузера с поддержкой русского, английского, немецкого, французского, испанского, китайского, японского и других языков
-                    </p>
+                    <h3 class="feature-title" data-i18n="feature.languages.title">🗣️ 20+ Language Support</h3>
+                    <p class="feature-description" data-i18n="feature.languages.description">Automatic browser language
+                        detection with support for Russian, English, German, French, Spanish, Chinese, Japanese and
+                        other languages</p>
                 </div>
-                
+
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M9 12l2 2 4-4"/>
-                            <circle cx="12" cy="12" r="10"/>
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M9 12l2 2 4-4"></path>
+                            <circle cx="12" cy="12" r="10"></circle>
                         </svg>
                     </div>
-                    <h3 class="feature-title" data-i18n="feature.blocking.title">🛡️ Автоматическая блокировка</h3>
-                    <p class="feature-description" data-i18n="feature.blocking.description">
-                        Интеллектуальная система блокировки cookie до получения согласия с автоматическим удалением отклоненных cookie и защитой от обхода
-                    </p>
+                    <h3 class="feature-title" data-i18n="feature.blocking.title">🛡️ Automatic Blocking</h3>
+                    <p class="feature-description" data-i18n="feature.blocking.description">Intelligent cookie blocking
+                        system before consent with automatic deletion of rejected cookies and bypass protection</p>
                 </div>
-                
+
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-                            <line x1="8" y1="21" x2="16" y2="21"/>
-                            <line x1="12" y1="17" x2="12" y2="21"/>
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
                         </svg>
                     </div>
-                    <h3 class="feature-title" data-i18n="feature.responsive.title">📱 Адаптивный дизайн</h3>
-                    <p class="feature-description" data-i18n="feature.responsive.description">
-                        Современный дизайн с градиентами и анимациями, идеально работающий на всех устройствах от мобильных телефонов до больших мониторов
+                    <h3 class="feature-title" data-i18n="feature.responsive.title">📱 Responsive Design</h3>
+                    <p class="feature-description" data-i18n="feature.responsive.description">Modern design with
+                        gradients and animations, working perfectly on all devices from mobile phones to large monitors
                     </p>
                 </div>
-                
+
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                            </path>
                         </svg>
                     </div>
-                    <h3 class="feature-title" data-i18n="feature.api.title">🎨 Мощный API кастомизации</h3>
-                    <p class="feature-description" data-i18n="feature.api.description">
-                        Полная кастомизация текстов, ссылок, тем оформления и поведения через JavaScript API. Поддержка корпоративного брендинга и дополнительных категорий
-                    </p>
+                    <h3 class="feature-title" data-i18n="feature.api.title">🎨 Powerful Customization API</h3>
+                    <p class="feature-description" data-i18n="feature.api.description">Full customization of texts,
+                        links, themes and behavior through JavaScript API. Support for corporate branding and additional
+                        categories</p>
                 </div>
-                
+
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
                         </svg>
                     </div>
-                    <h3 class="feature-title" data-i18n="feature.performance.title">⚡ Максимальная производительность</h3>
-                    <p class="feature-description" data-i18n="feature.performance.description">
-                        Всего 5KB минифицированного кода, без внешних зависимостей, с защитой от блокировщиков рекламы и оптимизацией для максимальной скорости загрузки
+                    <h3 class="feature-title" data-i18n="feature.performance.title">⚡ Maximum Performance</h3>
+                    <p class="feature-description" data-i18n="feature.performance.description">Only 5KB minified code,
+                        no external dependencies, with ad-blocker protection and optimization for maximum loading speed
                     </p>
                 </div>
-                
+
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
-                            <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                            <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
                         </svg>
                     </div>
-                    <h3 class="feature-title" data-i18n="feature.analytics.title">📊 Интеграция с аналитикой</h3>
-                    <p class="feature-description" data-i18n="feature.analytics.description">
-                        Готовые примеры интеграции с Google Analytics 4, Яндекс.Метрикой, Facebook Pixel и другими аналитическими системами с поддержкой Consent Mode
-                    </p>
+                    <h3 class="feature-title" data-i18n="feature.analytics.title">📊 Analytics Integration</h3>
+                    <p class="feature-description" data-i18n="feature.analytics.description">Ready examples for
+                        integration with Google Analytics 4, Yandex.Metrica, Facebook Pixel and other analytics systems
+                        with Consent Mode support</p>
                 </div>
-                
+
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="16,18 22,12 16,6"/>
-                            <polyline points="8,6 2,12 8,18"/>
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="16,18 22,12 16,6"></polyline>
+                            <polyline points="8,6 2,12 8,18"></polyline>
                         </svg>
                     </div>
-                    <h3 class="feature-title" data-i18n="feature.frameworks.title">⚛️ Поддержка фреймворков</h3>
-                    <p class="feature-description" data-i18n="feature.frameworks.description">
-                        Готовые примеры интеграции для React, Vue.js, Next.js, Nuxt.js, WordPress и других популярных фреймворков и CMS с TypeScript поддержкой
+                    <h3 class="feature-title" data-i18n="feature.frameworks.title">⚛️ Framework Support</h3>
+                    <p class="feature-description" data-i18n="feature.frameworks.description">Ready integration examples
+                        for React, Vue.js, Next.js, Nuxt.js, WordPress and other popular frameworks and CMS with
+                        TypeScript support</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title" data-i18n="feature.smart-detect.title">🧠 Smart Auto-Detect Tracking</h3>
+                    <p class="feature-description" data-i18n="feature.smart-detect.description">
+                        Automatic detection of 20+ trackers: Google Analytics, Meta Pixel, Yandex Metrica, TikTok
+                        Pixel.
+                        DOM scanning, network requests and cookies with categorization by types.
                     </p>
                 </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
+                            <polyline points="7.5,4.21 12,6.81 16.5,4.21" />
+                            <polyline points="7.5,19.79 7.5,14.6 3,12" />
+                            <polyline points="21,12 16.5,14.6 16.5,19.79" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title" data-i18n="feature.seo-friendly.title">🔍 SEO-Friendly Mode</h3>
+                    SEO-Friendly Mode</h3>
+                    <p class="feature-description" data-i18n="feature.seo-friendly.description">
+                        Search bots see the site as having accepted all cookies for better indexing.
+                        Detection of GoogleBot, YandexBot, BingBot via user-agent and automation indicators.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                            <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title" data-i18n="feature.integrations.title">🤝 Integrations Hub</h3>
+                    <p class="feature-description" data-i18n="feature.integrations.description">
+                        Ready configurations for Google Tag Manager, Yandex Metrica, Meta Pixel, TikTok Pixel,
+                        reCAPTCHA v3, Cloudflare Turnstile. Zero-config integration.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            <path d="M9 12l2 2 4-4" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title" data-i18n="feature.script-guard.title">🔒 Script Guard</h3>
+                    <p class="feature-description" data-i18n="feature.script-guard.description">
+                        Blocking Analytics and Marketing scripts before site loading through proxy stubs.
+                        Protection from tracker execution without user consent.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M23 7l-7 5 7 5V7z" />
+                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title" data-i18n="feature.zero-reload.title">🚀 Zero-Reload Mode</h3>
+                    <p class="feature-description" data-i18n="feature.zero-reload.description">
+                        Enable/disable trackers without page reload.
+                        Instant script activation upon consent through queue system.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 11-7.778 7.778 5.5 5.5 0 017.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title" data-i18n="feature.auto-renew.title">🔄 Auto-Renew Consent</h3>
+                    <p class="feature-description" data-i18n="feature.auto-renew.description">
+                        Automatic consent renewal after 3/6/12 months or when policy changes.
+                        GDPR compliance with privacy policy version tracking.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                            <circle cx="12" cy="16" r="1" />
+                            <path d="M7 11V7a5 5 0 0110 0v4" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title" data-i18n="feature.secure-storage.title">🔒 Secure Storage Backup</h3>
+                    <p class="feature-description" data-i18n="feature.secure-storage.description">
+                        Consent storage in localStorage, sessionStorage, IndexedDB and cookies.
+                        Works even in "anti-cookie" browsers with full cookie blocking.
+                    </p>
+                </div>
+
             </div>
         </div>
     </section>
@@ -325,26 +477,28 @@
     <section class="installation" id="installation">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title" data-i18n="install.title">Установка</h2>
+                <h2 class="section-title" data-i18n="install.title">Installation</h2>
                 <p class="section-description" data-i18n="install.description">
-                    Интегрируйте виджет на свой сайт за несколько минут
+                    Integrate the widget into your site in minutes
                 </p>
             </div>
-            
+
             <div class="installation-methods">
                 <div class="method-tabs">
                     <button class="tab-button active" data-tab="cdn" data-i18n="install.tab.cdn">CDN</button>
-                    <button class="tab-button" data-tab="download" data-i18n="install.tab.download">Скачать</button>
-                    <button class="tab-button" data-tab="integration" data-i18n="install.tab.integration">Интеграция</button>
+                    <button class="tab-button" data-tab="download" data-i18n="install.tab.download">Download</button>
+                    <button class="tab-button" data-tab="integration"
+                        data-i18n="install.tab.integration">Integration</button>
                 </div>
-                
+
                 <div class="tab-content active" id="cdn">
-                    <h3 data-i18n="install.cdn.title">Подключение через CDN</h3>
-                    <p data-i18n="install.cdn.description">Самый простой способ - подключить файлы напрямую с https://cookies-widget-sergioplay.vercel.app/:</p>
+                    <h3 data-i18n="install.cdn.title">CDN Integration</h3>
+                    <p data-i18n="install.cdn.description">The easiest way - connect files directly from
+                        https://cookies-widget-sergioplay.vercel.app/:</p>
                     <div class="code-block">
                         <div class="code-header">
                             <span>HTML</span>
-                            <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Копировать</button>
+                            <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Copy</button>
                         </div>
                         <pre><code>&lt;!-- CSS --&gt;
 &lt;link rel="stylesheet" href="https://cookies-widget-sergioplay.vercel.app/cookie-banner.css"&gt;
@@ -353,41 +507,44 @@
 &lt;script src="https://cookies-widget-sergioplay.vercel.app/cookie-banner.js"&gt;&lt;/script&gt;</code></pre>
                     </div>
                 </div>
-                
+
                 <div class="tab-content" id="download">
-                    <h3 data-i18n="install.download.title">Скачать файлы</h3>
-                    <p data-i18n="install.download.description">Скачайте файлы и разместите их на своем сервере:</p>
+                    <h3 data-i18n="install.download.title">Download Files</h3>
+                    <p data-i18n="install.download.description">Download files and place them on your server:</p>
                     <div class="download-links">
-                        <a href="https://cookies-widget-sergioplay.vercel.app/cookie-banner.css" 
-                           class="download-link" download>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                                <polyline points="7,10 12,15 17,10"/>
-                                <line x1="12" y1="15" x2="12" y2="3"/>
+                        <a href="https://cookies-widget-sergioplay.vercel.app/cookie-banner.css" class="download-link"
+                            download>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                <polyline points="7,10 12,15 17,10" />
+                                <line x1="12" y1="15" x2="12" y2="3" />
                             </svg>
                             cookie-banner.css
                         </a>
-                        <a href="https://cookies-widget-sergioplay.vercel.app/cookie-banner.js" 
-                           class="download-link" download>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                                <polyline points="7,10 12,15 17,10"/>
-                                <line x1="12" y1="15" x2="12" y2="3"/>
+                        <a href="https://cookies-widget-sergioplay.vercel.app/cookie-banner.js" class="download-link"
+                            download>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                <polyline points="7,10 12,15 17,10" />
+                                <line x1="12" y1="15" x2="12" y2="3" />
                             </svg>
                             cookie-banner.js
                         </a>
                     </div>
                 </div>
-                
+
                 <div class="tab-content" id="integration">
-                    <h3 data-i18n="install.integration.title">Интеграция с популярными платформами</h3>
-                    <p data-i18n="install.integration.description">Примеры интеграции с различными CMS и фреймворками:</p>
-                    
+                    <h3 data-i18n="install.integration.title">Integration with Popular Platforms</h3>
+                    <p data-i18n="install.integration.description">Integration examples with various CMS and frameworks:
+                    </p>
+
                     <h4 data-i18n="install.wordpress.title">WordPress</h4>
                     <div class="code-block">
                         <div class="code-header">
                             <span data-i18n="install.functions.file">functions.php</span>
-                            <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Копировать</button>
+                            <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Copy</button>
                         </div>
                         <pre><code>function add_cookie_widget() {
     wp_enqueue_style('cookie-banner', 'https://cookies-widget-sergioplay.vercel.app/cookie-banner.css');
@@ -395,12 +552,12 @@
 }
 add_action('wp_enqueue_scripts', 'add_cookie_widget');</code></pre>
                     </div>
-                    
+
                     <h4 data-i18n="install.react.title">React/Next.js</h4>
                     <div class="code-block">
                         <div class="code-header">
-                            <span data-i18n="install.react.file">_app.js или layout.js</span>
-                            <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Копировать</button>
+                            <span data-i18n="install.react.file">_app.js or layout.js</span>
+                            <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Copy</button>
                         </div>
                         <pre><code>import Head from 'next/head';
 
@@ -418,28 +575,28 @@ export default function App({ Component, pageProps }) {
                     </div>
                 </div>
             </div>
-            
+
             <div class="integration-example">
-                <h3 data-i18n="install.example.title">Пример интеграции</h3>
+                <h3 data-i18n="install.example.title">Integration Example</h3>
                 <div class="code-block">
                     <div class="code-header">
                         <span>HTML</span>
-                        <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Копировать</button>
+                        <button class="copy-btn" onclick="copyCode(this)" data-i18n="ui.copy">Copy</button>
                     </div>
                     <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="ru"&gt;
+&lt;html lang="en"&gt;
 &lt;head&gt;
     &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Мой сайт&lt;/title&gt;
+    &lt;title&gt;My Website&lt;/title&gt;
     &lt;link rel="stylesheet" href="https://cookies-widget-sergioplay.vercel.app/cookie-banner.css"&gt;
 &lt;/head&gt;
 &lt;body&gt;
-    &lt;!-- Ваш контент --&gt;
+    &lt;!-- Your content --&gt;
     
-    &lt;!-- Ссылка на настройки cookie в футере --&gt;
+    &lt;!-- Cookie settings link in footer --&gt;
     &lt;footer&gt;
         &lt;a href="#cookie-settings" onclick="showCookieSettings(); return false;"&gt;
-            Настройки Cookie
+            Cookie Settings
         &lt;/a&gt;
     &lt;/footer&gt;
     
@@ -451,68 +608,172 @@ export default function App({ Component, pageProps }) {
         </div>
     </section>
 
+    <!-- Advanced Features Demo Section -->
+    <section class="advanced-features" id="advanced-features">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">v3.3</div>
+                <h2 class="section-title" data-i18n="advanced.title">🚀 Exclusive Features</h2>
+                <p class="section-description" data-i18n="advanced.description">
+                    Unique capabilities that competitors don't have. Try them right now!
+                </p>
+            </div>
+
+            <div class="advanced-grid">
+                <div class="advanced-card">
+                    <div class="advanced-header">
+                        <div class="advanced-icon">🧠</div>
+                        <div class="advanced-content">
+                            <h3 data-i18n="demo.smart.title">Smart Auto-Detect</h3>
+                            <p data-i18n="demo.smart.description">Automatic tracker detection on the page</p>
+                        </div>
+                        <span class="advanced-badge" data-i18n="demo.new_badge">NEW</span>
+                    </div>
+                    <div class="advanced-demo">
+                        <div class="demo-result" id="trackers-demo">
+                            <div class="demo-loading" data-i18n="demo.smart.status.scanning">Scanning...</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="advanced-card">
+                    <div class="advanced-header">
+                        <div class="advanced-icon">🔍</div>
+                        <div class="advanced-content">
+                            <h3 data-i18n="demo.seo.title">SEO-Friendly Mode</h3>
+                            <p data-i18n="demo.seo.description">Bot and search robot detection</p>
+                        </div>
+                        <span class="advanced-badge" data-i18n="demo.new_badge">NEW</span>
+                    </div>
+                    <div class="advanced-demo">
+                        <div class="demo-result" id="seo-demo">
+                            <div class="demo-loading" data-i18n="demo.seo.status.checking">Checking...</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="advanced-card">
+                    <div class="advanced-header">
+                        <div class="advanced-icon">🔒</div>
+                        <div class="advanced-content">
+                            <h3 data-i18n="demo.guard.title">Script Guard</h3>
+                            <p data-i18n="demo.guard.description">Script blocking before consent</p>
+                        </div>
+                        <span class="advanced-badge" data-i18n="demo.new_badge">NEW</span>
+                    </div>
+                    <div class="advanced-demo">
+                        <div class="demo-result" id="guard-demo">
+                            <div class="demo-loading">Analyzing...</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="advanced-card">
+                    <div class="advanced-header">
+                        <div class="advanced-icon">🤝</div>
+                        <div class="advanced-content">
+                            <h3 data-i18n="demo.integrations.title">Integrations Hub</h3>
+                            <p data-i18n="demo.integrations.description">Ready configurations for popular services</p>
+                        </div>
+                        <span class="advanced-badge" data-i18n="demo.new_badge">NEW</span>
+                    </div>
+                    <div class="advanced-demo">
+                        <div class="integration-list">
+                            <span class="integration-item">Google Tag Manager</span>
+                            <span class="integration-item">Yandex Metrika</span>
+                            <span class="integration-item">Meta Pixel</span>
+                            <span class="integration-item">TikTok Pixel</span>
+                            <span class="integration-item">reCAPTCHA v3</span>
+                            <span class="integration-item">Cloudflare Turnstile</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="advanced-cta">
+                <a href="demo-advanced-features.html" class="btn btn-primary btn-large">
+                    <span data-i18n="advanced.cta.button">🎮 Try All Features</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m9 18 6-6-6-6" />
+                    </svg>
+                </a>
+                <p class="advanced-note" data-i18n="advanced.cta.note">
+                    Interactive demonstration of all exclusive features
+                </p>
+            </div>
+                </p>
+            </div>
+        </div>
+    </section>
+
     <!-- Documentation Section -->
     <section class="documentation" id="docs">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title" data-i18n="footer.documentation">Документация</h2>
+                <h2 class="section-title" data-i18n="footer.documentation">Documentation</h2>
                 <p class="section-description" data-i18n="docs.description.setup">
-                    Подробное руководство по настройке и использованию
+                    Detailed guide for configuration and usage
                 </p>
             </div>
-            
+
             <div class="docs-grid">
                 <div class="doc-card">
                     <div class="doc-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                            <polyline points="14,2 14,8 20,8"/>
-                            <line x1="16" y1="13" x2="8" y2="13"/>
-                            <line x1="16" y1="17" x2="8" y2="17"/>
-                            <polyline points="10,9 9,9 8,9"/>
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                            <polyline points="14,2 14,8 20,8" />
+                            <line x1="16" y1="13" x2="8" y2="13" />
+                            <line x1="16" y1="17" x2="8" y2="17" />
+                            <polyline points="10,9 9,9 8,9" />
                         </svg>
                     </div>
-                    <h3 data-i18n="docs.quickstart.title">Быстрый старт</h3>
-                    <p data-i18n="docs.quickstart.description">Пошаговое руководство по интеграции виджета на ваш сайт</p>
-                    <a href="documentation.html" class="doc-link" data-i18n="docs.quickstart.link">Читать →</a>
+                    <h3 data-i18n="docs.quickstart.title">Quick Start</h3>
+                    <p data-i18n="docs.quickstart.description">Step-by-step guide to integrating the widget on your site
+                    </p>
+                    <a href="documentation.html" class="doc-link" data-i18n="docs.quickstart.link">Read →</a>
                 </div>
-                
+
                 <div class="doc-card">
                     <div class="doc-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="3"/>
-                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1 1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="3" />
+                            <path
+                                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1 1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
                         </svg>
                     </div>
-                    <h3 data-i18n="docs.config.title">Настройка</h3>
-                    <p data-i18n="docs.config.description">Как настроить виджет под ваши требования и дизайн сайта</p>
-                    <a href="documentation.html" class="doc-link" data-i18n="docs.config.link">Читать →</a>
+                    <h3 data-i18n="docs.config.title">Configuration</h3>
+                    <p data-i18n="docs.config.description">How to configure the widget for your requirements and site design</p>
+                    <a href="documentation.html" class="doc-link" data-i18n="docs.config.link">Read →</a>
                 </div>
-                
+
                 <div class="doc-card">
                     <div class="doc-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="16 18 22 12 16 6"/>
-                            <polyline points="8 6 2 12 8 18"/>
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="16 18 22 12 16 6" />
+                            <polyline points="8 6 2 12 8 18" />
                         </svg>
                     </div>
                     <h3 data-i18n="docs.api.title">API</h3>
-                    <p data-i18n="docs.api.description">Справочник по методам и событиям для программного управления</p>
-                    <a href="documentation.html" class="doc-link" data-i18n="docs.api.link">Читать →</a>
+                    <p data-i18n="docs.api.description">Reference for methods and events for programmatic control</p>
+                    <a href="documentation.html" class="doc-link" data-i18n="docs.api.link">Read →</a>
                 </div>
-                
+
                 <div class="doc-card">
                     <div class="doc-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M9 12l2 2 4-4"/>
-                            <path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3"/>
-                            <path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3"/>
-                            <path d="M3 12c0 5.5 4.5 10 10 10s10-4.5 10-10"/>
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M9 12l2 2 4-4" />
+                            <path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3" />
+                            <path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3" />
+                            <path d="M3 12c0 5.5 4.5 10 10 10s10-4.5 10-10" />
                         </svg>
                     </div>
-                    <h3 data-i18n="docs.compliance.title">Соответствие законам</h3>
-                    <p data-i18n="docs.compliance.description">Как виджет обеспечивает соответствие GDPR и 152-ФЗ</p>
-                    <a href="documentation.html" class="doc-link" data-i18n="docs.compliance.link">Читать →</a>
+                    <h3 data-i18n="docs.compliance.title">Legal Compliance</h3>
+                    <p data-i18n="docs.compliance.description">How the widget ensures GDPR and legal compliance</p>
+                    <a href="documentation.html" class="doc-link" data-i18n="docs.compliance.link">Read →</a>
                 </div>
             </div>
         </div>
@@ -523,22 +784,23 @@ export default function App({ Component, pageProps }) {
         <div class="container">
             <div class="license-content">
                 <div class="license-text">
-                    <h2 data-i18n="license.title">Открытая лицензия</h2>
+                    <h2 data-i18n="license.title">Open License</h2>
                     <p data-i18n="license.description">
-                        Проект распространяется под лицензией MIT. Вы можете свободно использовать, 
-                        модифицировать и распространять код в коммерческих и некоммерческих проектах.
+                        The project is distributed under the MIT license. You can freely use,
+                        modify and distribute the code in commercial and non-commercial projects.
                     </p>
-                    <a href="https://github.com/SerGioPlay01/cookies_widget_sergioplay/blob/main/LICENSE" 
-                       class="btn btn-outline" target="_blank" data-i18n="license.link">
-                        Читать лицензию
+                    <a href="https://github.com/SerGioPlay01/cookies_widget_sergioplay/blob/main/LICENSE"
+                        class="btn btn-outline" target="_blank" data-i18n="license.link">
+                        Read License
                     </a>
                 </div>
                 <div class="license-icon">
-                    <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <circle cx="12" cy="12" r="10"/>
-                        <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
-                        <line x1="9" y1="9" x2="9.01" y2="9"/>
-                        <line x1="15" y1="9" x2="15.01" y2="9"/>
+                    <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+                        <line x1="9" y1="9" x2="9.01" y2="9" />
+                        <line x1="15" y1="9" x2="15.01" y2="9" />
                     </svg>
                 </div>
             </div>
@@ -549,56 +811,60 @@ export default function App({ Component, pageProps }) {
     <section class="support" id="support">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title" data-i18n="support.title">Поддержка проекта</h2>
+                <h2 class="section-title" data-i18n="support.title">Project Support</h2>
                 <p class="section-description" data-i18n="support.description">
-                    Помогите развитию проекта и получите поддержку
+                    Help develop the project and get support
                 </p>
             </div>
-            
+
             <div class="support-grid">
                 <div class="support-card">
                     <div class="support-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M9 11H5a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h4l3 3V8l-3 3z"/>
-                            <path d="M22 9v6a2 2 0 0 1-2 2h-4"/>
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M9 11H5a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h4l3 3V8l-3 3z" />
+                            <path d="M22 9v6a2 2 0 0 1-2 2h-4" />
                         </svg>
                     </div>
-                    <h3 data-i18n="support.bug.title">Сообщить об ошибке</h3>
-                    <p data-i18n="support.bug.description">Нашли баг или у вас есть предложение по улучшению?</p>
-                    <a href="https://github.com/SerGioPlay01/cookies_widget_sergioplay/issues" 
-                       class="support-link" target="_blank" data-i18n="support.bug.link">
-                        Создать Issue →
+                    <h3 data-i18n="support.bug.title">Report a Bug</h3>
+                    <p data-i18n="support.bug.description">Found a bug or have a suggestion for improvement?</p>
+                    <a href="https://github.com/SerGioPlay01/cookies_widget_sergioplay/issues" class="support-link"
+                        target="_blank" data-i18n="support.bug.link">
+                        Create Issue →
                     </a>
                 </div>
-                
+
                 <div class="support-card">
                     <div class="support-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"/>
-                            <path d="M16 16s-1.5-2-4-2-4 2-4 2"/>
-                            <line x1="9" y1="9" x2="9.01" y2="9"/>
-                            <line x1="15" y1="9" x2="15.01" y2="9"/>
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M16 16s-1.5-2-4-2-4 2-4 2" />
+                            <line x1="9" y1="9" x2="9.01" y2="9" />
+                            <line x1="15" y1="9" x2="15.01" y2="9" />
                         </svg>
                     </div>
-                    <h3 data-i18n="support.coffee.title">Поддержать разработчика</h3>
-                    <p data-i18n="support.coffee.description">Купите мне кофе и поддержите дальнейшее развитие проекта</p>
-                    <a href="https://www.buymeacoffee.com/sergioplay" 
-                       class="support-link" target="_blank" data-i18n="support.coffee.link">
+                    <h3 data-i18n="support.coffee.title">Support Developer</h3>
+                    <p data-i18n="support.coffee.description">Buy me a coffee and support further project development
+                    </p>
+                    <a href="https://www.buymeacoffee.com/sergioplay" class="support-link" target="_blank"
+                        data-i18n="support.coffee.link">
                         Buy me a coffee →
                     </a>
                 </div>
-                
+
                 <div class="support-card">
                     <div class="support-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
-                            <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+                            <rect x="8" y="2" width="8" height="4" rx="1" ry="1" />
                         </svg>
                     </div>
-                    <h3 data-i18n="support.docs.title">Документация</h3>
-                    <p data-i18n="support.docs.description">Подробная документация и примеры использования</p>
+                    <h3 data-i18n="support.docs.title">Documentation</h3>
+                    <p data-i18n="support.docs.description">Detailed documentation and usage examples</p>
                     <a href="documentation.html" class="support-link" data-i18n="support.docs.link">
-                        Читать документацию →
+                        Read Documentation →
                     </a>
                 </div>
             </div>
@@ -615,58 +881,68 @@ export default function App({ Component, pageProps }) {
                         <span class="nav-title">Cookie Widget</span>
                     </div>
                     <p class="footer-description" data-i18n="footer.description">
-                        Современный виджет cookie баннера с поддержкой GDPR и 152-ФЗ РФ
+                        Modern cookie banner widget with GDPR compliance
                     </p>
                     <button id="installApp" class="install-app-btn" style="display: none;">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                            <polyline points="7,10 12,15 17,10"/>
-                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                            <polyline points="7,10 12,15 17,10" />
+                            <line x1="12" y1="15" x2="12" y2="3" />
                         </svg>
-                        <span data-i18n="footer.install_app">Установить приложение</span>
+                        <span data-i18n="footer.install_app">Install App</span>
                     </button>
                 </div>
-                
+
                 <div class="footer-links">
                     <div class="footer-column">
-                        <h4 data-i18n="footer.project">Проект</h4>
+                        <h4 data-i18n="footer.project">Project</h4>
                         <a href="https://github.com/SerGioPlay01/cookies_widget_sergioplay" target="_blank">GitHub</a>
-                        <a href="https://github.com/SerGioPlay01/cookies_widget_sergioplay/releases" target="_blank" data-i18n="footer.releases">Релизы</a>
-                        <a href="https://github.com/SerGioPlay01/cookies_widget_sergioplay/blob/main/LICENSE" target="_blank" data-i18n="footer.license">Лицензия</a>
+                        <a href="https://github.com/SerGioPlay01/cookies_widget_sergioplay/releases" target="_blank"
+                            data-i18n="footer.releases">Releases</a>
+                        <a href="https://github.com/SerGioPlay01/cookies_widget_sergioplay/blob/main/LICENSE"
+                            target="_blank" data-i18n="footer.license">License</a>
                     </div>
-                    
+
                     <div class="footer-column">
-                        <h4 data-i18n="footer.documentation">Документация</h4>
-                        <a href="#installation" data-i18n="footer.installation">Установка</a>
-                        <a href="documentation.html" data-i18n="footer.guide">Руководство</a>
-                        <a href="examples.html" data-i18n="footer.examples">Примеры</a>
+                        <h4 data-i18n="footer.documentation">Documentation</h4>
+                        <a href="#installation" data-i18n="footer.installation">Installation</a>
+                        <a href="documentation.html" data-i18n="footer.guide">Guide</a>
+                        <a href="examples.html" data-i18n="footer.examples">Examples</a>
                     </div>
-                    
+
                     <div class="footer-column">
-                        <h4 data-i18n="footer.support">Поддержка</h4>
-                        <a href="https://github.com/SerGioPlay01/cookies_widget_sergioplay/issues" target="_blank" data-i18n="footer.issues">Issues</a>
-                        <a href="https://www.buymeacoffee.com/sergioplay" target="_blank" data-i18n="footer.support_dev">Поддержать</a>
-                        <a href="#cookie-settings" onclick="showCookieSettings(); return false;" data-i18n="footer.settings">Настройки Cookie</a>
+                        <h4 data-i18n="footer.support">Support</h4>
+                        <a href="https://github.com/SerGioPlay01/cookies_widget_sergioplay/issues" target="_blank"
+                            data-i18n="footer.issues">Issues</a>
+                        <a href="https://www.buymeacoffee.com/sergioplay" target="_blank"
+                            data-i18n="footer.support_dev">Support</a>
+                        <a href="#cookie-settings" onclick="showCookieSettings(); return false;"
+                            data-i18n="footer.settings">Cookie Settings</a>
                     </div>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
-                <p>&copy; <span id="currentYear">2025</span> SerGioPlay. <span data-i18n="footer.copyright">Распространяется под лицензией MIT.</span></p>
+                <p>&copy; <span id="currentYear">2025</span> SerGioPlay. <span
+                        data-i18n="footer.copyright">Distributed under MIT License.</span></p>
                 <div class="footer-social">
                     <a href="https://github.com/SerGioPlay01" target="_blank" aria-label="GitHub">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                         </svg>
                     </a>
                     <a href="https://x.com/_SerGio_Play_" target="_blank" aria-label="X (Twitter)">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            <path
+                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                         </svg>
                     </a>
                     <a href="https://instagram.com/_sergio_play_" target="_blank" aria-label="Instagram">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                         </svg>
                     </a>
                 </div>
@@ -679,19 +955,19 @@ export default function App({ Component, pageProps }) {
     <script>
         // Auto-update year in footer
         document.getElementById('currentYear').textContent = new Date().getFullYear();
-        
+
         // Function to show cookie settings
         function showCookieSettings() {
-            // Try to use existing global functions first
-            if (typeof window.showCookieSettings === 'function') {
-                window.showCookieSettings();
+            // Try to use cookie banner API first
+            if (typeof window.cookieBanner !== 'undefined' && window.cookieBanner.showSettings) {
+                window.cookieBanner.showSettings();
                 return;
             }
-            
-            // If no global function, try to show banner
+
+            // If no cookie banner API, try to show banner
             tryShowCookieBanner();
         }
-        
+
         // Function to show cookie banner
         function tryShowCookieBanner() {
             // Clear any existing consent to force banner to show
@@ -699,14 +975,14 @@ export default function App({ Component, pageProps }) {
                 localStorage.removeItem('cookie_consent');
                 sessionStorage.removeItem('cookie_consent');
                 document.cookie = 'cookie_consent=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-            } catch (e) {}
-            
+            } catch (e) { }
+
             // Remove existing banner if any
             const existingBanner = document.getElementById('cookieBanner');
             if (existingBanner) {
                 existingBanner.remove();
             }
-            
+
             // Wait a bit and then initialize new banner
             setTimeout(() => {
                 if (typeof CookieBanner !== 'undefined') {
@@ -714,7 +990,7 @@ export default function App({ Component, pageProps }) {
                 } else if (typeof AdvancedCookieBanner !== 'undefined') {
                     window.cookieBanner = new AdvancedCookieBanner();
                 }
-                
+
                 // Show banner after initialization
                 setTimeout(() => {
                     if (window.cookieBanner && window.cookieBanner.show) {
@@ -723,54 +999,54 @@ export default function App({ Component, pageProps }) {
                 }, 100);
             }, 100);
         }
-        
+
         // Mobile menu toggle
         const navToggle = document.getElementById('navToggle');
         const navMenu = document.querySelector('.nav-menu');
-        
+
         if (navToggle && navMenu) {
-            navToggle.addEventListener('click', function() {
+            navToggle.addEventListener('click', function () {
                 navMenu.classList.toggle('active');
                 this.classList.toggle('active');
             });
         }
-        
+
         // Simple tab switching
-        document.addEventListener('click', function(e) {
+        document.addEventListener('click', function (e) {
             if (e.target.classList.contains('tab-button')) {
                 const tabId = e.target.getAttribute('data-tab');
-                
+
                 // Remove active class from all tabs and content
                 document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
                 document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-                
+
                 // Add active class to clicked tab and corresponding content
                 e.target.classList.add('active');
                 document.getElementById(tabId).classList.add('active');
             }
         });
-        
+
         // Copy code function
         function copyCode(button) {
             const codeBlock = button.parentElement.nextElementSibling;
             const code = codeBlock.textContent;
-            
+
             navigator.clipboard.writeText(code).then(() => {
                 const originalText = button.textContent;
-                const copiedText = window.i18n ? window.i18n.t('ui.copied') : 'Скопировано!';
+                const copiedText = window.i18n ? window.i18n.t('ui.copied') : 'Copied!';
                 button.textContent = copiedText;
                 button.style.background = '#4CAF50';
-                
+
                 setTimeout(() => {
                     button.textContent = originalText;
                     button.style.background = '';
                 }, 2000);
             });
         }
-        
+
         // Language selector functionality будет обработана через i18n.js
         // Подключаем интеграцию с существующим селектором
-        window.addEventListener('languageChanged', function(event) {
+        window.addEventListener('languageChanged', function (event) {
             console.log('Язык изменен на:', event.detail.language);
         });
 
@@ -793,19 +1069,19 @@ export default function App({ Component, pageProps }) {
             if (!deferredPrompt) {
                 return;
             }
-            
+
             // Show the install prompt
             deferredPrompt.prompt();
-            
+
             // Wait for the user to respond to the prompt
             const { outcome } = await deferredPrompt.userChoice;
-            
+
             if (outcome === 'accepted') {
                 console.log('User accepted the install prompt');
             } else {
                 console.log('User dismissed the install prompt');
             }
-            
+
             // Clear the deferredPrompt variable
             deferredPrompt = null;
             // Hide the install button
@@ -828,11 +1104,211 @@ export default function App({ Component, pageProps }) {
             installButton.style.display = 'none';
         }
     </script>
-    
+
+    <!-- Advanced Features Demo Script -->
+    <script>
+        // Demo functionality for advanced features
+        document.addEventListener('DOMContentLoaded', function () {
+            // Simulate advanced features demo
+            setTimeout(() => {
+                // Smart Auto-Detect Demo
+                const trackersDemo = document.getElementById('trackers-demo');
+                if (trackersDemo) {
+                    trackersDemo.innerHTML = `
+                        <div style="color: #4CAF50;">✓ Google Analytics detected</div>
+                        <div style="color: #4CAF50;">✓ Yandex Metrika detected</div>
+                        <div style="color: #4CAF50;">✓ Meta Pixel detected</div>
+                        <div style="color: #FFC107;">Total: 3 trackers found</div>
+                    `;
+                }
+
+                // SEO-Friendly Mode Demo
+                const seoDemo = document.getElementById('seo-demo');
+                if (seoDemo) {
+                    const isBot = /bot|crawler|spider|crawling/i.test(navigator.userAgent);
+                    seoDemo.innerHTML = `
+                        <div style="color: ${isBot ? '#4CAF50' : '#2196F3'};">
+                            ${isBot ? '🤖 Bot detected' : '👤 Human visitor'}
+                        </div>
+                        <div style="color: #FFC107; font-size: 0.75rem;">
+                            User-Agent: ${navigator.userAgent.substring(0, 30)}...
+                        </div>
+                    `;
+                }
+
+                // Script Guard Demo
+                const guardDemo = document.getElementById('guard-demo');
+                if (guardDemo) {
+                    guardDemo.innerHTML = `
+                        <div style="color: #FF9800;">🔒 2 scripts blocked</div>
+                        <div style="color: #4CAF50;">✓ gtag() intercepted</div>
+                        <div style="color: #4CAF50;">✓ fbq() intercepted</div>
+                        <div style="color: #FFC107;">Waiting for consent...</div>
+                    `;
+                }
+            }, 2000);
+        });
+
+        // Enhanced cookie banner demo
+        function tryShowCookieBanner() {
+            console.log('🎯 Demo button clicked - trying to show cookie banner');
+            
+            // Force complete reset - clear everything first
+            clearConsentAndShow();
+            
+            setTimeout(() => {
+                if (window.cookieBanner) {
+                    console.log('✅ Found cookieBanner instance, performing complete reset...');
+                    
+                    try {
+                        // Force reset all internal state
+                        window.cookieBanner.isShown = false;
+                        window.cookieBanner.hasBeenShown = false;
+                        window.cookieBanner.isInitialized = false;
+                        window.cookieBanner.currentSettings = null;
+                        
+                        // Clear consent completely
+                        window.cookieBanner.resetConsent();
+                        
+                        // Force re-initialization
+                        window.cookieBanner.init().then(() => {
+                            console.log('🎉 Banner re-initialized, showing now...');
+                            window.cookieBanner.show();
+                        }).catch(error => {
+                            console.log('❌ Error during re-init, creating new instance');
+                            createNewBannerInstance();
+                        });
+                        
+                    } catch (error) {
+                        console.log('❌ Error with existing banner, creating new instance');
+                        createNewBannerInstance();
+                    }
+                } else {
+                    console.log('⚠️ No cookie banner found, creating new instance');
+                    createNewBannerInstance();
+                }
+            }, 300);
+        }
+        
+        // Create a completely new banner instance
+        function createNewBannerInstance() {
+            console.log('🔄 Creating completely new banner instance...');
+            
+            // Destroy existing instance completely
+            if (window.cookieBanner) {
+                try {
+                    // Try to destroy existing instance
+                    if (typeof window.cookieBanner.destroy === 'function') {
+                        window.cookieBanner.destroy();
+                    }
+                } catch (error) {
+                    console.log('⚠️ Could not destroy existing instance');
+                }
+                
+                // Remove reference
+                window.cookieBanner = null;
+                delete window.cookieBanner;
+            }
+            
+            setTimeout(() => {
+                if (window.AdvancedCookieBanner) {
+                    try {
+                        console.log('🆕 Creating fresh banner instance...');
+                        window.cookieBanner = new window.AdvancedCookieBanner({
+                            autoShow: true,
+                            forceShow: true
+                        });
+                        console.log('✅ New banner instance created and should be visible');
+                    } catch (error) {
+                        console.log('❌ Error creating new banner instance:', error);
+                        
+                        // Last resort - reload the page section
+                        if (confirm('Unable to show Cookie Widget. Refresh the page?')) {
+                            window.location.reload();
+                        }
+                    }
+                } else {
+                    console.log('❌ AdvancedCookieBanner class not available');
+                    alert('Cookie Widget not loaded. Try refreshing the page.');
+                }
+            }, 200);
+        }
+        
+        // Helper function to clear consent and show banner
+        function clearConsentAndShow() {
+            console.log('🧹 Performing complete consent cleanup...');
+            
+            // Clear all possible storage locations with all possible key variations
+            const storageKeys = [
+                'cookieConsent', 'cookieSettings', 'cookie-consent', 'cookie-settings',
+                'cookieBannerConsent', 'cookieBannerSettings', 'advancedCookieBanner',
+                'cookieWidgetConsent', 'cookieWidgetSettings'
+            ];
+            
+            storageKeys.forEach(key => {
+                try {
+                    localStorage.removeItem(key);
+                    sessionStorage.removeItem(key);
+                } catch (e) {
+                    console.log(`Could not remove ${key} from storage`);
+                }
+            });
+            
+            // Clear cookies with all possible variations
+            const cookiesToClear = [
+                'cookieConsent', 'cookieSettings', 'cookie-consent', 'cookie-settings',
+                'cookieBannerConsent', 'advancedCookieBanner'
+            ];
+            
+            const domains = [
+                '',
+                `; domain=${window.location.hostname}`,
+                `; domain=.${window.location.hostname}`
+            ];
+            
+            const paths = ['', '; path=/', '; path=/cookies_widget_sergioplay'];
+            
+            cookiesToClear.forEach(name => {
+                domains.forEach(domain => {
+                    paths.forEach(path => {
+                        document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC${path}${domain}`;
+                    });
+                });
+            });
+            
+            // Remove any existing banners from DOM
+            const bannerSelectors = [
+                '#cookieBanner',
+                '.cookie-banner',
+                '[data-cookie-banner]',
+                '.advanced-cookie-banner'
+            ];
+            
+            bannerSelectors.forEach(selector => {
+                const elements = document.querySelectorAll(selector);
+                elements.forEach(element => {
+                    element.remove();
+                    console.log(`🗑️ Removed banner element: ${selector}`);
+                });
+            });
+            
+            // Clear any event listeners that might prevent showing
+            if (window.cookieBanner && typeof window.cookieBanner.removeAllListeners === 'function') {
+                try {
+                    window.cookieBanner.removeAllListeners();
+                } catch (e) {
+                    console.log('Could not remove event listeners');
+                }
+            }
+            
+            console.log('✅ Complete cleanup finished');
+        }
+    </script>
+
     <!-- Buy Me a Coffee Widget -->
-    <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="sergioplay" data-description="Support me on Buy me a coffee!" data-message="" data-color="#40DCA5" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+    <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+        data-id="sergioplay" data-description="Support me on Buy me a coffee!" data-message="" data-color="#40DCA5"
+        data-position="Right" data-x_margin="18" data-y_margin="18"></script>
 </body>
 
 </html>
-
-

@@ -60,6 +60,69 @@
     font-weight: 600;
     margin: 0 0 8px 0;
     font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.cookie-banner__law {
+    background: #4CAF50;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.cookie-banner__trackers {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+    padding: 6px 10px;
+    background: rgba(76, 175, 80, 0.1);
+    border-radius: 6px;
+    border: 1px solid rgba(76, 175, 80, 0.2);
+}
+
+.cookie-banner__trackers-icon {
+    font-size: 14px;
+}
+
+.cookie-banner__trackers-text {
+    font-size: 12px;
+    color: #4CAF50;
+    font-weight: 500;
+}
+
+.cookie-banner__guard {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+    padding: 6px 10px;
+    background: rgba(255, 152, 0, 0.1);
+    border-radius: 6px;
+    border: 1px solid rgba(255, 152, 0, 0.2);
+}
+
+.cookie-banner__guard-icon {
+    font-size: 14px;
+}
+
+.cookie-banner__guard-text {
+    font-size: 12px;
+    color: #FF9800;
+    font-weight: 500;
+}
+
+.cookie-banner__compliance {
+    margin: 8px 0 0 0;
+    font-size: 11px;
+    opacity: 0.7;
+    font-style: italic;
 }
 
 .cookie-banner__text {
@@ -163,6 +226,28 @@
     z-index: 1;
 }
 
+.cookie-settings__law-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.cookie-settings__law-badge {
+    background: #4CAF50;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.cookie-settings__region {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
 .cookie-settings__title {
     margin: 0 0 8px 0;
     font-size: 18px;
@@ -204,6 +289,76 @@
     color: white;
     margin: 0;
     font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cookie-category__count {
+    background: #4CAF50;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 600;
+    min-width: 16px;
+    text-align: center;
+}
+
+.cookie-category__trackers {
+    margin-top: 12px;
+    padding: 10px;
+    background: rgba(76, 175, 80, 0.05);
+    border-radius: 6px;
+    border: 1px solid rgba(76, 175, 80, 0.1);
+}
+
+.cookie-category__trackers-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+
+.cookie-category__trackers-icon {
+    font-size: 12px;
+}
+
+.cookie-category__trackers-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: #4CAF50;
+}
+
+.cookie-category__trackers-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.cookie-tracker {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 4px 8px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cookie-tracker__name {
+    font-size: 11px;
+    color: white;
+    font-weight: 500;
+}
+
+.cookie-tracker__type {
+    font-size: 9px;
+    color: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1px 4px;
+    border-radius: 6px;
+    text-transform: uppercase;
 }
 
 .cookie-category__toggle {
@@ -309,6 +464,36 @@
         text-align: center;
     }
     
+    .cookie-banner__title {
+        justify-content: center;
+        font-size: 15px;
+    }
+    
+    .cookie-banner__law {
+        font-size: 10px;
+        padding: 2px 6px;
+    }
+    
+    .cookie-banner__trackers {
+        justify-content: center;
+        margin-top: 6px;
+        padding: 4px 8px;
+    }
+    
+    .cookie-banner__trackers-text {
+        font-size: 11px;
+    }
+    
+    .cookie-banner__guard {
+        justify-content: center;
+        margin-top: 6px;
+        padding: 4px 8px;
+    }
+    
+    .cookie-banner__guard-text {
+        font-size: 11px;
+    }
+    
     .cookie-banner__actions {
         justify-content: center;
     }
@@ -316,6 +501,16 @@
     .cookie-settings.show {
         max-height: 85vh;
         padding: 15px;
+    }
+    
+    .cookie-settings__law-info {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .cookie-settings__law-badge {
+        font-size: 10px;
+        padding: 3px 8px;
     }
     
     .cookie-settings__content {
@@ -327,6 +522,27 @@
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
+    }
+    
+    .cookie-category__title {
+        font-size: 14px;
+    }
+    
+    .cookie-category__trackers {
+        margin-top: 8px;
+        padding: 8px;
+    }
+    
+    .cookie-category__trackers-title {
+        font-size: 11px;
+    }
+    
+    .cookie-tracker__name {
+        font-size: 10px;
+    }
+    
+    .cookie-tracker__type {
+        font-size: 8px;
     }
     
     .cookie-settings__header {

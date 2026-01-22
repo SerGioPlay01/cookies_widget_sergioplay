@@ -209,11 +209,42 @@
     max-height: 80vh;
     padding: 20px;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
 }
 
 .cookie-settings__container {
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.cookie-settings__scrollable {
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 80px; /* Отступ для футера */
+}
+
+/* Стили прокрутки для scrollable контейнера */
+.cookie-settings__scrollable::-webkit-scrollbar {
+    width: 6px;
+}
+
+.cookie-settings__scrollable::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.cookie-settings__scrollable::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+}
+
+.cookie-settings__scrollable::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
 }
 
 .cookie-settings__header {
@@ -267,13 +298,10 @@
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
     margin-bottom: 20px;
-    padding-bottom: 10px; /* Обычный отступ */
+    padding-bottom: 10px;
 }
 
-/* Добавляем отступ только когда панель настроек открыта */
-.cookie-settings.show .cookie-settings__content {
-    padding-bottom: 80px; /* Отступ для фиксированного футера */
-}
+/* Убираем дополнительные отступы, так как теперь используем scrollable контейнер */
 
 .cookie-category {
     background: rgba(255, 255, 255, 0.05);
@@ -430,12 +458,12 @@
     flex-wrap: wrap;
     padding: 15px 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    position: fixed;
+    position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     background: rgba(0, 0, 0, 0.95);
-    z-index: 10001;
+    z-index: 1;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     padding-bottom: max(15px, env(safe-area-inset-bottom));
@@ -596,12 +624,7 @@
     .cookie-settings__content {
         gap: 10px;
         margin-bottom: 10px;
-        padding-bottom: 10px; /* Обычный отступ */
-    }
-    
-    /* Добавляем отступ только когда панель открыта */
-    .cookie-settings.show .cookie-settings__content {
-        padding-bottom: 100px; /* Увеличиваем отступ для мобильных */
+        padding-bottom: 10px;
     }
     
     .cookie-category {
@@ -612,6 +635,10 @@
         padding: 10px 15px;
         gap: 8px;
         flex-direction: column;
+    }
+    
+    .cookie-settings__scrollable {
+        padding-bottom: 100px; /* Увеличенный отступ для мобильных */
     }
     
     .cookie-settings__links {
@@ -718,12 +745,7 @@
     .cookie-settings__content {
         gap: 8px;
         margin-bottom: 8px;
-        padding-bottom: 8px; /* Обычный отступ */
-    }
-    
-    /* Добавляем отступ только когда панель открыта */
-    .cookie-settings.show .cookie-settings__content {
-        padding-bottom: 90px; /* Отступ для фиксированного футера */
+        padding-bottom: 8px;
     }
     
     .cookie-category {
@@ -749,12 +771,7 @@
     .cookie-settings__content {
         gap: 8px;
         margin-bottom: 5px;
-        padding-bottom: 5px; /* Обычный отступ */
-    }
-    
-    /* Добавляем отступ только когда панель открыта */
-    .cookie-settings.show .cookie-settings__content {
-        padding-bottom: 80px; /* Отступ для фиксированного футера */
+        padding-bottom: 5px;
     }
     
     .cookie-category {
@@ -763,6 +780,14 @@
     
     .cookie-settings.show .cookie-settings__footer {
         padding: 8px 10px;
+    }
+    
+    .cookie-settings__scrollable {
+        padding-bottom: 80px; /* Отступ для фиксированного футера */
+    }
+    
+    .cookie-settings__scrollable {
+        padding-bottom: 90px; /* Отступ для фиксированного футера */
     }
 }
 

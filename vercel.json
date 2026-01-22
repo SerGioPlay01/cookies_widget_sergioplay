@@ -8,13 +8,13 @@
   ],
   "routes": [
     {
-      "src": "/(.*)",
+      "src": "./",
       "dest": "/$1"
     }
   ],
   "headers": [
     {
-      "source": "/(.*)",
+      "source": "./)",
       "headers": [
         {
           "key": "X-Content-Type-Options",
@@ -127,3 +127,4 @@
   "trailingSlash": false
 
 }
+

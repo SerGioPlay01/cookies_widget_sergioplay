@@ -1,0 +1,28 @@
+{
+    "name": "Cookie Widget - GDPR & Global Privacy Compliant",
+    "short_name": "Cookie Widget",
+    "description": "Modern cookie banner widget with full GDPR, CCPA, LGPD, Russian 152-FZ and global privacy compliance. Easy integration, responsive design, and 20+ language support.",
+    "icons": [
+        {
+            "src": "/favicon_folder/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable any"
+        },
+        {
+            "src": "/favicon_folder/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable any"
+        }
+    ],
+    "theme_color": "#4CAF50",
+    "background_color": "#667eea",
+    "display": "standalone",
+    "start_url": "/",
+    "scope": "/",
+    "lang": "en",
+    "dir": "ltr",
+    "orientation": "portrait-primary",
+    "categories": ["productivity", "developer", "utilities", "business"]
+}

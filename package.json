@@ -1,0 +1,69 @@
+{
+  "name": "cookies-widget-sergioplay",
+  "version": "2.0.0",
+  "description": "Современный виджет cookie баннера с поддержкой GDPR, CCPA, LGPD, 152-ФЗ РФ и других международных стандартов защиты данных",
+  "main": "cookie-banner.js",
+  "style": "cookie-banner.css",
+  "files": [
+    "cookie-banner.js",
+    "cookie-banner.css",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "serve": "python -m http.server 8000 || python3 -m http.server 8000",
+    "lint": "echo \"Pure vanilla JS - no linting needed\"",
+    "build": "echo \"No build process - ready to use vanilla JS/CSS files\"",
+    "test": "echo \"Manual testing via live demo at https://cookies-widget-sergioplay.vercel.app/\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SerGioPlay01/cookies_widget_sergioplay.git"
+  },
+  "keywords": [
+    "cookie",
+    "banner",
+    "gdpr",
+    "ccpa", 
+    "lgpd",
+    "pipeda",
+    "privacy",
+    "consent",
+    "javascript",
+    "vanilla-js",
+    "152-фз",
+    "cookie-consent",
+    "privacy-policy",
+    "eu-cookie-law",
+    "responsive",
+    "lightweight",
+    "no-dependencies",
+    "cdn-ready",
+    "multilingual",
+    "global-compliance"
+  ],
+  "author": {
+    "name": "SerGioPlay",
+    "url": "https://github.com/SerGioPlay01"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SerGioPlay01/cookies_widget_sergioplay/issues"
+  },
+  "homepage": "https://cookies-widget-sergioplay.vercel.app/",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ],
+  "cdn": {
+    "js": "https://cookies-widget-sergioplay.vercel.app/cookie-banner.js",
+    "css": "https://cookies-widget-sergioplay.vercel.app/cookie-banner.css"
+  },
+  "devDependencies": {},
+  "dependencies": {}
+}

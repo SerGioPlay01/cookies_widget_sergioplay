@@ -1,0 +1,249 @@
+/* Language Selector Styles */
+.language-selector {
+    position: relative;
+    margin-left: 1rem;
+    z-index: 1001; /* Ensure it's above other elements */
+}
+
+.language-selector__button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(76, 175, 80, 0.3);
+    color: #333;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    font-weight: 500;
+    min-height: 40px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.language-selector__button:hover {
+    background: rgba(255, 255, 255, 1);
+    border-color: #4CAF50;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-1px);
+}
+
+.language-selector__flag {
+    font-size: 1.2rem;
+    line-height: 1;
+    display: inline-block;
+    min-width: 20px;
+}
+
+.language-selector__name {
+    font-weight: 500;
+    white-space: nowrap;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.language-selector__arrow {
+    transition: transform 0.3s ease;
+    opacity: 0.7;
+}
+
+.language-selector__button:hover .language-selector__arrow {
+    opacity: 1;
+}
+
+.language-selector__dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    min-width: 200px;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1002;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(20px);
+}
+
+.language-selector__dropdown.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.language-selector__option {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: none;
+    background: none;
+    color: #333;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    text-align: left;
+}
+
+.language-selector__option:hover {
+    background: #f5f5f5;
+}
+
+.language-selector__option.active {
+    background: #4CAF50;
+    color: white;
+}
+
+.language-selector__option.active:hover {
+    background: #45a049;
+}
+
+.language-selector__option .language-selector__flag {
+    font-size: 1.2rem;
+}
+
+.language-selector__option .language-selector__name {
+    font-weight: 500;
+}
+
+/* Scrollbar для dropdown */
+.language-selector__dropdown::-webkit-scrollbar {
+    width: 6px;
+}
+
+.language-selector__dropdown::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.language-selector__dropdown::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+.language-selector__dropdown::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .language-selector {
+        margin-left: 0.5rem;
+    }
+    
+    .language-selector__button {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.85rem;
+        min-height: 36px;
+    }
+    
+    .language-selector__dropdown {
+        right: -20px;
+        min-width: 180px;
+    }
+    
+    .language-selector__option {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .language-selector__button {
+        padding: 0.3rem 0.5rem;
+        min-height: 32px;
+    }
+    
+    .language-selector__name {
+        display: none;
+    }
+    
+    .language-selector__flag {
+        font-size: 1.1rem;
+    }
+    
+    .language-selector__dropdown {
+        right: -50px;
+        min-width: 160px;
+    }
+}
+
+/* Анимация появления */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.language-selector__dropdown.show {
+    animation: fadeInUp 0.3s ease;
+}
+
+/* Темная тема */
+@media (prefers-color-scheme: dark) {
+    .language-selector__button {
+        background: rgba(0, 0, 0, 0.1);
+        border-color: rgba(0, 0, 0, 0.2);
+        color: white;
+    }
+    
+    .language-selector__button:hover {
+        background: rgba(0, 0, 0, 0.2);
+        border-color: rgba(0, 0, 0, 0.3);
+    }
+    
+    .language-selector__dropdown {
+        background: #2d2d2d;
+        border-color: #444;
+    }
+    
+    .language-selector__option {
+        color: white;
+    }
+    
+    .language-selector__option:hover {
+        background: #3d3d3d;
+    }
+}
+
+/* Высокий контраст */
+@media (prefers-contrast: high) {
+    .language-selector__button {
+        border-width: 2px;
+    }
+    
+    .language-selector__dropdown {
+        border-width: 2px;
+    }
+    
+    .language-selector__option.active {
+        border: 2px solid currentColor;
+    }
+}
+
+/* Уменьшенная анимация */
+@media (prefers-reduced-motion: reduce) {
+    .language-selector__button,
+    .language-selector__dropdown,
+    .language-selector__option,
+    .language-selector__arrow {
+        transition: none;
+    }
+    
+    .language-selector__dropdown.show {
+        animation: none;
+    }
+}

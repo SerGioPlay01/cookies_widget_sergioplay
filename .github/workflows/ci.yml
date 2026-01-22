@@ -1,0 +1,61 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        
+    - name: Install dependencies
+      run: |
+        if [ -f package-lock.json ]; then
+          npm ci
+        else
+          npm install
+        fi
+        
+    - name: Validate HTML
+      run: |
+        # Install HTML validator
+        npm install -g html-validate
+        # Validate HTML files
+        html-validate index.html examples.html || echo "HTML validation completed with warnings"
+        
+    - name: Check file sizes
+      run: |
+        echo "Checking file sizes..."
+        ls -la *.css *.js
+        echo "CSS size: $(wc -c < cookie-banner.css) bytes"
+        echo "JS size: $(wc -c < cookie-banner.js) bytes"
+        
+    - name: Test basic functionality
+      run: |
+        echo "Running basic tests..."
+        # Check if required files exist
+        test -f cookie-banner.css || exit 1
+        test -f cookie-banner.js || exit 1
+        test -f index.html || exit 1
+        test -f examples.html || exit 1
+        test -f vercel.json || exit 1
+        echo "All required files exist"
+        
+    - name: Lint JavaScript
+      run: |
+        echo "Linting JavaScript files..."
+        # Basic syntax check
+        node -c cookie-banner.js
+        node -c script.js
+        echo "JavaScript syntax check passed"

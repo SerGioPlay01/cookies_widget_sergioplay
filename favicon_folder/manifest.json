@@ -1,0 +1,134 @@
+{
+  "name": "Cookie Widget - GDPR & Global Privacy Compliant",
+  "short_name": "Cookie Widget",
+  "description": "Modern cookie banner widget with full GDPR, CCPA, LGPD, Russian 152-FZ and global privacy compliance. Easy integration, responsive design, and 20+ language support.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#667eea",
+  "theme_color": "#4CAF50",
+  "orientation": "portrait-primary",
+  "categories": ["productivity", "developer", "utilities", "business"],
+  "lang": "en",
+  "dir": "ltr",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/favicon_folder/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/favicon_folder/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/favicon_folder/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon_folder/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon_folder/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/favicon_folder/screenshot-wide.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Cookie Widget Dashboard - Privacy Compliance Made Easy"
+    },
+    {
+      "src": "/favicon_folder/screenshot-narrow.png",
+      "sizes": "640x1136",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Cookie Widget Mobile - GDPR Compliant Cookie Banner"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Integration Examples",
+      "short_name": "Examples",
+      "description": "Ready-to-use Cookie Widget integration examples",
+      "url": "/examples.html",
+      "icons": [
+        {
+          "src": "/favicon_folder/shortcut-examples.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Documentation",
+      "short_name": "Docs",
+      "description": "Complete usage documentation and API reference",
+      "url": "/documentation.html",
+      "icons": [
+        {
+          "src": "/favicon_folder/shortcut-docs.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Webmaster Tools",
+      "short_name": "Tools",
+      "description": "Cookie analysis and GDPR compliance tools",
+      "url": "/tools.html",
+      "icons": [
+        {
+          "src": "/favicon_folder/shortcut-tools.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Live Demo",
+      "short_name": "Demo",
+      "description": "Try Cookie Widget in action",
+      "url": "/#demo",
+      "icons": [
+        {
+          "src": "/favicon_folder/shortcut-demo.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "web",
+      "url": "https://cookies-widget-sergioplay.vercel.app/",
+      "id": "cookie-widget-pwa"
+    }
+  ],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
+  "handle_links": "preferred",
+  "protocol_handlers": [
+    {
+      "protocol": "web+cookiewidget",
+      "url": "/?action=%s"
+    }
+  ]
+}

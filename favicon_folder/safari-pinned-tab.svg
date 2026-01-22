@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Монохромная версия для Safari pinned tab -->
+  <circle cx="256" cy="256" r="240" fill="black"/>
+  <circle cx="256" cy="256" r="180" fill="black"/>
+  
+  <!-- Cookie chips -->
+  <circle cx="200" cy="200" r="15" fill="white"/>
+  <circle cx="320" cy="180" r="12" fill="white"/>
+  <circle cx="180" cy="280" r="10" fill="white"/>
+  <circle cx="300" cy="300" r="14" fill="white"/>
+  <circle cx="240" cy="320" r="8" fill="white"/>
+  <circle cx="320" cy="240" r="11" fill="white"/>
+  <circle cx="220" cy="160" r="9" fill="white"/>
+  
+  <!-- Shield -->
+  <path d="M256 120 L200 140 L200 220 Q200 280 256 320 Q312 280 312 220 L312 140 Z" 
+        fill="white"/>
+  
+  <!-- Checkmark -->
+  <path d="M230 200 L250 220 L290 180" 
+        stroke="black" stroke-width="8" 
+        stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

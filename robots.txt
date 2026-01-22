@@ -1,0 +1,35 @@
+User-agent: *
+Allow: /
+
+# Основные страницы
+Allow: /index.html
+Allow: /examples.html
+
+# Статические ресурсы
+Allow: /styles.css
+Allow: /script.js
+Allow: /cookie-banner.css
+Allow: /cookie-banner.js
+Allow: /pwa.css
+Allow: /pwa.js
+
+# Фавиконы и манифест
+Allow: /favicon_folder/
+Allow: /sw.js
+
+# Запрещаем индексацию служебных файлов
+Disallow: /.vercel/
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /.env
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /vercel.json
+Disallow: /.gitignore
+Disallow: /.vercelignore
+
+# Карта сайта
+Sitemap: https://cookies-widget-sergioplay.vercel.app/sitemap.xml
+
+# Время задержки для ботов (в секундах)
+Crawl-delay: 1

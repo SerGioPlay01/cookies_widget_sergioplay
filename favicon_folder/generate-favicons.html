@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генератор фавиконов - Cookie Widget</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: #f5f5f5;
+        }
+        .favicon-preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .favicon-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .favicon-item img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .favicon-item h3 {
+            margin: 0.5rem 0;
+            font-size: 1rem;
+            color: #333;
+        }
+        .favicon-item p {
+            margin: 0;
+            font-size: 0.8rem;
+            color: #666;
+        }
+        .download-btn {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 0.5rem;
+        }
+        .download-btn:hover {
+            background: #45a049;
+        }
+        .instructions {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .instructions h2 {
+            margin-top: 0;
+            color: #4CAF50;
+        }
+        .instructions code {
+            background: #f0f0f0;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="instructions">
+        <h2>🍪 Генератор фавиконов Cookie Widget</h2>
+        <p>Эта страница поможет вам создать все необходимые размеры фавиконов для Cookie Widget PWA.</p>
+        <p><strong>Инструкция:</strong></p>
+        <ol>
+            <li>Откройте <code>favicon.svg</code> в графическом редакторе (например, Inkscape, Adobe Illustrator)</li>
+            <li>Экспортируйте SVG в PNG с нужными размерами</li>
+            <li>Сохраните файлы с соответствующими именами</li>
+            <li>Для ICO файла используйте онлайн конвертер</li>
+        </ol>
+    </div>
+
+    <div class="favicon-preview">
+        <div class="favicon-item">
+            <img src="favicon.svg" alt="Favicon 16x16" width="16" height="16">
+            <h3>favicon-16x16.png</h3>
+            <p>16×16 пикселей</p>
+            <p>Стандартный фавикон для браузера</p>
+        </div>
+
+        <div class="favicon-item">
+            <img src="favicon.svg" alt="Favicon 32x32" width="32" height="32">
+            <h3>favicon-32x32.png</h3>
+            <p>32×32 пикселя</p>
+            <p>Фавикон высокого разрешения</p>
+        </div>
+
+        <div class="favicon-item">
+            <img src="favicon.svg" alt="Apple Touch Icon" width="64" height="64">
+            <h3>apple-touch-icon.png</h3>
+            <p>180×180 пикселей</p>
+            <p>Иконка для iOS Safari</p>
+        </div>
+
+        <div class="favicon-item">
+            <img src="favicon.svg" alt="Android Chrome 192" width="64" height="64">
+            <h3>android-chrome-192x192.png</h3>
+            <p>192×192 пикселя</p>
+            <p>Иконка для Android Chrome</p>
+        </div>
+
+        <div class="favicon-item">
+            <img src="favicon.svg" alt="Android Chrome 512" width="64" height="64">
+            <h3>android-chrome-512x512.png</h3>
+            <p>512×512 пикселей</p>
+            <p>Большая иконка для PWA</p>
+        </div>
+
+        <div class="favicon-item">
+            <img src="favicon.svg" alt="MS Tile" width="64" height="64">
+            <h3>mstile-150x150.png</h3>
+            <p>150×150 пикселей</p>
+            <p>Плитка для Windows</p>
+        </div>
+    </div>
+
+    <div class="instructions">
+        <h2>📱 Дополнительные файлы</h2>
+        <p>Также создайте следующие файлы:</p>
+        <ul>
+            <li><code>favicon.ico</code> - классический ICO файл (16x16, 32x32, 48x48)</li>
+            <li><code>safari-pinned-tab.svg</code> - монохромная SVG иконка для Safari</li>
+            <li><code>screenshot-wide.png</code> - скриншот 1280×720 для PWA</li>
+            <li><code>screenshot-narrow.png</code> - скриншот 640×1136 для PWA</li>
+            <li><code>shortcut-examples.png</code> - иконка 96×96 для ярлыка примеров</li>
+            <li><code>shortcut-docs.png</code> - иконка 96×96 для ярлыка документации</li>
+        </ul>
+    </div>
+
+    <script>
+        // Функция для скачивания SVG как PNG
+        function downloadAsPNG(size, filename) {
+            const svg = document.querySelector('img[src="favicon.svg"]').cloneNode();
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            const img = new Image();
+            
+            canvas.width = size;
+            canvas.height = size;
+            
+            img.onload = function() {
+                ctx.drawImage(img, 0, 0, size, size);
+                canvas.toBlob(function(blob) {
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = filename;
+                    a.click();
+                    URL.revokeObjectURL(url);
+                });
+            };
+            
+            // Конвертируем SVG в data URL
+            fetch('favicon.svg')
+                .then(response => response.text())
+                .then(svgText => {
+                    const svgBlob = new Blob([svgText], {type: 'image/svg+xml'});
+                    const url = URL.createObjectURL(svgBlob);
+                    img.src = url;
+                });
+        }
+
+        // Добавляем кнопки скачивания
+        document.addEventListener('DOMContentLoaded', function() {
+            const items = document.querySelectorAll('.favicon-item');
+            const sizes = [16, 32, 180, 192, 512, 150];
+            const filenames = [
+                'favicon-16x16.png',
+                'favicon-32x32.png', 
+                'apple-touch-icon.png',
+                'android-chrome-192x192.png',
+                'android-chrome-512x512.png',
+                'mstile-150x150.png'
+            ];
+            
+            items.forEach((item, index) => {
+                const btn = document.createElement('button');
+                btn.className = 'download-btn';
+                btn.textContent = 'Скачать PNG';
+                btn.onclick = () => downloadAsPNG(sizes[index], filenames[index]);
+                item.appendChild(btn);
+            });
+        });
+    </script>
+</body>
+</html>

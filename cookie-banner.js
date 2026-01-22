@@ -1694,6 +1694,10 @@
             const settings = document.getElementById('cookieSettings');
             
             if (!settings) return;
+
+            // Блокируем прокрутку страницы
+            document.body.style.overflow = 'hidden';
+            document.documentElement.style.overflow = 'hidden';
             
             settings.classList.add('show');
             settings.setAttribute('aria-hidden', 'false');
@@ -1701,21 +1705,10 @@
             // Update toggles with current settings
             this.updateSettingsToggles();
             
-            // Мобильная оптимизация - прокрутка к началу настроек
-            if (window.innerWidth <= 768) {
-                setTimeout(() => {
-                    const banner = document.getElementById('cookieBanner');
-                    if (banner) {
-                        banner.scrollTop = 0;
-                    }
-                    settings.scrollTop = 0;
-                }, 100);
-            }
-            
             // Focus management
             const firstInput = settings.querySelector('input, button');
             if (firstInput) {
-                firstInput.focus();
+                setTimeout(() => firstInput.focus(), 100);
             }
             
             this.dispatchEvent('cookieSettingsShown');
@@ -1727,18 +1720,12 @@
             
             if (!settings) return;
             
+            // Восстанавливаем прокрутку страницы
+            document.body.style.overflow = '';
+            document.documentElement.style.overflow = '';
+            
             settings.classList.remove('show');
             settings.setAttribute('aria-hidden', 'true');
-            
-            // Мобильная оптимизация - восстановление скролла
-            if (window.innerWidth <= 768) {
-                setTimeout(() => {
-                    const banner = document.getElementById('cookieBanner');
-                    if (banner) {
-                        banner.scrollTop = 0;
-                    }
-                }, 100);
-            }
             
             this.dispatchEvent('cookieSettingsHidden');
         }

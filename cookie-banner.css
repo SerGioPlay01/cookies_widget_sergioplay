@@ -197,23 +197,58 @@
 
 /* Cookie Settings Panel */
 .cookie-settings {
-    background: rgba(0, 0, 0, 0.85);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background: transparent;
+    border-top: none;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
-    padding: 0 20px;
+    transition: max-height 0.4s ease-in-out;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    pointer-events: none;
 }
 
 .cookie-settings.show {
-    max-height: 80vh;
+    max-height: 100vh;
+    pointer-events: all;
+}
+
+/* Оверлей для блокировки прокрутки страницы */
+.cookie-settings.show::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
+
+/* Модальное окно настроек */
+.cookie-settings.show {
+    max-height: 70vh; /* Уменьшаем высоту чтобы футер поместился */
     padding: 0;
     overflow: hidden;
     -webkit-overflow-scrolling: touch;
-    position: relative;
+    position: fixed; /* Фиксируем панель */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 1200px;
+    background: rgba(0, 0, 0, 0.95);
+    border-radius: 8px;
+    z-index: 10000;
     display: flex;
     flex-direction: column;
-    min-height: 300px; /* Минимальная высота для отображения футера */
+    min-height: 400px; /* Увеличиваем минимальную высоту */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .cookie-settings__container {
@@ -461,13 +496,12 @@
     gap: 10px;
     padding: 15px 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    background: rgba(0, 0, 0, 0.95);
+    background: rgba(0, 0, 0, 0.98);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    padding-bottom: max(15px, env(safe-area-inset-bottom));
     flex-shrink: 0;
-    margin-top: auto; /* Прижимаем к низу */
-    min-height: 120px; /* Минимальная высота футера */
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
 .cookie-settings__footer-buttons {
@@ -549,9 +583,12 @@
     }
     
     .cookie-settings.show {
-        max-height: 85vh;
-        padding: 0;
-        min-height: 250px; /* Уменьшенная минимальная высота для мобильных */
+        width: 95%;
+        max-height: 80vh;
+        min-height: 350px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
     
     .cookie-settings__container {
@@ -624,8 +661,9 @@
     }
     
     .cookie-settings.show {
-        max-height: 90vh;
-        padding: 0;
+        width: 98%;
+        max-height: 85vh;
+        min-height: 300px;
     }
     
     .cookie-settings__container {
@@ -648,9 +686,8 @@
     }
     
     .cookie-settings.show .cookie-settings__footer {
-        padding: 10px 15px;
+        padding: 12px 15px;
         gap: 8px;
-        min-height: 100px; /* Уменьшенная высота футера для мобильных */
     }
     
     .cookie-settings__footer-buttons {
@@ -709,9 +746,10 @@
 /* Дополнительные стили для очень маленьких экранов */
 @media (max-width: 360px) {
     .cookie-settings.show {
-        max-height: 95vh;
+        width: 98%;
+        max-height: 90vh;
+        min-height: 300px;
         padding: 0;
-        min-height: 200px; /* Еще меньше для очень маленьких экранов */
     }
     
     .cookie-settings__container {
@@ -719,8 +757,8 @@
     }
     
     .cookie-settings.show .cookie-settings__footer {
-        padding: 8px 10px;
-        min-height: 90px; /* Компактный футер для маленьких экранов */
+        padding: 10px;
+        gap: 6px;
     }
     
     .cookie-settings__scrollable {
@@ -800,9 +838,10 @@
     }
     
     .cookie-settings.show {
-        max-height: 75vh;
+        width: 90%;
+        max-height: 85vh;
+        min-height: 300px;
         padding: 0;
-        min-height: 200px; /* Минимальная высота для landscape */
     }
     
     .cookie-settings__container {
@@ -826,7 +865,7 @@
     
     .cookie-settings.show .cookie-settings__footer {
         padding: 8px 10px;
-        min-height: 80px; /* Компактный футер для landscape */
+        gap: 6px;
     }
     
     .cookie-settings__scrollable {

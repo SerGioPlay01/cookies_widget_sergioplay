@@ -213,6 +213,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    min-height: 300px; /* Минимальная высота для отображения футера */
 }
 
 .cookie-settings__container {
@@ -229,6 +230,7 @@
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     padding-bottom: 20px;
+    min-height: 0; /* Позволяет flex элементу сжиматься */
 }
 
 /* Стили прокрутки для scrollable контейнера */
@@ -465,6 +467,7 @@
     padding-bottom: max(15px, env(safe-area-inset-bottom));
     flex-shrink: 0;
     margin-top: auto; /* Прижимаем к низу */
+    min-height: 120px; /* Минимальная высота футера */
 }
 
 .cookie-settings__footer-buttons {
@@ -548,6 +551,7 @@
     .cookie-settings.show {
         max-height: 85vh;
         padding: 0;
+        min-height: 250px; /* Уменьшенная минимальная высота для мобильных */
     }
     
     .cookie-settings__container {
@@ -646,6 +650,7 @@
     .cookie-settings.show .cookie-settings__footer {
         padding: 10px 15px;
         gap: 8px;
+        min-height: 100px; /* Уменьшенная высота футера для мобильных */
     }
     
     .cookie-settings__footer-buttons {
@@ -706,6 +711,7 @@
     .cookie-settings.show {
         max-height: 95vh;
         padding: 0;
+        min-height: 200px; /* Еще меньше для очень маленьких экранов */
     }
     
     .cookie-settings__container {
@@ -714,6 +720,7 @@
     
     .cookie-settings.show .cookie-settings__footer {
         padding: 8px 10px;
+        min-height: 90px; /* Компактный футер для маленьких экранов */
     }
     
     .cookie-settings__scrollable {
@@ -795,6 +802,7 @@
     .cookie-settings.show {
         max-height: 75vh;
         padding: 0;
+        min-height: 200px; /* Минимальная высота для landscape */
     }
     
     .cookie-settings__container {
@@ -818,14 +826,11 @@
     
     .cookie-settings.show .cookie-settings__footer {
         padding: 8px 10px;
+        min-height: 80px; /* Компактный футер для landscape */
     }
     
     .cookie-settings__scrollable {
         padding-bottom: 10px;
-    }
-    
-    .cookie-settings__scrollable {
-        margin-bottom: 90px; /* Отступ для фиксированного футера */
     }
 }
 

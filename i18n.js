@@ -40,20 +40,20 @@ class I18n {
                 // Hero Section
                 'hero.title.main': 'Cookie Widget',
                 'hero.title.sub': 'GDPR & Global Privacy Compliant',
-                'hero.description': 'Современный и красивый виджет cookie баннера с полной поддержкой GDPR, CCPA, LGPD, 152-ФЗ РФ и других международных стандартов защиты данных. Легкая интеграция, адаптивный дизайн и гибкие настройки.',
+                'hero.description': 'Революционный виджет cookie баннера v3.3 с 4 эксклюзивными системами безопасности, которых нет у конкурентов: блокировщик iFrame, сканер скриптов, безопасная песочница, ленивая защита скриптов. Плюс Smart Auto-Detect трекеров, SEO-Friendly Mode, Zero-Reload Mode и поддержка 21 языка. Полное соответствие GDPR, CCPA, LGPD, 152-ФЗ.',
                 'hero.btn.start': 'Начать использовать',
                 'hero.btn.demo': 'Посмотреть демо',
                 'hero.btn.examples': 'Примеры интеграции',
                 'hero.btn.github': 'GitHub',
-                'hero.stat.size': 'Минимальный размер',
+                'hero.stat.languages': 'Языков',
                 'hero.stat.deps': 'Зависимостей',
-                'hero.stat.features': 'Уникальных функций',
+                'hero.stat.features': 'Функций безопасности',
                 'hero.stat.gdpr': 'Соответствие GDPR',
                 
 
                 // Features
                 'features.title': 'Возможности',
-                'features.description': 'Современный cookie баннер с поддержкой 20+ языков, автоматической блокировкой cookie и соответствием международным стандартам защиты данных',
+                'features.description': 'Cookie Widget v3.3 с 4 революционными системами безопасности, которых нет у конкурентов: блокировщик iFrame, сканер скриптов, безопасная песочница, ленивая защита скриптов. Плюс Smart Auto-Detect трекеров, SEO-Friendly Mode, Zero-Reload Mode, поддержка 21 языка и полное соответствие международным законам о конфиденциальности.',
                 
                 // Installation
                 'install.title': 'Установка',
@@ -113,7 +113,7 @@ class I18n {
                 'install.example.title': 'Пример интеграции',
                 
                 // Footer
-                'footer.description': 'Современный виджет cookie баннера с поддержкой GDPR и 152-ФЗ РФ',
+                'footer.description': 'Революционный виджет cookie баннера v3.3 с продвинутыми функциями безопасности',
                 'footer.project': 'Проект',
                 'footer.documentation': 'Документация',
                 'footer.support': 'Поддержка',
@@ -591,6 +591,22 @@ class I18n {
                 'feature.script-guard.fbq': '✓ fbq() перехвачен',
                 'feature.script-guard.waiting': 'Ожидание согласия...',
                 
+                'feature.iframe-blocker.title': '🚫 Блокировщик iFrame',
+                'feature.iframe-blocker.description': 'Автоматическая блокировка YouTube, TikTok, карт и других iframe',
+                'feature.iframe-blocker.status': 'НОВОЕ',
+                
+                'feature.script-scanner.title': '🔍 Сканер скриптов',
+                'feature.script-scanner.description': 'Автоматический анализ скриптов страницы как у CookieBot',
+                'feature.script-scanner.status': 'НОВОЕ',
+                
+                'feature.secure-sandbox.title': '🏖️ Безопасная песочница',
+                'feature.secure-sandbox.description': 'Выполнение скриптов в изолированном sandbox iframe',
+                'feature.secure-sandbox.status': 'НОВОЕ',
+                
+                'feature.lazy-guard.title': '⏳ Ленивая защита',
+                'feature.lazy-guard.description': 'Блокирует deferred и async скрипты до ответа пользователя',
+                'feature.lazy-guard.status': 'НОВОЕ',
+                
                 'feature.integrations.title': '🤝 Центр интеграций',
                 'feature.integrations.description': 'Готовые конфигурации для популярных сервисов',
                 'feature.integrations.status': 'НОВОЕ',
@@ -608,7 +624,19 @@ class I18n {
                 'feature.auto-renew.description': 'Автоматическое обновление согласия через 3/6/12 месяцев или при изменении политики',
                 
                 'feature.secure-storage.title': '🔐 Безопасное хранилище',
-                'feature.secure-storage.description': 'Сохранение согласия в localStorage, sessionStorage, IndexedDB и cookies',
+                'feature.secure-storage.description': 'Сохранение согласия в localStorage, sessionStorage, IndexedDB и cookies. Тройная система резервного копирования предотвращает потерю данных.',
+                
+                'feature.iframe-blocker.title': '🚫 Блокировщик iFrame',
+                'feature.iframe-blocker.description': 'Автоматически блокирует YouTube, TikTok, Google Maps и другие iframe, которые устанавливают cookie без согласия пользователя. Показывает заглушки с запросом согласия.',
+                
+                'feature.script-scanner.title': '🔍 Сканер скриптов',
+                'feature.script-scanner.description': 'Анализирует все скрипты страницы как CookieBot, но локально. Обнаруживает паттерны установки cookie, классифицирует по категориям и предоставляет подробные отчеты.',
+                
+                'feature.secure-sandbox.title': '🏖️ Безопасная песочница',
+                'feature.secure-sandbox.description': 'Выполняет скрипты в изолированных sandbox iframe с ограниченным доступом к API. Революционный подход к безопасности, который почти никто не реализует.',
+                
+                'feature.lazy-script-guard.title': '⏳ Ленивая защита скриптов',
+                'feature.lazy-script-guard.description': 'Блокирует deferred и async скрипты до получения согласия пользователя. Предотвращает фоновое выполнение скриптов во время загрузки страницы.',
                 
                 // Demo Page
                 'demo.page.title': 'Демо эксклюзивных функций v3.3',
@@ -703,7 +731,85 @@ class I18n {
                 'examples.laravel.title': '🔴 Laravel интеграция',
                 'examples.laravel.description': 'Создание пакета для Laravel с middleware и сервис-провайдером',
                 'examples.django.title': '🐍 Django интеграция',
-                'examples.django.description': 'Создание Django приложения с middleware для Cookie Widget'
+                'examples.django.description': 'Создание Django приложения с middleware для Cookie Widget',
+                
+                // Demo features - missing translations
+                'demo.smart.title': 'Smart Auto-Detect',
+                'demo.smart.description': 'Автоматическое обнаружение трекеров на странице: Google Analytics, Meta Pixel, Yandex Metrika и других.',
+                'demo.smart.status.scanning': 'Сканирование...',
+                'demo.smart.status.found': 'Найдено',
+                'demo.smart.loading': 'Анализ трекеров...',
+                
+                'demo.seo.title': 'SEO-Friendly Mode',
+                'demo.seo.description': 'Определение поисковых ботов и роботов для лучшей индексации сайта.',
+                'demo.seo.status.checking': 'Проверка...',
+                'demo.seo.status.bot': 'Бот',
+                'demo.seo.status.user': 'Пользователь',
+                'demo.seo.loading': 'Анализ user-agent...',
+                'demo.seo.type': 'Тип',
+                'demo.seo.mode': 'Режим',
+                'demo.seo.bot_type': 'Поисковый бот',
+                'demo.seo.user_type': 'Обычный пользователь',
+                'demo.seo.all_cookies': 'Все cookies разрешены',
+                'demo.seo.standard_mode': 'Стандартный режим',
+                
+                'demo.guard.title': 'Script Guard',
+                'demo.guard.description': 'Блокировка скриптов Analytics и Marketing до получения согласия пользователя.',
+                'demo.guard.status.active': 'Активен',
+                'demo.guard.placeholder': 'Заблокированные скрипты будут показаны здесь...',
+                
+                'demo.reload.title': 'Zero-Reload Mode',
+                'demo.reload.description': 'Включение/выключение трекеров без перезагрузки страницы через систему очередей.',
+                'demo.reload.status.ready': 'Готов',
+                'demo.reload.active': 'Режим активен - скрипты будут загружаться динамически',
+                
+                'demo.storage.title': 'Secure Storage',
+                'demo.storage.description': 'Сохранение согласия в нескольких местах: localStorage, sessionStorage, IndexedDB, cookies.',
+                'demo.storage.status.checking': 'Проверка...',
+                'demo.storage.loading': 'Проверка доступных хранилищ...',
+                'demo.storage.available': 'Доступные хранилища',
+                'demo.storage.total': 'Всего',
+                'demo.storage.of': 'из',
+                'demo.storage.possible': 'возможных',
+                
+                'demo.integrations.title': 'Integrations Hub',
+                'demo.integrations.description': 'Готовые настройки для популярных сервисов: GTM, Meta Pixel, reCAPTCHA, Cloudflare Turnstile.',
+                'demo.integrations.status.ready': 'Готов',
+                'demo.integrations.placeholder': 'Доступные интеграции будут показаны здесь...',
+                
+                // New Advanced Security Features Demo
+                'demo.iframe.title': 'Блокировщик iFrame',
+                'demo.iframe.description': 'Блокирует YouTube/TikTok/карты без согласия',
+                'demo.iframe.status.scanning': 'Сканирование iframe...',
+                'demo.iframe.status.blocked': 'iframe заблокированы',
+                
+                'demo.scanner.title': 'Сканер скриптов',
+                'demo.scanner.description': 'Анализирует скрипты как CookieBot локально',
+                'demo.scanner.status.analyzing': 'Анализ скриптов...',
+                'demo.scanner.status.found': 'скриптов найдено',
+                
+                'demo.sandbox.title': 'Безопасная песочница',
+                'demo.sandbox.description': 'Изолированная среда выполнения скриптов',
+                'demo.sandbox.status.testing': 'Тестирование песочницы...',
+                'demo.sandbox.status.ready': 'Песочница готова',
+                
+                'demo.lazy.title': 'Ленивая защита скриптов',
+                'demo.lazy.description': 'Блокирует deferred/async до согласия',
+                'demo.lazy.status.monitoring': 'Мониторинг скриптов...',
+                'demo.lazy.status.blocked': 'скриптов в очереди',
+                
+                // Feature translations for new security systems
+                'feature.iframe-blocker.title': '🚫 Блокировщик iFrame',
+                'feature.iframe-blocker.description': 'Автоматически блокирует YouTube, TikTok, Google Maps и другие iframe, которые устанавливают cookie без согласия пользователя. Показывает заглушки с запросом согласия.',
+                
+                'feature.script-scanner.title': '🔍 Сканер скриптов',
+                'feature.script-scanner.description': 'Анализирует все скрипты страницы как CookieBot, но локально. Обнаруживает паттерны установки cookie, классифицирует по категориям и предоставляет подробные отчеты.',
+                
+                'feature.secure-sandbox.title': '🏖️ Безопасная песочница',
+                'feature.secure-sandbox.description': 'Выполняет скрипты в изолированных sandbox iframe с ограниченным доступом к API. Революционный подход к безопасности, который почти никто не реализует.',
+                
+                'feature.lazy-script-guard.title': '⏳ Ленивая защита скриптов',
+                'feature.lazy-script-guard.description': 'Блокирует deferred и async скрипты до получения согласия пользователя. Предотвращает фоновое выполнение скриптов во время загрузки страницы.',
             },
             
             'en': {
@@ -718,19 +824,19 @@ class I18n {
                 // Hero Section
                 'hero.title.main': 'Cookie Widget',
                 'hero.title.sub': 'GDPR & Global Privacy Compliant',
-                'hero.description': 'Modern and beautiful cookie banner widget with full GDPR, CCPA, LGPD compliance and support for international data protection standards. Easy integration, responsive design, and flexible settings.',
+                'hero.description': 'Revolutionary cookie banner widget v3.3 with 4 exclusive security systems that no competitor has: iFrame Blocker, Script Scanner, Secure Sandbox, Lazy Script Guard. Plus Smart Auto-Detect trackers, SEO-Friendly Mode, Zero-Reload Mode and 21 languages support. Full compliance with GDPR, CCPA, LGPD, 152-FZ.',
                 'hero.btn.start': 'Get Started',
                 'hero.btn.demo': 'View Demo',
                 'hero.btn.examples': 'Integration Examples',
                 'hero.btn.github': 'GitHub',
-                'hero.stat.size': 'Minimal Size',
+                'hero.stat.languages': 'Languages',
                 'hero.stat.deps': 'Dependencies',
-                'hero.stat.features': 'Unique Features',
+                'hero.stat.features': 'Security Features',
                 
 
                 // Features
                 'features.title': 'Features',
-                'features.description': 'Modern cookie banner with 20+ language support, automatic cookie blocking and compliance with international data protection standards',
+                'features.description': 'Cookie Widget v3.3 with 4 revolutionary security systems that no competitor has: iFrame Blocker, Script Scanner, Secure Sandbox, Lazy Script Guard. Plus Smart Auto-Detect trackers, SEO-Friendly Mode, Zero-Reload Mode, 21 languages support and full compliance with international privacy laws.',
                 
                 // Advanced Features v3.3
                 'advanced.title': '🚀 Exclusive Features',
@@ -749,6 +855,40 @@ class I18n {
                 'demo.integrations.description': 'Ready configurations for popular services',
                 'demo.new_badge': 'NEW',
                 
+                // New Advanced Security Features Demo
+                'demo.iframe.title': 'iFrame Blocker',
+                'demo.iframe.description': 'Blocks YouTube/TikTok/Maps without consent',
+                'demo.iframe.status.scanning': 'Scanning iframes...',
+                'demo.iframe.status.blocked': 'iframes blocked',
+                
+                'demo.scanner.title': 'Script Scanner',
+                'demo.scanner.description': 'Analyzes scripts like CookieBot locally',
+                'demo.scanner.status.analyzing': 'Analyzing scripts...',
+                'demo.scanner.status.found': 'scripts found',
+                
+                'demo.sandbox.title': 'Secure Sandbox',
+                'demo.sandbox.description': 'Isolated script execution environment',
+                'demo.sandbox.status.testing': 'Testing sandbox...',
+                'demo.sandbox.status.ready': 'Sandbox ready',
+                
+                'demo.lazy.title': 'Lazy Script Guard',
+                'demo.lazy.description': 'Blocks deferred/async until consent',
+                'demo.lazy.status.monitoring': 'Monitoring scripts...',
+                'demo.lazy.status.blocked': 'scripts in queue',
+                
+                // Feature translations for new security systems
+                'feature.iframe-blocker.title': '🚫 iFrame Blocker',
+                'feature.iframe-blocker.description': 'Automatically blocks YouTube, TikTok, Google Maps and other iframes that set cookies without user consent. Shows consent placeholders instead.',
+                
+                'feature.script-scanner.title': '🔍 Script Scanner',
+                'feature.script-scanner.description': 'Analyzes all page scripts like CookieBot but locally. Detects cookie-setting patterns, classifies by categories and provides detailed reports.',
+                
+                'feature.secure-sandbox.title': '🏖️ Secure Sandbox',
+                'feature.secure-sandbox.description': 'Executes scripts in isolated sandbox iframes with limited API access. Revolutionary security approach that almost no one implements.',
+                
+                'feature.lazy-script-guard.title': '⏳ Lazy Script Guard',
+                'feature.lazy-script-guard.description': 'Blocks deferred and async scripts until user provides consent. Prevents background script execution during page load.',
+                
                 // Advanced CTA
                 'advanced.cta.button': '🎮 Try All Features',
                 'advanced.cta.note': 'Interactive demonstration of all exclusive features',
@@ -762,12 +902,32 @@ class I18n {
                 'feature.integrations.description': 'Ready configurations for Google Tag Manager, Yandex Metrica, Meta Pixel, TikTok Pixel, reCAPTCHA v3, Cloudflare Turnstile. Zero-config integration.',
                 'feature.script-guard.title': '🔒 Script Guard',
                 'feature.script-guard.description': 'Blocking Analytics and Marketing scripts before site loading through proxy stubs. Protection from tracker execution without user consent.',
+                'feature.iframe-blocker.title': '🚫 iFrame Blocker',
+                'feature.iframe-blocker.description': 'Automatic blocking of YouTube, TikTok, Maps and other iframes that set cookies without consent. Shows consent request overlay.',
+                'feature.script-scanner.title': '🔍 Script Scanner',
+                'feature.script-scanner.description': 'Automatic page script analysis like CookieBot but locally. Detects cookie-setting scripts and classifies them by category.',
+                'feature.secure-sandbox.title': '🏖️ Secure Sandbox',
+                'feature.secure-sandbox.description': 'Scripts execution in isolated sandbox iframe with limited API access. Maximum security for untrusted code.',
+                'feature.lazy-guard.title': '⏳ Lazy Script Guard',
+                'feature.lazy-guard.description': 'Blocks deferred and async scripts until user responds to consent banner. Prevents background tracking.',
                 'feature.zero-reload.title': '🚀 Zero-Reload Mode',
                 'feature.zero-reload.description': 'Enable/disable trackers without page reload. Instant script activation upon consent through queue system.',
                 'feature.auto-renew.title': '🔄 Auto-Renew Consent',
                 'feature.auto-renew.description': 'Automatic consent renewal after 3/6/12 months or when policy changes. GDPR compliance with privacy policy version tracking.',
                 'feature.secure-storage.title': '🔐 Secure Storage',
                 'feature.secure-storage.description': 'Consent storage in localStorage, sessionStorage, IndexedDB and cookies. Works even in "anti-cookie" browsers with full cookie blocking.',
+                
+                'feature.iframe-blocker.title': '🚫 iFrame Blocker',
+                'feature.iframe-blocker.description': 'Automatically blocks YouTube, TikTok, Google Maps and other iframes that set cookies without user consent. Shows consent placeholders instead.',
+                
+                'feature.script-scanner.title': '🔍 Script Scanner',
+                'feature.script-scanner.description': 'Analyzes all page scripts like CookieBot but locally. Detects cookie-setting patterns, classifies by categories and provides detailed reports.',
+                
+                'feature.secure-sandbox.title': '🏖️ Secure Sandbox',
+                'feature.secure-sandbox.description': 'Executes scripts in isolated sandbox iframes with limited API access. Revolutionary security approach that almost no one implements.',
+                
+                'feature.lazy-script-guard.title': '⏳ Lazy Script Guard',
+                'feature.lazy-script-guard.description': 'Blocks deferred and async scripts until user provides consent. Prevents background script execution during page load.',
                 
                 // Installation
                 'install.title': 'Installation',
@@ -827,7 +987,7 @@ class I18n {
                 'install.example.title': 'Integration Example',
                 
                 // Footer
-                'footer.description': 'Modern cookie banner widget with GDPR compliance',
+                'footer.description': 'Revolutionary cookie banner widget v3.3 with advanced security features',
                 'footer.project': 'Project',
                 'footer.documentation': 'Documentation',
                 'footer.support': 'Support',
@@ -1670,6 +1830,723 @@ class I18n {
                 'examples.django.description': 'Creating a Django application with middleware for Cookie Widget'
             },
             
+            'de': {
+                // Navigation
+                'nav.features': 'Funktionen',
+                'nav.installation': 'Installation',
+                'nav.docs': 'Dokumentation',
+                'nav.examples': 'Beispiele',
+                'nav.tools': 'Tools',
+                'nav.support': 'Support',
+                
+                // Hero Section
+                'hero.title.main': 'Cookie Widget',
+                'hero.title.sub': 'DSGVO & Global Privacy Compliant',
+                'hero.description': 'Revolutionäres Cookie-Banner-Widget v3.3 mit 4 exklusiven Sicherheitssystemen, die kein Konkurrent hat: iFrame-Blocker, Script-Scanner, Secure Sandbox, Lazy Script Guard. Plus Smart Auto-Detect Tracker, SEO-Friendly Mode, Zero-Reload Mode und 21 Sprachen Support. Vollständige Compliance mit DSGVO, CCPA, LGPD, 152-FZ.',
+                'hero.btn.start': 'Loslegen',
+                'hero.btn.demo': 'Demo ansehen',
+                'hero.btn.examples': 'Integrations-Beispiele',
+                'hero.btn.github': 'GitHub',
+                'hero.stat.languages': 'Sprachen',
+                'hero.stat.deps': 'Abhängigkeiten',
+                'hero.stat.features': 'Sicherheits-Features',
+                'hero.stat.gdpr': 'DSGVO-Konformität',
+                
+                // Features
+                'features.title': 'Funktionen',
+                'features.description': 'Cookie Widget v3.3 mit 4 revolutionären Sicherheitssystemen, die kein Konkurrent hat: iFrame-Blocker, Script-Scanner, Secure Sandbox, Lazy Script Guard. Plus Smart Auto-Detect Tracker, SEO-Friendly Mode, Zero-Reload Mode, 21 Sprachen Support und vollständige Compliance mit internationalen Datenschutzgesetzen.',
+                
+                // Advanced Features v3.3
+                'advanced.title': '🚀 Exklusive Funktionen',
+                'advanced.description': 'Einzigartige Fähigkeiten, die Konkurrenten nicht haben. Probieren Sie sie jetzt aus!',
+                'advanced.cta.button': '🎮 Alle Funktionen ausprobieren',
+                'advanced.cta.note': 'Interaktive Demonstration aller exklusiven Funktionen',
+                
+                // Demo features
+                'demo.smart.title': 'Smart Auto-Detect',
+                'demo.smart.description': 'Automatische Tracker-Erkennung auf der Seite',
+                'demo.smart.status.scanning': 'Scannen...',
+                'demo.seo.title': 'SEO-Friendly Modus',
+                'demo.seo.description': 'Bot- und Suchroboter-Erkennung',
+                'demo.seo.status.checking': 'Überprüfen...',
+                'demo.guard.title': 'Script Guard',
+                'demo.guard.description': 'Script-Blockierung vor Zustimmung',
+                'demo.integrations.title': 'Integrations Hub',
+                'demo.integrations.description': 'Fertige Konfigurationen für beliebte Services',
+                'demo.new_badge': 'NEU',
+                
+                // New Advanced Security Features Demo
+                'demo.iframe.title': 'iFrame-Blocker',
+                'demo.iframe.description': 'Blockiert YouTube/TikTok/Maps ohne Zustimmung',
+                'demo.iframe.status.scanning': 'Scanne iframes...',
+                'demo.iframe.status.blocked': 'iframes blockiert',
+                
+                'demo.scanner.title': 'Script-Scanner',
+                'demo.scanner.description': 'Analysiert Scripts wie CookieBot lokal',
+                'demo.scanner.status.analyzing': 'Analysiere Scripts...',
+                'demo.scanner.status.found': 'Scripts gefunden',
+                
+                'demo.sandbox.title': 'Sichere Sandbox',
+                'demo.sandbox.description': 'Isolierte Script-Ausführungsumgebung',
+                'demo.sandbox.status.testing': 'Teste Sandbox...',
+                'demo.sandbox.status.ready': 'Sandbox bereit',
+                
+                'demo.lazy.title': 'Lazy Script Guard',
+                'demo.lazy.description': 'Blockiert deferred/async bis Zustimmung',
+                'demo.lazy.status.monitoring': 'Überwache Scripts...',
+                'demo.lazy.status.blocked': 'Scripts in Warteschlange',
+                
+                // Feature translations for new security systems
+                'feature.iframe-blocker.title': '🚫 iFrame-Blocker',
+                'feature.iframe-blocker.description': 'Blockiert automatisch YouTube, TikTok, Google Maps und andere iframes, die Cookies ohne Benutzerzustimmung setzen. Zeigt Zustimmungsplatzhalter stattdessen.',
+                
+                'feature.script-scanner.title': '🔍 Script-Scanner',
+                'feature.script-scanner.description': 'Analysiert alle Seitenskripte wie CookieBot, aber lokal. Erkennt Cookie-setzende Muster, klassifiziert nach Kategorien und liefert detaillierte Berichte.',
+                
+                'feature.secure-sandbox.title': '🏖️ Sichere Sandbox',
+                'feature.secure-sandbox.description': 'Führt Scripts in isolierten Sandbox-iframes mit begrenztem API-Zugang aus. Revolutionärer Sicherheitsansatz, den fast niemand implementiert.',
+                
+                'feature.lazy-script-guard.title': '⏳ Lazy Script Guard',
+                'feature.lazy-script-guard.description': 'Blockiert deferred und async Scripts bis der Benutzer seine Zustimmung gibt. Verhindert Hintergrund-Script-Ausführung während des Seitenladens.',
+                
+                // Installation
+                'install.title': 'Installation',
+                'install.description': 'Integrieren Sie das Widget in wenigen Minuten in Ihre Website',
+                'install.tab.cdn': 'CDN',
+                'install.tab.download': 'Herunterladen',
+                'install.tab.integration': 'Integration',
+                
+                // Support
+                'support.title': 'Projekt unterstützen',
+                'support.description': 'Helfen Sie bei der Projektentwicklung und erhalten Sie Support',
+                'support.bug.title': 'Bug melden',
+                'support.bug.description': 'Haben Sie einen Bug gefunden oder einen Verbesserungsvorschlag?',
+                'support.bug.link': 'Issue erstellen →',
+                'support.coffee.title': 'Entwickler unterstützen',
+                'support.coffee.description': 'Kaufen Sie mir einen Kaffee und unterstützen Sie die weitere Projektentwicklung',
+                'support.coffee.link': 'Buy me a coffee →',
+                'support.docs.title': 'Dokumentation',
+                'support.docs.description': 'Detaillierte Dokumentation und Verwendungsbeispiele',
+                'support.docs.link': 'Dokumentation lesen →',
+                
+                // Examples
+                'examples.title': 'Integrations-Beispiele',
+                'examples.subtitle': 'Fertige Lösungen zur Integration von Cookie Widget in beliebte Frameworks, CMS und Analytics-Systeme. Code kopieren und an Ihre Bedürfnisse anpassen.',
+                
+                // Feature cards
+                'feature.compliance.title': '🌍 Globale Compliance',
+                'feature.compliance.description': 'Vollständige Compliance mit DSGVO, CCPA, LGPD, russischem 152-FZ, PIPEDA, PIPL, APPI, PIPA und anderen internationalen Datenschutzstandards mit automatischer Regionserkennung',
+                'feature.languages.title': '🗣️ 20+ Sprachen Support',
+                'feature.languages.description': 'Automatische Browser-Spracherkennung mit Unterstützung für Deutsch, Englisch, Französisch, Spanisch, Chinesisch, Japanisch und andere Sprachen',
+                'feature.blocking.title': '🛡️ Automatische Blockierung',
+                'feature.blocking.description': 'Intelligentes Cookie-Blockierungssystem vor Zustimmung mit automatischer Löschung abgelehnter Cookies und Umgehungsschutz',
+                'feature.responsive.title': '📱 Responsive Design',
+                'feature.responsive.description': 'Modernes Design mit Verläufen und Animationen, perfekt funktionierend auf allen Geräten von Mobiltelefonen bis zu großen Monitoren',
+                'feature.api.title': '🎨 Mächtige Anpassungs-API',
+                'feature.api.description': 'Vollständige Anpassung von Texten, Links, Themes und Verhalten über JavaScript API. Unterstützung für Corporate Branding und zusätzliche Kategorien',
+                'feature.performance.title': '⚡ Maximale Performance',
+                'feature.performance.description': 'Nur 5KB minifizierter Code, keine externen Abhängigkeiten, mit Adblocker-Schutz und Optimierung für maximale Ladegeschwindigkeit',
+                'feature.analytics.title': '📊 Analytics Integration',
+                'feature.analytics.description': 'Fertige Beispiele für Integration mit Google Analytics 4, Yandex.Metrica, Facebook Pixel und anderen Analytics-Systemen mit Consent Mode Support',
+                'feature.frameworks.title': '⚛️ Framework Support',
+                'feature.frameworks.description': 'Fertige Integrations-Beispiele für React, Vue.js, Next.js, Nuxt.js, WordPress und andere beliebte Frameworks und CMS mit TypeScript Support',
+                
+                // Interface elements
+                'ui.copy': 'Kopieren',
+                'ui.copied': 'Kopiert!',
+                'ui.read_more': 'Lesen →',
+                'ui.back_to_top': '↑',
+                'ui.menu': 'Menü',
+                'ui.close': 'Schließen',
+                
+                // Footer
+                'footer.description': 'Modernes Cookie-Banner-Widget mit DSGVO-Compliance',
+                'footer.project': 'Projekt',
+                'footer.documentation': 'Dokumentation',
+                'footer.support': 'Support',
+                'footer.settings': 'Cookie-Einstellungen',
+                'footer.copyright': 'Unter MIT-Lizenz verteilt.',
+                
+                // Language Selector
+                'lang.select': 'Sprache wählen',
+                'lang.auto': 'Auto-Erkennung',
+                
+                // Tools page
+                'tools.title': 'Webmaster-Tools',
+                'tools.subtitle': 'Nützliche Tools für Cookie-Analyse, DSGVO-Compliance-Prüfung und Cookie-Banner-Tests. Alle Tools funktionieren lokal in Ihrem Browser und senden keine Daten an den Server.',
+                
+                // Cookie Analyzer
+                'tools.analyzer.title': 'Cookie-Analysator',
+                'tools.analyzer.description': 'Analysieren Sie alle Cookies auf der aktuellen Website, überprüfen Sie deren Typen, Ablaufzeiten und DSGVO-Compliance-Anforderungen.',
+                'tools.analyzer.feature1': 'Liste aller Cookies auf der Website',
+                'tools.analyzer.feature2': 'Klassifizierung nach Typen (notwendig, funktional, analytisch)',
+                'tools.analyzer.feature3': 'Überprüfung von Ablaufzeiten und Sicherheit',
+                'tools.analyzer.feature4': 'DSGVO-Compliance jedes Cookies',
+                'tools.analyzer.button': 'Cookies analysieren',
+                
+                // GDPR Checker
+                'tools.gdpr.title': 'DSGVO-Prüfung',
+                'tools.gdpr.description': 'Überprüfen Sie die Compliance Ihrer Website mit DSGVO, CCPA, 152-FZ und anderen Datenschutzgesetzen.',
+                'tools.gdpr.feature1': 'Überprüfung auf Cookie-Banner-Vorhandensein',
+                'tools.gdpr.feature2': 'Datenschutzrichtlinien-Analyse',
+                'tools.gdpr.feature3': 'Überprüfung der Cookie-Blockierung vor Zustimmung',
+                'tools.gdpr.feature4': 'Internationale Standards-Compliance',
+                'tools.gdpr.url.label': 'Zu überprüfende URL:',
+                'tools.gdpr.url.placeholder': 'https://example.com',
+                'tools.gdpr.button': 'DSGVO prüfen',
+                
+                // Policy Generator
+                'tools.policy.title': 'Cookie-Richtlinien-Generator',
+                'tools.policy.description': 'Erstellen Sie eine professionelle Cookie-Richtlinie für Ihre Website mit allen DSGVO-Anforderungen.',
+                'tools.policy.feature1': 'Fertige Vorlagen für verschiedene Website-Typen',
+                'tools.policy.feature2': 'DSGVO-konforme Formulierungen',
+                'tools.policy.feature3': 'Mehrsprachige Unterstützung',
+                'tools.policy.feature4': 'Export nach HTML und PDF',
+                'tools.policy.company.label': 'Firmenname:',
+                'tools.policy.company.placeholder': 'Ihr Unternehmen',
+                'tools.policy.website.label': 'Website:',
+                'tools.policy.website.placeholder': 'https://example.com',
+                'tools.policy.email.label': 'Kontakt-E-Mail:',
+                'tools.policy.email.placeholder': 'contact@example.com',
+                'tools.policy.button': 'Richtlinie erstellen',
+                
+                // Banner Tester
+                'tools.tester.title': 'Cookie-Banner-Tester',
+                'tools.tester.description': 'Testen Sie verschiedene Cookie-Widget-Einstellungen und sehen Sie, wie sie auf Ihrer Website aussehen werden.',
+                'tools.tester.feature1': 'Vorschau verschiedener Themes',
+                'tools.tester.feature2': 'Testen von Banner-Positionen',
+                'tools.tester.feature3': 'Überprüfung in verschiedenen Sprachen',
+                'tools.tester.feature4': 'Mobile Responsivität',
+                'tools.tester.theme.label': 'Theme:',
+                'tools.tester.theme.modern': 'Modern',
+                'tools.tester.theme.classic': 'Klassisch',
+                'tools.tester.theme.dark': 'Dunkel',
+                'tools.tester.theme.minimal': 'Minimal',
+                'tools.tester.position.label': 'Position:',
+                'tools.tester.position.bottom': 'Unten',
+                'tools.tester.position.top': 'Oben',
+                'tools.tester.position.center': 'Mitte',
+                'tools.tester.button': 'Test anzeigen',
+                'tools.tester.reset': 'Zurücksetzen',
+                
+                // Documentation
+                'docs.title': 'Cookie Widget v3.3 Dokumentation',
+                'docs.subtitle': 'Vollständiger Leitfaden zu neuen exklusiven Funktionen: Smart Auto-Detect Tracker, SEO-Friendly Mode, Script Guard, Zero-Reload Mode, Integrations Hub, Secure Storage und Geo-Adaptive Compliance',
+                'docs.stats.version': 'Version',
+                'docs.stats.size': 'Vollständige Größe',
+                'docs.stats.features': 'Einzigartige Funktionen',
+                'docs.stats.languages': 'Unterstützte Sprachen',
+                'docs.stats.laws': 'Gesetzeskonformität',
+                'docs.stats.dependencies': 'Abhängigkeiten',
+                'docs.contents': 'Inhalt',
+                
+                // Documentation navigation
+                'docs.nav.quickstart': 'Schnellstart',
+                'docs.nav.installation': 'Installation',
+                'docs.nav.advanced': '🆕 Exklusive Funktionen',
+                'docs.nav.smart-detect': '🧠 Smart Auto-Detect',
+                'docs.nav.seo-friendly': '🔍 SEO-Friendly Mode',
+                'docs.nav.script-guard': '🔒 Script Guard',
+                'docs.nav.integrations': '🤝 Integrations Hub',
+                'docs.nav.zero-reload': '🚀 Zero-Reload Mode',
+                'docs.nav.secure-storage': '🔒 Secure Storage',
+                'docs.nav.configuration': 'Konfiguration',
+                'docs.nav.api': 'API-Referenz',
+                'docs.nav.customization': 'Text-Anpassung',
+                'docs.nav.events': 'Ereignisse',
+                'docs.nav.examples': 'Beispiele',
+                'docs.nav.compliance': 'Gesetzeskonformität',
+                'docs.nav.troubleshooting': 'Fehlerbehebung',
+                
+                // Quick start section
+                'docs.quickstart.title': '🚀 Schnellstart',
+                'docs.quickstart.description': 'Integrieren Sie Cookie Widget in 2 Minuten auf Ihrer Website und erhalten Sie vollständige Compliance mit internationalen Datenschutzstandards:',
+                'docs.quickstart.features': '✨ Neue exklusive Funktionen in v3.3',
+                'docs.quickstart.features.description': '🧠 Smart Auto-Detect Tracker • 🔍 SEO-Friendly Mode für Bots • 🔒 Script Guard Blockierung • 🚀 Zero-Reload Mode • 🤝 Integrations Hub • 🔒 Secure Storage • 🔄 Auto-Renew Consent • 🌍 Geo-Adaptive Compliance',
+                'docs.quickstart.step1': '1. Dateien einbinden',
+                'docs.quickstart.step2': '2. Fertig!',
+                'docs.quickstart.step2.description': 'Cookie-Banner wird automatisch:',
+                'docs.quickstart.step3': '3. Zusätzliche Einrichtung (optional)',
+                'docs.quickstart.auto.region': '🌍 Region erkennen',
+                'docs.quickstart.auto.region.description': 'Automatische Erkennung des Benutzerstandorts und Anwendung entsprechender Gesetzesanforderungen (DSGVO, CCPA, 152-FZ, LGPD, etc.)',
+                'docs.quickstart.auto.language': '🗣️ Sprache wählen',
+                'docs.quickstart.auto.language.description': 'Erkennung der Browser-Sprache aus 20+ unterstützten Sprachen einschließlich Deutsch, Englisch, Französisch, Spanisch, Chinesisch',
+                'docs.quickstart.auto.blocking': '🛡️ Cookies blockieren',
+                'docs.quickstart.auto.blocking.description': 'Blockierung aller unerwünschten Cookies bis zur Zustimmung und automatische Entfernung abgelehnter Cookies',
+                'docs.quickstart.auto.responsive': '📱 Anpassen',
+                'docs.quickstart.auto.responsive.description': 'Korrekte Anzeige auf allen Geräten und Bildschirmen mit modernem responsivem Design',
+                
+                // Tips and warnings
+                'docs.tip.title': '💡 Tipp',
+                'docs.tip.description': 'Für zusätzliche Anpassungen verwenden Sie die mächtige JavaScript-API. Alle Texte, Links, Themes und Verhalten können programmatisch geändert werden.',
+                'docs.warning.title': '⚠️ Wichtig für Entwickler',
+                'docs.warning.description': 'Cookie Widget blockiert automatisch alle Cookies bis zur Zustimmung. Stellen Sie sicher, dass Ihre Analytics- und Marketing-Skripte nur nach dem cookieConsentAccepted-Ereignis laden.',
+                
+                // Documentation sections - detailed features
+                'docs.smart-detect.title': '🧠 Smart Auto-Detect Tracking',
+                'docs.smart-detect.description': 'Automatische Erkennung von Trackern und Skripten auf der Seite mit Kategorisierung nach Typen.',
+                'docs.seo-friendly.title': '🔍 SEO-Friendly Mode',
+                'docs.seo-friendly.description': 'Suchbots sehen die Website als alle Cookies akzeptierend für bessere Indexierung, während echte Benutzer das Banner sehen.',
+                'docs.script-guard.title': '🔒 Script Guard',
+                'docs.script-guard.description': 'Skript-Blockierung für Analytics und Marketing noch vor dem Laden der Website durch Proxy-Stubs.',
+                'docs.integrations-hub.title': '🤝 Integrations Hub',
+                'docs.integrations-hub.description': 'Fertige Einstellungen für beliebte Services mit Zero-Config-Integration.',
+                'docs.zero-reload.title': '🚀 Zero-Reload Mode',
+                'docs.zero-reload.description': 'Aktivierung und Deaktivierung von Trackern ohne Seitenneuladen durch Warteschlangensystem.',
+                'docs.secure-storage.title': '🔒 Secure LocalStorage Backup',
+                'docs.secure-storage.description': 'Speicherung der Zustimmung in mehreren Speichern für maximale Zuverlässigkeit.'
+            },
+            
+            'fr': {
+                // Navigation
+                'nav.features': 'Fonctionnalités',
+                'nav.installation': 'Installation',
+                'nav.docs': 'Documentation',
+                'nav.examples': 'Exemples',
+                'nav.tools': 'Outils',
+                'nav.support': 'Support',
+                
+                // Hero Section
+                'hero.title.main': 'Cookie Widget',
+                'hero.title.sub': 'Conforme RGPD et Confidentialité Globale',
+                'hero.description': 'Widget révolutionnaire de bannière de cookies v3.3 avec 4 systèmes de sécurité exclusifs qu\'aucun concurrent n\'a : Bloqueur iFrame, Scanner de Scripts, Sandbox Sécurisé, Garde de Scripts Paresseux. Plus Smart Auto-Detect trackers, Mode SEO-Friendly, Mode Zero-Reload et support de 21 langues. Conformité complète avec RGPD, CCPA, LGPD, 152-FZ.',
+                'hero.btn.start': 'Commencer',
+                'hero.btn.demo': 'Voir la démo',
+                'hero.btn.examples': 'Exemples d\'intégration',
+                'hero.btn.github': 'GitHub',
+                'hero.stat.languages': 'Langues',
+                'hero.stat.deps': 'Dépendances',
+                'hero.stat.features': 'Fonctionnalités de Sécurité',
+                'hero.stat.gdpr': 'Conformité RGPD',
+                
+                // Features
+                'features.title': 'Fonctionnalités',
+                'features.description': 'Cookie Widget v3.3 avec 4 systèmes de sécurité révolutionnaires qu\'aucun concurrent n\'a : Bloqueur iFrame, Scanner de Scripts, Sandbox Sécurisé, Garde de Scripts Paresseux. Plus Smart Auto-Detect trackers, Mode SEO-Friendly, Mode Zero-Reload, support de 21 langues et conformité complète avec les lois internationales de confidentialité.',
+                
+                // Advanced Features v3.3
+                'advanced.title': '🚀 Fonctionnalités Exclusives',
+                'advanced.description': 'Capacités uniques que les concurrents n\'ont pas. Essayez-les maintenant !',
+                'advanced.cta.button': '🎮 Essayer toutes les fonctionnalités',
+                'advanced.cta.note': 'Démonstration interactive de toutes les fonctionnalités exclusives',
+                
+                // Demo features
+                'demo.smart.title': 'Smart Auto-Detect',
+                'demo.smart.description': 'Détection automatique des trackers sur la page',
+                'demo.smart.status.scanning': 'Analyse...',
+                'demo.seo.title': 'Mode SEO-Friendly',
+                'demo.seo.description': 'Détection des bots et robots de recherche',
+                'demo.seo.status.checking': 'Vérification...',
+                'demo.guard.title': 'Script Guard',
+                'demo.guard.description': 'Blocage de scripts avant consentement',
+                'demo.integrations.title': 'Hub d\'Intégrations',
+                'demo.integrations.description': 'Configurations prêtes pour services populaires',
+                'demo.new_badge': 'NOUVEAU',
+                
+                // New Advanced Security Features Demo
+                'demo.iframe.title': 'Bloqueur iFrame',
+                'demo.iframe.description': 'Bloque YouTube/TikTok/Maps sans consentement',
+                'demo.iframe.status.scanning': 'Analyse des iframes...',
+                'demo.iframe.status.blocked': 'iframes bloqués',
+                
+                'demo.scanner.title': 'Scanner de Scripts',
+                'demo.scanner.description': 'Analyse les scripts comme CookieBot localement',
+                'demo.scanner.status.analyzing': 'Analyse des scripts...',
+                'demo.scanner.status.found': 'scripts trouvés',
+                
+                'demo.sandbox.title': 'Sandbox Sécurisé',
+                'demo.sandbox.description': 'Environnement d\'exécution de scripts isolé',
+                'demo.sandbox.status.testing': 'Test du sandbox...',
+                'demo.sandbox.status.ready': 'Sandbox prêt',
+                
+                'demo.lazy.title': 'Garde de Scripts Paresseux',
+                'demo.lazy.description': 'Bloque deferred/async jusqu\'au consentement',
+                'demo.lazy.status.monitoring': 'Surveillance des scripts...',
+                'demo.lazy.status.blocked': 'scripts en file d\'attente',
+                
+                // Feature translations for new security systems
+                'feature.iframe-blocker.title': '🚫 Bloqueur iFrame',
+                'feature.iframe-blocker.description': 'Bloque automatiquement YouTube, TikTok, Google Maps et autres iframes qui définissent des cookies sans consentement utilisateur. Affiche des espaces réservés de consentement à la place.',
+                
+                'feature.script-scanner.title': '🔍 Scanner de Scripts',
+                'feature.script-scanner.description': 'Analyse tous les scripts de page comme CookieBot mais localement. Détecte les modèles de définition de cookies, classe par catégories et fournit des rapports détaillés.',
+                
+                'feature.secure-sandbox.title': '🏖️ Sandbox Sécurisé',
+                'feature.secure-sandbox.description': 'Exécute les scripts dans des iframes sandbox isolés avec accès API limité. Approche de sécurité révolutionnaire que presque personne n\'implémente.',
+                
+                'feature.lazy-script-guard.title': '⏳ Garde de Scripts Paresseux',
+                'feature.lazy-script-guard.description': 'Bloque les scripts deferred et async jusqu\'à ce que l\'utilisateur donne son consentement. Empêche l\'exécution de scripts en arrière-plan pendant le chargement de la page.',
+                
+                // Interface elements
+                'ui.copy': 'Copier',
+                'ui.copied': 'Copié !',
+                'ui.read_more': 'Lire →',
+                'ui.back_to_top': '↑',
+                'ui.menu': 'Menu',
+                'ui.close': 'Fermer',
+                
+                // Footer
+                'footer.description': 'Widget moderne de bannière de cookies avec conformité RGPD',
+                'footer.project': 'Projet',
+                'footer.documentation': 'Documentation',
+                'footer.support': 'Support',
+                'footer.settings': 'Paramètres des Cookies',
+                'footer.copyright': 'Distribué sous licence MIT.',
+                
+                // Language Selector
+                'lang.select': 'Choisir la langue',
+                'lang.auto': 'Détection automatique',
+                
+                // Tools page
+                'tools.title': 'Outils Webmaster',
+                'tools.subtitle': 'Outils utiles pour l\'analyse des cookies, la vérification de conformité RGPD et les tests de bannières de cookies. Tous les outils fonctionnent localement dans votre navigateur et n\'envoient pas de données au serveur.',
+                
+                // Cookie Analyzer
+                'tools.analyzer.title': 'Analyseur de Cookies',
+                'tools.analyzer.description': 'Analysez tous les cookies sur le site actuel, vérifiez leurs types, dates d\'expiration et exigences de conformité RGPD.',
+                'tools.analyzer.feature1': 'Liste de tous les cookies sur le site',
+                'tools.analyzer.feature2': 'Classification par types (nécessaires, fonctionnels, analytiques)',
+                'tools.analyzer.feature3': 'Vérification des dates d\'expiration et de sécurité',
+                'tools.analyzer.feature4': 'Conformité RGPD de chaque cookie',
+                'tools.analyzer.button': 'Analyser les Cookies',
+                
+                // GDPR Checker
+                'tools.gdpr.title': 'Vérification RGPD',
+                'tools.gdpr.description': 'Vérifiez la conformité de votre site avec le RGPD, CCPA, 152-FZ et autres lois de protection des données.',
+                'tools.gdpr.feature1': 'Vérification de la présence de bannière de cookies',
+                'tools.gdpr.feature2': 'Analyse de la politique de confidentialité',
+                'tools.gdpr.feature3': 'Vérification du blocage des cookies avant consentement',
+                'tools.gdpr.feature4': 'Conformité aux standards internationaux',
+                'tools.gdpr.url.label': 'URL à vérifier :',
+                'tools.gdpr.url.placeholder': 'https://example.com',
+                'tools.gdpr.button': 'Vérifier RGPD',
+                
+                // Policy Generator
+                'tools.policy.title': 'Générateur de Politique de Cookies',
+                'tools.policy.description': 'Créez une politique de cookies professionnelle pour votre site web avec toutes les exigences RGPD.',
+                'tools.policy.feature1': 'Modèles prêts pour différents types de sites',
+                'tools.policy.feature2': 'Formulations conformes au RGPD',
+                'tools.policy.feature3': 'Support multilingue',
+                'tools.policy.feature4': 'Export en HTML et PDF',
+                'tools.policy.company.label': 'Nom de l\'entreprise :',
+                'tools.policy.company.placeholder': 'Votre Entreprise',
+                'tools.policy.website.label': 'Site web :',
+                'tools.policy.website.placeholder': 'https://example.com',
+                'tools.policy.email.label': 'Email de contact :',
+                'tools.policy.email.placeholder': 'contact@example.com',
+                'tools.policy.button': 'Créer la Politique',
+                
+                // Banner Tester
+                'tools.tester.title': 'Testeur de Bannière de Cookies',
+                'tools.tester.description': 'Testez différents paramètres de Cookie Widget et voyez comment ils apparaîtront sur votre site.',
+                'tools.tester.feature1': 'Aperçu de différents thèmes',
+                'tools.tester.feature2': 'Test des positions de bannière',
+                'tools.tester.feature3': 'Vérification en différentes langues',
+                'tools.tester.feature4': 'Réactivité mobile',
+                'tools.tester.theme.label': 'Thème :',
+                'tools.tester.theme.modern': 'Moderne',
+                'tools.tester.theme.classic': 'Classique',
+                'tools.tester.theme.dark': 'Sombre',
+                'tools.tester.theme.minimal': 'Minimal',
+                'tools.tester.position.label': 'Position :',
+                'tools.tester.position.bottom': 'Bas',
+                'tools.tester.position.top': 'Haut',
+                'tools.tester.position.center': 'Centre',
+                'tools.tester.button': 'Afficher le Test',
+                'tools.tester.reset': 'Réinitialiser',
+                
+                // Documentation
+                'docs.title': 'Documentation Cookie Widget v3.3',
+                'docs.subtitle': 'Guide complet des nouvelles fonctionnalités exclusives : Smart Auto-Detect trackers, Mode SEO-Friendly, Script Guard, Mode Zero-Reload, Hub d\'Intégrations, Stockage Sécurisé et Conformité Géo-Adaptative',
+                'docs.stats.version': 'Version',
+                'docs.stats.size': 'Taille complète',
+                'docs.stats.features': 'Fonctionnalités uniques',
+                'docs.stats.languages': 'Langues supportées',
+                'docs.stats.laws': 'Conformité légale',
+                'docs.stats.dependencies': 'Dépendances',
+                'docs.contents': 'Contenu',
+                
+                // Documentation navigation
+                'docs.nav.quickstart': 'Démarrage Rapide',
+                'docs.nav.installation': 'Installation',
+                'docs.nav.advanced': '🆕 Fonctionnalités Exclusives',
+                'docs.nav.smart-detect': '🧠 Smart Auto-Detect',
+                'docs.nav.seo-friendly': '🔍 Mode SEO-Friendly',
+                'docs.nav.script-guard': '🔒 Script Guard',
+                'docs.nav.integrations': '🤝 Hub d\'Intégrations',
+                'docs.nav.zero-reload': '🚀 Mode Zero-Reload',
+                'docs.nav.secure-storage': '🔒 Stockage Sécurisé',
+                'docs.nav.configuration': 'Configuration',
+                'docs.nav.api': 'Référence API',
+                'docs.nav.customization': 'Personnalisation du Texte',
+                'docs.nav.events': 'Événements',
+                'docs.nav.examples': 'Exemples',
+                'docs.nav.compliance': 'Conformité Légale',
+                'docs.nav.troubleshooting': 'Dépannage',
+                
+                // Quick start section
+                'docs.quickstart.title': '🚀 Démarrage Rapide',
+                'docs.quickstart.description': 'Intégrez Cookie Widget sur votre site en 2 minutes et obtenez une conformité complète avec les standards internationaux de protection des données :',
+                'docs.quickstart.features': '✨ Nouvelles fonctionnalités exclusives en v3.3',
+                'docs.quickstart.features.description': '🧠 Smart Auto-Detect trackers • 🔍 Mode SEO-Friendly pour bots • 🔒 Blocage Script Guard • 🚀 Mode Zero-Reload • 🤝 Hub d\'Intégrations • 🔒 Stockage Sécurisé • 🔄 Renouvellement Auto du Consentement • 🌍 Conformité Géo-Adaptative',
+                'docs.quickstart.step1': '1. Inclure les fichiers',
+                'docs.quickstart.step2': '2. Terminé !',
+                'docs.quickstart.step2.description': 'La bannière de cookies va automatiquement :',
+                'docs.quickstart.step3': '3. Configuration supplémentaire (optionnelle)',
+                'docs.quickstart.auto.region': '🌍 Détecter la région',
+                'docs.quickstart.auto.region.description': 'Détection automatique de la localisation de l\'utilisateur et application des exigences légales correspondantes (RGPD, CCPA, 152-FZ, LGPD, etc.)',
+                'docs.quickstart.auto.language': '🗣️ Choisir la langue',
+                'docs.quickstart.auto.language.description': 'Détection de la langue du navigateur parmi 20+ langues supportées incluant le français, l\'anglais, l\'allemand, l\'espagnol, le chinois',
+                'docs.quickstart.auto.blocking': '🛡️ Bloquer les cookies',
+                'docs.quickstart.auto.blocking.description': 'Blocage de tous les cookies indésirables jusqu\'au consentement et suppression automatique des cookies rejetés',
+                'docs.quickstart.auto.responsive': '📱 S\'adapter',
+                'docs.quickstart.auto.responsive.description': 'Affichage correct sur tous les appareils et écrans avec un design responsive moderne',
+                
+                // Tips and warnings
+                'docs.tip.title': '💡 Conseil',
+                'docs.tip.description': 'Pour une personnalisation supplémentaire, utilisez la puissante API JavaScript. Tous les textes, liens, thèmes et comportements peuvent être modifiés par programmation.',
+                'docs.warning.title': '⚠️ Important pour les développeurs',
+                'docs.warning.description': 'Cookie Widget bloque automatiquement tous les cookies jusqu\'au consentement. Assurez-vous que vos scripts d\'analyse et de marketing se chargent uniquement après l\'événement cookieConsentAccepted.',
+                
+                // Documentation sections - detailed features
+                'docs.smart-detect.title': '🧠 Smart Auto-Detect Tracking',
+                'docs.smart-detect.description': 'Détection automatique des trackers et scripts sur la page avec catégorisation par types.',
+                'docs.seo-friendly.title': '🔍 Mode SEO-Friendly',
+                'docs.seo-friendly.description': 'Les bots de recherche voient le site comme acceptant tous les cookies pour une meilleure indexation, tandis que les vrais utilisateurs voient la bannière.',
+                'docs.script-guard.title': '🔒 Script Guard',
+                'docs.script-guard.description': 'Blocage de scripts pour Analytics et Marketing même avant le chargement du site via des stubs proxy.',
+                'docs.integrations-hub.title': '🤝 Hub d\'Intégrations',
+                'docs.integrations-hub.description': 'Paramètres prêts à l\'emploi pour les services populaires avec intégration zéro-config.',
+                'docs.zero-reload.title': '🚀 Mode Zero-Reload',
+                'docs.zero-reload.description': 'Activation et désactivation des trackers sans rechargement de page via système de file d\'attente.',
+                'docs.secure-storage.title': '🔒 Sauvegarde LocalStorage Sécurisée',
+                'docs.secure-storage.description': 'Sauvegarde du consentement dans plusieurs stockages pour une fiabilité maximale.'
+            },
+            
+            'es': {
+                // Navigation
+                'nav.features': 'Características',
+                'nav.installation': 'Instalación',
+                'nav.docs': 'Documentación',
+                'nav.examples': 'Ejemplos',
+                'nav.tools': 'Herramientas',
+                'nav.support': 'Soporte',
+                
+                // Hero Section
+                'hero.title.main': 'Cookie Widget',
+                'hero.title.sub': 'Cumple con GDPR y Privacidad Global',
+                'hero.description': 'Widget revolucionario de banner de cookies v3.3 con 4 sistemas de seguridad exclusivos que ningún competidor tiene: Bloqueador iFrame, Escáner de Scripts, Sandbox Seguro, Guardia de Scripts Perezoso. Además Smart Auto-Detect trackers, Modo SEO-Friendly, Modo Zero-Reload y soporte para 21 idiomas. Cumplimiento completo con GDPR, CCPA, LGPD, 152-FZ.',
+                'hero.btn.start': 'Comenzar',
+                'hero.btn.demo': 'Ver demo',
+                'hero.btn.examples': 'Ejemplos de integración',
+                'hero.btn.github': 'GitHub',
+                'hero.stat.languages': 'Idiomas',
+                'hero.stat.deps': 'Dependencias',
+                'hero.stat.features': 'Características de Seguridad',
+                'hero.stat.gdpr': 'Cumplimiento GDPR',
+                
+                // Features
+                'features.title': 'Características',
+                'features.description': 'Cookie Widget v3.3 con 4 sistemas de seguridad revolucionarios que ningún competidor tiene: Bloqueador iFrame, Escáner de Scripts, Sandbox Seguro, Guardia de Scripts Perezoso. Además Smart Auto-Detect trackers, Modo SEO-Friendly, Modo Zero-Reload, soporte para 21 idiomas y cumplimiento completo con las leyes internacionales de privacidad.',
+                
+                // Advanced Features v3.3
+                'advanced.title': '🚀 Características Exclusivas',
+                'advanced.description': 'Capacidades únicas que los competidores no tienen. ¡Pruébalas ahora!',
+                'advanced.cta.button': '🎮 Probar todas las características',
+                'advanced.cta.note': 'Demostración interactiva de todas las características exclusivas',
+                
+                // Demo features
+                'demo.smart.title': 'Smart Auto-Detect',
+                'demo.smart.description': 'Detección automática de rastreadores en la página',
+                'demo.smart.status.scanning': 'Escaneando...',
+                'demo.seo.title': 'Modo SEO-Friendly',
+                'demo.seo.description': 'Detección de bots y robots de búsqueda',
+                'demo.seo.status.checking': 'Verificando...',
+                'demo.guard.title': 'Script Guard',
+                'demo.guard.description': 'Bloqueo de scripts antes del consentimiento',
+                'demo.integrations.title': 'Hub de Integraciones',
+                'demo.integrations.description': 'Configuraciones listas para servicios populares',
+                'demo.new_badge': 'NUEVO',
+                
+                // New Advanced Security Features Demo
+                'demo.iframe.title': 'Bloqueador iFrame',
+                'demo.iframe.description': 'Bloquea YouTube/TikTok/Maps sin consentimiento',
+                'demo.iframe.status.scanning': 'Escaneando iframes...',
+                'demo.iframe.status.blocked': 'iframes bloqueados',
+                
+                'demo.scanner.title': 'Escáner de Scripts',
+                'demo.scanner.description': 'Analiza scripts como CookieBot localmente',
+                'demo.scanner.status.analyzing': 'Analizando scripts...',
+                'demo.scanner.status.found': 'scripts encontrados',
+                
+                'demo.sandbox.title': 'Sandbox Seguro',
+                'demo.sandbox.description': 'Entorno de ejecución de scripts aislado',
+                'demo.sandbox.status.testing': 'Probando sandbox...',
+                'demo.sandbox.status.ready': 'Sandbox listo',
+                
+                'demo.lazy.title': 'Guardia de Scripts Perezoso',
+                'demo.lazy.description': 'Bloquea deferred/async hasta consentimiento',
+                'demo.lazy.status.monitoring': 'Monitoreando scripts...',
+                'demo.lazy.status.blocked': 'scripts en cola',
+                
+                // Feature translations for new security systems
+                'feature.iframe-blocker.title': '🚫 Bloqueador iFrame',
+                'feature.iframe-blocker.description': 'Bloquea automáticamente YouTube, TikTok, Google Maps y otros iframes que establecen cookies sin consentimiento del usuario. Muestra marcadores de posición de consentimiento en su lugar.',
+                
+                'feature.script-scanner.title': '🔍 Escáner de Scripts',
+                'feature.script-scanner.description': 'Analiza todos los scripts de página como CookieBot pero localmente. Detecta patrones de configuración de cookies, clasifica por categorías y proporciona informes detallados.',
+                
+                'feature.secure-sandbox.title': '🏖️ Sandbox Seguro',
+                'feature.secure-sandbox.description': 'Ejecuta scripts en iframes sandbox aislados con acceso API limitado. Enfoque de seguridad revolucionario que casi nadie implementa.',
+                
+                'feature.lazy-script-guard.title': '⏳ Guardia de Scripts Perezoso',
+                'feature.lazy-script-guard.description': 'Bloquea scripts deferred y async hasta que el usuario proporcione consentimiento. Previene la ejecución de scripts en segundo plano durante la carga de la página.',
+                
+                // Interface elements
+                'ui.copy': 'Copiar',
+                'ui.copied': '¡Copiado!',
+                'ui.read_more': 'Leer →',
+                'ui.back_to_top': '↑',
+                'ui.menu': 'Menú',
+                'ui.close': 'Cerrar',
+                
+                // Footer
+                'footer.description': 'Widget moderno de banner de cookies con cumplimiento GDPR',
+                'footer.project': 'Proyecto',
+                'footer.documentation': 'Documentación',
+                'footer.support': 'Soporte',
+                'footer.settings': 'Configuración de Cookies',
+                'footer.copyright': 'Distribuido bajo licencia MIT.',
+                
+                // Language Selector
+                'lang.select': 'Seleccionar idioma',
+                'lang.auto': 'Detección automática',
+                
+                // Tools page
+                'tools.title': 'Herramientas para Webmasters',
+                'tools.subtitle': 'Herramientas útiles para análisis de cookies, verificación de cumplimiento GDPR y pruebas de banners de cookies. Todas las herramientas funcionan localmente en su navegador y no envían datos al servidor.',
+                
+                // Cookie Analyzer
+                'tools.analyzer.title': 'Analizador de Cookies',
+                'tools.analyzer.description': 'Analice todas las cookies en el sitio actual, verifique sus tipos, fechas de vencimiento y requisitos de cumplimiento GDPR.',
+                'tools.analyzer.feature1': 'Lista de todas las cookies en el sitio',
+                'tools.analyzer.feature2': 'Clasificación por tipos (necesarias, funcionales, analíticas)',
+                'tools.analyzer.feature3': 'Verificación de fechas de vencimiento y seguridad',
+                'tools.analyzer.feature4': 'Cumplimiento GDPR de cada cookie',
+                'tools.analyzer.button': 'Analizar Cookies',
+                
+                // GDPR Checker
+                'tools.gdpr.title': 'Verificación GDPR',
+                'tools.gdpr.description': 'Verifique el cumplimiento de su sitio con GDPR, CCPA, 152-FZ y otras leyes de protección de datos.',
+                'tools.gdpr.feature1': 'Verificación de presencia de banner de cookies',
+                'tools.gdpr.feature2': 'Análisis de política de privacidad',
+                'tools.gdpr.feature3': 'Verificación de bloqueo de cookies antes del consentimiento',
+                'tools.gdpr.feature4': 'Cumplimiento de estándares internacionales',
+                'tools.gdpr.url.label': 'URL a verificar:',
+                'tools.gdpr.url.placeholder': 'https://example.com',
+                'tools.gdpr.button': 'Verificar GDPR',
+                
+                // Policy Generator
+                'tools.policy.title': 'Generador de Política de Cookies',
+                'tools.policy.description': 'Cree una política de cookies profesional para su sitio web con todos los requisitos GDPR.',
+                'tools.policy.feature1': 'Plantillas listas para diferentes tipos de sitios',
+                'tools.policy.feature2': 'Formulaciones compatibles con GDPR',
+                'tools.policy.feature3': 'Soporte multiidioma',
+                'tools.policy.feature4': 'Exportar a HTML y PDF',
+                'tools.policy.company.label': 'Nombre de la empresa:',
+                'tools.policy.company.placeholder': 'Su Empresa',
+                'tools.policy.website.label': 'Sitio web:',
+                'tools.policy.website.placeholder': 'https://example.com',
+                'tools.policy.email.label': 'Email de contacto:',
+                'tools.policy.email.placeholder': 'contact@example.com',
+                'tools.policy.button': 'Generar Política',
+                
+                // Banner Tester
+                'tools.tester.title': 'Probador de Banner de Cookies',
+                'tools.tester.description': 'Pruebe diferentes configuraciones de Cookie Widget y vea cómo se verán en su sitio.',
+                'tools.tester.feature1': 'Vista previa de diferentes temas',
+                'tools.tester.feature2': 'Prueba de posiciones de banner',
+                'tools.tester.feature3': 'Verificación en diferentes idiomas',
+                'tools.tester.feature4': 'Capacidad de respuesta móvil',
+                'tools.tester.theme.label': 'Tema:',
+                'tools.tester.theme.modern': 'Moderno',
+                'tools.tester.theme.classic': 'Clásico',
+                'tools.tester.theme.dark': 'Oscuro',
+                'tools.tester.theme.minimal': 'Mínimo',
+                'tools.tester.position.label': 'Posición:',
+                'tools.tester.position.bottom': 'Abajo',
+                'tools.tester.position.top': 'Arriba',
+                'tools.tester.position.center': 'Centro',
+                'tools.tester.button': 'Mostrar Prueba',
+                'tools.tester.reset': 'Restablecer',
+                
+                // Documentation
+                'docs.title': 'Documentación Cookie Widget v3.3',
+                'docs.subtitle': 'Guía completa de nuevas características exclusivas: Smart Auto-Detect trackers, Modo SEO-Friendly, Script Guard, Modo Zero-Reload, Hub de Integraciones, Almacenamiento Seguro y Cumplimiento Geo-Adaptativo',
+                'docs.stats.version': 'Versión',
+                'docs.stats.size': 'Tamaño completo',
+                'docs.stats.features': 'Características únicas',
+                'docs.stats.languages': 'Idiomas soportados',
+                'docs.stats.laws': 'Cumplimiento legal',
+                'docs.stats.dependencies': 'Dependencias',
+                'docs.contents': 'Contenido',
+                
+                // Documentation navigation
+                'docs.nav.quickstart': 'Inicio Rápido',
+                'docs.nav.installation': 'Instalación',
+                'docs.nav.advanced': '🆕 Características Exclusivas',
+                'docs.nav.smart-detect': '🧠 Smart Auto-Detect',
+                'docs.nav.seo-friendly': '🔍 Modo SEO-Friendly',
+                'docs.nav.script-guard': '🔒 Script Guard',
+                'docs.nav.integrations': '🤝 Hub de Integraciones',
+                'docs.nav.zero-reload': '🚀 Modo Zero-Reload',
+                'docs.nav.secure-storage': '🔒 Almacenamiento Seguro',
+                'docs.nav.configuration': 'Configuración',
+                'docs.nav.api': 'Referencia API',
+                'docs.nav.customization': 'Personalización de Texto',
+                'docs.nav.events': 'Eventos',
+                'docs.nav.examples': 'Ejemplos',
+                'docs.nav.compliance': 'Cumplimiento Legal',
+                'docs.nav.troubleshooting': 'Solución de Problemas',
+                
+                // Quick start section
+                'docs.quickstart.title': '🚀 Inicio Rápido',
+                'docs.quickstart.description': 'Integre Cookie Widget en su sitio en 2 minutos y obtenga cumplimiento completo con estándares internacionales de protección de datos:',
+                'docs.quickstart.features': '✨ Nuevas características exclusivas en v3.3',
+                'docs.quickstart.features.description': '🧠 Smart Auto-Detect trackers • 🔍 Modo SEO-Friendly para bots • 🔒 Bloqueo Script Guard • 🚀 Modo Zero-Reload • 🤝 Hub de Integraciones • 🔒 Almacenamiento Seguro • 🔄 Renovación Auto del Consentimiento • 🌍 Cumplimiento Geo-Adaptativo',
+                'docs.quickstart.step1': '1. Incluir archivos',
+                'docs.quickstart.step2': '2. ¡Listo!',
+                'docs.quickstart.step2.description': 'El banner de cookies automáticamente:',
+                'docs.quickstart.step3': '3. Configuración adicional (opcional)',
+                'docs.quickstart.auto.region': '🌍 Detectar región',
+                'docs.quickstart.auto.region.description': 'Detección automática de la ubicación del usuario y aplicación de requisitos legales correspondientes (GDPR, CCPA, 152-FZ, LGPD, etc.)',
+                'docs.quickstart.auto.language': '🗣️ Elegir idioma',
+                'docs.quickstart.auto.language.description': 'Detección del idioma del navegador de 20+ idiomas soportados incluyendo español, inglés, alemán, francés, chino',
+                'docs.quickstart.auto.blocking': '🛡️ Bloquear cookies',
+                'docs.quickstart.auto.blocking.description': 'Bloqueo de todas las cookies no deseadas hasta el consentimiento y eliminación automática de cookies rechazadas',
+                'docs.quickstart.auto.responsive': '📱 Adaptarse',
+                'docs.quickstart.auto.responsive.description': 'Visualización correcta en todos los dispositivos y pantallas con diseño responsive moderno',
+                
+                // Tips and warnings
+                'docs.tip.title': '💡 Consejo',
+                'docs.tip.description': 'Para personalización adicional use la poderosa API de JavaScript. Todos los textos, enlaces, temas y comportamientos pueden cambiarse programáticamente.',
+                'docs.warning.title': '⚠️ Importante para desarrolladores',
+                'docs.warning.description': 'Cookie Widget bloquea automáticamente todas las cookies hasta el consentimiento. Asegúrese de que sus scripts de análisis y marketing se carguen solo después del evento cookieConsentAccepted.',
+                
+                // Documentation sections - detailed features
+                'docs.smart-detect.title': '🧠 Smart Auto-Detect Tracking',
+                'docs.smart-detect.description': 'Detección automática de rastreadores y scripts en la página con categorización por tipos.',
+                'docs.seo-friendly.title': '🔍 Modo SEO-Friendly',
+                'docs.seo-friendly.description': 'Los bots de búsqueda ven el sitio como aceptando todas las cookies para mejor indexación, mientras que los usuarios reales ven el banner.',
+                'docs.script-guard.title': '🔒 Script Guard',
+                'docs.script-guard.description': 'Bloqueo de scripts para Analytics y Marketing incluso antes de la carga del sitio a través de stubs proxy.',
+                'docs.integrations-hub.title': '🤝 Hub de Integraciones',
+                'docs.integrations-hub.description': 'Configuraciones listas para servicios populares con integración de configuración cero.',
+                'docs.zero-reload.title': '🚀 Modo Zero-Reload',
+                'docs.zero-reload.description': 'Activación y desactivación de rastreadores sin recarga de página a través del sistema de cola.',
+                'docs.secure-storage.title': '🔒 Respaldo LocalStorage Seguro',
+                'docs.secure-storage.description': 'Guardado del consentimiento en múltiples almacenamientos para máxima confiabilidad.'
+            },
+            
             'pl': {
                 // Navigation
                 'nav.features': 'Funkcje',
@@ -1710,6 +2587,40 @@ class I18n {
                 'demo.integrations.title': 'Hub Integracji',
                 'demo.integrations.description': 'Gotowe konfiguracje dla popularnych usług',
                 'demo.new_badge': 'NOWE',
+                
+                // New Advanced Security Features Demo
+                'demo.iframe.title': 'Blokada iFrame',
+                'demo.iframe.description': 'Blokuje YouTube/TikTok/Mapy bez zgody',
+                'demo.iframe.status.scanning': 'Skanowanie iframe...',
+                'demo.iframe.status.blocked': 'iframe zablokowane',
+                
+                'demo.scanner.title': 'Skaner skryptów',
+                'demo.scanner.description': 'Analizuje skrypty jak CookieBot lokalnie',
+                'demo.scanner.status.analyzing': 'Analiza skryptów...',
+                'demo.scanner.status.found': 'skryptów znaleziono',
+                
+                'demo.sandbox.title': 'Bezpieczna piaskownica',
+                'demo.sandbox.description': 'Izolowane środowisko wykonywania skryptów',
+                'demo.sandbox.status.testing': 'Testowanie piaskownicy...',
+                'demo.sandbox.status.ready': 'Piaskownica gotowa',
+                
+                'demo.lazy.title': 'Leniwa ochrona skryptów',
+                'demo.lazy.description': 'Blokuje deferred/async do zgody',
+                'demo.lazy.status.monitoring': 'Monitorowanie skryptów...',
+                'demo.lazy.status.blocked': 'skryptów w kolejce',
+                
+                // Feature translations for new security systems
+                'feature.iframe-blocker.title': '🚫 Blokada iFrame',
+                'feature.iframe-blocker.description': 'Automatycznie blokuje YouTube, TikTok, Google Maps i inne iframe, które ustawiają cookie bez zgody użytkownika. Pokazuje zastępcze żądania zgody.',
+                
+                'feature.script-scanner.title': '🔍 Skaner skryptów',
+                'feature.script-scanner.description': 'Analizuje wszystkie skrypty strony jak CookieBot, ale lokalnie. Wykrywa wzorce ustawiania cookie, klasyfikuje według kategorii i dostarcza szczegółowe raporty.',
+                
+                'feature.secure-sandbox.title': '🏖️ Bezpieczna piaskownica',
+                'feature.secure-sandbox.description': 'Wykonuje skrypty w izolowanych iframe piaskownicy z ograniczonym dostępem do API. Rewolucyjne podejście do bezpieczeństwa, które prawie nikt nie implementuje.',
+                
+                'feature.lazy-script-guard.title': '⏳ Leniwa ochrona skryptów',
+                'feature.lazy-script-guard.description': 'Blokuje skrypty deferred i async do momentu udzielenia zgody przez użytkownika. Zapobiega wykonywaniu skryptów w tle podczas ładowania strony.',
                 
                 // Advanced CTA
                 'advanced.cta.button': '🎮 Wypróbuj wszystkie funkcje',
@@ -1846,6 +2757,77 @@ class I18n {
                 'footer.support': 'Wsparcie',
                 'footer.settings': 'Ustawienia Cookie',
                 'footer.copyright': 'Dystrybuowane na licencji MIT.',
+                
+                // Language Selector
+                'lang.select': 'Wybierz język',
+                'lang.auto': 'Automatyczne wykrywanie',
+                
+                // Documentation
+                'docs.title': 'Dokumentacja Cookie Widget v3.3',
+                'docs.subtitle': 'Kompletny przewodnik po nowych ekskluzywnych funkcjach: Smart Auto-Detect trackers, Tryb SEO-Friendly, Script Guard, Tryb Zero-Reload, Hub Integracji, Bezpieczne Przechowywanie i Geo-Adaptacyjna Zgodność',
+                'docs.stats.version': 'Wersja',
+                'docs.stats.size': 'Pełny rozmiar',
+                'docs.stats.features': 'Unikalne funkcje',
+                'docs.stats.languages': 'Obsługiwane języki',
+                'docs.stats.laws': 'Zgodność z prawem',
+                'docs.stats.dependencies': 'Zależności',
+                'docs.contents': 'Spis treści',
+                
+                // Documentation navigation
+                'docs.nav.quickstart': 'Szybki Start',
+                'docs.nav.installation': 'Instalacja',
+                'docs.nav.advanced': '🆕 Ekskluzywne Funkcje',
+                'docs.nav.smart-detect': '🧠 Smart Auto-Detect',
+                'docs.nav.seo-friendly': '🔍 Tryb SEO-Friendly',
+                'docs.nav.script-guard': '🔒 Script Guard',
+                'docs.nav.integrations': '🤝 Hub Integracji',
+                'docs.nav.zero-reload': '🚀 Tryb Zero-Reload',
+                'docs.nav.secure-storage': '🔒 Bezpieczne Przechowywanie',
+                'docs.nav.configuration': 'Konfiguracja',
+                'docs.nav.api': 'Dokumentacja API',
+                'docs.nav.customization': 'Dostosowanie Tekstu',
+                'docs.nav.events': 'Zdarzenia',
+                'docs.nav.examples': 'Przykłady',
+                'docs.nav.compliance': 'Zgodność z Prawem',
+                'docs.nav.troubleshooting': 'Rozwiązywanie Problemów',
+                
+                // Quick start section
+                'docs.quickstart.title': '🚀 Szybki Start',
+                'docs.quickstart.description': 'Zintegruj Cookie Widget na swojej stronie w 2 minuty i uzyskaj pełną zgodność z międzynarodowymi standardami ochrony danych:',
+                'docs.quickstart.features': '✨ Nowe ekskluzywne funkcje w v3.3',
+                'docs.quickstart.features.description': '🧠 Smart Auto-Detect trackers • 🔍 Tryb SEO-Friendly dla botów • 🔒 Blokowanie Script Guard • 🚀 Tryb Zero-Reload • 🤝 Hub Integracji • 🔒 Bezpieczne Przechowywanie • 🔄 Auto-Odnowienie Zgody • 🌍 Geo-Adaptacyjna Zgodność',
+                'docs.quickstart.step1': '1. Dołącz pliki',
+                'docs.quickstart.step2': '2. Gotowe!',
+                'docs.quickstart.step2.description': 'Banner cookie automatycznie:',
+                'docs.quickstart.step3': '3. Dodatkowa konfiguracja (opcjonalna)',
+                'docs.quickstart.auto.region': '🌍 Wykryj region',
+                'docs.quickstart.auto.region.description': 'Automatyczne wykrywanie lokalizacji użytkownika i stosowanie odpowiednich wymagań prawnych (RODO, CCPA, 152-FZ, LGPD, itp.)',
+                'docs.quickstart.auto.language': '🗣️ Wybierz język',
+                'docs.quickstart.auto.language.description': 'Wykrywanie języka przeglądarki z 20+ obsługiwanych języków włączając polski, angielski, niemiecki, francuski, chiński',
+                'docs.quickstart.auto.blocking': '🛡️ Blokuj cookies',
+                'docs.quickstart.auto.blocking.description': 'Blokowanie wszystkich niechcianych cookies do momentu udzielenia zgody i automatyczne usuwanie odrzuconych cookies',
+                'docs.quickstart.auto.responsive': '📱 Dostosuj się',
+                'docs.quickstart.auto.responsive.description': 'Poprawne wyświetlanie na wszystkich urządzeniach i ekranach z nowoczesnym responsywnym designem',
+                
+                // Tips and warnings
+                'docs.tip.title': '💡 Wskazówka',
+                'docs.tip.description': 'Do dodatkowego dostosowania użyj potężnego JavaScript API. Wszystkie teksty, linki, motywy i zachowania mogą być zmieniane programowo.',
+                'docs.warning.title': '⚠️ Ważne dla programistów',
+                'docs.warning.description': 'Cookie Widget automatycznie blokuje wszystkie cookies do momentu udzielenia zgody. Upewnij się, że twoje skrypty analityczne i marketingowe ładują się tylko po zdarzeniu cookieConsentAccepted.',
+                
+                // Documentation sections - detailed features
+                'docs.smart-detect.title': '🧠 Smart Auto-Detect Tracking',
+                'docs.smart-detect.description': 'Automatyczne wykrywanie trackerów i skryptów na stronie z kategoryzacją według typów.',
+                'docs.seo-friendly.title': '🔍 Tryb SEO-Friendly',
+                'docs.seo-friendly.description': 'Boty wyszukiwarek widzą stronę jako akceptującą wszystkie cookies dla lepszej indeksacji, podczas gdy prawdziwi użytkownicy widzą banner.',
+                'docs.script-guard.title': '🔒 Script Guard',
+                'docs.script-guard.description': 'Blokowanie skryptów Analytics i Marketing jeszcze przed załadowaniem strony przez proxy stubs.',
+                'docs.integrations-hub.title': '🤝 Hub Integracji',
+                'docs.integrations-hub.description': 'Gotowe ustawienia dla popularnych usług z integracją zero-config.',
+                'docs.zero-reload.title': '🚀 Tryb Zero-Reload',
+                'docs.zero-reload.description': 'Włączanie i wyłączanie trackerów bez przeładowania strony przez system kolejek.',
+                'docs.secure-storage.title': '🔒 Bezpieczna Kopia LocalStorage',
+                'docs.secure-storage.description': 'Zapisywanie zgody w wielu magazynach dla maksymalnej niezawodności.',
                 
                 // Tools page
                 'nav.tools': 'Narzędzia',
@@ -2417,6 +3399,40 @@ class I18n {
                 'demo.integrations.title': 'Хаб інтеграцій',
                 'demo.integrations.description': 'Готові конфігурації для популярних сервісів',
                 'demo.new_badge': 'НОВЕ',
+                
+                // New Advanced Security Features Demo
+                'demo.iframe.title': 'Блокувальник iFrame',
+                'demo.iframe.description': 'Блокує YouTube/TikTok/Карти без згоди',
+                'demo.iframe.status.scanning': 'Сканування iframe...',
+                'demo.iframe.status.blocked': 'iframe заблоковано',
+                
+                'demo.scanner.title': 'Сканер скриптів',
+                'demo.scanner.description': 'Аналізує скрипти як CookieBot локально',
+                'demo.scanner.status.analyzing': 'Аналіз скриптів...',
+                'demo.scanner.status.found': 'скриптів знайдено',
+                
+                'demo.sandbox.title': 'Безпечна пісочниця',
+                'demo.sandbox.description': 'Ізольоване середовище виконання скриптів',
+                'demo.sandbox.status.testing': 'Тестування пісочниці...',
+                'demo.sandbox.status.ready': 'Пісочниця готова',
+                
+                'demo.lazy.title': 'Лінива захист скриптів',
+                'demo.lazy.description': 'Блокує deferred/async до згоди',
+                'demo.lazy.status.monitoring': 'Моніторинг скриптів...',
+                'demo.lazy.status.blocked': 'скриптів у черзі',
+                
+                // Feature translations for new security systems
+                'feature.iframe-blocker.title': '🚫 Блокувальник iFrame',
+                'feature.iframe-blocker.description': 'Автоматично блокує YouTube, TikTok, Google Maps та інші iframe, які встановлюють cookie без згоди користувача. Показує заглушки з запитом згоди.',
+                
+                'feature.script-scanner.title': '🔍 Сканер скриптів',
+                'feature.script-scanner.description': 'Аналізує всі скрипти сторінки як CookieBot, але локально. Виявляє патерни встановлення cookie, класифікує за категоріями та надає детальні звіти.',
+                
+                'feature.secure-sandbox.title': '🏖️ Безпечна пісочниця',
+                'feature.secure-sandbox.description': 'Виконує скрипти в ізольованих sandbox iframe з обмеженим доступом до API. Революційний підхід до безпеки, який майже ніхто не реалізує.',
+                
+                'feature.lazy-script-guard.title': '⏳ Лінива захист скриптів',
+                'feature.lazy-script-guard.description': 'Блокує deferred та async скрипти до отримання згоди користувача. Запобігає фоновому виконанню скриптів під час завантаження сторінки.',
                 
                 // Advanced CTA
                 'advanced.cta.button': '🎮 Спробувати всі функції',
@@ -3108,7 +4124,44 @@ class I18n {
                 'examples.mixpanel.title': '📈 Інтеграція Mixpanel',
                 'examples.mixpanel.description': 'Інтеграція з Mixpanel аналітикою',
                 'examples.amplitude.title': '📊 Інтеграція Amplitude',
-                'examples.amplitude.description': 'Інтеграція з Amplitude для продуктової аналітики'
+                'examples.amplitude.description': 'Інтеграція з Amplitude для продуктової аналітики',
+                
+                // Documentation v3.3 updates
+                'docs.title': 'Документація Cookie Widget v3.3',
+                'docs.subtitle': 'Повний посібник з нових ексклюзивних функцій: Smart Auto-Detect трекери, SEO-Friendly режим, Script Guard, Zero-Reload режим, Hub інтеграцій, Безпечне сховище та Geo-Adaptive відповідність',
+                'docs.stats.version': 'Версія',
+                'docs.stats.size': 'Повний розмір',
+                'docs.stats.features': 'Унікальні функції',
+                'docs.stats.languages': 'Підтримувані мови',
+                'docs.stats.laws': 'Правова відповідність',
+                'docs.stats.dependencies': 'Залежності',
+                
+                // Documentation navigation
+                'docs.nav.advanced': '🆕 Ексклюзивні функції',
+                'docs.nav.smart-detect': '🧠 Smart Auto-Detect',
+                'docs.nav.seo-friendly': '🔍 SEO-Friendly режим',
+                'docs.nav.script-guard': '🔒 Script Guard',
+                'docs.nav.integrations': '🤝 Hub інтеграцій',
+                'docs.nav.zero-reload': '🚀 Zero-Reload режим',
+                'docs.nav.secure-storage': '🔒 Безпечне сховище',
+                
+                // Quick start section v3.3
+                'docs.quickstart.features': '✨ Нові ексклюзивні функції в v3.3',
+                'docs.quickstart.features.description': '🧠 Smart Auto-Detect трекери • 🔍 SEO-Friendly режим для ботів • 🔒 Script Guard блокування • 🚀 Zero-Reload режим • 🤝 Hub інтеграцій • 🔒 Безпечне сховище • 🔄 Auto-Renew згода • 🌍 Geo-Adaptive відповідність',
+                
+                // Documentation sections - detailed features
+                'docs.smart-detect.title': '🧠 Smart Auto-Detect трекінг',
+                'docs.smart-detect.description': 'Автоматичне виявлення трекерів та скриптів на сторінці з категоризацією за типами.',
+                'docs.seo-friendly.title': '🔍 SEO-Friendly режим',
+                'docs.seo-friendly.description': 'Пошукові боти бачать сайт як такий, що прийняв всі cookie для кращого індексування, тоді як справжні користувачі бачать банер.',
+                'docs.script-guard.title': '🔒 Script Guard',
+                'docs.script-guard.description': 'Блокування скриптів Analytics та Marketing ще до завантаження сайту через proxy-заглушки.',
+                'docs.integrations-hub.title': '🤝 Hub інтеграцій',
+                'docs.integrations-hub.description': 'Готові налаштування для популярних сервісів з інтеграцією без налаштувань.',
+                'docs.zero-reload.title': '🚀 Zero-Reload режим',
+                'docs.zero-reload.description': 'Увімкнення та вимкнення трекерів без перезавантаження сторінки через систему черг.',
+                'docs.secure-storage.title': '🔒 Безпечна резервна копія LocalStorage',
+                'docs.secure-storage.description': 'Збереження згоди в кількох сховищах для максимальної надійності.'
             }
         };
     }
@@ -3118,6 +4171,7 @@ class I18n {
         const savedLang = localStorage.getItem('cookie-widget-lang');
         if (savedLang && this.supportedLanguages[savedLang]) {
             this.currentLanguage = savedLang;
+            console.log(`🌍 Language system initialized: ${this.currentLanguage} (saved)`);
             return;
         }
         
@@ -3139,34 +4193,49 @@ class I18n {
         
         if (this.supportedLanguages[detectedLang]) {
             this.currentLanguage = detectedLang;
+            console.log(`🌍 Language system initialized: ${this.currentLanguage} (browser)`);
         } else {
             // Определяем по часовому поясу и региону
             this.currentLanguage = this.detectByRegion();
+            console.log(`🌍 Language system initialized: ${this.currentLanguage} (region)`);
         }
     }
     
     detectByRegion() {
         const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
         
+        // Российские часовые пояса (расширенный список)
+        const russianZones = [
+            'Europe/Moscow', 'Europe/Kaliningrad', 'Europe/Samara',
+            'Asia/Yekaterinburg', 'Asia/Omsk', 'Asia/Krasnoyarsk',
+            'Asia/Irkutsk', 'Asia/Yakutsk', 'Asia/Vladivostok',
+            'Asia/Magadan', 'Asia/Kamchatka', 'Asia/Sakhalin',
+            'Asia/Srednekolymsk', 'Asia/Ust-Nera', 'Asia/Chokurdakh'
+        ];
+        
+        if (russianZones.includes(timezone)) {
+            return 'ru';
+        }
+        
         // Европейские часовые пояса
         const europeanZones = {
             'Europe/Warsaw': 'pl',
-            'Europe/Kiev': 'uk'
+            'Europe/Kiev': 'uk',
+            'Europe/Minsk': 'be',
+            'Europe/Berlin': 'de',
+            'Europe/Paris': 'fr',
+            'Europe/Madrid': 'es',
+            'Europe/Rome': 'it',
+            'Europe/Lisbon': 'pt'
         };
         
         if (europeanZones[timezone]) {
             return europeanZones[timezone];
         }
         
-        // Российские часовые пояса
-        const russianZones = [
-            'Europe/Moscow', 'Europe/Kaliningrad', 'Europe/Samara',
-            'Asia/Yekaterinburg', 'Asia/Omsk', 'Asia/Krasnoyarsk',
-            'Asia/Irkutsk', 'Asia/Yakutsk', 'Asia/Vladivostok',
-            'Asia/Magadan', 'Asia/Kamchatka'
-        ];
-        
-        if (russianZones.includes(timezone)) {
+        // Дополнительная проверка по региону браузера
+        const locale = Intl.DateTimeFormat().resolvedOptions().locale;
+        if (locale.startsWith('ru')) {
             return 'ru';
         }
         

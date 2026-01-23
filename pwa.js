@@ -61,15 +61,30 @@ class PWAManager {
     setupPWAEvents() {
         // Событие beforeinstallprompt
         window.addEventListener('beforeinstallprompt', (e) => {
-            console.log('PWA: Install prompt available');
-            e.preventDefault();
-            this.deferredPrompt = e;
-            this.showInstallButton();
+            console.log('%c📱 PWA %cInstall prompt available', 
+                'background: linear-gradient(135deg, #9C27B0 0%, #7B1FA2 100%); color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold;',
+                'color: #333; font-weight: normal;');
+            
+            // Only prevent default if we're going to handle it ourselves
+            if (this.shouldShowInstallButton()) {
+                e.preventDefault();
+                this.deferredPrompt = e;
+                this.showInstallButton();
+                console.log('%c📱 PWA %cHandling install prompt with custom button', 
+                    'background: linear-gradient(135deg, #9C27B0 0%, #7B1FA2 100%); color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold;',
+                    'color: #333; font-weight: normal;');
+            } else {
+                console.log('%c📱 PWA %cLetting browser handle install prompt', 
+                    'background: linear-gradient(135deg, #9C27B0 0%, #7B1FA2 100%); color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold;',
+                    'color: #333; font-weight: normal;');
+            }
         });
         
         // Событие appinstalled
         window.addEventListener('appinstalled', () => {
-            console.log('PWA: App installed successfully');
+            console.log('%c📱 PWA %cApp installed successfully', 
+                'background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%); color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold;',
+                'color: #333; font-weight: normal;');
             this.isInstalled = true;
             this.hideInstallButton();
             this.showNotification('Приложение установлено!', 'success');
@@ -128,6 +143,35 @@ class PWAManager {
         } catch (error) {
             console.error('PWA: Install prompt failed', error);
         }
+    }
+    
+    shouldShowInstallButton() {
+        // Check if we should show our custom install button
+        // Don't show if already installed or if we're in standalone mode
+        if (this.isInstalled || window.matchMedia('(display-mode: standalone)').matches) {
+            return false;
+        }
+        
+        // Check if we have an install button element on the page
+        const installButton = document.querySelector('#pwa-install-button, .pwa-install, [data-pwa-install]');
+        if (!installButton) {
+            return false; // No install button element found, let browser handle it
+        }
+        
+        // Always allow on desktop for better compatibility
+        const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        
+        if (!isMobile) {
+            return true; // Show on desktop if we have a button element
+        }
+        
+        // On mobile, be more permissive
+        const isChrome = /Chrome/i.test(navigator.userAgent);
+        const isFirefox = /Firefox/i.test(navigator.userAgent);
+        const isSamsung = /SamsungBrowser/i.test(navigator.userAgent);
+        
+        // Show on most modern mobile browsers if we have a button element
+        return isChrome || isFirefox || isSamsung;
     }
     
     showInstallButton() {

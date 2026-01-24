@@ -2528,8 +2528,18 @@
                 // Check if banner should be shown
                 if (this.shouldShowBanner()) {
                     await this.createBanner();
+                    
+                    // Для мобильных - принудительно показываем
                     if (this.config.autoShow) {
-                        this.showBanner();
+                        // Небольшая задержка для мобильных чтобы DOM успел обновиться
+                        if (this.isMobileDevice()) {
+                            setTimeout(() => {
+                                this.showBanner();
+                                LOGGER.mobile('MOBILE', '📱', 'Banner shown with delay for mobile');
+                            }, 100);
+                        } else {
+                            this.showBanner();
+                        }
                         
                         // Дополнительная проверка для мобильных сразу после показа
                         if (this.isMobileDevice()) {
@@ -2541,6 +2551,13 @@
                                 }
                             }, 500);
                         }
+                    }
+                } else {
+                    // Даже если не должен показываться, на мобильных проверяем еще раз
+                    if (this.isMobileDevice()) {
+                        LOGGER.mobile('MOBILE', '📱', 'Banner should not show according to shouldShowBanner(), but checking consent...');
+                        const consent = this.getCookieConsent();
+                        LOGGER.mobile('MOBILE', '📋', 'Current consent:', consent);
                     }
                 }
                 
@@ -3066,10 +3083,16 @@
             const consent = this.getCookieConsent();
             
             // Always show if no consent exists
-            if (!consent) return true;
+            if (!consent) {
+                LOGGER.info('BANNER', '📋', 'No consent found - showing banner');
+                return true;
+            }
             
             // Check version compatibility
-            if (consent.version !== this.version) return true;
+            if (consent.version !== this.version) {
+                LOGGER.info('BANNER', '📋', `Version mismatch (${consent.version} vs ${this.version}) - showing banner`);
+                return true;
+            }
             
             // Check auto-renewal
             const renewalReason = AUTO_RENEW.getRenewalReason(consent, this.autoRenewPeriod, this.policyVersion);
@@ -3079,6 +3102,7 @@
                 return true;
             }
             
+            LOGGER.info('BANNER', '📋', 'Valid consent exists - not showing banner');
             return false;
         }
         
@@ -4187,9 +4211,35 @@
                     isMobile: self.isMobileDevice(),
                     userAgent: navigator.userAgent,
                     viewport: { width: window.innerWidth, height: window.innerHeight },
-                    shouldShow: self.shouldShowBanner()
+                    shouldShow: self.shouldShowBanner(),
+                    consent: self.getCookieConsent()
                 });
                 return banner;
+            };
+            
+            // Force reset and show for mobile (для отладки)
+            window.forceResetAndShowMobile = function() {
+                console.log('📱 Force reset and show for mobile');
+                
+                // Очищаем все хранилища
+                try {
+                    localStorage.removeItem('cookie_consent');
+                    sessionStorage.removeItem('cookie_consent');
+                    document.cookie = 'cookie_consent=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+                } catch (e) {
+                    console.error('Error clearing storage:', e);
+                }
+                
+                // Удаляем существующий баннер
+                const existing = document.getElementById('cookieBanner');
+                if (existing) {
+                    existing.remove();
+                }
+                
+                // Перезагружаем страницу
+                setTimeout(() => {
+                    location.reload();
+                }, 100);
             };
         }
         

@@ -2602,9 +2602,46 @@
                 
                 // Дополнительная проверка для мобильных устройств
                 if (this.isMobileDevice()) {
+                    // Первая проверка через 1.5 секунды
                     setTimeout(() => {
                         this.mobileCompatibilityCheck();
                     }, 1500);
+                    
+                    // Вторая агрессивная проверка через 3 секунды
+                    setTimeout(() => {
+                        const banner = document.getElementById('cookieBanner');
+                        const shouldShow = this.shouldShowBanner();
+                        
+                        LOGGER.mobile('MOBILE', '🔍', 'Second mobile check:', {
+                            bannerExists: !!banner,
+                            shouldShow: shouldShow,
+                            hasShowClass: banner ? banner.classList.contains('show') : false
+                        });
+                        
+                        if (shouldShow && banner && !banner.classList.contains('show')) {
+                            LOGGER.mobile('MOBILE', '⚠️', 'FORCING banner display with aggressive styles');
+                            
+                            // СУПЕР АГРЕССИВНОЕ ОТОБРАЖЕНИЕ
+                            banner.style.cssText = `
+                                display: block !important;
+                                visibility: visible !important;
+                                opacity: 1 !important;
+                                position: fixed !important;
+                                bottom: 0 !important;
+                                left: 0 !important;
+                                right: 0 !important;
+                                width: 100% !important;
+                                z-index: 999999 !important;
+                                transform: none !important;
+                                -webkit-transform: none !important;
+                            `;
+                            
+                            banner.classList.add('show');
+                            banner.setAttribute('aria-hidden', 'false');
+                            
+                            LOGGER.mobile('MOBILE', '✅', 'Banner forced with inline styles');
+                        }
+                    }, 3000);
                 }
                 
             } catch (error) {
@@ -4186,20 +4223,25 @@
                 setTimeout(() => {
                     const banner = document.getElementById('cookieBanner');
                     if (banner) {
-                        // Принудительные мобильные стили
-                        banner.style.display = 'block';
-                        banner.style.visibility = 'visible';
-                        banner.style.position = 'fixed';
-                        banner.style.bottom = '0';
-                        banner.style.left = '0';
-                        banner.style.right = '0';
-                        banner.style.zIndex = '999999';
-                        banner.style.width = '100%';
-                        banner.style.transform = 'translateY(0)';
-                        banner.style.webkitTransform = 'translateY(0)';
+                        // СУПЕР АГРЕССИВНЫЕ мобильные стили
+                        banner.style.cssText = `
+                            display: block !important;
+                            visibility: visible !important;
+                            opacity: 1 !important;
+                            position: fixed !important;
+                            bottom: 0 !important;
+                            left: 0 !important;
+                            right: 0 !important;
+                            width: 100% !important;
+                            z-index: 999999 !important;
+                            transform: none !important;
+                            -webkit-transform: none !important;
+                            background: rgba(0, 0, 0, 0.95) !important;
+                            color: white !important;
+                        `;
                         banner.classList.add('show');
                         banner.setAttribute('aria-hidden', 'false');
-                        console.log('📱 Mobile banner forced visible');
+                        console.log('📱 Mobile banner forced visible with aggressive styles');
                     }
                 }, 200);
             };

@@ -80,12 +80,6 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="cookie-banner.css">
     <link rel="stylesheet" href="i18n.css">
-
-    <!-- Internationalization -->
-    <script src="i18n.js"></script>
-
-    <!-- Cookie Banner Script -->
-    <script src="cookie-banner.js"></script>
 </head>
 
 <body>
@@ -1435,6 +1429,10 @@ export default function App({ Component, pageProps }) {
             console.log('✅ Complete cleanup finished');
         }
     </script>
+
+    <!-- Cookie Widget Scripts - ВАЖНО: загружаются в конце для мобильных устройств -->
+    <script src="i18n.js"></script>
+    <script src="cookie-banner.js"></script>
 
     <!-- Buy Me a Coffee Widget -->
     <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"

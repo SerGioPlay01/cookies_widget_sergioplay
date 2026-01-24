@@ -36,12 +36,6 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="cookie-banner.css">
     <link rel="stylesheet" href="i18n.css">
-    
-    <!-- Internationalization -->
-    <script src="i18n.js"></script>
-    
-    <!-- Cookie Banner Script -->
-    <script src="cookie-banner.js"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -2080,70 +2074,11 @@ LOGGING = {
         document.getElementById('currentYear').textContent = new Date().getFullYear();
     </script>
 
+    <!-- Cookie Widget Scripts - загружаются в конце для мобильных -->
+    <script src="i18n.js"></script>
+    <script src="cookie-banner.js"></script>
+
     <!-- Buy Me a Coffee Widget -->
     <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="sergioplay" data-description="Support me on Buy me a coffee!" data-message="" data-color="#40DCA5" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
-</body>
-</html>
-
-    <script>
-        // Copy code functionality
-        function copyCode(button) {
-            const codeBlock = button.closest('.code-block');
-            const code = codeBlock.querySelector('code');
-            
-            if (code) {
-                const text = code.textContent;
-                
-                if (navigator.clipboard && window.isSecureContext) {
-                    navigator.clipboard.writeText(text).then(() => {
-                        showCopySuccess(button);
-                    }).catch(() => {
-                        fallbackCopyTextToClipboard(text, button);
-                    });
-                } else {
-                    fallbackCopyTextToClipboard(text, button);
-                }
-            }
-        }
-        
-        function fallbackCopyTextToClipboard(text, button) {
-            const textArea = document.createElement('textarea');
-            textArea.value = text;
-            textArea.style.position = 'fixed';
-            textArea.style.left = '-999999px';
-            textArea.style.top = '-999999px';
-            document.body.appendChild(textArea);
-            textArea.focus();
-            textArea.select();
-            
-            try {
-                document.execCommand('copy');
-                showCopySuccess(button);
-            } catch (err) {
-                console.error('Fallback: Oops, unable to copy', err);
-            }
-            
-            document.body.removeChild(textArea);
-        }
-        
-        function showCopySuccess(button) {
-            const originalText = button.textContent;
-            button.textContent = 'Copied!';
-            button.style.background = 'linear-gradient(135deg, #4CAF50 0%, #45a049 100%)';
-            
-            setTimeout(() => {
-                button.textContent = originalText;
-                button.style.background = 'linear-gradient(135deg, #4CAF50 0%, #45a049 100%)';
-            }, 2000);
-        }
-        
-        // Language selector initialization
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize i18n if available
-            if (window.i18n) {
-                window.i18n.init();
-            }
-        });
-    </script>
 </body>
 </html>

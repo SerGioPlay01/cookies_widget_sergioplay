@@ -36,9 +36,6 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="cookie-banner.css">
     <link rel="stylesheet" href="i18n.css">
-    
-    <!-- Cookie Banner Script -->
-    <script src="cookie-banner.js"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -768,7 +765,7 @@
         </div>
     </div>
 
-    <!-- Scripts -->
+    <!-- Cookie Widget Scripts - Load AFTER DOM is ready -->
     <script src="i18n.js"></script>
     <script src="cookie-banner.js"></script>
     
@@ -782,6 +779,15 @@
                 dateElement.textContent = now.toLocaleDateString('ru-RU', options);
             }
         });
+        
+        // Function to show cookie settings
+        function showCookieSettings() {
+            if (window.cookieBanner && typeof window.cookieBanner.showSettings === 'function') {
+                window.cookieBanner.showSettings();
+            } else if (window.cookieBanner && typeof window.cookieBanner.show === 'function') {
+                window.cookieBanner.show();
+            }
+        }
     </script>
 </body>
 </html>

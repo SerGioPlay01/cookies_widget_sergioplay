@@ -25,7 +25,7 @@
             title: 'Использование файлов cookie',
             description: 'Мы используем файлы cookie для улучшения работы сайта, анализа трафика и персонализации контента. Продолжая использовать сайт, вы соглашаетесь с нашей',
             privacyPolicy: 'политикой конфиденциальности',
-            compliance: 'В соответствии с требованиями 152-ФЗ "О персональных данных" и международными стандартами защиты данных.',
+            compliance: 'В соответствии с международными стандартами защиты данных.',
             settings: 'Настройки',
             decline: 'Отклонить',
             acceptAll: 'Принять все',
@@ -2302,7 +2302,18 @@
             requiresExplicitConsent: true,
             showDeclineButton: true,
             defaultDenied: true,
-            complianceText: 'In accordance with GDPR and European data protection laws.'
+            complianceText: {
+                'ru': 'В соответствии с требованиями GDPR и европейскими законами о защите данных.',
+                'en': 'In accordance with GDPR and European data protection laws.',
+                'de': 'In Übereinstimmung mit der DSGVO und den europäischen Datenschutzgesetzen.',
+                'fr': 'Conformément au RGPD et aux lois européennes sur la protection des données.',
+                'es': 'De acuerdo con el RGPD y las leyes europeas de protección de datos.',
+                'it': 'In conformità con il GDPR e le leggi europee sulla protezione dei dati.',
+                'pt': 'De acordo com o RGPD e as leis europeias de proteção de dados.',
+                'pl': 'Zgodnie z RODO i europejskimi przepisami o ochronie danych.',
+                'uk': 'Відповідно до вимог GDPR та європейських законів про захист даних.',
+                'default': 'In accordance with GDPR and European data protection laws.'
+            }
         },
         'US': {
             name: 'CCPA/CPRA',
@@ -2310,7 +2321,18 @@
             requiresExplicitConsent: false,
             showDeclineButton: true,
             defaultDenied: false,
-            complianceText: 'In accordance with CCPA, CPRA and California privacy laws.'
+            complianceText: {
+                'ru': 'В соответствии с требованиями CCPA, CPRA и калифорнийскими законами о конфиденциальности.',
+                'en': 'In accordance with CCPA, CPRA and California privacy laws.',
+                'de': 'In Übereinstimmung mit CCPA, CPRA und kalifornischen Datenschutzgesetzen.',
+                'fr': 'Conformément au CCPA, CPRA et aux lois californiennes sur la confidentialité.',
+                'es': 'De acuerdo con CCPA, CPRA y las leyes de privacidad de California.',
+                'it': 'In conformità con CCPA, CPRA e le leggi californiane sulla privacy.',
+                'pt': 'De acordo com CCPA, CPRA e as leis de privacidade da Califórnia.',
+                'pl': 'Zgodnie z CCPA, CPRA i kalifornijskimi przepisami o prywatności.',
+                'uk': 'Відповідно до вимог CCPA, CPRA та каліфорнійських законів про конфіденційність.',
+                'default': 'In accordance with CCPA, CPRA and California privacy laws.'
+            }
         },
         'BR': {
             name: 'LGPD',
@@ -2318,7 +2340,18 @@
             requiresExplicitConsent: true,
             showDeclineButton: true,
             defaultDenied: true,
-            complianceText: 'In accordance with LGPD and Brazilian data protection laws.'
+            complianceText: {
+                'ru': 'В соответствии с требованиями LGPD и бразильскими законами о защите данных.',
+                'en': 'In accordance with LGPD and Brazilian data protection laws.',
+                'de': 'In Übereinstimmung mit LGPD und brasilianischen Datenschutzgesetzen.',
+                'fr': 'Conformément à la LGPD et aux lois brésiliennes sur la protection des données.',
+                'es': 'De acuerdo con la LGPD y las leyes brasileñas de protección de datos.',
+                'it': 'In conformità con la LGPD e le leggi brasiliane sulla protezione dei dati.',
+                'pt': 'De acordo com a LGPD e as leis brasileiras de proteção de dados.',
+                'pl': 'Zgodnie z LGPD i brazylijskimi przepisami o ochronie danych.',
+                'uk': 'Відповідно до вимог LGPD та бразильських законів про захист даних.',
+                'default': 'In accordance with LGPD and Brazilian data protection laws.'
+            }
         },
         'RU': {
             name: '152-ФЗ РФ',
@@ -2326,7 +2359,18 @@
             requiresExplicitConsent: true,
             showDeclineButton: true,
             defaultDenied: true,
-            complianceText: 'В соответствии с требованиями 152-ФЗ "О персональных данных".'
+            complianceText: {
+                'ru': 'В соответствии с требованиями 152-ФЗ "О персональных данных".',
+                'en': 'In accordance with Federal Law No. 152-FZ "On Personal Data".',
+                'de': 'In Übereinstimmung mit dem Bundesgesetz Nr. 152-FZ "Über personenbezogene Daten".',
+                'fr': 'Conformément à la loi fédérale n° 152-FZ "Sur les données personnelles".',
+                'es': 'De acuerdo con la Ley Federal No. 152-FZ "Sobre Datos Personales".',
+                'it': 'In conformità con la Legge Federale n. 152-FZ "Sui dati personali".',
+                'pt': 'De acordo com a Lei Federal nº 152-FZ "Sobre Dados Pessoais".',
+                'pl': 'Zgodnie z ustawą federalną nr 152-FZ "O danych osobowych".',
+                'uk': 'Відповідно до вимог Федерального закону № 152-ФЗ "Про персональні дані".',
+                'default': 'In accordance with Federal Law No. 152-FZ "On Personal Data".'
+            }
         },
         'CA': {
             name: 'PIPEDA',
@@ -2334,7 +2378,18 @@
             requiresExplicitConsent: false,
             showDeclineButton: true,
             defaultDenied: false,
-            complianceText: 'In accordance with PIPEDA and Canadian privacy laws.'
+            complianceText: {
+                'ru': 'В соответствии с требованиями PIPEDA и канадскими законами о конфиденциальности.',
+                'en': 'In accordance with PIPEDA and Canadian privacy laws.',
+                'de': 'In Übereinstimmung mit PIPEDA und kanadischen Datenschutzgesetzen.',
+                'fr': 'Conformément à la LPRPDE et aux lois canadiennes sur la protection de la vie privée.',
+                'es': 'De acuerdo con PIPEDA y las leyes canadienses de privacidad.',
+                'it': 'In conformità con PIPEDA e le leggi canadesi sulla privacy.',
+                'pt': 'De acordo com PIPEDA e as leis canadenses de privacidade.',
+                'pl': 'Zgodnie z PIPEDA i kanadyjskimi przepisami o prywatności.',
+                'uk': 'Відповідно до вимог PIPEDA та канадських законів про конфіденційність.',
+                'default': 'In accordance with PIPEDA and Canadian privacy laws.'
+            }
         },
         'DEFAULT': {
             name: 'Privacy Compliance',
@@ -2342,7 +2397,18 @@
             requiresExplicitConsent: false,
             showDeclineButton: false,
             defaultDenied: false,
-            complianceText: 'We respect your privacy and comply with applicable data protection laws.'
+            complianceText: {
+                'ru': 'Мы уважаем вашу конфиденциальность и соблюдаем применимые законы о защите данных.',
+                'en': 'We respect your privacy and comply with applicable data protection laws.',
+                'de': 'Wir respektieren Ihre Privatsphäre und halten uns an geltende Datenschutzgesetze.',
+                'fr': 'Nous respectons votre vie privée et nous conformons aux lois applicables sur la protection des données.',
+                'es': 'Respetamos su privacidad y cumplimos con las leyes aplicables de protección de datos.',
+                'it': 'Rispettiamo la tua privacy e rispettiamo le leggi applicabili sulla protezione dei dati.',
+                'pt': 'Respeitamos sua privacidade e cumprimos as leis aplicáveis de proteção de dados.',
+                'pl': 'Szanujemy Twoją prywatność i przestrzegamy obowiązujących przepisów o ochronie danych.',
+                'uk': 'Ми поважаємо вашу конфіденційність та дотримуємося чинних законів про захист даних.',
+                'default': 'We respect your privacy and comply with applicable data protection laws.'
+            }
         }
     };
 
@@ -2464,6 +2530,17 @@
                     await this.createBanner();
                     if (this.config.autoShow) {
                         this.showBanner();
+                        
+                        // Дополнительная проверка для мобильных сразу после показа
+                        if (this.isMobileDevice()) {
+                            setTimeout(() => {
+                                const banner = document.getElementById('cookieBanner');
+                                if (banner && !banner.classList.contains('show')) {
+                                    LOGGER.mobile('MOBILE', '⚠️', 'Banner not showing after initial display, forcing again');
+                                    this.showBanner();
+                                }
+                            }, 500);
+                        }
                     }
                 }
                 
@@ -2529,7 +2606,9 @@
                 settingsExists: !!settings,
                 shouldShow: shouldShow,
                 bannerVisible: banner ? banner.classList.contains('show') : false,
-                settingsVisible: settings ? settings.classList.contains('show') : false
+                settingsVisible: settings ? settings.classList.contains('show') : false,
+                bannerDisplay: banner ? banner.style.display : 'N/A',
+                bannerVisibility: banner ? banner.style.visibility : 'N/A'
             });
             
             // Убеждаемся, что настройки скрыты при загрузке
@@ -2539,29 +2618,36 @@
                 settings.setAttribute('aria-hidden', 'true');
             }
             
-            // Если баннер должен показываться, но не показывается
-            if (shouldShow && banner && !banner.classList.contains('show')) {
-                LOGGER.mobile('MOBILE', '📱', 'Banner should be visible but is not, forcing display');
-                
-                // Принудительно показываем баннер
-                banner.style.display = 'block';
-                banner.style.visibility = 'visible';
-                banner.style.position = 'fixed';
-                banner.style.bottom = '0';
-                banner.style.left = '0';
-                banner.style.right = '0';
-                banner.style.zIndex = '999999';
-                banner.style.width = '100%';
-                
-                this.showBanner();
-            }
-            
-            // Если баннер вообще не создан, но должен быть
-            if (shouldShow && !banner) {
-                LOGGER.mobile('MOBILE', '📱', 'Banner not created, forcing creation');
-                this.createBanner().then(() => {
-                    this.showBanner();
-                });
+            // Если баннер должен показываться
+            if (shouldShow) {
+                if (banner && !banner.classList.contains('show')) {
+                    LOGGER.mobile('MOBILE', '📱', 'Banner should be visible but is not, forcing display');
+                    
+                    // Принудительно показываем баннер
+                    banner.style.display = 'block';
+                    banner.style.visibility = 'visible';
+                    banner.style.position = 'fixed';
+                    banner.style.bottom = '0';
+                    banner.style.left = '0';
+                    banner.style.right = '0';
+                    banner.style.zIndex = '999999';
+                    banner.style.width = '100%';
+                    banner.style.opacity = '1';
+                    
+                    // Добавляем класс show
+                    banner.classList.add('show');
+                    banner.setAttribute('aria-hidden', 'false');
+                    
+                    LOGGER.mobile('MOBILE', '✅', 'Banner forced to display');
+                } else if (!banner) {
+                    // Если баннер вообще не создан, но должен быть
+                    LOGGER.mobile('MOBILE', '📱', 'Banner not created, forcing creation');
+                    this.createBanner().then(() => {
+                        setTimeout(() => {
+                            this.showBanner();
+                        }, 100);
+                    });
+                }
             }
         }
         
@@ -2886,11 +2972,20 @@
                 });
             }
             
-            // Update compliance text
+            // Update compliance text based on region AND language
             this.config.customTexts = this.config.customTexts || {};
-            this.config.customTexts.compliance = this.privacyLaw.complianceText;
+            const complianceTextObj = this.privacyLaw.complianceText;
             
-            LOGGER.info('COMPLIANCE', '⚖️', `Applied ${this.privacyLaw.name} compliance settings`);
+            // Get localized compliance text based on current language
+            if (typeof complianceTextObj === 'object') {
+                this.config.customTexts.compliance = complianceTextObj[this.currentLanguage] || complianceTextObj['default'] || complianceTextObj['en'];
+            } else {
+                // Fallback for old format (string)
+                this.config.customTexts.compliance = complianceTextObj;
+            }
+            
+            LOGGER.info('COMPLIANCE', '⚖️', `Applied ${this.privacyLaw.name} compliance settings for language: ${this.currentLanguage}`);
+            LOGGER.info('COMPLIANCE', '📝', `Compliance text: ${this.config.customTexts.compliance}`);
         }
         
         // Enhanced language detection
@@ -3004,6 +3099,20 @@
             if (LANGUAGES[langCode]) {
                 this.currentLanguage = langCode;
                 
+                // Update compliance text for new language
+                if (this.privacyLaw && this.privacyLaw.complianceText) {
+                    this.config.customTexts = this.config.customTexts || {};
+                    const complianceTextObj = this.privacyLaw.complianceText;
+                    
+                    if (typeof complianceTextObj === 'object') {
+                        this.config.customTexts.compliance = complianceTextObj[langCode] || complianceTextObj['default'] || complianceTextObj['en'];
+                    } else {
+                        this.config.customTexts.compliance = complianceTextObj;
+                    }
+                    
+                    LOGGER.info('COMPLIANCE', '📝', `Updated compliance text for language: ${langCode}`);
+                }
+                
                 // Save to localStorage
                 try {
                     localStorage.setItem('cookie_banner_language', langCode);
@@ -3053,7 +3162,7 @@
             banner.setAttribute('role', 'dialog');
             banner.setAttribute('aria-hidden', 'true');
             
-            // Мобильные исправления
+            // Мобильные исправления - НЕ используем transform, используем display
             const isMobile = this.isMobileDevice();
             if (isMobile) {
                 banner.style.position = 'fixed';
@@ -3061,8 +3170,11 @@
                 banner.style.left = '0';
                 banner.style.right = '0';
                 banner.style.zIndex = '999999';
-                banner.style.transform = 'translateY(100%)';
-                banner.style.webkitTransform = 'translateY(100%)';
+                banner.style.width = '100%';
+                banner.style.display = 'none'; // Скрываем через display вместо transform
+                banner.style.visibility = 'hidden';
+                
+                LOGGER.mobile('MOBILE', '📱', 'Creating mobile banner with fixed positioning');
             }
             
             // Create banner content
@@ -3080,6 +3192,12 @@
                     const bannerCheck = document.getElementById('cookieBanner');
                     if (bannerCheck) {
                         LOGGER.success('MOBILE', '✅', 'Cookie banner created successfully');
+                        LOGGER.mobile('MOBILE', '📱', 'Banner styles:', {
+                            display: bannerCheck.style.display,
+                            visibility: bannerCheck.style.visibility,
+                            position: bannerCheck.style.position,
+                            zIndex: bannerCheck.style.zIndex
+                        });
                     } else {
                         LOGGER.error('MOBILE', '❌', 'Cookie banner creation failed');
                     }
@@ -3371,7 +3489,7 @@
             }
             
             if (isMobile) {
-                // Дополнительные проверки для мобильных
+                // Для мобильных - сначала делаем видимым через display и visibility
                 banner.style.display = 'block';
                 banner.style.visibility = 'visible';
                 banner.style.position = 'fixed';
@@ -3379,28 +3497,34 @@
                 banner.style.left = '0';
                 banner.style.right = '0';
                 banner.style.zIndex = '999999';
-            }
-            
-            const showAnimation = () => {
-                banner.classList.add('show');
+                banner.style.width = '100%';
+                banner.style.opacity = '0';
                 
-                // Remove aria-hidden AFTER adding show class and BEFORE focusing
-                banner.setAttribute('aria-hidden', 'false');
+                LOGGER.mobile('MOBILE', '📱', 'Showing banner on mobile device');
                 
-                // Focus management for accessibility - only after aria-hidden is false
-                const firstButton = banner.querySelector('button');
-                if (firstButton && !isMobile) {
-                    // На мобильных не фокусируем автоматически
-                    setTimeout(() => {
-                        firstButton.focus();
-                    }, 100);
-                }
-            };
-            
-            if (isMobile) {
-                // На мобильных используем setTimeout вместо raf для лучшей совместимости
-                setTimeout(showAnimation, 10);
+                // Затем добавляем класс show для анимации
+                setTimeout(() => {
+                    banner.style.opacity = '1';
+                    banner.classList.add('show');
+                    banner.setAttribute('aria-hidden', 'false');
+                    
+                    LOGGER.mobile('MOBILE', '✅', 'Banner shown successfully');
+                }, 50);
             } else {
+                // Для десктопа - стандартная анимация
+                const showAnimation = () => {
+                    banner.classList.add('show');
+                    banner.setAttribute('aria-hidden', 'false');
+                    
+                    // Focus management for accessibility
+                    const firstButton = banner.querySelector('button');
+                    if (firstButton) {
+                        setTimeout(() => {
+                            firstButton.focus();
+                        }, 100);
+                    }
+                };
+                
                 raf(showAnimation);
             }
             

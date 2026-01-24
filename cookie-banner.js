@@ -4213,79 +4213,6 @@
                     flag: LANGUAGES[self.currentLanguage].flag
                 };
             };
-            
-            // Mobile-specific functions
-            window.showCookieBannerMobile = function() {
-                console.log('📱 Mobile force show called');
-                if (!document.getElementById('cookieBanner')) {
-                    self.forceInit();
-                }
-                setTimeout(() => {
-                    const banner = document.getElementById('cookieBanner');
-                    if (banner) {
-                        // СУПЕР АГРЕССИВНЫЕ мобильные стили
-                        banner.style.cssText = `
-                            display: block !important;
-                            visibility: visible !important;
-                            opacity: 1 !important;
-                            position: fixed !important;
-                            bottom: 0 !important;
-                            left: 0 !important;
-                            right: 0 !important;
-                            width: 100% !important;
-                            z-index: 999999 !important;
-                            transform: none !important;
-                            -webkit-transform: none !important;
-                            background: rgba(0, 0, 0, 0.95) !important;
-                            color: white !important;
-                        `;
-                        banner.classList.add('show');
-                        banner.setAttribute('aria-hidden', 'false');
-                        console.log('📱 Mobile banner forced visible with aggressive styles');
-                    }
-                }, 200);
-            };
-            
-            // Debug function for mobile
-            window.debugCookieBannerMobile = function() {
-                const banner = document.getElementById('cookieBanner');
-                console.log('📱 Mobile Debug Info:', {
-                    bannerExists: !!banner,
-                    bannerVisible: banner ? getComputedStyle(banner).display !== 'none' : false,
-                    bannerClasses: banner ? banner.className : 'N/A',
-                    isMobile: self.isMobileDevice(),
-                    userAgent: navigator.userAgent,
-                    viewport: { width: window.innerWidth, height: window.innerHeight },
-                    shouldShow: self.shouldShowBanner(),
-                    consent: self.getCookieConsent()
-                });
-                return banner;
-            };
-            
-            // Force reset and show for mobile (для отладки)
-            window.forceResetAndShowMobile = function() {
-                console.log('📱 Force reset and show for mobile');
-                
-                // Очищаем все хранилища
-                try {
-                    localStorage.removeItem('cookie_consent');
-                    sessionStorage.removeItem('cookie_consent');
-                    document.cookie = 'cookie_consent=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-                } catch (e) {
-                    console.error('Error clearing storage:', e);
-                }
-                
-                // Удаляем существующий баннер
-                const existing = document.getElementById('cookieBanner');
-                if (existing) {
-                    existing.remove();
-                }
-                
-                // Перезагружаем страницу
-                setTimeout(() => {
-                    location.reload();
-                }, 100);
-            };
         }
         
         // Force initialization (for manual triggers)
@@ -4358,12 +4285,6 @@
         
         // Public API methods
         show() {
-            const isMobile = this.isMobileDevice();
-            
-            if (isMobile) {
-                console.log('📱 Mobile show() called');
-            }
-            
             if (!document.getElementById('cookieBanner')) {
                 this.forceInit();
             }
@@ -4715,17 +4636,6 @@
                     
                     if (isMobile) {
                         LOGGER.mobile('MOBILE', '📱', 'Cookie banner initialized');
-                        
-                        // Дополнительная проверка через 1 секунду
-                        setTimeout(() => {
-                            if (window.cookieBanner && window.cookieBanner.shouldShowBanner && window.cookieBanner.shouldShowBanner()) {
-                                console.log('📱 Mobile: Forcing banner display check');
-                                const banner = document.getElementById('cookieBanner');
-                                if (banner && !banner.classList.contains('show')) {
-                                    window.cookieBanner.showBanner();
-                                }
-                            }
-                        }, 1000);
                     }
                 } catch (error) {
                     console.error('Cookie banner initialization failed:', error);

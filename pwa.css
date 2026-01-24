@@ -117,7 +117,8 @@
 }
 
 /* Кнопка "Поделиться" */
-.pwa-share-btn {
+.pwa-share-btn,
+.pwa-check-update-btn {
     background: none;
     border: none;
     color: #999;
@@ -133,6 +134,24 @@
 .pwa-share-btn:hover {
     color: #4CAF50;
     background: rgba(76, 175, 80, 0.1);
+}
+
+.pwa-check-update-btn:hover {
+    color: #2196F3;
+    background: rgba(33, 150, 243, 0.1);
+}
+
+.pwa-check-update-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.pwa-check-update-btn svg {
+    animation: none;
+}
+
+.pwa-check-update-btn:active:not(:disabled) svg {
+    animation: spin 1s linear;
 }
 
 /* Индикатор офлайн режима */

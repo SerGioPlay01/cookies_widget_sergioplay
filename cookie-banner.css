@@ -6,7 +6,7 @@
     right: 0;
     background: rgba(0, 0, 0, 0.95);
     color: white;
-    z-index: 999999; /* Увеличен z-index для мобильных */
+    z-index: 999999;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
     transform: translateY(100%);
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
@@ -16,7 +16,7 @@
     max-height: 95vh;
     overflow-y: auto;
     opacity: 0;
-    /* Мобильные исправления */
+    visibility: hidden;
     -webkit-overflow-scrolling: touch;
     -webkit-transform: translateY(100%);
     -webkit-transition: -webkit-transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
@@ -27,43 +27,50 @@
     transform: translateY(0);
     -webkit-transform: translateY(0);
     opacity: 1;
+    visibility: visible;
 }
 
-/* Для мобильных устройств - упрощенная анимация */
+/* КРИТИЧНО: Для мобильных устройств - максимально упрощенные стили */
 @media (max-width: 768px) {
     .cookie-banner {
-        max-height: 90vh;
-        bottom: env(safe-area-inset-bottom, 0);
-        /* Упрощенная анимация для мобильных - только opacity */
+        /* УБИРАЕМ ВСЕ ТРАНСФОРМАЦИИ */
         transform: none !important;
         -webkit-transform: none !important;
-        transition: opacity 0.3s ease-in-out !important;
-        -webkit-transition: opacity 0.3s ease-in-out !important;
-        /* Дополнительные исправления для мобильных */
+        /* Начальное состояние - скрыт через opacity */
+        opacity: 0 !important;
+        visibility: hidden !important;
+        /* Только opacity анимация */
+        transition: opacity 0.3s ease-in-out, visibility 0s linear 0.3s !important;
+        -webkit-transition: opacity 0.3s ease-in-out, visibility 0s linear 0.3s !important;
+        /* Позиционирование */
+        position: fixed !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        max-height: 90vh;
+        bottom: env(safe-area-inset-bottom, 0);
+        /* Оптимизация */
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
-        -webkit-perspective: 1000;
-        perspective: 1000;
     }
     
+    /* КРИТИЧНО: Показанное состояние */
     .cookie-banner.show {
         opacity: 1 !important;
-        display: block !important;
         visibility: visible !important;
+        display: block !important;
+        transition: opacity 0.3s ease-in-out, visibility 0s linear 0s !important;
+        -webkit-transition: opacity 0.3s ease-in-out, visibility 0s linear 0s !important;
     }
 }
 
 @media (max-width: 480px) {
     .cookie-banner {
         max-height: 95vh;
-        bottom: env(safe-area-inset-bottom, 0);
-        -webkit-overflow-scrolling: touch;
-        /* Исправления для очень маленьких экранов */
         font-size: 13px;
-        min-height: auto;
     }
     
-    /* Убеждаемся, что баннер виден на маленьких экранах */
     .cookie-banner.show {
         display: block !important;
         visibility: visible !important;

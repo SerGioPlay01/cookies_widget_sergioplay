@@ -45,12 +45,27 @@ class PWAManager {
                     scope: '/'
                 });
                 
-                console.log('PWA: Service Worker registered successfully');
+                console.log('%c✅ PWA %cService Worker registered', 
+                    'background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%); color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold;',
+                    'color: #333; font-weight: normal;');
                 
-                // Проверяем обновления каждые 60 секунд
+                // Немедленно проверяем обновления при загрузке
+                console.log('PWA: Checking for updates...');
+                this.swRegistration.update();
+                
+                // Проверяем обновления каждые 30 секунд (более частая проверка)
                 setInterval(() => {
+                    console.log('PWA: Periodic update check...');
                     this.swRegistration.update();
-                }, 60000);
+                }, 30000);
+                
+                // Проверяем при возвращении на вкладку
+                document.addEventListener('visibilitychange', () => {
+                    if (!document.hidden) {
+                        console.log('PWA: Tab visible - checking for updates...');
+                        this.swRegistration.update();
+                    }
+                });
                 
             } catch (error) {
                 console.error('PWA: Service Worker registration failed', error);
@@ -211,24 +226,43 @@ class PWAManager {
     }
     
     showUpdateAvailable() {
+        console.log('%c🔄 UPDATE %cNew version available!', 
+            'background: linear-gradient(135deg, #FF9800 0%, #F57C00 100%); color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold;',
+            'color: #333; font-weight: normal;');
+        
+        // Удаляем старое уведомление если есть
+        const oldBanner = document.querySelector('.pwa-update-banner');
+        if (oldBanner) {
+            oldBanner.remove();
+        }
+        
         const updateBanner = document.createElement('div');
         updateBanner.className = 'pwa-update-banner';
         updateBanner.innerHTML = `
             <div class="pwa-update-content">
-                <span>Доступно обновление приложения</span>
-                <button onclick="pwaManager.applyUpdate()" class="pwa-update-btn">Обновить</button>
-                <button onclick="this.parentElement.parentElement.remove()" class="pwa-close-btn">×</button>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <span style="font-size: 24px;">🔄</span>
+                    <div>
+                        <strong>Доступно обновление!</strong>
+                        <div style="font-size: 0.85em; opacity: 0.9;">Новая версия Cookie Widget готова к установке</div>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <button onclick="pwaManager.applyUpdate()" class="pwa-update-btn">
+                        <strong>Обновить сейчас</strong>
+                    </button>
+                    <button onclick="this.closest('.pwa-update-banner').remove()" class="pwa-close-btn" title="Закрыть">×</button>
+                </div>
             </div>
         `;
         
         document.body.appendChild(updateBanner);
         
-        // Автоматически скрываем через 10 секунд
-        setTimeout(() => {
-            if (updateBanner.parentElement) {
-                updateBanner.remove();
-            }
-        }, 10000);
+        // Показываем уведомление
+        this.showNotification('Доступно обновление приложения! 🔄', 'info');
+        
+        // НЕ скрываем автоматически - пусть пользователь сам закроет
+        console.log('PWA: Update banner shown');
     }
     
     async applyUpdate() {
@@ -330,9 +364,36 @@ document.addEventListener('DOMContentLoaded', () => {
     // Добавляем глобальные функции
     window.pwaManager = pwaManager;
     
+    // Добавляем кнопку "Проверить обновления"
+    const updateButton = document.createElement('button');
+    updateButton.className = 'pwa-check-update-btn';
+    updateButton.title = 'Проверить обновления';
+    updateButton.innerHTML = `
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/>
+        </svg>
+    `;
+    
+    updateButton.addEventListener('click', async () => {
+        updateButton.disabled = true;
+        updateButton.style.opacity = '0.5';
+        
+        if (pwaManager.swRegistration) {
+            console.log('🔄 Manual update check triggered');
+            await pwaManager.swRegistration.update();
+            pwaManager.showNotification('Проверка обновлений...', 'info');
+            
+            setTimeout(() => {
+                updateButton.disabled = false;
+                updateButton.style.opacity = '1';
+            }, 2000);
+        }
+    });
+    
     // Добавляем кнопку "Поделиться"
     const shareButton = document.createElement('button');
     shareButton.className = 'pwa-share-btn';
+    shareButton.title = 'Поделиться';
     shareButton.innerHTML = `
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="18" cy="5" r="3"/>
@@ -351,9 +412,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
-    // Добавляем кнопку в футер
+    // Добавляем кнопки в футер
     const footer = document.querySelector('.footer-social');
     if (footer) {
+        footer.appendChild(updateButton);
         footer.appendChild(shareButton);
     }
 });

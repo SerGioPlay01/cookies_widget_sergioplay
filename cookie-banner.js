@@ -3186,19 +3186,20 @@
             banner.setAttribute('role', 'dialog');
             banner.setAttribute('aria-hidden', 'true');
             
-            // Мобильные исправления - НЕ используем transform, используем display
+            // Мобильные исправления - НЕ устанавливаем display/visibility, пусть CSS управляет
             const isMobile = this.isMobileDevice();
             if (isMobile) {
+                // Только критичные стили для позиционирования
                 banner.style.position = 'fixed';
                 banner.style.bottom = '0';
                 banner.style.left = '0';
                 banner.style.right = '0';
                 banner.style.zIndex = '999999';
                 banner.style.width = '100%';
-                banner.style.display = 'none'; // Скрываем через display вместо transform
-                banner.style.visibility = 'hidden';
+                // НЕ устанавливаем display: none или visibility: hidden
+                // CSS сам управляет через opacity и visibility
                 
-                LOGGER.mobile('MOBILE', '📱', 'Creating mobile banner with fixed positioning');
+                LOGGER.mobile('MOBILE', '📱', 'Creating mobile banner - CSS will handle visibility');
             }
             
             // Create banner content
@@ -3216,11 +3217,14 @@
                     const bannerCheck = document.getElementById('cookieBanner');
                     if (bannerCheck) {
                         LOGGER.success('MOBILE', '✅', 'Cookie banner created successfully');
-                        LOGGER.mobile('MOBILE', '📱', 'Banner styles:', {
-                            display: bannerCheck.style.display,
-                            visibility: bannerCheck.style.visibility,
-                            position: bannerCheck.style.position,
-                            zIndex: bannerCheck.style.zIndex
+                        const computedStyle = window.getComputedStyle(bannerCheck);
+                        LOGGER.mobile('MOBILE', '📱', 'Banner computed styles:', {
+                            display: computedStyle.display,
+                            visibility: computedStyle.visibility,
+                            opacity: computedStyle.opacity,
+                            position: computedStyle.position,
+                            zIndex: computedStyle.zIndex,
+                            bottom: computedStyle.bottom
                         });
                     } else {
                         LOGGER.error('MOBILE', '❌', 'Cookie banner creation failed');
@@ -3513,27 +3517,26 @@
             }
             
             if (isMobile) {
-                // Для мобильных - сначала делаем видимым через display и visibility
-                banner.style.display = 'block';
-                banner.style.visibility = 'visible';
-                banner.style.position = 'fixed';
-                banner.style.bottom = '0';
-                banner.style.left = '0';
-                banner.style.right = '0';
-                banner.style.zIndex = '999999';
-                banner.style.width = '100%';
-                banner.style.opacity = '0';
+                // Для мобильных - просто добавляем класс show, CSS сам все сделает
+                LOGGER.mobile('MOBILE', '📱', 'Showing banner on mobile - adding show class');
                 
-                LOGGER.mobile('MOBILE', '📱', 'Showing banner on mobile device');
+                // Убираем aria-hidden
+                banner.setAttribute('aria-hidden', 'false');
                 
-                // Затем добавляем класс show для анимации
+                // Добавляем класс show - CSS сделает opacity: 1 и visibility: visible
+                banner.classList.add('show');
+                
+                // Проверяем что класс добавлен
                 setTimeout(() => {
-                    banner.style.opacity = '1';
-                    banner.classList.add('show');
-                    banner.setAttribute('aria-hidden', 'false');
-                    
-                    LOGGER.mobile('MOBILE', '✅', 'Banner shown successfully');
-                }, 50);
+                    const hasShow = banner.classList.contains('show');
+                    const computedStyle = window.getComputedStyle(banner);
+                    LOGGER.mobile('MOBILE', '✅', 'Banner show class added:', hasShow);
+                    LOGGER.mobile('MOBILE', '📱', 'Computed styles after show:', {
+                        opacity: computedStyle.opacity,
+                        visibility: computedStyle.visibility,
+                        display: computedStyle.display
+                    });
+                }, 100);
             } else {
                 // Для десктопа - стандартная анимация
                 const showAnimation = () => {

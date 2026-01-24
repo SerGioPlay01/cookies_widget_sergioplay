@@ -4524,13 +4524,23 @@
         const isMobile = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase());
         
         const initFunction = () => {
+            // Initialize advanced security systems AFTER DOM is ready
+            try {
+                IFRAME_BLOCKER.init();
+                SCRIPT_SCANNER.init();
+                SECURE_SANDBOX.init();
+                LAZY_SCRIPT_GUARD.init();
+            } catch (error) {
+                console.warn('Security systems initialization warning:', error);
+            }
+            
             // Create global instance
             if (!window.cookieBanner) {
                 try {
                     window.cookieBanner = new AdvancedCookieBanner();
                     
                     if (isMobile) {
-                        LOGGER.mobile('MOBILE', '📱', 'Cookie banner initialized');
+                        LOGGER.mobile('MOBILE', '📱', 'Cookie banner initialized on mobile device');
                     }
                 } catch (error) {
                     console.error('Cookie banner initialization failed:', error);
@@ -4543,18 +4553,12 @@
         };
         
         if (isMobile) {
-            // На мобильных добавляем небольшую задержку
-            setTimeout(initFunction, 100);
+            // На мобильных добавляем небольшую задержку для полной загрузки DOM
+            setTimeout(initFunction, 150);
         } else {
             initFunction();
         }
     }
-    
-    // Initialize advanced security systems after all constants are defined
-    IFRAME_BLOCKER.init();
-    SCRIPT_SCANNER.init();
-    SECURE_SANDBOX.init();
-    LAZY_SCRIPT_GUARD.init();
     
     // Initialize
     autoInit();

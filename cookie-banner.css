@@ -17,6 +17,7 @@
     overflow-y: auto;
     opacity: 0;
     visibility: hidden;
+    display: block; /* ВАЖНО: всегда block, видимость контролируется через opacity и visibility */
     -webkit-overflow-scrolling: touch;
     -webkit-transform: translateY(100%);
     -webkit-transition: -webkit-transform 0.3s ease-in-out, opacity 0.3s ease-in-out;

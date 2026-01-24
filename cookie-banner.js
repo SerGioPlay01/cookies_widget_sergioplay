@@ -2553,12 +2553,7 @@
                         }
                     }
                 } else {
-                    // Даже если не должен показываться, на мобильных проверяем еще раз
-                    if (this.isMobileDevice()) {
-                        LOGGER.mobile('MOBILE', '📱', 'Banner should not show according to shouldShowBanner(), but checking consent...');
-                        const consent = this.getCookieConsent();
-                        LOGGER.mobile('MOBILE', '📋', 'Current consent:', consent);
-                    }
+                    // Banner should not show
                 }
                 
                 // Setup global functions
@@ -2600,108 +2595,8 @@
                 LOGGER.info('SYSTEM', '🗣️', `Supported Languages: ${Object.keys(LANGUAGES).length} (${Object.keys(LANGUAGES).join(', ')})`);
                 console.groupEnd();
                 
-                // Дополнительная проверка для мобильных устройств
-                if (this.isMobileDevice()) {
-                    // Первая проверка через 1.5 секунды
-                    setTimeout(() => {
-                        this.mobileCompatibilityCheck();
-                    }, 1500);
-                    
-                    // Вторая агрессивная проверка через 3 секунды
-                    setTimeout(() => {
-                        const banner = document.getElementById('cookieBanner');
-                        const shouldShow = this.shouldShowBanner();
-                        
-                        LOGGER.mobile('MOBILE', '🔍', 'Second mobile check:', {
-                            bannerExists: !!banner,
-                            shouldShow: shouldShow,
-                            hasShowClass: banner ? banner.classList.contains('show') : false
-                        });
-                        
-                        if (shouldShow && banner && !banner.classList.contains('show')) {
-                            LOGGER.mobile('MOBILE', '⚠️', 'FORCING banner display with aggressive styles');
-                            
-                            // СУПЕР АГРЕССИВНОЕ ОТОБРАЖЕНИЕ
-                            banner.style.cssText = `
-                                display: block !important;
-                                visibility: visible !important;
-                                opacity: 1 !important;
-                                position: fixed !important;
-                                bottom: 0 !important;
-                                left: 0 !important;
-                                right: 0 !important;
-                                width: 100% !important;
-                                z-index: 999999 !important;
-                                transform: none !important;
-                                -webkit-transform: none !important;
-                            `;
-                            
-                            banner.classList.add('show');
-                            banner.setAttribute('aria-hidden', 'false');
-                            
-                            LOGGER.mobile('MOBILE', '✅', 'Banner forced with inline styles');
-                        }
-                    }, 3000);
-                }
-                
             } catch (error) {
                 console.warn('Cookie banner initialization failed:', error);
-            }
-        }
-        
-        // Проверка совместимости с мобильными устройствами
-        mobileCompatibilityCheck() {
-            const banner = document.getElementById('cookieBanner');
-            const settings = document.getElementById('cookieSettings');
-            const shouldShow = this.shouldShowBanner();
-            
-            LOGGER.mobile('MOBILE', '📱', 'Mobile compatibility check:', {
-                bannerExists: !!banner,
-                settingsExists: !!settings,
-                shouldShow: shouldShow,
-                bannerVisible: banner ? banner.classList.contains('show') : false,
-                settingsVisible: settings ? settings.classList.contains('show') : false,
-                bannerDisplay: banner ? banner.style.display : 'N/A',
-                bannerVisibility: banner ? banner.style.visibility : 'N/A'
-            });
-            
-            // Убеждаемся, что настройки скрыты при загрузке
-            if (settings) {
-                settings.style.display = 'none';
-                settings.classList.remove('show');
-                settings.setAttribute('aria-hidden', 'true');
-            }
-            
-            // Если баннер должен показываться
-            if (shouldShow) {
-                if (banner && !banner.classList.contains('show')) {
-                    LOGGER.mobile('MOBILE', '📱', 'Banner should be visible but is not, forcing display');
-                    
-                    // Принудительно показываем баннер
-                    banner.style.display = 'block';
-                    banner.style.visibility = 'visible';
-                    banner.style.position = 'fixed';
-                    banner.style.bottom = '0';
-                    banner.style.left = '0';
-                    banner.style.right = '0';
-                    banner.style.zIndex = '999999';
-                    banner.style.width = '100%';
-                    banner.style.opacity = '1';
-                    
-                    // Добавляем класс show
-                    banner.classList.add('show');
-                    banner.setAttribute('aria-hidden', 'false');
-                    
-                    LOGGER.mobile('MOBILE', '✅', 'Banner forced to display');
-                } else if (!banner) {
-                    // Если баннер вообще не создан, но должен быть
-                    LOGGER.mobile('MOBILE', '📱', 'Banner not created, forcing creation');
-                    this.createBanner().then(() => {
-                        setTimeout(() => {
-                            this.showBanner();
-                        }, 100);
-                    });
-                }
             }
         }
         
@@ -4544,7 +4439,7 @@
             return this.config.privacyPolicyUrl;
         }
         
-        // API for customizing appearance
+        // API for cuубstomizing appearance
         setTheme(theme) {
             this.config.theme = theme;
             const banner = document.getElementById('cookieBanner');

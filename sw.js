@@ -1,7 +1,7 @@
 // Service Worker для Cookie Widget PWA
-const CACHE_NAME = 'cookie-widget-v3.3.5';
-const STATIC_CACHE_NAME = 'cookie-widget-static-v3.3.5';
-const DYNAMIC_CACHE_NAME = 'cookie-widget-dynamic-v3.3.5';
+const CACHE_NAME = 'cookie-widget-v3.3.6';
+const STATIC_CACHE_NAME = 'cookie-widget-static-v3.3.6';
+const DYNAMIC_CACHE_NAME = 'cookie-widget-dynamic-v3.3.6';
 
 // Файлы для кэширования
 const STATIC_FILES = [

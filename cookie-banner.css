@@ -1194,13 +1194,6 @@
         -moz-osx-font-smoothing: grayscale;
     }
     
-    /* Предотвращение случайного масштабирования */
-    .cookie-banner * {
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        user-select: none;
-    }
-    
     .cookie-banner__text,
     .cookie-banner__link {
         -webkit-user-select: text;

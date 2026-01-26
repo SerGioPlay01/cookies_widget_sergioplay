@@ -3128,6 +3128,7 @@
                 banner.style.right = '0';
                 banner.style.zIndex = '999999';
                 banner.style.width = '100%';
+                banner.style.display = 'block';
                 // НЕ устанавливаем display: none или visibility: hidden
                 // CSS сам управляет через opacity и visibility
                 
@@ -3156,7 +3157,8 @@
                             opacity: computedStyle.opacity,
                             position: computedStyle.position,
                             zIndex: computedStyle.zIndex,
-                            bottom: computedStyle.bottom
+                            bottom: computedStyle.bottom,
+                            pointerEvents: computedStyle.pointerEvents
                         });
                     } else {
                         LOGGER.error('MOBILE', '❌', 'Cookie banner creation failed');
@@ -3455,6 +3457,12 @@
                 // Убираем aria-hidden
                 banner.setAttribute('aria-hidden', 'false');
                 
+                // Убедимся что элемент видим
+                banner.style.display = 'block';
+                banner.style.visibility = 'visible';
+                banner.style.opacity = '1';
+                banner.style.pointerEvents = 'auto';
+                
                 // Добавляем класс show - CSS сделает opacity: 1 и visibility: visible
                 banner.classList.add('show');
                 
@@ -3466,7 +3474,8 @@
                     LOGGER.mobile('MOBILE', '📱', 'Computed styles after show:', {
                         opacity: computedStyle.opacity,
                         visibility: computedStyle.visibility,
-                        display: computedStyle.display
+                        display: computedStyle.display,
+                        pointerEvents: computedStyle.pointerEvents
                     });
                 }, 100);
             } else {
@@ -3499,10 +3508,14 @@
             const isMobileUA = mobileRegex.test(userAgent.toLowerCase());
             
             // Дополнительные проверки
-            const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+            const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
             const isSmallScreen = window.innerWidth <= 768;
             
-            return isMobileUA || (isTouchDevice && isSmallScreen);
+            // Проверка media query
+            const isMediaQueryMobile = window.matchMedia('(max-width: 768px)').matches;
+            
+            // Возвращаем true если это мобильное устройство по любому из критериев
+            return isMobileUA || (isTouchDevice && isSmallScreen) || isMediaQueryMobile;
         }
         
         // Hide banner with animation
@@ -4541,6 +4554,21 @@
                     
                     if (isMobile) {
                         LOGGER.mobile('MOBILE', '📱', 'Cookie banner initialized on mobile device');
+                        
+                        // Дополнительная проверка для мобильных - убедимся что баннер показывается
+                        setTimeout(() => {
+                            const banner = document.getElementById('cookieBanner');
+                            if (banner && !banner.classList.contains('show')) {
+                                LOGGER.mobile('MOBILE', '⚠️', 'Banner not visible after init, checking...');
+                                const computedStyle = window.getComputedStyle(banner);
+                                LOGGER.mobile('MOBILE', '📱', 'Banner state:', {
+                                    hasShowClass: banner.classList.contains('show'),
+                                    display: computedStyle.display,
+                                    visibility: computedStyle.visibility,
+                                    opacity: computedStyle.opacity
+                                });
+                            }
+                        }, 500);
                     }
                 } catch (error) {
                     console.error('Cookie banner initialization failed:', error);

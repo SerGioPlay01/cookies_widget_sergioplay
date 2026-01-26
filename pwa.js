@@ -80,12 +80,14 @@ class PWAManager {
                 'background: linear-gradient(135deg, #9C27B0 0%, #7B1FA2 100%); color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold;',
                 'color: #333; font-weight: normal;');
             
-            // Only prevent default if we're going to handle it ourselves
+            // ВАЖНО: НЕ вызываем preventDefault() - это блокирует cookie banner!
+            // Сохраняем prompt для использования позже
+            this.deferredPrompt = e;
+            
+            // Показываем кнопку установки если нужно
             if (this.shouldShowInstallButton()) {
-                e.preventDefault();
-                this.deferredPrompt = e;
                 this.showInstallButton();
-                console.log('%c📱 PWA %cHandling install prompt with custom button', 
+                console.log('%c📱 PWA %cShowing install button', 
                     'background: linear-gradient(135deg, #9C27B0 0%, #7B1FA2 100%); color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold;',
                     'color: #333; font-weight: normal;');
             } else {
@@ -167,17 +169,20 @@ class PWAManager {
             return false;
         }
         
-        // Check if we have an install button element on the page
-        const installButton = document.querySelector('#pwa-install-button, .pwa-install, [data-pwa-install]');
-        if (!installButton) {
-            return false; // No install button element found, let browser handle it
+        // ВАЖНО: Не блокируем cookie banner!
+        // Показываем кнопку установки только если явно запрошено
+        // Проверяем наличие специального флага в конфиге
+        const shouldShowPWAButton = window.showPWAInstallButton === true;
+        
+        if (!shouldShowPWAButton) {
+            return false; // По умолчанию не показываем, чтобы не блокировать cookie banner
         }
         
         // Always allow on desktop for better compatibility
         const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
         
         if (!isMobile) {
-            return true; // Show on desktop if we have a button element
+            return true; // Show on desktop if explicitly enabled
         }
         
         // On mobile, be more permissive
@@ -185,7 +190,7 @@ class PWAManager {
         const isFirefox = /Firefox/i.test(navigator.userAgent);
         const isSamsung = /SamsungBrowser/i.test(navigator.userAgent);
         
-        // Show on most modern mobile browsers if we have a button element
+        // Show on most modern mobile browsers if explicitly enabled
         return isChrome || isFirefox || isSamsung;
     }
     

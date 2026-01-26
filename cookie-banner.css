@@ -45,13 +45,16 @@
         /* Начальное состояние - скрыт через opacity */
         opacity: 0 !important;
         visibility: hidden !important;
+        pointer-events: none !important;
         /* Только opacity анимация */
         transition:
             opacity 0.3s ease-in-out,
-            visibility 0s linear 0.3s !important;
+            visibility 0s linear 0.3s,
+            pointer-events 0s linear 0.3s !important;
         -webkit-transition:
             opacity 0.3s ease-in-out,
-            visibility 0s linear 0.3s !important;
+            visibility 0s linear 0.3s,
+            pointer-events 0s linear 0.3s !important;
         /* Позиционирование */
         position: fixed !important;
         bottom: 0 !important;
@@ -63,6 +66,8 @@
         /* Оптимизация */
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
+        /* Убедимся что элемент есть в DOM */
+        display: block !important;
     }
 
     /* КРИТИЧНО: Показанное состояние */
@@ -70,12 +75,15 @@
         opacity: 1 !important;
         visibility: visible !important;
         display: block !important;
+        pointer-events: auto !important;
         transition:
             opacity 0.3s ease-in-out,
-            visibility 0s linear 0s !important;
+            visibility 0s linear 0s,
+            pointer-events 0s linear 0s !important;
         -webkit-transition:
             opacity 0.3s ease-in-out,
-            visibility 0s linear 0s !important;
+            visibility 0s linear 0s,
+            pointer-events 0s linear 0s !important;
     }
 }
 

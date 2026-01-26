@@ -3121,17 +3121,8 @@
             // Мобильные исправления - НЕ устанавливаем display/visibility, пусть CSS управляет
             const isMobile = this.isMobileDevice();
             if (isMobile) {
-                // Только критичные стили для позиционирования
-                banner.style.position = 'fixed';
-                banner.style.bottom = '0';
-                banner.style.left = '0';
-                banner.style.right = '0';
-                banner.style.zIndex = '999999';
-                banner.style.width = '100%';
-                banner.style.display = 'block';
-                // НЕ устанавливаем display: none или visibility: hidden
-                // CSS сам управляет через opacity и visibility
-                
+                // Для мобильных - не устанавливаем inline стили, CSS с !important переопределит их
+                // Просто логируем что это мобильное устройство
                 LOGGER.mobile('MOBILE', '📱', 'Creating mobile banner - CSS will handle visibility');
             }
             
@@ -3456,12 +3447,6 @@
                 
                 // Убираем aria-hidden
                 banner.setAttribute('aria-hidden', 'false');
-                
-                // Убедимся что элемент видим
-                banner.style.display = 'block';
-                banner.style.visibility = 'visible';
-                banner.style.opacity = '1';
-                banner.style.pointerEvents = 'auto';
                 
                 // Добавляем класс show - CSS сделает opacity: 1 и visibility: visible
                 banner.classList.add('show');
@@ -4197,26 +4182,8 @@
                 this.forceInit();
             }
             
-            // Дополнительные проверки для мобильных
-            if (isMobile) {
-                setTimeout(() => {
-                    const banner = document.getElementById('cookieBanner');
-                    if (banner) {
-                        // Принудительно применяем мобильные стили
-                        banner.style.display = 'block';
-                        banner.style.visibility = 'visible';
-                        banner.style.position = 'fixed';
-                        banner.style.bottom = '0';
-                        banner.style.left = '0';
-                        banner.style.right = '0';
-                        banner.style.zIndex = '999999';
-                        banner.style.width = '100%';
-                    }
-                    this.showBanner();
-                }, 100);
-            } else {
-                this.showBanner();
-            }
+            // Просто показываем баннер - CSS сам управляет стилями
+            this.showBanner();
             
             return this;
         }

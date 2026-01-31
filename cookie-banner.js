@@ -3120,19 +3120,19 @@
                 existingBanner.remove();
             }
             
+            const isMobile = this.isMobileDevice();
+            
+            // Для мобильных создаем специальный упрощенный виджет
+            if (isMobile) {
+                LOGGER.mobile('MOBILE', '📱', 'Creating MOBILE-SPECIFIC banner widget');
+                return await this.createMobileBanner();
+            }
+            
             const banner = document.createElement('div');
             banner.className = 'cookie-banner';
             banner.id = 'cookieBanner';
             banner.setAttribute('role', 'dialog');
             banner.setAttribute('aria-hidden', 'true');
-            
-            // Мобильные исправления - НЕ устанавливаем display/visibility, пусть CSS управляет
-            const isMobile = this.isMobileDevice();
-            if (isMobile) {
-                // Для мобильных - не устанавливаем inline стили, CSS с   переопределит их
-                // Просто логируем что это мобильное устройство
-                LOGGER.mobile('MOBILE', '📱', 'Creating mobile banner - CSS will handle visibility');
-            }
             
             // Create banner content
             banner.innerHTML = await this.createBannerHTML();
@@ -3143,29 +3143,278 @@
             // Setup event listeners
             this.setupEventListeners(banner);
             
-            // Дополнительная проверка для мобильных
-            if (isMobile) {
-                setTimeout(() => {
-                    const bannerCheck = document.getElementById('cookieBanner');
-                    if (bannerCheck) {
-                        LOGGER.success('MOBILE', '✅', 'Cookie banner created successfully');
-                        const computedStyle = window.getComputedStyle(bannerCheck);
-                        LOGGER.mobile('MOBILE', '📱', 'Banner computed styles:', {
-                            display: computedStyle.display,
-                            visibility: computedStyle.visibility,
-                            opacity: computedStyle.opacity,
-                            position: computedStyle.position,
-                            zIndex: computedStyle.zIndex,
-                            bottom: computedStyle.bottom,
-                            pointerEvents: computedStyle.pointerEvents
-                        });
-                    } else {
-                        LOGGER.error('MOBILE', '❌', 'Cookie banner creation failed');
-                    }
-                }, 100);
-            }
+            return banner;
+        }
+        
+        // Create mobile-specific banner
+        async createMobileBanner() {
+            const banner = document.createElement('div');
+            banner.className = 'cookie-banner cookie-banner--mobile';
+            banner.id = 'cookieBanner';
+            banner.setAttribute('role', 'dialog');
+            banner.setAttribute('aria-hidden', 'true');
+            
+            // Агрессивные inline стили для мобильных
+            banner.style.cssText = `
+                position: fixed !important;
+                bottom: 0 !important;
+                left: 0 !important;
+                right: 0 !important;
+                width: 100% !important;
+                background: rgba(0, 0, 0, 0.95) !important;
+                color: white !important;
+                z-index: 2147483647 !important;
+                display: block !important;
+                opacity: 0 !important;
+                visibility: hidden !important;
+                pointer-events: none !important;
+                transition: opacity 0.3s ease, visibility 0.3s ease !important;
+                -webkit-transition: opacity 0.3s ease, visibility 0.3s ease !important;
+                max-height: 90vh !important;
+                overflow-y: auto !important;
+                -webkit-overflow-scrolling: touch !important;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+            `;
+            
+            // Упрощенный HTML для мобильных
+            banner.innerHTML = await this.createMobileBannerHTML();
+            
+            // Add to DOM
+            document.body.appendChild(banner);
+            
+            // Setup event listeners
+            this.setupMobileEventListeners(banner);
+            
+            // Проверка создания
+            setTimeout(() => {
+                const bannerCheck = document.getElementById('cookieBanner');
+                if (bannerCheck) {
+                    LOGGER.success('MOBILE', '✅', 'Mobile banner created successfully');
+                    const computedStyle = window.getComputedStyle(bannerCheck);
+                    LOGGER.mobile('MOBILE', '📱', 'Mobile banner styles:', {
+                        display: computedStyle.display,
+                        visibility: computedStyle.visibility,
+                        opacity: computedStyle.opacity,
+                        zIndex: computedStyle.zIndex,
+                        position: computedStyle.position
+                    });
+                } else {
+                    LOGGER.error('MOBILE', '❌', 'Mobile banner creation failed');
+                }
+            }, 100);
             
             return banner;
+        }
+        
+        // Create mobile banner HTML
+        async createMobileBannerHTML() {
+            const totalTrackers = Object.values(this.detectedTrackers).flat().length;
+            const privacyLawName = this.privacyLaw?.name || 'Privacy';
+            
+            return `
+                <div style="padding: 20px; text-align: center;">
+                    <h2 style="margin: 0 0 12px 0; font-size: 18px; font-weight: 600; color: white;">
+                        🍪 ${this.t('title')}
+                    </h2>
+                    ${this.privacyLaw ? `
+                        <div style="display: inline-block; background: #4caf50; color: white; padding: 4px 10px; border-radius: 12px; font-size: 11px; font-weight: 600; margin-bottom: 12px;">
+                            ${privacyLawName}
+                        </div>
+                    ` : ''}
+                    <p style="margin: 0 0 16px 0; font-size: 14px; line-height: 1.5; color: rgba(255,255,255,0.9);">
+                        ${this.t('description')} 
+                        <a href="${this.config.privacyPolicyUrl}" 
+                           style="color: #4caf50; text-decoration: underline;"
+                           target="_blank" rel="noopener">
+                            ${this.t('privacyPolicy')}
+                        </a>.
+                    </p>
+                    ${totalTrackers > 0 ? `
+                        <div style="display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: rgba(76, 175, 80, 0.1); border-radius: 6px; margin-bottom: 16px; font-size: 12px; color: #4caf50;">
+                            <span>🧠</span>
+                            <span>${this.t('trackersDetected')}: ${totalTrackers}</span>
+                        </div>
+                    ` : ''}
+                    <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 16px;">
+                        <button data-action="accept" 
+                                style="width: 100%; padding: 14px 20px; background: #4caf50; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; touch-action: manipulation; -webkit-tap-highlight-color: transparent;">
+                            ${this.t('acceptAll')}
+                        </button>
+                        ${this.config.showSettingsButton ? `
+                            <button data-action="settings" 
+                                    style="width: 100%; padding: 12px 20px; background: transparent; color: #4caf50; border: 2px solid #4caf50; border-radius: 8px; font-size: 14px; font-weight: 500; cursor: pointer; touch-action: manipulation; -webkit-tap-highlight-color: transparent;">
+                                ${this.t('settings')}
+                            </button>
+                        ` : ''}
+                        ${this.config.showDeclineButton ? `
+                            <button data-action="decline" 
+                                    style="width: 100%; padding: 10px 20px; background: transparent; color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.3); border-radius: 8px; font-size: 13px; cursor: pointer; touch-action: manipulation; -webkit-tap-highlight-color: transparent;">
+                                ${this.t('decline')}
+                            </button>
+                        ` : ''}
+                    </div>
+                </div>
+                
+                <div id="cookieSettings" style="display: none; background: rgba(0,0,0,0.9); border-top: 1px solid rgba(255,255,255,0.1); max-height: 0; overflow: hidden; transition: max-height 0.3s ease;">
+                    ${await this.createMobileSettingsHTML()}
+                </div>
+            `;
+        }
+        
+        // Create mobile settings HTML
+        async createMobileSettingsHTML() {
+            return `
+                <div style="padding: 20px;">
+                    <h3 style="margin: 0 0 12px 0; font-size: 18px; font-weight: 600; color: white; text-align: center;">
+                        ${this.t('settingsTitle')}
+                    </h3>
+                    <p style="margin: 0 0 20px 0; font-size: 13px; color: rgba(255,255,255,0.8); text-align: center; line-height: 1.5;">
+                        ${this.t('settingsDescription')}
+                    </p>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 20px;">
+                        ${this.config.categories.map(category => this.createMobileCategoryHTML(category)).join('')}
+                    </div>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 12px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+                        <button data-action="save-settings" 
+                                style="width: 100%; padding: 14px 20px; background: #4caf50; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; touch-action: manipulation;">
+                            ${this.t('saveSettings')}
+                        </button>
+                        <button data-action="close-settings" 
+                                style="width: 100%; padding: 12px 20px; background: transparent; color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.3); border-radius: 8px; font-size: 14px; cursor: pointer; touch-action: manipulation;">
+                            ${this.t('cancel')}
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Create mobile category HTML
+        createMobileCategoryHTML(category) {
+            const isNecessary = category === 'necessary';
+            const currentSettings = this.getCookieSettings();
+            const isChecked = currentSettings[category] || isNecessary;
+            const detectedInCategory = this.detectedTrackers[category] || [];
+            
+            return `
+                <div style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 16px; border: 1px solid rgba(255,255,255,0.1);">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                        <h4 style="margin: 0; font-size: 15px; font-weight: 600; color: white; display: flex; align-items: center; gap: 8px;">
+                            ${this.t(category)}
+                            ${detectedInCategory.length > 0 ? `
+                                <span style="background: #4caf50; color: white; padding: 2px 6px; border-radius: 10px; font-size: 10px; font-weight: 600;">
+                                    ${detectedInCategory.length}
+                                </span>
+                            ` : ''}
+                        </h4>
+                        <label style="position: relative; display: inline-block; width: 50px; height: 28px; min-width: 50px;">
+                            <input type="checkbox" 
+                                   id="cookie-${category}"
+                                   data-category="${category}"
+                                   ${isChecked ? 'checked' : ''}
+                                   ${isNecessary ? 'disabled' : ''}
+                                   style="opacity: 0; width: 0; height: 0;">
+                            <span style="position: absolute; cursor: ${isNecessary ? 'not-allowed' : 'pointer'}; top: 0; left: 0; right: 0; bottom: 0; background-color: ${isChecked ? '#4caf50' : 'rgba(255,255,255,0.3)'}; transition: 0.3s; border-radius: 28px; ${isNecessary ? 'opacity: 0.6;' : ''}">
+                                <span style="position: absolute; content: ''; height: 20px; width: 20px; left: 4px; bottom: 4px; background-color: white; transition: 0.3s; border-radius: 50%; transform: ${isChecked ? 'translateX(22px)' : 'translateX(0)'};"></span>
+                            </span>
+                        </label>
+                    </div>
+                    <p style="margin: 0; font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.4;">
+                        ${this.t(category + 'Desc')}
+                    </p>
+                </div>
+            `;
+        }
+        
+        // Setup mobile event listeners
+        setupMobileEventListeners(banner) {
+            LOGGER.mobile('MOBILE', '📱', 'Setting up mobile event listeners');
+            
+            const handleAction = (e) => {
+                const target = e.target.closest('[data-action]');
+                if (!target) return;
+                
+                const action = target.getAttribute('data-action');
+                e.preventDefault();
+                e.stopPropagation();
+                
+                // Визуальная обратная связь
+                target.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    target.style.transform = '';
+                }, 150);
+                
+                LOGGER.mobile('MOBILE', '🖱️', 'Mobile action triggered:', action);
+                
+                switch (action) {
+                    case 'accept':
+                        this.acceptAll();
+                        break;
+                    case 'decline':
+                        this.declineAll();
+                        break;
+                    case 'settings':
+                        this.showMobileSettings();
+                        break;
+                    case 'close-settings':
+                        this.hideMobileSettings();
+                        break;
+                    case 'save-settings':
+                        this.saveSettings();
+                        break;
+                }
+            };
+            
+            // Обработчики для touch и click
+            banner.addEventListener('touchend', handleAction, { passive: false });
+            banner.addEventListener('click', handleAction);
+            
+            // Обработка чекбоксов
+            const checkboxes = banner.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', (e) => {
+                    const category = e.target.getAttribute('data-category');
+                    const span = e.target.nextElementSibling;
+                    const innerSpan = span.querySelector('span');
+                    
+                    if (e.target.checked) {
+                        span.style.backgroundColor = '#4caf50';
+                        innerSpan.style.transform = 'translateX(22px)';
+                    } else {
+                        span.style.backgroundColor = 'rgba(255,255,255,0.3)';
+                        innerSpan.style.transform = 'translateX(0)';
+                    }
+                    
+                    LOGGER.mobile('MOBILE', '✅', `Category ${category} toggled:`, e.target.checked);
+                });
+            });
+        }
+        
+        // Show mobile settings
+        showMobileSettings() {
+            const settings = document.getElementById('cookieSettings');
+            if (!settings) return;
+            
+            LOGGER.mobile('MOBILE', '⚙️', 'Showing mobile settings');
+            
+            settings.style.display = 'block';
+            settings.style.maxHeight = '70vh';
+            settings.style.overflowY = 'auto';
+            settings.style.webkitOverflowScrolling = 'touch';
+        }
+        
+        // Hide mobile settings
+        hideMobileSettings() {
+            const settings = document.getElementById('cookieSettings');
+            if (!settings) return;
+            
+            LOGGER.mobile('MOBILE', '⚙️', 'Hiding mobile settings');
+            
+            settings.style.maxHeight = '0';
+            setTimeout(() => {
+                settings.style.display = 'none';
+            }, 300);
         }
         
         // Generate banner HTML
@@ -3438,50 +3687,37 @@
                 return;
             }
             
-            // Мобильные исправления
             const isMobile = this.isMobileDevice();
             
             // Убеждаемся, что настройки скрыты при показе баннера
             const settings = document.getElementById('cookieSettings');
             if (settings) {
                 settings.style.display = 'none';
-                settings.classList.remove('show');
+                settings.style.maxHeight = '0';
                 settings.setAttribute('aria-hidden', 'true');
             }
             
             if (isMobile) {
-                // Для мобильных - просто добавляем класс show, CSS сам все сделает
-                LOGGER.mobile('MOBILE', '📱', 'Showing banner on mobile - adding show class');
+                // Для мобильных - агрессивное показывание с inline стилями
+                LOGGER.mobile('MOBILE', '📱', 'Showing mobile banner with inline styles');
                 
-                // Убираем aria-hidden
                 banner.setAttribute('aria-hidden', 'false');
                 
-                // Добавляем класс show - CSS сделает opacity: 1 и visibility: visible
-                banner.classList.add('show');
-
-                // На мобильных иногда сторонние стили или контейнеры перекрывают видимость.
-                // Установим inline-стили, чтобы гарантировать видимость баннера на мобильных.
-                try {
-                    banner.style.opacity = '1';
-                    banner.style.visibility = 'visible';
-                    banner.style.pointerEvents = 'auto';
-                    banner.style.display = 'block';
-                    banner.style.transform = 'translateY(0)';
-                    banner.style.webkitTransform = 'translateY(0)';
-                } catch (e) {
-                    // Не критично — оставляем управление CSS классом
-                }
+                // Агрессивные inline стили для показа
+                banner.style.opacity = '1';
+                banner.style.visibility = 'visible';
+                banner.style.pointerEvents = 'auto';
+                banner.style.display = 'block';
                 
-                // Проверяем что класс добавлен
+                // Проверка через 100ms
                 setTimeout(() => {
-                    const hasShow = banner.classList.contains('show');
                     const computedStyle = window.getComputedStyle(banner);
-                    LOGGER.mobile('MOBILE', '✅', 'Banner show class added:', hasShow);
-                    LOGGER.mobile('MOBILE', '📱', 'Computed styles after show:', {
+                    LOGGER.mobile('MOBILE', '✅', 'Mobile banner shown. Styles:', {
                         opacity: computedStyle.opacity,
                         visibility: computedStyle.visibility,
                         display: computedStyle.display,
-                        pointerEvents: computedStyle.pointerEvents
+                        pointerEvents: computedStyle.pointerEvents,
+                        zIndex: computedStyle.zIndex
                     });
                 }, 100);
             } else {

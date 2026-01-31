@@ -2498,7 +2498,15 @@
                 this.setupIntegrations();
                 
                 // Detect user region and privacy law
-                await this.detectUserRegion();
+                // Wrap detection in a timeout so slow/blocked network calls on mobile
+                // do not block overall initialization.
+                await Promise.race([
+                    this.detectUserRegion(),
+                    new Promise(resolve => setTimeout(() => {
+                        try { LOGGER.geo && LOGGER.geo('GEO-DETECT','⏱️','Region detection timeout, using fallback'); } catch (e) {}
+                        resolve();
+                    }, 1500))
+                ]);
                 
                 // Detect user language
                 this.currentLanguage = this.detectLanguage();

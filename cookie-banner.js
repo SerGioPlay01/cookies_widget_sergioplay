@@ -3450,6 +3450,19 @@
                 
                 // Добавляем класс show - CSS сделает opacity: 1 и visibility: visible
                 banner.classList.add('show');
+
+                // На мобильных иногда сторонние стили или контейнеры перекрывают видимость.
+                // Установим inline-стили, чтобы гарантировать видимость баннера на мобильных.
+                try {
+                    banner.style.opacity = '1';
+                    banner.style.visibility = 'visible';
+                    banner.style.pointerEvents = 'auto';
+                    banner.style.display = 'block';
+                    banner.style.transform = 'translateY(0)';
+                    banner.style.webkitTransform = 'translateY(0)';
+                } catch (e) {
+                    // Не критично — оставляем управление CSS классом
+                }
                 
                 // Проверяем что класс добавлен
                 setTimeout(() => {
